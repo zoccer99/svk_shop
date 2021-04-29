@@ -1,0 +1,82 @@
+body{
+    background-color: #ebeded;
+}
+
+h1 {
+  font-family: "Playfair Display";
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+.carouselImage {
+        height: 65vh;
+        min-height: 200px;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+} 
+
+
+/* ContributionCard */
+
+  
+.card-img {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+.card-title {
+    margin-bottom: 0.3rem;
+  }
+  
+.cat {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+.fa-users {
+    margin-left: 1rem;
+  }
+  
+.card-footer {
+    font-size: 0.8rem;
+  }
+
+.textContainer {
+    max-width:90%;
+}
+
+.Player {
+  margin: 20px 10% 20px 10%;
+}
+
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
+
+/* Media Queries */
+.siteLogo {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  max-height:10vw;
+}
+
+.siteImage {
+  height:40px;
+  width:auto;
+}
+
+.siteCaption {
+  display:none;
+}
+
+@media (min-width: 768px) {
+    .siteCaption {
+      display:flex;
+    }
+}
