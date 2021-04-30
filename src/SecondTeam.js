@@ -5,13 +5,13 @@ import firstTeam from "./pictures/secondTeam.jpg";
 function SecondTeam(props) {
   return (
     <div className="container-fluid">
-      <div class="my-3 mx-2 text-center">
+      <div class="my-3 mx-2 text-center d-flex flex-column">
         <img
-          className="img-fluid img-thumbnail rounded"
+          className="img-fluid img-thumbnail rounded mx-5"
           src={firstTeam}
           alt="Erste Mannschaft"
         ></img>
-        <div className="Player">
+        <div className="Player mx-5">
           <h2 className="text-center">
             Wir bedanken uns für das Trikotsponsoring bei Firma Rothermann
             Heizungs- und Sanitärtechnik.
