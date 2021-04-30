@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import Shop from "./Shop";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import FirstTeam from "./FirstTeam";
+import SecondTeam from "./SecondTeam";
 import Home from "./Home";
 import Banner from "./Banner";
 import BigContribution from "./BigContribution";
@@ -19,7 +20,7 @@ function Welcome(props) {
           <Route path="/" exact component={Home}></Route>
           <Route path="/shop" component={Shop}></Route>
           <Route exact path="/erste_Mannschaft" component={FirstTeam}></Route>
-          <Route path="/zweite_Mannschaft"></Route>
+          <Route path="/zweite_Mannschaft" component={SecondTeam}></Route>
           <Route
             exact
             path="/erste_Mannschaft/erstesSpiel"
