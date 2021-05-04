@@ -51,9 +51,11 @@ h5 {
     max-width:90%;
 }
 
-.Player {
-}
+/*Mannschaftseite */
 
+.TransitionSVG{
+  border-radius: 5%;
+}
 
 /* Footer */
 .footer {

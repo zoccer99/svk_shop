@@ -16,6 +16,7 @@ function Welcome(props) {
       <Banner />
       <Router>
         <Navigation />
+      {/* Switch & Routing */}
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/shop" component={Shop}></Route>
