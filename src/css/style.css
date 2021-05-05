@@ -1,5 +1,33 @@
 body{
-    background-color: #ebeded;
+    background-color: #FBFBF2;
+  }
+
+.primary-color {
+  background-color: #34A6ED;
+}
+
+.secondary-color {
+  background-color: #E5E6E4;
+}
+
+.transition {
+ 
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.transition svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 140px;
+}
+
+.transition .shape-fill {
+  fill: #34A6ED;
 }
 
 h1 {
@@ -12,13 +40,11 @@ h5 {
 
 }
 
+.carousel {
+
+}
+
 .carouselImage {
-        height: 65vh;
-        min-height: 200px;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
 } 
 
 

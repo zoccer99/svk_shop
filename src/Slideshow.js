@@ -8,7 +8,7 @@ import svkTeam from './pictures/team.jpg';
 function Slideshow(props) {
     return (
         <div>
-            <Carousel className="mx-2  ">
+            <Carousel className="mx-2 carousel">
                 <Carousel.Item>
                     <img
                         className="d-block w-100 carouselImage"

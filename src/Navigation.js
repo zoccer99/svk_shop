@@ -7,7 +7,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 function Navigation() {
     return <div className="mb-3">
-        <Navbar bg="primary" expand="sm" variant="dark">
+        <Navbar className="primary-color" expand="sm" variant="dark">
                 <Navbar.Brand href="#home">SVK</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">

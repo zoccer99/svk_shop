@@ -8,7 +8,7 @@ import Home from "./Home";
 import Banner from "./Banner";
 import BigContribution from "./BigContribution";
 import Footer from "./Footer";
-import Team from "./pictures/team.jpg";
+import {contributionOne} from './ContributionSite';
 
 function Welcome(props) {
   return (
@@ -24,13 +24,13 @@ function Welcome(props) {
           <Route path="/zweite_Mannschaft" component={SecondTeam}></Route>
           <Route
             exact
-            path="/erste_Mannschaft/erstesSpiel"
+            path={`/erste_Mannschaft/${contributionOne.Url}`}
             render={(props) => (
               <BigContribution
                 {...props}
-                imgUrl={Team}
-                headline="das erste Spiel!"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                imgUrl={contributionOne.imgUrl}
+                headline={contributionOne.headline}
+                text={contributionOne.longText}
               />
             )}
           ></Route>
