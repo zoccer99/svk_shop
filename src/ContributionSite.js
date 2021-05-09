@@ -52,18 +52,20 @@ function ContributionSite(props) {
           className="gridItem1"
         />
         <Contribution
-          imgUrl={svkTeam}
-          name="Endlich - zweites Spiel"
-          text="blblblaldadls"
-          category="Spielbetrieb"
-          className="gridItem2"
+           imgUrl={contributionTwo.imgUrl}
+           name={contributionTwo.headline}
+           Url={contributionTwo.Url}
+           text={contributionTwo.longText}
+           category={contributionTwo.category}
+           className="gridItem2"
         />
         <Contribution
-          imgUrl={svkTeam}
-          name="Endlich - drittes Spiel"
-          text="blblblaldadls"
-          category="Spielbetrieb"
-          className="gridItem3"
+           imgUrl={contributionThree.imgUrl}
+           name={contributionThree.headline}
+           Url={contributionThree.Url}
+           text={contributionThree.longText}
+           category={contributionThree.category}
+           className="gridItem3"
         />
       </div>
     </div>

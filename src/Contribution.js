@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
 function maxWords(str) {
   var symbols = str.length;
@@ -14,12 +14,8 @@ function maxWords(str) {
 function Contribution(props) {
   let match = useRouteMatch();
 
-  
-
-
   return (
-    <div>
-      <div className="container">
+      <div className="container contributionCard">
         <div className="row">
           <Link to={`${match.url}/${props.Url}`}>
             <div className="card m-2" style={{color:"black"}}>
@@ -45,7 +41,6 @@ function Contribution(props) {
           </Link>
         </div>
       </div>
-    </div>
   );
 }
 

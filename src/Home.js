@@ -1,5 +1,6 @@
 import React from 'react';
 import Slideshow from './Slideshow';
+import Spring from './Spring';
 
 function Home(props) {
     return (

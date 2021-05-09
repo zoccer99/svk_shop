@@ -1,11 +1,11 @@
 import React from 'react';
-import svkLogo from './pictures/svkLogo.jpeg';
+import svkLogo from './pictures/svkLogo.svg';
 
 function Banner(props) {
     return (
-            <div className="siteLogo">
+            <div className="siteLogo  primary-color ">
                 <img src={svkLogo} className="siteImage"></img>
-                <h1 className="px-3 siteCaption ">Willkommen der HomePage des SVK</h1>
+                <h1 className="siteCaption ">SV Kretzschau</h1>
             </div>
     );
 }

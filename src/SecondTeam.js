@@ -1,6 +1,6 @@
 import React from "react";
 import ContributionSite from "./ContributionSite";
-import firstTeam from "./pictures/secondTeam.jpg";
+import secondTeam from "./pictures/secondTeam.jpg";
 
 function SecondTeam(props) {
   return (
@@ -8,8 +8,8 @@ function SecondTeam(props) {
       <div class="mb-3 text-center d-flex flex-column ">
         <img
           className="img-fluid img-thumbnail my-3"
-          src={firstTeam}
-          alt="Erste Mannschaft"
+          src={secondTeam}
+          alt="Zweite Mannschaft"
         ></img>
         <div className="Player ">
           <h2 className="text-center font-weight-bold">
