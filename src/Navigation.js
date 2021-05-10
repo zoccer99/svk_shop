@@ -16,7 +16,8 @@ function Navigation() {
                     <Nav.Link className="NavItem" as={Link} to="/erste_Mannschaft">1. Mannschaft</Nav.Link>
                     <Nav.Link className="NavItem" as={Link} to="/zweite_Mannschaft">2.Mannschaft</Nav.Link>
                     <Nav.Link className="NavItem" as={Link} to="/shop">Shop</Nav.Link>
-                    </Nav>
+                    
+                </Nav>
                 </Navbar.Collapse>
             
         </Navbar>

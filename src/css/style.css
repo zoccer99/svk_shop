@@ -66,6 +66,9 @@ h5 {
   overflow: hidden;
 }
 
+.slideTileContainer:hover {
+}
+
 .slideTile {
     height: calc(100% - 6rem);
     position: relative;

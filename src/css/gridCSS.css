@@ -117,20 +117,17 @@
       "line line line line line line";
   }
 
-
   .siteLogo {
     grid-area: logo;
     display: flex;
     justify-content: center;
-    border-right: 0.1rem solid #29283d;
-
+    border-right: 0.1rem solid #e5e6e4;
   }
 
-
-  .placeholder {
+  .socialTile {
     display: block;
     grid-area: rest;
-    border-bottom: 0.1rem solid #29283d;
+    border-bottom: 0.1rem solid #e5e6e4;
   }
 
   .BannerNav {
@@ -148,20 +145,54 @@
     );
   }
 
+  .navbar{
+      padding:0;
+  }
+
   .navbar-nav {
     flex: 1;
   }
 
   .NavItem {
     flex: 1;
-    border-right: 0.1rem solid #29283d;
+    border-right: 0.1rem solid #e5e6e4;
     text-align: center;
-
     transition: background-color 0.3s, color 0.3s;
   }
 
   .NavItem:hover {
     background-color: rgb(77, 168, 221);
     color: violet;
+  }
+
+  .socialTile {
+    
+    background-color: #3a6078;
+  }
+
+  .socialIcons {
+    height: 100%;
+    display: flex;
+    width: 20rem;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .socialIcon {
+    
+  }
+
+  .socialIcon svg {
+    fill: hsla(0,0%,100%,.6);
+  }
+
+  .socialText {
+    font-family: fcb-bold, Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-weight: 400;
+    height: 1.2rem;
+    color: hsla(0, 0%, 100%, 0.6);
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: default;
   }
 }

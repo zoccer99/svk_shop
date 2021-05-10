@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
+import SocialTile from './SocialTile';
 import Navigation from './Navigation';
 
 function MainBanner(props) {
@@ -7,7 +8,7 @@ function MainBanner(props) {
             <div className="MainBanner_Wrapper" >
                 <Navigation />
                 <Banner />
-                <div className="placeholder primary-color">a</div>
+                <SocialTile />
                 <div className="BannerLine"></div>
             </div>
     );
