@@ -13,6 +13,12 @@ body {
   background-color: #e5e6e4;
 }
 
+
+/* NAVMENU */
+
+
+
+
 .transition {
   top: 0;
   left: 0;
@@ -33,8 +39,7 @@ body {
 }
 
 h1 {
-  font-family: "Playfair Display";
-  text-shadow: 4px 4px 4px #e5e6e4;
+  font-family: "Girassol";
 }
 
 h5 {
@@ -50,8 +55,16 @@ h5 {
   background: #080e1f;
   overflow: hidden;
   box-shadow: 0 0.4rem 1.2rem 0 rgba(0, 0, 0, 0.4);
-  display: flex;
   box-sizing: border-box;
+  display: none;
+}
+
+.slideTile {
+    height: calc(100% - 6rem);
+    position: relative;
+    display: block;
+    overflow: hidden;
+ 
 }
 
 .slideTileContainer {
@@ -64,19 +77,15 @@ h5 {
   box-shadow: 0 0.4rem 1.2rem 0 rgba(0, 0, 0, 0.4);
   cursor: pointer;
   overflow: hidden;
+  transition: height .3s;
 }
+
+
+
 
 .slideTileContainer:hover {
-}
-
-.slideTile {
-    height: calc(100% - 6rem);
-    position: relative;
-    display: block;
-    overflow: hidden;
-    will-change: transform;
-    transition: transform .4s cubic-bezier(.165,.84,.44,1), -webkit-transform .4s cubic-bezier(.165,.84,.44,1);
- 
+  height: calc(100% + 12rem);
+  overflow: visible;
 }
 
 .hero-tile__gradient {
@@ -95,6 +104,9 @@ h5 {
 
 /* ContributionCard */
 
+.card-img-overlay {
+  box-shadow: 9px 10px 22px 4px #e5e6e4;
+}
 .card-img {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -121,13 +133,6 @@ h5 {
   max-width: 90%;
 }
 
-.contributionCard {
-  box-shadow: 10px 16px #e5e6e4;
-}
-
-.contributionCard:hover {
-}
-
 /*Mannschaftseite */
 
 .TransitionSVG {
@@ -138,4 +143,8 @@ h5 {
 .footer {
   position: fixed;
   bottom: 0;
+}
+
+@media (max-width:992px) {
+  
 }

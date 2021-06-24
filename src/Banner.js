@@ -5,7 +5,7 @@ function Banner(props) {
     return (
             <div className="siteLogo  primary-color ">
                 <img src={svkLogo} className="siteImage"></img>
-                <h1 className="siteCaption ">SV Kretzschau</h1>
+                <h1 className="siteCaption ">SV KRETZSCHAU</h1>
             </div>
     );
 }

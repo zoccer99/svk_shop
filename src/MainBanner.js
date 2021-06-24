@@ -7,9 +7,6 @@ function MainBanner(props) {
     return (
             <div className="MainBanner_Wrapper" >
                 <Navigation />
-                <Banner />
-                <SocialTile />
-                <div className="BannerLine"></div>
             </div>
     );
 }
