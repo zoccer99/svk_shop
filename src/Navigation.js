@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Switch, Route, Link } from "react-router-dom";
+import svkLogo from './pictures/svkLogo.jpeg';
 
 function Navigation() {
   return (

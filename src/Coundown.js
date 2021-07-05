@@ -52,18 +52,24 @@ class Countdown extends React.Component {
   render() {
     return (
       <div className="countdownContainer">
-        <h1 >Next Game</h1>
+        <h1 className="text-center">Next Game</h1>
         <div className="d-flex justify-content-around">
-          <div>Days</div>
-          <div>Hours</div>
-          <div>Minutes </div>
-          <div>Seconds </div>
-        </div>
-        <div className="d-flex justify-content-around">
-          <div> {this.state.timeLeft.d}</div>
-          <div> {this.state.timeLeft.h}</div>
-          <div> {this.state.timeLeft.m}</div>
-          <div> {this.state.timeLeft.s}</div>
+          <div className="d-flex flex-column">
+            <div>Days</div>
+            <div className="align-self-center"> {this.state.timeLeft.d}</div>
+          </div>
+          <div className="d-flex flex-column">
+            <div>Hours</div>
+            <div className="align-self-center"> {this.state.timeLeft.h}</div>
+          </div>
+          <div className="d-flex flex-column">
+            <div>Minutes </div>
+            <div className="align-self-center"> {this.state.timeLeft.m}</div>
+          </div>
+          <div className="d-flex flex-column">
+            <div>Seconds </div>
+            <div className="align-self-center"> {this.state.timeLeft.s}</div>
+          </div>
         </div>
       </div>
     );

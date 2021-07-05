@@ -7,16 +7,16 @@ import SecondTeam from "./SecondTeam";
 import Home from "./Home";
 import BigContribution from "./BigContribution";
 import Footer from "./Footer";
-import {contributionOne} from './ContributionSite';
-import MainBanner from './MainBanner';
+import { contributionOne } from "./ContributionSite";
+import MainBanner from "./MainBanner";
 
 function Welcome(props) {
   return (
     <div>
       <Router>
-      <MainBanner />
-      
-      {/* Switch & Routing */}
+        <MainBanner />
+
+        {/* Switch & Routing */}
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/shop" component={Shop}></Route>
@@ -33,13 +33,12 @@ function Welcome(props) {
                 text={contributionOne.longText}
               />
             )}
+            
           ></Route>
           <Route path="/erster_Beitrag" component={Shop}></Route>
         </Switch>
       </Router>
-      <div style={{height:"600px"}}>
-
-      </div>
+      <div style={{ height: "600px" }}></div>
       <Footer />
     </div>
   );

@@ -1,10 +1,25 @@
 import React from "react";
+import svkLogo from "./pictures/svkLogo.svg";
 
 function BigContribution(props) {
   return (
     <div className="d-flex flex-column mx-3 my-2">
       <img className="mx-3" src={props.imgUrl} />
-     <div class="transition mx-3 my-2">
+      <div class="wrapper">
+        <div class="divider div-transparent"></div>
+        </div>
+        <div className="mx-3">
+          <h2 className="text-center my-1">{props.headline}</h2>
+          <p className="text-center my-1 mx-3">{props.text}</p>
+        </div>
+    </div>
+  );
+}
+
+export default BigContribution;
+
+{
+  /* <div class="transition mx-3 my-2">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -26,13 +41,5 @@ function BigContribution(props) {
             class="shape-fill"
           ></path>
         </svg>
-      </div>
-      <div className="border-left border-right border-primary mx-3">
-        <h2 className="text-center my-1">{props.headline}</h2>
-        <p className="text-center my-1 mx-3">{props.text}</p>
-      </div>
-    </div>
-  );
+      </div> */
 }
-
-export default BigContribution;
