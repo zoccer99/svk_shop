@@ -1,6 +1,4 @@
 import React from 'react';
-import Banner from './Banner';
-import SocialTile from './SocialTile';
 import Navigation from './Navigation';
 
 function MainBanner(props) {

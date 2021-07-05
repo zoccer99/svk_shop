@@ -5,7 +5,6 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import FirstTeam from "./FirstTeam";
 import SecondTeam from "./SecondTeam";
 import Home from "./Home";
-import Banner from "./Banner";
 import BigContribution from "./BigContribution";
 import Footer from "./Footer";
 import {contributionOne} from './ContributionSite';
