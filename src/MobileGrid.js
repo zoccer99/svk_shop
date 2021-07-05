@@ -5,7 +5,7 @@ import Nico from "./pictures/nico.jpg";
 
 function MobileGrid(props) {
   return (
-    <div className="container">
+    <div className="container MobileGrid">
       <div className="column">
         <div className="row">
             <div  className="imgTile_1 mt-3 col-12 p-0" > </div>
