@@ -1,5 +1,4 @@
 import React from "react";
-import Navigation from "./Navigation";
 import Shop from "./Shop";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import FirstTeam from "./FirstTeam";
@@ -9,6 +8,7 @@ import BigContribution from "./BigContribution";
 import Footer from "./Footer";
 import { contributionOne } from "./ContributionSite";
 import MainBanner from "./MainBanner";
+import NoMatch from "./NoMatch";
 
 function Welcome(props) {
   return (
@@ -36,6 +36,10 @@ function Welcome(props) {
             
           ></Route>
           <Route path="/erster_Beitrag" component={Shop}></Route>
+          <Route path='*'>    
+          {/* catch error 404  */}
+            <NoMatch />
+          </Route>
         </Switch>
       </Router>
       <div style={{ height: "600px" }}></div>

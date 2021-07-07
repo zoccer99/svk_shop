@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link, useParams, useRouteMatch } from "react-router-dom";
 
 function maxWords(str) {
   var symbols = str.length;
@@ -12,12 +12,12 @@ function maxWords(str) {
 }
 
 function Contribution(props) {
-  let match = useRouteMatch();
+  let {path,url} = useRouteMatch();         //url -> /{letzter teil} ; path -> {./{letzter Teil}}
 
   return (
       <div className="container contributionCard">
         <div className="row">
-          <Link to={`${match.url}/${props.Url}`}>
+          <Link to={`${props.teamClass}/${props.Url}`}>
             <div className="card m-2" style={{color:"black"}}>
               <img className="card-img" src={props.imgUrl} />
               <div className="card-img-overlay">

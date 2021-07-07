@@ -4,6 +4,7 @@ import svkTeam from "./pictures/team.jpg";
 
 //TODO: Datenbank verbinden
 var contributionOne = {
+  teamClass:'ersteMannschaft',
   imgUrl: svkTeam,
   headline: "Endlich-erstes Spiel",
   Url: "erstesSpiel",
@@ -16,6 +17,7 @@ var contributionOne = {
 };
 
 var contributionTwo = {
+  teamClass:'ersteMannschaft',
   imgUrl: svkTeam,
   headline: "zweites Spiel",
   Url: "drittesSpiel",
@@ -26,6 +28,7 @@ var contributionTwo = {
 };
 
 var contributionThree = {
+  teamClass:'ersteMannschaft',
   imgUrl: svkTeam,
   headline: "drittes Spiel",
   Url: "drittesSpiel",
@@ -43,6 +46,7 @@ function ContributionSite(props) {
       <h3 className="text-center">Aktuelle Berichte</h3>
       <div className="gridParent">
         <Contribution
+          teamClass={contributionOne.teamClass}
           imgUrl={contributionOne.imgUrl}
           name={contributionOne.headline}
           Url={contributionOne.Url}
@@ -51,6 +55,7 @@ function ContributionSite(props) {
           className="gridItem1"
         />
         <Contribution
+        teamClass={contributionTwo.teamClass}
           imgUrl={contributionTwo.imgUrl}
           name={contributionTwo.headline}
           Url={contributionTwo.Url}
@@ -59,6 +64,7 @@ function ContributionSite(props) {
           className="gridItem2"
         />
         <Contribution
+        teamClass={contributionThree.teamClass}
           imgUrl={contributionThree.imgUrl}
           name={contributionThree.headline}
           Url={contributionThree.Url}
