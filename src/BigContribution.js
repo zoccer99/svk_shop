@@ -1,5 +1,4 @@
 import React from "react";
-import svkLogo from "./pictures/svkLogo.svg";
 
 function BigContribution(props) {
   return (

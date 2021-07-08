@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/svk_shop/static/css/main.62dfa966.chunk.css",
-    "main.js": "/svk_shop/static/js/main.88d89d40.chunk.js",
-    "main.js.map": "/svk_shop/static/js/main.88d89d40.chunk.js.map",
+    "main.js": "/svk_shop/static/js/main.7ca2f581.chunk.js",
+    "main.js.map": "/svk_shop/static/js/main.7ca2f581.chunk.js.map",
     "runtime-main.js": "/svk_shop/static/js/runtime-main.1f1ef46b.js",
     "runtime-main.js.map": "/svk_shop/static/js/runtime-main.1f1ef46b.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/svk_shop/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.640793f6.chunk.js": "/svk_shop/static/js/2.640793f6.chunk.js",
-    "static/js/2.640793f6.chunk.js.map": "/svk_shop/static/js/2.640793f6.chunk.js.map",
+    "static/js/2.46d1ed7f.chunk.js": "/svk_shop/static/js/2.46d1ed7f.chunk.js",
+    "static/js/2.46d1ed7f.chunk.js.map": "/svk_shop/static/js/2.46d1ed7f.chunk.js.map",
     "index.html": "/svk_shop/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/svk_shop/static/css/2.4c97ca4f.chunk.css.map",
     "static/css/main.62dfa966.chunk.css.map": "/svk_shop/static/css/main.62dfa966.chunk.css.map",
-    "static/js/2.640793f6.chunk.js.LICENSE.txt": "/svk_shop/static/js/2.640793f6.chunk.js.LICENSE.txt",
+    "static/js/2.46d1ed7f.chunk.js.LICENSE.txt": "/svk_shop/static/js/2.46d1ed7f.chunk.js.LICENSE.txt",
     "static/media/firstTeam.1c28e5aa.jpg": "/svk_shop/static/media/firstTeam.1c28e5aa.jpg",
     "static/media/ingame_1.9cefb6ef.jpeg": "/svk_shop/static/media/ingame_1.9cefb6ef.jpeg",
     "static/media/style.css": "/svk_shop/static/media/scholli.5c2dc6c0.jpg",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.1f1ef46b.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.640793f6.chunk.js",
+    "static/js/2.46d1ed7f.chunk.js",
     "static/css/main.62dfa966.chunk.css",
-    "static/js/main.88d89d40.chunk.js"
+    "static/js/main.7ca2f581.chunk.js"
   ]
 }

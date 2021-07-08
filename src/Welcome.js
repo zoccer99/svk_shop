@@ -6,9 +6,11 @@ import SecondTeam from "./SecondTeam";
 import Home from "./Home";
 import BigContribution from "./BigContribution";
 import Footer from "./Footer";
-import { contributionOne } from "./ContributionSite";
+import { contributionOne,contributionTwo,contributionThree  } from "./ContributionSite";
 import MainBanner from "./MainBanner";
 import NoMatch from "./NoMatch";
+
+var contributions = [contributionOne,contributionTwo,contributionThree];
 
 function Welcome(props) {
   return (
@@ -20,24 +22,13 @@ function Welcome(props) {
         <Switch>
           <Route path="/" exact component={Home}></Route>
           <Route path="/shop" component={Shop}></Route>
-          <Route exact path="/erste_Mannschaft" component={FirstTeam}></Route>
-          <Route path="/zweite_Mannschaft" component={SecondTeam}></Route>
-          <Route
-            exact
-            path={`/erste_Mannschaft/${contributionOne.Url}`}
-            render={(props) => (
-              <BigContribution
-                {...props}
-                imgUrl={contributionOne.imgUrl}
-                headline={contributionOne.headline}
-                text={contributionOne.longText}
-              />
-            )}
-            
-          ></Route>
+          <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
+          <Route path="/zweiteMannschaft" component={SecondTeam}></Route>
+          {contributions.map((contribution) => (contributionToRoute(contribution)))} 
+          {/* mapping of contribution routes depending on their props */}
           <Route path="/erster_Beitrag" component={Shop}></Route>
-          <Route path='*'>    
-          {/* catch error 404  */}
+          <Route path="*">
+            {/* catch error 404  */}
             <NoMatch />
           </Route>
         </Switch>
@@ -45,6 +36,22 @@ function Welcome(props) {
       <div style={{ height: "600px" }}></div>
       <Footer />
     </div>
+  );
+}
+
+function contributionToRoute(contribution) {
+  return (
+    <Route
+      exact
+      path={`/${contribution.teamClass}/${contribution.Url}`}
+      render={() => (
+        <BigContribution
+          imgUrl={contribution.imgUrl}
+          headline={contribution.headline}
+          text={contribution.longText}
+        />
+      )}
+    />
   );
 }
 

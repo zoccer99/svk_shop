@@ -14,10 +14,10 @@ function Navigation() {
           <Nav.Link className="NavItem " as={Link} to="/">
             Home
           </Nav.Link>
-          <Nav.Link className="NavItem" as={Link} to="/erste_Mannschaft">
+          <Nav.Link className="NavItem" as={Link} to="/ersteMannschaft">
             1. Mannschaft
           </Nav.Link>
-          <Nav.Link className="NavItem" as={Link} to="/zweite_Mannschaft">
+          <Nav.Link className="NavItem" as={Link} to="/zweiteMannschaft">
             2.Mannschaft
           </Nav.Link>
           <NavDropdown title="Junioren">

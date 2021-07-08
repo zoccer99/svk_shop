@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import ContributionSite from "./ContributionSite";
 import firstTeam from "./pictures/firstTeam.jpg";
+
+
 
 function FirstTeam(props) {
   return (
@@ -70,5 +73,7 @@ function FirstTeam(props) {
     </div>
   );
 }
+
+
 
 export default FirstTeam;

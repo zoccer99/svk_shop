@@ -36,7 +36,6 @@ class Countdown extends React.Component {
     return obj;
   }
 
-  toString() {}
 
   tick() {
     var temp = this.state.date - new Date();
