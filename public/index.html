@@ -3,23 +3,26 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display&effect=fire">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&Girassol">
-
+  <script type="text/javascript"
+		src="https://www.fussball.de/static/layout/fbde2/egm//js/widget2.js">
+	</script>
   
-  <title>React App</title>
+  <title>SV Kretzschau</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-
+  <div id="widget1"></div>
+	<script type="text/javascript">
+		new fussballdeWidgetAPI().showWidget('widget1', '02FBVOBCV8000000VUM1DNOMVS4UPRQD');
+	</script>
   <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
 </body>
 

@@ -11,13 +11,13 @@ function maxWords(str) {
   return previewText;
 }
 
-function Contribution(props) {
-  let {path,url} = useRouteMatch();         //url -> /{letzter teil} ; path -> {./{letzter Teil}}
+function Contribution(props) {         
+  
 
   return (
       <div className="container contributionCard">
         <div className="row">
-          <Link to={`${props.teamClass}/${props.Url}`}>
+          <Link to={`${props.teamClass}/${props.titel}`}>
             <div className="card m-2" style={{color:"black"}}>
               <img className="card-img" src={props.imgUrl} />
               <div className="card-img-overlay">
@@ -26,9 +26,9 @@ function Contribution(props) {
                 </button>
               </div>
               <div className="card-body">
-                <h4 className="card-title"> {props.name} </h4>
+                <h4 className="card-title"> {props.titel} </h4>
                 <small className="text-muted cat">
-                  <i className=" text-info"> {props.info} </i>
+                  <i className=" text-info"> {props.category} </i>
                 </small>
                 <div className="textContainer">
                   <p className="card-text">{maxWords(props.text)}</p>

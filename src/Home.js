@@ -9,9 +9,10 @@ function Home(props) {
         <div>
             <Slideshow />
             <MobileGrid />  
-            <Countdown date={new Date('July 10,2021 15:00')}/>      
+            <Countdown date={new Date('August 19,2021 15:30')}/>      
             {/* nextgame Date*/}
             <ContributionSite />
+            
         </div>
     );
 }

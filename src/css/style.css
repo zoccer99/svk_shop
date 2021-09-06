@@ -1,9 +1,17 @@
 body {
   background-color: #fbfbf2;
   box-sizing: border-box;
+  font-family: 'Oswald';
   font-weight: 400;
   font-size: 1.4rem;
 }
+
+.smallFont {
+  font-family: 'Oswald';
+  font-weight: 300;
+  font-size: 1.0rem;
+}
+
 
 .primary-color {
   background-color: #34a6ed;
@@ -187,16 +195,7 @@ h5 {
 }
 
 /* COUNTDWON */
-.countdownContainer {
-  background: radial-gradient(
-    circle,
-    rgba(57, 192, 214, 1) 0%,
-    rgba(142, 146, 255, 1) 41%,
-    rgba(233, 248, 250, 1) 100%
-  );
-  border: 2px solid #34a6ed;
-  margin: 10px 0px 10px 0px;
-}
+
 
 .wrapper
 {

@@ -50,10 +50,11 @@ class Countdown extends React.Component {
 
   render() {
     return (
-      <div className="countdownContainer">
-        <h1 className="text-center">Next Game</h1>
+      <div className="countdownContainer card border-secondary m-2 Oswald-sans-serif">
+        <div className = "card-body ">
+        <h1 className="text-center Oswald-sans-serif">Next Game</h1>
         <div className="d-flex justify-content-around">
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column ">
             <div>Days</div>
             <div className="align-self-center"> {this.state.timeLeft.d}</div>
           </div>
@@ -69,6 +70,7 @@ class Countdown extends React.Component {
             <div>Seconds </div>
             <div className="align-self-center"> {this.state.timeLeft.s}</div>
           </div>
+        </div>
         </div>
       </div>
     );

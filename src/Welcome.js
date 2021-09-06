@@ -3,56 +3,76 @@ import Shop from "./Shop";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import FirstTeam from "./FirstTeam";
 import SecondTeam from "./SecondTeam";
+import EJunioren from "./EJunioren";
 import Home from "./Home";
 import BigContribution from "./BigContribution";
 import Footer from "./Footer";
-import { contributionOne,contributionTwo,contributionThree  } from "./ContributionSite";
 import MainBanner from "./MainBanner";
 import NoMatch from "./NoMatch";
+import ContributionForm from "./admin/ContributionForm";
+import axios from "axios";
+import Contribution from "./Contribution";
 
-var contributions = [contributionOne,contributionTwo,contributionThree];
+class Welcome extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      Contributions: [],
+    };
+  }
 
-function Welcome(props) {
-  return (
-    <div>
-      <Router>
-        <MainBanner />
+  fetchDB = () => {
+    axios
+      .get("http://localhost:5000/Contribution/")
+      .then((res) => {
+        const data = res.data;
+        this.setState({ Contributions: data });
+        console.log(this.state.Contributions )
+      })
+      .catch((err) => console.log(err));
+  };
 
-        {/* Switch & Routing */}
-        <Switch>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/shop" component={Shop}></Route>
-          <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
-          <Route path="/zweiteMannschaft" component={SecondTeam}></Route>
-          {contributions.map((contribution) => (contributionToRoute(contribution)))} 
-          {/* mapping of contribution routes depending on their props */}
-          <Route path="/erster_Beitrag" component={Shop}></Route>
-          <Route path="*">
-            {/* catch error 404  */}
-            <NoMatch />
-          </Route>
-        </Switch>
-      </Router>
-      <div style={{ height: "600px" }}></div>
-      <Footer />
-    </div>
-  );
+  componentDidMount() {
+    this.fetchDB();
+  }
+
+  render() {
+    return (
+      <div>
+        <Router>
+          <MainBanner />
+
+          {/* Switch & Routing */}
+          <Switch>
+            <Route path="/" exact component={Home}></Route>
+            <Route path="/shop" component={Shop}></Route>
+            <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
+            <Route path="/zweiteMannschaft" component={SecondTeam}></Route>
+            <Route path="/E-Junioren" component={EJunioren}></Route>
+            {this.state.Contributions.map((contribution, index) => (
+              <BigContribution
+                exact path={`/${contribution.teamClass}/${contribution.titel}`}
+                key={index}
+                imgUrl={contribution.imgUrl}
+                headline={contribution.titel}
+                text={contribution.text}
+              />
+            ))}
+            {/* mapping of contribution routes depending on their props */}
+            <Route path="/login" component={ContributionForm}></Route>
+            <Route path="*">
+              {/* catch error 404  */}
+              <NoMatch />
+            </Route>
+          </Switch>
+        </Router>
+        <div style={{ height: "600px" }}></div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
-function contributionToRoute(contribution) {
-  return (
-    <Route
-      exact
-      path={`/${contribution.teamClass}/${contribution.Url}`}
-      render={() => (
-        <BigContribution
-          imgUrl={contribution.imgUrl}
-          headline={contribution.headline}
-          text={contribution.longText}
-        />
-      )}
-    />
-  );
-}
+
 
 export default Welcome;

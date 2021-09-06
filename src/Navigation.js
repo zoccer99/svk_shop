@@ -23,7 +23,7 @@ function Navigation() {
           <NavDropdown title="Junioren">
             <NavDropdown.Item>C-Junioren</NavDropdown.Item>
             <NavDropdown.Item>D-Junioren</NavDropdown.Item>
-            <NavDropdown.Item>E-Junioren</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/E-Junioren">E-Junioren</NavDropdown.Item>
           </NavDropdown>
 
           <Nav.Link className="NavItem" as={Link} to="/shop">
