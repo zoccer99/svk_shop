@@ -26,9 +26,6 @@ class ContributionForm extends React.Component {
     });
   }
   handleSubmit(event) {
-    this.setState({
-      image: event.target.files[0]
-    })
     event.preventDefault();
     const newContribution = {
       autor: this.state.autor,
@@ -52,9 +49,9 @@ class ContributionForm extends React.Component {
         .catch((err) => console.log(err));
     }
 
-    axios
-      .post("http://localhost:5000/Contribution/add", this.state.image)
-      .catch((err) => console.log(err));
+    // axios
+    //   .post("http://localhost:3000/Contribution/add", this.state.image)
+    //   .catch((err) => console.log(err));
 
     this.setState({
       autor: "",
@@ -106,7 +103,7 @@ class ContributionForm extends React.Component {
           onChange={this.handleChange}
         />
         <input type="file" name="images" onChange={this.handleChange} />
-        <Button className="mt-3" type="submit" value="Absenden">
+        <Button className="mt-3" type="submit" value="Absenden" onClick={this.handleSubmit}>
           {" "}
           Absenden{" "}
         </Button>
