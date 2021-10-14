@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/svk_shop/static/css/main.d022b835.chunk.css",
-    "main.js": "/svk_shop/static/js/main.9b149883.chunk.js",
-    "main.js.map": "/svk_shop/static/js/main.9b149883.chunk.js.map",
+    "main.css": "/svk_shop/static/css/main.3eeb7574.chunk.css",
+    "main.js": "/svk_shop/static/js/main.503787de.chunk.js",
+    "main.js.map": "/svk_shop/static/js/main.503787de.chunk.js.map",
     "runtime-main.js": "/svk_shop/static/js/runtime-main.1f1ef46b.js",
     "runtime-main.js.map": "/svk_shop/static/js/runtime-main.1f1ef46b.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/svk_shop/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.4038c295.chunk.js": "/svk_shop/static/js/2.4038c295.chunk.js",
-    "static/js/2.4038c295.chunk.js.map": "/svk_shop/static/js/2.4038c295.chunk.js.map",
+    "static/js/2.d1f01223.chunk.js": "/svk_shop/static/js/2.d1f01223.chunk.js",
+    "static/js/2.d1f01223.chunk.js.map": "/svk_shop/static/js/2.d1f01223.chunk.js.map",
     "index.html": "/svk_shop/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/svk_shop/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.d022b835.chunk.css.map": "/svk_shop/static/css/main.d022b835.chunk.css.map",
-    "static/js/2.4038c295.chunk.js.LICENSE.txt": "/svk_shop/static/js/2.4038c295.chunk.js.LICENSE.txt",
-    "static/media/firstTeam.2ace456c.jpg": "/svk_shop/static/media/firstTeam.2ace456c.jpg",
+    "static/css/main.3eeb7574.chunk.css.map": "/svk_shop/static/css/main.3eeb7574.chunk.css.map",
+    "static/js/2.d1f01223.chunk.js.LICENSE.txt": "/svk_shop/static/js/2.d1f01223.chunk.js.LICENSE.txt",
+    "static/media/firstTeam.1cb1a623.jpg": "/svk_shop/static/media/firstTeam.1cb1a623.jpg",
     "static/media/ingame_1.9cefb6ef.jpeg": "/svk_shop/static/media/ingame_1.9cefb6ef.jpeg",
     "static/media/style.css": "/svk_shop/static/media/scholli.5c2dc6c0.jpg",
-    "static/media/secondTeam.ba354dbb.jpg": "/svk_shop/static/media/secondTeam.ba354dbb.jpg",
+    "static/media/secondTeam.621e86a4.jpg": "/svk_shop/static/media/secondTeam.621e86a4.jpg",
     "static/media/svkLogo.dbfc8384.jpeg": "/svk_shop/static/media/svkLogo.dbfc8384.jpeg",
     "static/media/svkVerein.264ab51c.jpg": "/svk_shop/static/media/svkVerein.264ab51c.jpg",
     "static/media/team.fa16bdc7.jpg": "/svk_shop/static/media/team.fa16bdc7.jpg"
@@ -23,8 +23,8 @@
   "entrypoints": [
     "static/js/runtime-main.1f1ef46b.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.4038c295.chunk.js",
-    "static/css/main.d022b835.chunk.css",
-    "static/js/main.9b149883.chunk.js"
+    "static/js/2.d1f01223.chunk.js",
+    "static/css/main.3eeb7574.chunk.css",
+    "static/js/main.503787de.chunk.js"
   ]
 }
