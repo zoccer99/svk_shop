@@ -11,7 +11,7 @@ import MainBanner from "./MainBanner";
 import NoMatch from "./NoMatch";
 import ContributionForm from "./admin/ContributionForm";
 import axios from "axios";
-import Contribution from "./Contribution";
+import Bambinies from "./Bambinies";
 
 class Welcome extends React.Component {
   constructor() {
@@ -48,6 +48,7 @@ class Welcome extends React.Component {
             <Route path="/shop" component={Shop}></Route>
             <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
             <Route path="/zweiteMannschaft" component={SecondTeam}></Route>
+            <Route pasth="/Bambinies" component={Bambinies}></Route>
             <Route path="/E-Junioren" component={EJunioren}></Route>
             {this.state.Contributions.map((contribution, index) => (
               <BigContribution

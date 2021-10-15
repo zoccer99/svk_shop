@@ -29,7 +29,7 @@ class ContributionSite extends React.Component {
     return (
       <div>
         {/* <button onClick={fetchDB}>FetchDB</button> */}
-        <h3 className="text-center">Aktuelle Berichte</h3>
+        <h3 className="text-center mt-4 pinch">Aktuelle Berichte</h3>
         <div className="gridParent">
           {this.state.Contributions.map((conn, index) => (
             <Contribution

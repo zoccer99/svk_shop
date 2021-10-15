@@ -21,7 +21,7 @@ function Navigation() {
             2.Mannschaft
           </Nav.Link>
           <NavDropdown title="Junioren">
-            <NavDropdown.Item>C-Junioren</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Bambinies">Bambinies</NavDropdown.Item>
             <NavDropdown.Item>D-Junioren</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/E-Junioren">E-Junioren</NavDropdown.Item>
           </NavDropdown>

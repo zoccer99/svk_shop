@@ -1,12 +1,42 @@
 body {
-  background-color: #fbfbf2;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'><rect fill='#054855' width='100' height='1000'/><g fill-opacity='1'><circle  fill='#054855' cx='50' cy='0' r='50'/><g fill='#004c5d' ><circle cx='0' cy='50' r='50'/><circle cx='100' cy='50' r='50'/></g><circle  fill='#004f65' cx='50' cy='100' r='50'/><g fill='#00526e' ><circle cx='0' cy='150' r='50'/><circle cx='100' cy='150' r='50'/></g><circle  fill='#005677' cx='50' cy='200' r='50'/><g fill='#005980' ><circle cx='0' cy='250' r='50'/><circle cx='100' cy='250' r='50'/></g><circle  fill='#005c8a' cx='50' cy='300' r='50'/><g fill='#005f93' ><circle cx='0' cy='350' r='50'/><circle cx='100' cy='350' r='50'/></g><circle  fill='#00629d' cx='50' cy='400' r='50'/><g fill='#0064a7' ><circle cx='0' cy='450' r='50'/><circle cx='100' cy='450' r='50'/></g><circle  fill='#0067b1' cx='50' cy='500' r='50'/><g fill='#0069ba' ><circle cx='0' cy='550' r='50'/><circle cx='100' cy='550' r='50'/></g><circle  fill='#006bc4' cx='50' cy='600' r='50'/><g fill='#006dcd' ><circle cx='0' cy='650' r='50'/><circle cx='100' cy='650' r='50'/></g><circle  fill='#006ed6' cx='50' cy='700' r='50'/><g fill='#006fde' ><circle cx='0' cy='750' r='50'/><circle cx='100' cy='750' r='50'/></g><circle  fill='#0070e6' cx='50' cy='800' r='50'/><g fill='#0070ed' ><circle cx='0' cy='850' r='50'/><circle cx='100' cy='850' r='50'/></g><circle  fill='#006ff4' cx='50' cy='900' r='50'/><g fill='#356ffa' ><circle cx='0' cy='950' r='50'/><circle cx='100' cy='950' r='50'/></g><circle  fill='#526DFF' cx='50' cy='1000' r='50'/></g></svg>");
   box-sizing: border-box;
   font-family: 'Oswald';
-  font-size:1rem;
+  font-size:calc(16px + (24-16)*(100vw - 400px)/(800-400));
 }
+
+h1 {
+  
+}
+
+h2 {
+  
+}
+
+h3 {
+font-size: 1.4rem;
+}
+
+h4 {
+
+}
+
+h5 {
+  font-size:1rem
+}
+
+p {
+  font-size: 1rem;
+  letter-spacing: -0.03em;
+}
+
 
 /* Mannschaftsbilder */
 
+.PlayerCard {
+  width: 80%;
+  display: inline-block;
+}
 
 .myThumbnail {              
   width: 80%;
@@ -115,6 +145,10 @@ h5 {
   html {
     font-size:1.4rem;
   }
+
+  .countdownContainer {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='560' preserveAspectRatio='none' viewBox='0 0 1473 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1847%26quot%3b)' fill='none'%3e%3crect width='1473' height='560' x='0' y='0' fill='url(%23SvgjsLinearGradient1848)'%3e%3c/rect%3e%3cpath d='M1473 0L1312.03 0L1473 262.88z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1312.03 0L1473 262.88L1473 424.41999999999996L1189.9 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M1189.9 0L1473 424.41999999999996L1473 473.41999999999996L570.2200000000001 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M570.22 0L1473 473.41999999999996L1473 492.29999999999995L442.54 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L396.11 560L0 422.61z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 422.61L396.11 560L527.37 560L0 202.51000000000002z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 202.51L527.37 560L845.7 560L0 191.38z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 191.38L845.7 560L881.74 560L0 56.870000000000005z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1847'%3e%3crect width='1473' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='84.5%25' y1='-40.76%25' x2='15.5%25' y2='140.76%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1848'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(28%2c 202%2c 204%2c 0.83)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+  }
 }
 
 /* MobileGrid */
@@ -210,9 +244,9 @@ h5 {
 }
 
 @media(min-width:992px) {
-  .countdownContainer {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='560' preserveAspectRatio='none' viewBox='0 0 1473 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1847%26quot%3b)' fill='none'%3e%3crect width='1473' height='560' x='0' y='0' fill='url(%23SvgjsLinearGradient1848)'%3e%3c/rect%3e%3cpath d='M1473 0L1312.03 0L1473 262.88z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1312.03 0L1473 262.88L1473 424.41999999999996L1189.9 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M1189.9 0L1473 424.41999999999996L1473 473.41999999999996L570.2200000000001 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M570.22 0L1473 473.41999999999996L1473 492.29999999999995L442.54 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L396.11 560L0 422.61z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 422.61L396.11 560L527.37 560L0 202.51000000000002z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 202.51L527.37 560L845.7 560L0 191.38z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 191.38L845.7 560L881.74 560L0 56.870000000000005z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1847'%3e%3crect width='1473' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='84.5%25' y1='-40.76%25' x2='15.5%25' y2='140.76%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1848'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(28%2c 202%2c 204%2c 0.83)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-  }
+  
+
+  
 }
 
 .wrapper
@@ -220,11 +254,29 @@ h5 {
   padding-bottom: 40px;
 }
 
-.divider
+.pinch {
+  
+font-size: 2.4rem;
+line-height: 1.5;
+letter-spacing: -.05em;
+font-weight: 700;
+margin-bottom: 1.8rem;
+position: relative;
+padding-bottom: 1.5rem;
+}
+
+.pinch::before
 {
-  position: relative;
-  margin-top: 40px;
-  height: 1px;
+max-width: 10rem;
+height: 1rem;
+border-radius: .5rem;
+content: "";
+position: absolute;
+bottom: 0;
+left: 50%;
+width: 100%;
+transform: translate(-50%);
+background-color: #34a6ed;
 }
 
 .div-transparent:before
@@ -238,3 +290,4 @@ h5 {
   height: 1px;
   background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
 }
+

@@ -8,12 +8,14 @@ function SecondTeam(props) {
       <div class="mb-3 text-center d-flex flex-column ">
         <div className="d-flex justify-content-center">
           <img
-            className="img-fluid img-thumbnail my-3"
+            className="img-fluid img-thumbnail my-3 myThumbnail"
             src={secondTeam}
             alt="Zweite Mannschaft"
           ></img>
         </div>
-        <div className="Player ">
+        <div>
+        <div className="card mt-4 PlayerCard">
+          <div className="card-body">
           <h2 className="text-center ">
             Wir bedanken uns für das Trikotsponsoring bei Firma Rothermann
             Heizungs- und Sanitärtechnik.
@@ -49,9 +51,8 @@ function SecondTeam(props) {
             <br />
           </h5>
         </div>
+        </div>
       </div>
-      <div class="wrapper">
-        <div class="divider div-transparent"></div>
       </div>
       <ContributionSite />
     </div>
