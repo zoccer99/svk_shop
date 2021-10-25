@@ -47,9 +47,9 @@ class Welcome extends React.Component {
             <Route path="/" exact component={Home}></Route>
             <Route path="/shop" component={Shop}></Route>
             <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
-            <Route path="/zweiteMannschaft" component={SecondTeam}></Route>
-            <Route pasth="/Bambinies" component={Bambinies}></Route>
-            <Route path="/E-Junioren" component={EJunioren}></Route>
+            <Route exact path="/zweiteMannschaft" component={SecondTeam}></Route>
+            <Route exact path="/Bambinies" component={Bambinies}></Route>
+            <Route exact path="/E-Junioren" component={EJunioren}></Route>
             {this.state.Contributions.map((contribution, index) => (
               <BigContribution
                 exact path={`/${contribution.teamClass}/${contribution.titel}`}
@@ -60,8 +60,8 @@ class Welcome extends React.Component {
               />
             ))}
             {/* mapping of contribution routes depending on their props */}
-            <Route path="/login" component={ContributionForm}></Route>
-            <Route path="*">
+            <Route exact path="/login" component={ContributionForm}></Route>
+            <Route exact path="*">
               {/* catch error 404  */}
               <NoMatch />
             </Route>
