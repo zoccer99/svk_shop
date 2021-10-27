@@ -3,7 +3,7 @@ import Navigation from './Navigation';
 
 function MainBanner(props) {
     return (
-            <div className="MainBanner_Wrapper" >
+            <div>
                 <Navigation />
             </div>
     );

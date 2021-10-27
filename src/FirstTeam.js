@@ -20,7 +20,7 @@ class FirstTeam extends React.Component {
     return(
    
     <div className="container-fluid firstTeamWrapper">
-      <div className="d-flex justify-content-center">
+      <div className="">
         <img
           className="img-fluid img-thumbnail my-3 myThumbnail"
           src={firstTeam}
@@ -29,14 +29,14 @@ class FirstTeam extends React.Component {
           onClick={this.handleModal.bind(this,'modalFirstTeam')}
         ></img>
 
-        <div id="modalFirstTeam" className="w3-modal" onClick="this.style.display='none'">
+        {/* <div id="modalFirstTeam" className="w3-modal" onClick={this.dishandleModal}>
           <div class="w3-modal-content w3-animate-zoom">
             <img src={firstTeam} style={{width:100+'%'}} />
           </div>
-        </div>
+        </div> */}
 
       </div>
-      <div className="">
+      <div >
         <h5 >Hinten von links nach rechts:</h5>
         <p >Markus Schuhmann, Daniel Piel, Elias Just, Nico Balschun, Luca Jena,
           Quentin Bernstein, Christopher Pauli, Jonas Höhntsch, Andrè Barth</p>
@@ -49,7 +49,7 @@ class FirstTeam extends React.Component {
           Ludwig, Christian Protz, Tino Lai, Christoph Freyer</p>
       </div>
 
-      <ContributionSite />
+      <ContributionSite team='first' />
     </div>
   );
     }

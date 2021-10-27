@@ -11,9 +11,10 @@ class ContributionForm extends React.Component {
       text: "",
       teamClass: "",
       image: null,
-      imageUrl: "",
+      category: ""
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleImageChange = this.handleImageChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,17 +24,33 @@ class ContributionForm extends React.Component {
     this.setState({
       [name]: target.value,
 
+
     });
   }
+
+  handleImageChange(event) {
+    const target = event.target;
+    this.setState({
+      image: target.files[0],
+    })
+  }
+
+
   handleSubmit(event) {
     event.preventDefault();
+
+    const formdata = new FormData();
+
+    formdata.append("myFile", this.state.image);
+
+
     const newContribution = {
       autor: this.state.autor,
       titel: this.state.titel,
       text: this.state.text,
       teamClass: this.state.teamClass,
       category: this.state.category,
-      imageUrl: this.state.imageUrl,
+      image: this.state.image,
       zeit: new Date().toString(),
     };
 
@@ -47,7 +64,10 @@ class ContributionForm extends React.Component {
       axios
         .post("http://localhost:5000/Contribution/add", newContribution)
         .catch((err) => console.log(err));
+
+      axios.post("http://localhost:5000/Contribution/add",formdata);
     }
+    console.log(this.state);
 
     // axios
     //   .post("http://localhost:3000/Contribution/add", this.state.image)
@@ -83,11 +103,16 @@ class ContributionForm extends React.Component {
         />{" "}
         <Form.Label>Team:</Form.Label>
         <Form.Control
+          as="select"
           type="text"
           name="teamClass"
           value={this.state.teamClass}
           onChange={this.handleChange}
-        />{" "}
+        >
+          <option value="Erste Mannschaft">Erste Mannschaft</option>
+          <option value="Zweite Mannschaft">Zweite Mannschaft</option>
+          <option value="Bambinies">Bambinies</option>
+        </Form.Control>
         <Form.Label>Text:</Form.Label>
         <Form.Control
           as="textarea"
@@ -102,7 +127,7 @@ class ContributionForm extends React.Component {
           value={this.state.category}
           onChange={this.handleChange}
         />
-        <input type="file" name="images" onChange={this.handleChange} />
+        <input type="file" accept=".png, .jpg, .jpeg" name="image" onChange={this.handleImageChange} />
         <Button className="mt-3" type="submit" value="Absenden" onClick={this.handleSubmit}>
           {" "}
           Absenden{" "}

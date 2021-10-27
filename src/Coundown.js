@@ -50,27 +50,27 @@ class Countdown extends React.Component {
 
   render() {
     return (
-      <div className="countdownContainer card border-secondary m-2 Oswald-sans-serif">
-        <div className = "card-body ">
-        <h1 className="text-center Oswald-sans-serif">Next Game</h1>
-        <div className="d-flex justify-content-around">
-          <div className="d-flex flex-column ">
-            <div>Days</div>
-            <div className="align-self-center"> {this.state.timeLeft.d}</div>
+      <div className="d-flex justify-content-center">
+        <div className="countdownContainer m-4">
+          <h1 className="text-center">Nächstes Spiel</h1>
+          <div className="d-flex justify-content-around">
+            <div className="d-flex flex-column ">
+              <div>Tage</div>
+              <div className="align-self-center"> {this.state.timeLeft.d}</div>
+            </div>
+            <div className="d-flex flex-column">
+              <div>Stunden</div>
+              <div className="align-self-center"> {this.state.timeLeft.h}</div>
+            </div>
+            <div className="d-flex flex-column">
+              <div>Minuten</div>
+              <div className="align-self-center"> {this.state.timeLeft.m}</div>
+            </div>
+            <div className="d-flex flex-column">
+              <div>Sekunden</div>
+              <div className="align-self-center"> {this.state.timeLeft.s}</div>
+            </div>
           </div>
-          <div className="d-flex flex-column">
-            <div>Hours</div>
-            <div className="align-self-center"> {this.state.timeLeft.h}</div>
-          </div>
-          <div className="d-flex flex-column">
-            <div>Minutes </div>
-            <div className="align-self-center"> {this.state.timeLeft.m}</div>
-          </div>
-          <div className="d-flex flex-column">
-            <div>Seconds </div>
-            <div className="align-self-center"> {this.state.timeLeft.s}</div>
-          </div>
-        </div>
         </div>
       </div>
     );

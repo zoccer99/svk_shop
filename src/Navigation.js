@@ -20,11 +20,15 @@ function Navigation() {
           <Nav.Link className="NavItem" as={Link} to="/zweiteMannschaft">
             2.Mannschaft
           </Nav.Link>
-          <NavDropdown title="Junioren">
+          <Nav.Link className="NavItem" as={Link} to="/Bambinies">
+            Bambinies
+          </Nav.Link>
+
+          {/* <NavDropdown title="Junioren">
             <NavDropdown.Item as={Link} to="/Bambinies">Bambinies</NavDropdown.Item>
             <NavDropdown.Item>D-Junioren</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/E-Junioren">E-Junioren</NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> */}
 
           <Nav.Link className="NavItem" as={Link} to="/shop">
             Shop

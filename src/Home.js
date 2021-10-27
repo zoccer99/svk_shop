@@ -6,13 +6,18 @@ import ContributionSite from './ContributionSite';
 
 function Home(props) {
     return (
-        <div>
+        <div className="">
+
             <Slideshow />
-            <MobileGrid />  
-            <Countdown date={new Date('December 19,2021 15:30')}/>      
-            {/* nextgame Date*/}
-            <ContributionSite />
-            
+            <MobileGrid />
+            <div className="d-flex flex-column align-items-center">
+                <div style={{width:"80%"}}>
+
+                    <Countdown date={new Date('October 31,2021 14:00')} />
+                    <ContributionSite />
+                </div>
+            </div>
+
         </div>
     );
 }

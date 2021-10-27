@@ -44,7 +44,7 @@ function SecondTeam(props) {
           Schmeißer, Christopher Pauli
         </p>
       </div>
-      <ContributionSite />
+      <ContributionSite team='second'/>
     </div>
   );
 }

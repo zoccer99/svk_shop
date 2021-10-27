@@ -22,7 +22,7 @@ function Contribution(props) {
               <img className="card-img" src={props.imgUrl} />
               <div className="card-img-overlay">
                 <button className="btn btn-light btn-sm">
-                  {props.category}
+                  {props.teamClass}
                 </button>
               </div>
               <div className="card-body">
