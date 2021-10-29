@@ -3,7 +3,12 @@ import React, { useState } from "react";
 class Countdown extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { timeLeft: {}, date: props.date };
+    this.state = { timeLeft: {
+      d:0,
+      h:0,
+      m:0,
+      s:0
+    }, date: props.date };
   }
 
   componentDidMount() {
@@ -50,25 +55,25 @@ class Countdown extends React.Component {
 
   render() {
     return (
-      <div className="d-flex justify-content-center">
-        <div className="countdownContainer m-4">
-          <h1 className="text-center">Nächstes Spiel</h1>
+      <div className="d-flex justify-content-center ">
+        <div className="countdownContainer my-4 p-3">
+          <h1 className="text-center m-4">Nächstes Spiel</h1> 
           <div className="d-flex justify-content-around">
             <div className="d-flex flex-column ">
-              <div>Tage</div>
-              <div className="align-self-center"> {this.state.timeLeft.d}</div>
+              <h5>Tage</h5>
+              <div className="align-self-center"> <h3>{this.state.timeLeft.d}</h3></div>
             </div>
             <div className="d-flex flex-column">
-              <div>Stunden</div>
-              <div className="align-self-center"> {this.state.timeLeft.h}</div>
+              <h5>Stunden</h5>
+              <div className="align-self-center"> <h3>{this.state.timeLeft.h}</h3></div>
             </div>
             <div className="d-flex flex-column">
-              <div>Minuten</div>
-              <div className="align-self-center"> {this.state.timeLeft.m}</div>
+              <h5>Minuten</h5>
+              <div className="align-self-center"> <h3>{this.state.timeLeft.m}</h3></div>
             </div>
             <div className="d-flex flex-column">
-              <div>Sekunden</div>
-              <div className="align-self-center"> {this.state.timeLeft.s}</div>
+              <h5>Sekunden</h5>
+              <div className="align-self-center "> <h3>{this.state.timeLeft.s}</h3></div>
             </div>
           </div>
         </div>

@@ -1,9 +1,11 @@
 import React from "react";
-import Shop from "./Shop";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import FirstTeam from "./FirstTeam";
 import SecondTeam from "./SecondTeam";
+import CJunioren from "./CJunioren";
+import DJunioren from "./DJunioren";
 import EJunioren from "./EJunioren";
+import Bambinies from "./Bambinies";
 import Home from "./Home";
 import BigContribution from "./BigContribution";
 import Footer from "./Footer";
@@ -11,7 +13,6 @@ import MainBanner from "./MainBanner";
 import NoMatch from "./NoMatch";
 import ContributionForm from "./admin/ContributionForm";
 import axios from "axios";
-import Bambinies from "./Bambinies";
 
 class Welcome extends React.Component {
   constructor() {
@@ -45,11 +46,12 @@ class Welcome extends React.Component {
           {/* Switch & Routing */}
           <Switch>
             <Route path="/" exact component={Home}></Route>
-            <Route path="/shop" component={Shop}></Route>
             <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
             <Route exact path="/zweiteMannschaft" component={SecondTeam}></Route>
-            <Route exact path="/Bambinies" component={Bambinies}></Route>
+            <Route exact path="/C-Junioren" component={CJunioren}></Route>
+            <Route exact path="/D-Junioren" component={DJunioren}></Route>
             <Route exact path="/E-Junioren" component={EJunioren}></Route>
+            <Route exact path="/Bambinies" component={Bambinies}></Route>
             {this.state.Contributions.map((contribution, index) => (
               <BigContribution
                 exact path={`/${contribution.teamClass}/${contribution.titel}`}

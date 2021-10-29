@@ -5,10 +5,7 @@ import BambinisFlyer from "./pictures/Flyer_Bambini.jpg";
 const Bambinies = () => {
     return (
         <div>
-            <div id="widget1"></div>
-            <script type="text/javascript">
-                new fussballdeWidgetAPI().showWidget('widget1', '02G5EVPN2O000000VUM1DNOIVU9R2CBC');
-            </script>
+            
 
 
             <blockquote class="blockquote ml-3 my-4">

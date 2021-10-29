@@ -1,6 +1,6 @@
 const EJunioren = () => {
     return ( 
-        <div>JUNIOREN</div>
+        <div>E-JUNIOREN</div>
      );
 }
  
