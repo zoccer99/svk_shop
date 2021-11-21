@@ -1,22 +1,51 @@
-import React from "react";
-import Scholli from "./pictures/scholli.jpg";
-import Markus from "./pictures/markus.jpg";
-import Nico from "./pictures/nico.jpg";
+import React, { Component } from "react";
+import Carousel from 'react-bootstrap/Carousel'
 
-function MobileGrid(props) {
-  return (
-    <div className="container MobileGrid">
-      <div className="column">
-        <div className="row">
-            <div  className="imgTile_1 mt-3 col-12 p-0" > </div>
-        </div>
-        <div className="row">
-          <div className="col-6 p-0 imgTile_2" ></div>
-          <div className="col-6 p-0 imgTile_3" ></div>
-        </div>
-      </div>
-    </div>
-  );
+
+import pic1 from "./pictures/erste/Bild10.JPG"
+import pic2 from "./pictures/erste/Bild18.JPG"
+import pic3 from "./pictures/erste/Bild17.JPG"
+
+class MobileGrid extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+
+  componentDidMount() {
+   
+  }
+
+
+  render() {
+
+    return (
+      <Carousel className="MobileGrid" controls={false}>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={pic1}
+            alt="First slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={pic2}
+            alt="Second slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={pic3}
+            alt="Third slide"
+          />
+        </Carousel.Item>
+      </Carousel>
+    )
+  }
 }
-
 export default MobileGrid;

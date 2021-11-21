@@ -3,6 +3,14 @@ import React from "react";
 import svkVerein from "./pictures/svkVerein.jpg";
 import svkIngame from "./pictures/ingame_1.jpeg";
 import svkTeam from "./pictures/team.jpg";
+import pic1 from "./pictures/erste/Bild4.JPG"
+import pic2 from "./pictures/erste/Bild5.JPG"
+import pic3 from "./pictures/erste/Bild6.JPG"
+import pic4 from "./pictures/erste/Bild10.JPG"
+import pic5 from "./pictures/erste/Bild14.JPG"
+import pic6 from "./pictures/erste/Bild15.JPG"
+import pic7 from "./pictures/erste/Bild18.JPG"
+
 
 class Slideshow extends React.Component {
   constructor(props) {
@@ -20,7 +28,6 @@ class Slideshow extends React.Component {
     this.setState({
       index: this.state.index == elementList.length - 1 ? 0 : this.state.index+1,
     })
-    console.log(this.state.index)
   };
 
 
@@ -41,27 +48,27 @@ class Slideshow extends React.Component {
     return (
       <div id="slideshow">
         <a className="slideTileContainer">
-          <img className="slideTile" src={svkVerein}></img>
+          <img className="slideTile" src={pic1}></img>
           <div className="hero-tile__gradient"></div>
         </a>
         <a className="slideTileContainer">
-          <img className="slideTile" src={svkIngame}></img>
+          <img className="slideTile" src={pic2}></img>
           <div className="hero-tile__gradient"></div>
         </a>
         <a className="slideTileContainer">
-          <img className="slideTile" src={svkTeam}></img>
+          <img className="slideTile" src={pic3}></img>
           <div className="hero-tile__gradient"></div>
         </a>
         <a className="slideTileContainer">
-          <img className="slideTile" src={svkTeam}></img>
+          <img className="slideTile" src={pic4}></img>
           <div className="hero-tile__gradient"></div>
         </a>
         <a className="slideTileContainer">
-          <img className="slideTile" src={svkTeam}></img>
+          <img className="slideTile" src={pic5}></img>
           <div className="hero-tile__gradient"></div>
         </a>
         <a className="slideTileContainer">
-          <img className="slideTile" src={svkTeam}></img>
+          <img className="slideTile" src={pic6}></img>
           <div className="hero-tile__gradient"></div>
         </a>
       </div>

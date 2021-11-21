@@ -32,15 +32,18 @@ h1 {
 /* COUNTDWON */
 
 .CounConWrapper {
-  width:90%
+  width: 90%
 }
 
 .startCountdownContribution {
   width: 80%;
 }
+
 .countdownContainer {
-  color: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(87,87,87,1) 0%, rgba(153,231,233,1) 27%, rgba(214,214,214,1) 100%);
+  color: #fafafa;
+  background: #56CCF2;
+  background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+ 
   width: 100%;
   border-radius: 15px;
 }
@@ -55,9 +58,8 @@ h1 {
   body {
     font-size: 1.4rem;
   }
-
   .CounConWrapper {
-    width:80%
+    width: 80%
   }
 }
 
@@ -105,13 +107,12 @@ h1 {
 }
 
 #NavbarLogo {
-  width: 30px;
-  
+  width: 50px;
 }
 
 .navbarBrand {
-  color: rgba(0,0,0,.5);
-  
+  color: rgba(0, 0, 0, .5);
+  display: flex
 }
 
 @media(min-width:992px) {
@@ -135,6 +136,7 @@ h1 {
 }
 
 .slideTile {
+  max-width: 2000px;
   height: calc(100% - 6rem);
   position: relative;
   display: block;
@@ -148,7 +150,7 @@ h1 {
   position: relative;
   display: block;
   text-decoration: none;
-  box-shadow: 0 0.4rem 1.2rem 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.4rem 1.2rem 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   overflow: hidden;
   transition: height 0.3s;
@@ -189,28 +191,11 @@ h1 {
 
 /* MobileGrid */
 
-.imgTile_1 {
-  background-image: linear-gradient( to bottom, rgba(245, 246, 252, 0.1), rgba(27, 32, 32, 0.6)), url("../pictures/scholli.jpg");
-  background-size: cover;
-  height: 200px;
-  width: 80%;
-}
-
-.imgTile_2 {
-  background-image: linear-gradient( to bottom, rgba(245, 246, 252, 0.1), rgba(27, 32, 32, 0.6)), url("../pictures/nico.jpg");
-  background-size: cover;
-  height: 200px;
-  width: 80%;
-}
-
-.imgTile_3 {
-  background-image: linear-gradient( to bottom, rgba(245, 246, 252, 0.1), rgba(27, 32, 32, 0.6)), url("../pictures/markus.jpg");
-  background-size: cover;
-  height: 200px;
-  width: 80%;
-}
-
 /* ContributionCard */
+
+.card {}
+
+.contributionCard {}
 
 .card-img-overlay {
   box-shadow: 9px 10px 22px 4px rgba(8, 8, 8, 0.6);
@@ -297,4 +282,109 @@ h1 {
 
 .bigContributionWrapper {
   width: 80vw;
+}
+
+.loginFormWrapper {
+  width: 50vw;
+}
+
+/* Card */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.containerCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin-block: 2rem;
+  gap: 2rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: #ECE9E6;
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}
+
+.card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.tag {
+  align-self: flex-start;
+  padding: .25em .75em;
+  border-radius: 1em;
+  font-size: .75rem;
+}
+
+.tag+.tag {
+  margin-left: .5em;
+}
+
+.tag-blue {
+  background: #56CCF2;
+  background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  color: #fafafa;
+}
+
+.tag-brown {
+  background: #D1913C;
+  background: linear-gradient(to bottom, #FFD194, #D1913C);
+  color: #fafafa;
+}
+
+.tag-red {
+  background: #cb2d3e;
+  background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+  color: #fafafa;
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.card__footer {
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.user {
+  display: flex;
+  gap: .5rem;
+}
+
+.user__image {
+  border-radius: 50%;
+}
+
+.user__info>small {
+  color: #666;
+}
+
+.cardLink {
+  text-decoration: none;
+}
+
+.card__image {
+  max-width: 100%;
 }

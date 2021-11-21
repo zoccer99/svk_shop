@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
 import Contribution from "./Contribution";
+import Card from "./Card.js";
 import svkTeam from "./pictures/team.jpg";
+import Nico from "./pictures/erste/Bild12.JPG"
 
 //TODO: Datenbank verbinden
 
@@ -15,6 +17,7 @@ class ContributionSite extends React.Component {
     };
   }
 
+ 
 
   
   
@@ -52,18 +55,22 @@ class ContributionSite extends React.Component {
     this.fetchDB();
   }
   render() {
+    let options = {weekday:'long',year:'numeric',month:'long',day:'numeric'};
     return (
       <div>
         <h3 className="text-center mt-4 pinch">Aktuelle Berichte</h3>
         <div className="gridParent">
           {this.state.ContributionsFinal.map((conn, index) => (
-            <Contribution
+            <Card
               key={index}
               teamClass={conn.teamClass}
               imgUrl={svkTeam}
               titel={conn.titel}
               text={conn.text}
               category={conn.category}
+              author="Christian Gebbert"
+              time={new Date(conn.zeit).toLocaleDateString('de-DE',options)}
+              
             />
           ))}
         </div>

@@ -12,6 +12,7 @@ import Footer from "./Footer";
 import MainBanner from "./MainBanner";
 import NoMatch from "./NoMatch";
 import ContributionForm from "./admin/ContributionForm";
+import login from "./admin/login";
 import axios from "axios";
 
 class Welcome extends React.Component {
@@ -63,6 +64,7 @@ class Welcome extends React.Component {
             ))}
             {/* mapping of contribution routes depending on their props */}
             <Route exact path="/login" component={ContributionForm}></Route>
+            <Route exact path="/loginUser" component={login}></Route>
             <Route exact path="*">
               {/* catch error 404  */}
               <NoMatch />

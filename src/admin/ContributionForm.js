@@ -51,7 +51,7 @@ class ContributionForm extends React.Component {
       teamClass: this.state.teamClass,
       category: this.state.category,
       image: this.state.image,
-      zeit: new Date().toString(),
+      zeit: new Date(),
     };
 
     if (
