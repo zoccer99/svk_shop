@@ -112,6 +112,7 @@ class ContributionForm extends React.Component {
           <option value="Erste Mannschaft">Erste Mannschaft</option>
           <option value="Zweite Mannschaft">Zweite Mannschaft</option>
           <option value="Bambinies">Bambinies</option>
+          <option value="Verein">Verein</option>
         </Form.Control>
         <Form.Label>Text:</Form.Label>
         <Form.Control

@@ -12,7 +12,7 @@ function Home(props) {
             <MobileGrid />
             <div className="d-flex flex-column align-items-center">
                 <div className="CounConWrapper">
-                    <Countdown date={new Date('October 31,2021 14:00')} />
+                    <Countdown date={new Date('December 14,2021 14:00')} />
                     <ContributionSite />
                 </div>
             </div>

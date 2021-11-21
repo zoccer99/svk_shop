@@ -53,6 +53,7 @@ class ContributionSite extends React.Component {
   };
   componentDidMount() {
     this.fetchDB();
+    
   }
   render() {
     let options = {weekday:'long',year:'numeric',month:'long',day:'numeric'};

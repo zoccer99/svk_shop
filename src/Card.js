@@ -12,30 +12,63 @@ function maxWords(str) {
     return previewText;
 }
 
-export default function Card(props) {
-    return (
-        <div className="containerCard ">
-            <div className="card">
-                <Link style={{textDecoration:"none"}} to={`${props.teamClass}/${props.titel}`}>
-                    <div className="card__header">
-                        <img src={props.imgUrl} alt="card__image" className="card__image" />
-                    </div>
-                    <div className="card__body">
-                        <span className="tag tag-blue">{props.teamClass}</span>
-                        <h4>{props.titel}</h4>
-                        <p>{maxWords(props.text)}</p>
-                    </div>
-                    <div className="card__footer">
-                        <div className="user">
-                            <img src={gebbi} alt="user__image" className="user__image" />
-                            <div className="user__info">
-                                <h5>{props.author}</h5>
-                                <small>{props.time}</small>
+
+export default class Card extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cssClassName: ''
+        };
+    }
+
+    componentDidMount() {
+        if (this.props.teamClass === "Erste Mannschaft") {
+            this.setState({
+                cssClassName: 'tag-blue',
+            }
+            )
+        }
+        else if(this.props.teamClass === "Zweite Mannschaft") {
+            this.setState({
+                cssClassName: 'tag-brown'
+            })
+        }
+
+        else if(this.props.teamClass ==='Verein') {
+            this.setState({
+                cssClassName:'tag-red',
+            })
+        }
+
+    }
+    render() {
+        return (
+            <div className="containerCard ">
+                <div className="card">
+                    <Link style={{ textDecoration: "none" }} to={`${this.props.teamClass}/${this.props.titel}`}>
+                        <div className="card__header">
+                            <img src={this.props.imgUrl} alt="card__image" className="card__image" />
+                        </div>
+                        <div className="card__body">
+                            <span className={`tag ${this.state.cssClassName}`}>{this.props.teamClass}</span>
+                            <h4>{this.props.titel}</h4>
+                            <p>{maxWords(this.props.text)}</p>
+                        </div>
+                        <div className="card__footer">
+                            <div className="user">
+                                <img src={gebbi} alt="user__image" className="user__image" />
+                                <div className="user__info">
+                                    <h5>{this.props.author}</h5>
+                                    <small>{this.props.time}</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </div>
-        </div>
-    )
+        );
+    }
 }
+
+
+

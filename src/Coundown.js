@@ -51,6 +51,7 @@ class Countdown extends React.Component {
     this.setState({
       timeLeft: this.secondsToTime(temp),
     });
+    console.log(this.state)
   }
 
   render() {
