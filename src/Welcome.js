@@ -14,6 +14,7 @@ import NoMatch from "./NoMatch";
 import ContributionForm from "./admin/ContributionForm";
 import login from "./admin/login";
 import axios from "axios";
+import FullContribution from "./FullContribution";
 
 class Welcome extends React.Component {
   constructor() {
@@ -54,11 +55,11 @@ class Welcome extends React.Component {
             <Route exact path="/E-Junioren" component={EJunioren}></Route>
             <Route exact path="/Bambinies" component={Bambinies}></Route>
             {this.state.Contributions.map((contribution, index) => (
-              <BigContribution
+              <FullContribution
                 exact path={`/${contribution.teamClass}/${contribution.titel}`}
                 key={index}
-                imgUrl={contribution.imgUrl}
                 headline={contribution.titel}
+                tailline= '--Zum Spiel am Sonntag--'
                 text={contribution.text}
               />
             ))}
