@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/svk_shop/static/css/main.af7910e0.chunk.css",
-    "main.js": "/svk_shop/static/js/main.cfa2d5c6.chunk.js",
-    "main.js.map": "/svk_shop/static/js/main.cfa2d5c6.chunk.js.map",
+    "main.css": "/svk_shop/static/css/main.056f47b3.chunk.css",
+    "main.js": "/svk_shop/static/js/main.26d540a7.chunk.js",
+    "main.js.map": "/svk_shop/static/js/main.26d540a7.chunk.js.map",
     "runtime-main.js": "/svk_shop/static/js/runtime-main.1f1ef46b.js",
     "runtime-main.js.map": "/svk_shop/static/js/runtime-main.1f1ef46b.js.map",
     "static/css/2.8c502dfb.chunk.css": "/svk_shop/static/css/2.8c502dfb.chunk.css",
-    "static/js/2.de0ccabb.chunk.js": "/svk_shop/static/js/2.de0ccabb.chunk.js",
-    "static/js/2.de0ccabb.chunk.js.map": "/svk_shop/static/js/2.de0ccabb.chunk.js.map",
+    "static/js/2.e7c1e82b.chunk.js": "/svk_shop/static/js/2.e7c1e82b.chunk.js",
+    "static/js/2.e7c1e82b.chunk.js.map": "/svk_shop/static/js/2.e7c1e82b.chunk.js.map",
     "index.html": "/svk_shop/index.html",
     "static/css/2.8c502dfb.chunk.css.map": "/svk_shop/static/css/2.8c502dfb.chunk.css.map",
-    "static/css/main.af7910e0.chunk.css.map": "/svk_shop/static/css/main.af7910e0.chunk.css.map",
-    "static/js/2.de0ccabb.chunk.js.LICENSE.txt": "/svk_shop/static/js/2.de0ccabb.chunk.js.LICENSE.txt",
+    "static/css/main.056f47b3.chunk.css.map": "/svk_shop/static/css/main.056f47b3.chunk.css.map",
+    "static/js/2.e7c1e82b.chunk.js.LICENSE.txt": "/svk_shop/static/js/2.e7c1e82b.chunk.js.LICENSE.txt",
     "static/media/Bild10.d5230fe6.JPG": "/svk_shop/static/media/Bild10.d5230fe6.JPG",
     "static/media/Bild12.9b8b48d2.JPG": "/svk_shop/static/media/Bild12.9b8b48d2.JPG",
     "static/media/Bild14.5a02b49f.JPG": "/svk_shop/static/media/Bild14.5a02b49f.JPG",
@@ -23,8 +23,10 @@
     "static/media/Bild6.931778b2.JPG": "/svk_shop/static/media/Bild6.931778b2.JPG",
     "static/media/Flyer_Bambini.5734f619.jpg": "/svk_shop/static/media/Flyer_Bambini.5734f619.jpg",
     "static/media/firstTeam.a7ad4687.jpg": "/svk_shop/static/media/firstTeam.a7ad4687.jpg",
+    "static/media/style.css": "/svk_shop/static/media/fussballplatz.81aa534e.jpg",
     "static/media/gebbi.ffefd9b3.webp": "/svk_shop/static/media/gebbi.ffefd9b3.webp",
     "static/media/ingame_1.3efeaac5.jpeg": "/svk_shop/static/media/ingame_1.3efeaac5.jpeg",
+    "static/media/nico.fd36cd2f.jpg": "/svk_shop/static/media/nico.fd36cd2f.jpg",
     "static/media/secondTeam.6ddef6f2.jpg": "/svk_shop/static/media/secondTeam.6ddef6f2.jpg",
     "static/media/svkLogo.dbfc8384.jpeg": "/svk_shop/static/media/svkLogo.dbfc8384.jpeg",
     "static/media/svkVerein.264ab51c.jpg": "/svk_shop/static/media/svkVerein.264ab51c.jpg",
@@ -33,8 +35,8 @@
   "entrypoints": [
     "static/js/runtime-main.1f1ef46b.js",
     "static/css/2.8c502dfb.chunk.css",
-    "static/js/2.de0ccabb.chunk.js",
-    "static/css/main.af7910e0.chunk.css",
-    "static/js/main.cfa2d5c6.chunk.js"
+    "static/js/2.e7c1e82b.chunk.js",
+    "static/css/main.056f47b3.chunk.css",
+    "static/js/main.26d540a7.chunk.js"
   ]
 }
