@@ -60,23 +60,20 @@ h1 {
     font-size: 1.4rem;
   }
   .CounConWrapper {
-    width: 80%
+    width: 75%
   }
 }
 
 /* Mannschaftsbilder */
 
-.firstTeamWrapper {
-  width: 80vw;
+
+
+.bambiniFlyer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.secondTeamWrapper {
-  width: 80vw;
-}
-
-.myThumbnail {
-  height: auto;
-}
 
 .primary-color {
   background-color: #34a6ed;
@@ -86,7 +83,23 @@ h1 {
   background-color: #e5e6e4;
 }
 
+.third-color {
+  background-color: #0079C1;
+}
+
+.dark {
+  background: #110f16;
+}
+.light {
+  background: #f3f5f7;
+}
+
 /* NAVMENU */
+
+.navbar {
+  padding-left: 1rem;
+}
+
 
 .transition {
   top: 0;
@@ -306,11 +319,11 @@ h1 {
   gap: 2rem;
 }
 
-img {
+/* img {
   max-width: 100%;
   display: block;
   object-fit: cover;
-}
+} */
 
 .card {
   display: flex;
@@ -418,10 +431,10 @@ main
 }
 
 
-img {
+/* img {
   width: 100%;
   height: auto;
-}
+} */
 .main-text {
   font-size: 5.5em;
   text-align: center;
@@ -458,19 +471,8 @@ img {
 /* FullContribution */
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 /* This pen */
- body {
-	 font-family: "Baloo 2", cursive;
-	 font-size: 16px;
-	 color: #fff;
-	 text-rendering: optimizeLegibility;
-	 font-weight: initial;
-}
- .dark {
-	 background: #110f16;
-}
- .light {
-	 background: #f3f5f7;
-}
+
+
  a, a:hover {
 	 text-decoration: none;
 	 transition: color 0.3s ease-in-out;

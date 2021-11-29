@@ -6,11 +6,11 @@ import svkLogo from './pictures/svkLogo.jpeg';
 
 function Navigation() {
   return (
-    <Navbar collapseOnSelect expand="lg">
+    <Navbar collapseOnSelect expand="lg" >
       <Navbar.Brand className="navbarBrand " as={Link} to="/"><img src={svkLogo} id="NavbarLogo" /> <strong className="m-2">SV Kretzschau</strong></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="mr-auto ">
 
           <Nav.Link className="NavItem" as={Link} to="/ersteMannschaft">
             1. Mannschaft

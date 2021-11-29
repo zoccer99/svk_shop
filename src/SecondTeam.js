@@ -1,19 +1,20 @@
 import React from "react";
 import ContributionSite from "./ContributionSite";
 import secondTeam from "./pictures/secondTeam.jpg";
+import ModalImage from "react-modal-image";
 
 function SecondTeam(props) {
   return (
-    <div className="container-fluid secondTeamWrapper">
+    <div className="container-fluid w-75">
       <div className="d-flex justify-content-center">
-        <img
-          className="img-fluid img-thumbnail my-3 myThumbnail"
-          src={secondTeam}
+        <ModalImage small={secondTeam} large={secondTeam}
+          className="img-fluid img-thumbnail my-3 "
+
           alt="Zweite Mannschaft"
-          loading="lazy"
-        ></img>
+
+        />
       </div>
-      <div>
+      <div className="light rounded p-4">
         <h5 >Hintere Reihe von links nach rechts:</h5>
         <p >
           Markus Schumann, Elias Just, Christoph Freyer, Silvio Gipp (SF), Tom
@@ -44,7 +45,7 @@ function SecondTeam(props) {
           Schmeißer, Christopher Pauli
         </p>
       </div>
-      <ContributionSite team='second'/>
+      <ContributionSite team='second' />
     </div>
   );
 }

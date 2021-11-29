@@ -7,8 +7,10 @@ import "./css/gridCSS.css";
 
 
 ReactDOM.render(
+  
     <React.StrictMode>
       <Welcome />
+      
     </React.StrictMode>,
   document.getElementById("root")
 );
