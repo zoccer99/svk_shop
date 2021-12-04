@@ -9,7 +9,7 @@ class BlogEntry extends Component {
     render() {
         return (
             
-                <article class="postcard light blue w-75">
+                <article class="postcard light blue w-75 ">
                     <a class="postcard__img_link" href="#">
                         <img class="postcard__img" src="https://picsum.photos/1000/1000?blur" alt="Image Title" />
                     </a>

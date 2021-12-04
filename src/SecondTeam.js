@@ -14,13 +14,13 @@ function SecondTeam(props) {
 
         />
       </div>
-      <div className="light rounded p-4">
-        <h5 >Hintere Reihe von links nach rechts:</h5>
+      <div className="countdownContainer rounded p-4">
+        <h5 className="lead">Hintere Reihe von links nach rechts:</h5>
         <p >
           Markus Schumann, Elias Just, Christoph Freyer, Silvio Gipp (SF), Tom
           Kratz
         </p>
-        <h5>
+        <h5 className="lead">
           Mittlere Reihe von von links nach rechts:
         </h5>
         <p>
@@ -30,7 +30,7 @@ function SecondTeam(props) {
           Lars Hendrischke, Heiko Seifert, Peter Hornbogen (Teammanager)
 
         </p>
-        <h5>
+        <h5 className="lead">
           Vordere Reihe von von links nach rechts:
         </h5>
         <p >
@@ -38,7 +38,7 @@ function SecondTeam(props) {
           Koschik, Denis Sosna, Etienne- Noel Kalkofen, Matthias Scholle
 
         </p>
-        <h5 >Fehlend:</h5>
+        <h5 className="lead">Fehlend:</h5>
         <p >
           Dietmar Abendroth, Jens Schmeißer, Julius- Niclas Pacholski, Philipp
           Schmidt, Thomas Oertel, Philipp Meyer, Udo- Thomas Schirdewahn, Aiko

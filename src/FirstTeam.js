@@ -20,15 +20,15 @@ class FirstTeam extends React.Component {
 
           />
         </div>
-        <div className="light rounded p-4">
-          <h5 >Hinten von links nach rechts:</h5>
-          <p >Markus Schuhmann, Daniel Piel, Elias Just, Nico Balschun, Luca Jena,
+        <div className="countdownContainer rounded p-4">
+          <h5 className="lead">Hinten von links nach rechts:</h5>
+          <p className="">Markus Schuhmann, Daniel Piel, Elias Just, Nico Balschun, Luca Jena,
             Quentin Bernstein, Christopher Pauli, Jonas Höhntsch, Andrè Barth</p>
-          <h5>Vorn von links nach rechts:</h5>
+          <h5 className="lead">Vorn von links nach rechts:</h5>
           <p>Ingo Grajek(Präsident), Heiko, -, Lars hendrischke, Christian
             Gebbert, Leon Gottschild, Patrick Fuhrmann, Christopher Scholz,
             Manuel Lages, Ole Friedrich, Paul Mühlmann, Erik Dobierzin</p>
-          <h5>Vorn von links nach rechts:</h5>
+          <h5 className="lead">Vorn von links nach rechts:</h5>
           <p>Phillip Pinscher, Claas Schmeißer, Daniel Albert, Etienne Kalkofen, Adreas
             Ludwig, Christian Protz, Tino Lai, Christoph Freyer</p>
         </div>
