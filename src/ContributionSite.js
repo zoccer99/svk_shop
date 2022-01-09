@@ -11,7 +11,7 @@ class ContributionSite extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Contributions: [],
+      Contributions : [],
       ContributionsFinal: []
 
     };
@@ -24,6 +24,8 @@ class ContributionSite extends React.Component {
   sortCon = (teamclass,conntribution) => {
     
     let firstTeamContributions;
+
+   
     if (teamclass === 'first') {
       firstTeamContributions = conntribution.filter(conn => conn.teamClass === 'Erste Mannschaft');
     }
@@ -38,6 +40,20 @@ class ContributionSite extends React.Component {
     this.setState({ ContributionsFinal: firstTeamContributions });
     
   }
+
+
+  sortConBydate = (array) => {
+    array.sort(function(a, b) {
+      console.log(new Date(b.zeit) - new Date(a.zeit))
+      return new Date(b.zeit) - new Date(a.zeit);
+    });
+    
+    return array;
+  }
+
+
+  
+
   
   fetchDB = () => {
     axios
@@ -46,8 +62,8 @@ class ContributionSite extends React.Component {
         const data = res.data;
         this.setState({ Contributions: data });
         this.sortCon(this.props.team,this.state.Contributions)
-        console.log(this.state.Contributions)
-        console.log(this.state.ContributionsFinal)
+        this.sortConBydate(this.state.ContributionsFinal)
+        console.log(this.state)
       })
       .catch((err) => console.log(err));
   };

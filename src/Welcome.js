@@ -30,7 +30,6 @@ class Welcome extends React.Component {
       .then((res) => {
         const data = res.data;
         this.setState({ Contributions: data });
-        console.log(this.state.Contributions )
       })
       .catch((err) => console.log(err));
   };

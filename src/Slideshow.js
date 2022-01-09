@@ -20,6 +20,7 @@ class Slideshow extends React.Component {
     }
   }
 
+
   simulateHover = (elementList) => {
  
 
