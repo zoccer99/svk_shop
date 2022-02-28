@@ -49,10 +49,10 @@ class Welcome extends React.Component {
             <Route path="/" exact component={Home}></Route>
             <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
             <Route exact path="/zweiteMannschaft" component={SecondTeam}></Route>
-            <Route exact path="/C-Junioren" component={CJunioren}></Route>
-            <Route exact path="/D-Junioren" component={DJunioren}></Route>
-            <Route exact path="/E-Junioren" component={EJunioren}></Route>
-            <Route exact path="/Bambinis" component={Bambinies}></Route>
+            <Route exact path="/Junioren/C-Junioren" component={CJunioren}></Route>
+            <Route exact path="/Junioren/D-Junioren" component={DJunioren}></Route>
+            <Route exact path="/Junioren/E-Junioren" component={EJunioren}></Route>
+            <Route exact path="/Junioren/Bambinis" component={Bambinies}></Route>
             {this.state.Contributions.map((contribution, index) => (
               <FullContribution
                 exact path={`/${contribution.teamClass}/${contribution.titel}`}

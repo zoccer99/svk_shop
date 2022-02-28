@@ -44,14 +44,13 @@ class ContributionSite extends React.Component {
 
   sortConBydate = (array) => {
     array.sort(function(a, b) {
-      console.log(new Date(b.zeit) - new Date(a.zeit))
       return new Date(b.zeit) - new Date(a.zeit);
     });
-    
-    return array;
+    this.setState({ContributionsFinal: array})
   }
 
 
+  
   
 
   
@@ -61,9 +60,8 @@ class ContributionSite extends React.Component {
       .then((res) => {
         const data = res.data;
         this.setState({ Contributions: data });
-        this.sortCon(this.props.team,this.state.Contributions)
-        this.sortConBydate(this.state.ContributionsFinal)
-        console.log(this.state)
+        this.sortCon(this.props.team,this.state.Contributions)      //sortierung der mannschaftsart(erste, zweite)
+        this.sortConBydate(this.state.ContributionsFinal)           
       })
       .catch((err) => console.log(err));
   };

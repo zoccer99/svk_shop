@@ -3,37 +3,46 @@ import React from "react";
 import svkVerein from "./pictures/svkVerein.jpg";
 import svkIngame from "./pictures/ingame_1.jpeg";
 import svkTeam from "./pictures/team.jpg";
-import pic1 from "./pictures/erste/Bild4.JPG"
-import pic2 from "./pictures/erste/Bild5.JPG"
-import pic3 from "./pictures/erste/Bild6.JPG"
-import pic4 from "./pictures/erste/Bild10.JPG"
-import pic5 from "./pictures/erste/Bild14.JPG"
-import pic6 from "./pictures/erste/Bild15.JPG"
-import pic7 from "./pictures/erste/Bild18.JPG"
-
+import pic1 from "./pictures/erste/Bild4.JPG";
+import pic2 from "./pictures/erste/Bild5.JPG";
+import pic3 from "./pictures/erste/Bild6.JPG";
+import pic4 from "./pictures/erste/Bild10.JPG";
+import pic5 from "./pictures/erste/Bild14.JPG";
+import pic6 from "./pictures/erste/Bild15.JPG";
+import pic7 from "./pictures/erste/Bild18.JPG";
 
 class Slideshow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       index: 0,
-    }
+    };
   }
 
-
   simulateHover = (elementList) => {
- 
+    if (!elementList.some((element) => element.matches(":hover"))) {              //check if some element gets hovered manually
+      elementList[
+        this.state.index == 0 ? elementList.length - 1 : this.state.index - 1
+      ].classList.remove("slideTileContainerHoverSimulation");
 
-    elementList.item(this.state.index==0?elementList.length - 1 : this.state.index -1).classList.remove('slideTileContainerHoverSimulation');
-   elementList.item(this.state.index).classList.add('slideTileContainerHoverSimulation');
-    this.setState({
-      index: this.state.index == elementList.length - 1 ? 0 : this.state.index+1,
-    })
+      elementList[this.state.index].classList.add(
+        "slideTileContainerHoverSimulation"
+      );
+      this.setState({
+        index:
+          this.state.index == elementList.length - 1 ? 0 : this.state.index + 1,
+      });
+    }
+
+    else {
+      elementList[this.state.index - 1].classList.remove("slideTileContainerHoverSimulation");    //wenn manuell ausgewählt -> andere hovers entfernen
+    }
   };
 
-
   componentDidMount() {
-    let sildeTileContainers = document.getElementsByClassName('slideTileContainer');
+    let sildeTileContainers = Array.from(
+      document.getElementsByClassName("slideTileContainer")
+    );
     this.timerID = setInterval(() => {
       this.simulateHover(sildeTileContainers);
     }, 2200);
@@ -43,9 +52,7 @@ class Slideshow extends React.Component {
     clearInterval(this.timerID);
   }
 
-
   render() {
-
     return (
       <div id="slideshow">
         <a className="slideTileContainer">
