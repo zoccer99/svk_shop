@@ -5,6 +5,7 @@ import SecondTeam from "./SecondTeam";
 import CJunioren from "./CJunioren";
 import DJunioren from "./DJunioren";
 import EJunioren from "./EJunioren";
+import EJunioren from "./FJunioren";
 import Bambinies from "./Bambinies";
 import Home from "./Home";
 import BigContribution from "./BigContribution";
@@ -52,7 +53,8 @@ class Welcome extends React.Component {
             <Route exact path="/Junioren/C-Junioren" component={CJunioren}></Route>
             <Route exact path="/Junioren/D-Junioren" component={DJunioren}></Route>
             <Route exact path="/Junioren/E-Junioren" component={EJunioren}></Route>
-            <Route exact path="/Junioren/Bambinis" component={Bambinies}></Route>
+            <Route exact path="/Junioren/F-Junioren" component={FJunioren}></Route>
+            <Route exact path="/Junioren/G-Junioren" component={Bambinies}></Route>
             {this.state.Contributions.map((contribution, index) => (
               <FullContribution
                 exact path={`/${contribution.teamClass}/${contribution.titel}`}
