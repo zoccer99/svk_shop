@@ -5,7 +5,7 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 
-export default function ContactJunior() {
+export default function ContactJunior(props) {
     return (
         <div className=" mt-5 ">
             <div className="w-75  py-3  container-fluid rounded countdownContainer">
@@ -14,10 +14,10 @@ export default function ContactJunior() {
                         <FontAwesomeIcon icon={faPhone} />
                     </div>
                     <div className='col text-center '>
-                        <p className='mb-0'>Andre Barth, Christian Koschik</p>
+                        <p className='mb-0'>{props.verantwortliche}</p>
                     </div>
                     <div className='col-lg-4 d-none d-lg-block text-center'>
-                        <p className='mb-0'>+49 152 21096461</p>
+                        <p className='mb-0'>{props.telefon}</p>
                     </div>
                 </div>
                 <div className='d-flex align-items-center mb-2'>
@@ -25,10 +25,10 @@ export default function ContactJunior() {
                         <FontAwesomeIcon icon={faLocationDot} />
                     </div>
                     <div className='col text-center'>
-                        <p className='mb-0'>Am Mittelweg 5</p>
+                        <p className='mb-0'>{props.anschrift}</p>
                     </div>
                     <div className='col-lg-4 d-none d-lg-block text-center'>
-                        <p className='mb-0'>Kretzschau</p>
+                        <p className='mb-0'>{props.ort}</p>
                     </div>
                 </div>
                 <div className='d-flex align-items-center mb-2'>
@@ -36,10 +36,10 @@ export default function ContactJunior() {
                         <FontAwesomeIcon icon={faClock} />
                     </div>
                     <div className='col text-center'>
-                        <p className='mb-0'>Mittwoch 16.00 - 17.00</p>
+                        <p className='mb-0'>{props.zeit}</p>
                     </div>
                     <div className='col-lg-4 d-none d-lg-block text-center'>
-                        <p className='mb-0'>Spiel Sonntag</p>
+                        <p className='mb-0'>{props.spieltag}</p>
                     </div>
                 </div>
 

@@ -1,15 +1,10 @@
-import { Carousel, CarouselItem } from "react-bootstrap";
 import React from "react";
-import svkVerein from "./pictures/svkVerein.jpg";
-import svkIngame from "./pictures/ingame_1.jpeg";
-import svkTeam from "./pictures/team.jpg";
 import pic1 from "./pictures/erste/Bild4.JPG";
 import pic2 from "./pictures/erste/Bild5.JPG";
 import pic3 from "./pictures/erste/Bild6.JPG";
 import pic4 from "./pictures/erste/Bild10.JPG";
 import pic5 from "./pictures/erste/Bild14.JPG";
 import pic6 from "./pictures/erste/Bild15.JPG";
-import pic7 from "./pictures/erste/Bild18.JPG";
 
 class Slideshow extends React.Component {
   constructor(props) {
@@ -20,7 +15,7 @@ class Slideshow extends React.Component {
   }
 
   simulateHover = (elementList) => {
-    if (!elementList.some((element) => element.matches(":hover"))) {              //check if some element gets hovered manually
+    if (!elementList.some((element) => element.matches(":hover"))) {              //check if some element gets NOT hovered manually
       elementList[
         this.state.index == 0 ? elementList.length - 1 : this.state.index - 1
       ].classList.remove("slideTileContainerHoverSimulation");
@@ -35,7 +30,10 @@ class Slideshow extends React.Component {
     }
 
     else {
-      elementList[this.state.index - 1].classList.remove("slideTileContainerHoverSimulation");    //wenn manuell ausgewählt -> andere hovers entfernen
+      if(this.state.index>0) {
+
+        elementList[this.state.index - 1].classList.remove("slideTileContainerHoverSimulation");    //wenn manuell ausgewählt -> andere hovers entfernen
+      }
     }
   };
 
