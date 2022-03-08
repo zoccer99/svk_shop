@@ -62,13 +62,13 @@ class ContributionForm extends React.Component {
       (newContribution["category"] !== "")
     ) {
       axios
-        .post("http://localhost:5000/Contribution/add", newContribution)
+        .post("https://svkretzschau.herokuapp.com/Contribution/add", newContribution)
         .catch((err) => console.log(err));
 
-      axios.post("http://localhost:5000/Contribution/add",formdata);
+      axios.post("https://svkretzschau.herokuapp.com/Contribution/add",formdata);
     }
     console.log(this.state);
-
+https://svkretzschau.herokuapp.com/Contribution/
     // axios
     //   .post("http://localhost:3000/Contribution/add", this.state.image)
     //   .catch((err) => console.log(err));
