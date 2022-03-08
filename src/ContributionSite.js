@@ -56,7 +56,7 @@ class ContributionSite extends React.Component {
   
   fetchDB = () => {
     axios
-      .get("http://localhost:5000/Contribution/")
+      .get("https://svkretzschau.herokuapp.com/Contribution/")
       .then((res) => {
         const data = res.data;
         this.setState({ Contributions: data });
