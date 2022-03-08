@@ -5,7 +5,7 @@ import SecondTeam from "./SecondTeam";
 import CJunioren from "./CJunioren";
 import DJunioren from "./DJunioren";
 import EJunioren from "./EJunioren";
-import EJunioren from "./FJunioren";
+import FJunioren from "./FJunioren";
 import Bambinies from "./Bambinies";
 import Home from "./Home";
 import BigContribution from "./BigContribution";
