@@ -68,7 +68,7 @@ class ContributionForm extends React.Component {
       axios.post("https://svkretzschau.herokuapp.com/Contribution/add",formdata);
     }
     console.log(this.state);
-https://svkretzschau.herokuapp.com/Contribution/
+
     // axios
     //   .post("http://localhost:3000/Contribution/add", this.state.image)
     //   .catch((err) => console.log(err));

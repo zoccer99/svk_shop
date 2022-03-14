@@ -1,14 +1,30 @@
 import ContactJunior from "./ContactJunior";
-
+import DJuniorenPic from "./pictures/DJunioren.jpeg";
+import ModalImage from "react-modal-image";
 
 const DJunioren = () => {
-    return (
-        <div>
-
-            <div>D-JUNIOREN</div>
-            <ContactJunior verantwortliche="Christian Koschik, Andre Barth" telefon="0152 21096461" anschrift="Mittelweg 1" ort="Kretzschau" zeit="Mittwoch 17.00-18.30" spieltag="Sonntag"/>
-        </div>
-    );
-}
+  return (
+    <div className="container-fluid w-75">
+      <div className="d-flex justify-content-center">
+        <ModalImage
+          small={DJuniorenPic}
+          large={DJuniorenPic}
+          className="img-fluid img-thumbnail my-3 "
+          alt="D-Junioren Mannschaft"
+        />
+      </div>
+      <ContactJunior
+        verantwortliche="Lars Hendrischke(Trainer), Christian Gebert(Nachwuchsleiter)"
+        telefon="0178 3555708"
+        anschrift="Mittelstraße 28"
+        ort="Kretzschau"
+        zeit="Dienstag 16.30 - 18.00, Freitag 16.00 - 17.30"
+        spieltag=
+        "Sonntag"
+      />
+    </div>
+   
+  );
+};
 
 export default DJunioren;
