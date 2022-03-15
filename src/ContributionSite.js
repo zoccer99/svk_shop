@@ -73,7 +73,7 @@ class ContributionSite extends React.Component {
     let options = {weekday:'long',year:'numeric',month:'long',day:'numeric'};
     return (
       <div>
-        <h3 className="text-center mt-4 pinch">Aktuelle Berichte</h3>
+        <h3 className="text-center mt-4 pinch" style={{color:"#292929"}}>Aktuelle Berichte</h3>
         <div className="gridParent">
           {this.state.ContributionsFinal.map((conn, index) => (
             <Card

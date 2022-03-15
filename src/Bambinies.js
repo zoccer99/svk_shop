@@ -7,13 +7,13 @@ import BambinisFlyer from "./pictures/Flyer_Bambini.jpg";
 const Bambinies = () => {
   return (
     <div>
-     
+{/*      
         <blockquote class="blockquote">
           <h3 class="">Unsere Bambinis</h3>
           <footer class="blockquote-footer mt-2">
             Die Zukunft <cite title="Source Title">des Vereins</cite>
           </footer>
-        </blockquote>
+        </blockquote> */}
      
       <div className="text-center bambiniFlyer">
         <img

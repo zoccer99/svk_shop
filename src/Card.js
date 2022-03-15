@@ -1,3 +1,4 @@
+import { faThList } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { Link } from "react-router-dom";
 import gebbi from "./pictures/profiles/gebbi.webp"
@@ -22,24 +23,27 @@ export default class Card extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.teamClass === "Erste Mannschaft") {
+        
+        if (this.props.teamClass == "Erste Mannschaft") {
             this.setState({
                 cssClassName: 'tag-blue',
             }
             )
         }
-        else if(this.props.teamClass === "Zweite Mannschaft") {
+        else if(this.props.teamClass == "Zweite Mannschaft") {
             this.setState({
-                cssClassName: 'tag-brown'
+                cssClassName: 'tag-brown',
             })
         }
 
-        else if(this.props.teamClass ==='Verein') {
+        else if(this.props.teamClass =='Verein') {
             this.setState({
                 cssClassName:'tag-red',
             })
-        }
 
+       
+        }
+        
     }
     render() {
         return (

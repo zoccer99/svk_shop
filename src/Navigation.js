@@ -11,15 +11,22 @@ function Navigation() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto ">
-
+        <Nav.Link className="NavItem" as={Link} to="/aktuelles">
+            Aktuelles
+          </Nav.Link>
           <Nav.Link className="NavItem" as={Link} to="/ersteMannschaft">
             1. Mannschaft
           </Nav.Link>
           <Nav.Link className="NavItem" as={Link} to="/zweiteMannschaft">
             2.Mannschaft
           </Nav.Link>
+          <Nav.Link as={Link} to="/Junioren/C-Junioren">C-Junioren</Nav.Link>
+            <Nav.Link as={Link} to="/Junioren/D-Junioren">D-Junioren</Nav.Link>
+            <Nav.Link as={Link} to="/Junioren/E-Junioren">E-Junioren</Nav.Link>
+            <Nav.Link as={Link} to="/Junioren/F-Junioren">F-Junioren</Nav.Link>
+            <Nav.Link as={Link} to="/Junioren/G-Junioren">G-Junioren</Nav.Link>
 
-          <NavDropdown title="Junioren">
+          {/* <NavDropdown title="Junioren">                                                        //DROPDOWN JUNIOREN
             <NavDropdown.Item as={Link} to="/Junioren/C-Junioren">C-Junioren</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/Junioren/D-Junioren">D-Junioren</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/Junioren/E-Junioren">E-Junioren</NavDropdown.Item>
@@ -27,7 +34,7 @@ function Navigation() {
             <NavDropdown.Item as={Link} to="/Junioren/G-Junioren">G-Junioren</NavDropdown.Item>
 
 
-          </NavDropdown>
+          </NavDropdown> */}
 
         </Nav>
       </Navbar.Collapse>

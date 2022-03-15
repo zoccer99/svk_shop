@@ -3,12 +3,17 @@ import React, { useState } from "react";
 class Countdown extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { timeLeft: {
-      d:0,
-      h:0,
-      m:0,
-      s:0
-    }, date: props.date };
+    this.state = {
+      timeLeft: {
+        d: 0,
+        h: 0,
+        m: 0,
+        s: 0,
+      },
+      date: props.date,
+      heimmannschaft: props.heimmannschaft,
+      gastmannschaft: props.gastmannschaft,
+    };
   }
 
   componentDidMount() {
@@ -41,7 +46,6 @@ class Countdown extends React.Component {
     return obj;
   }
 
-
   tick() {
     var temp = this.state.date - new Date();
     if (temp <= 0) {
@@ -57,23 +61,47 @@ class Countdown extends React.Component {
     return (
       <div className="d-flex justify-content-center ">
         <div className="countdownContainer my-4 p-3">
-          <h1 className="text-center m-4">Nächstes Spiel</h1> 
+          <h1 className="text-center m-4">Nächstes Spiel</h1>
+          <div className="d-flex justify-content-around m-3">
+            <div>
+              <h2 className="">{this.state.heimmannschaft}</h2>
+            </div>
+            <div>
+              <h2>-</h2>
+            </div>
+
+            <div>
+              <h2>{this.state.gastmannschaft}</h2>
+            </div>
+          </div>
           <div className="d-flex justify-content-around">
             <div className="d-flex flex-column ">
-              <h5>Tage</h5>
-              <div className="align-self-center"> <h3>{this.state.timeLeft.d}</h3></div>
+              <h4>Tage</h4>
+              <div className="align-self-center">
+                {" "}
+                <h3>{this.state.timeLeft.d}</h3>
+              </div>
             </div>
             <div className="d-flex flex-column">
-              <h5>Stunden</h5>
-              <div className="align-self-center"> <h3>{this.state.timeLeft.h}</h3></div>
+              <h4>Stunden</h4>
+              <div className="align-self-center">
+                {" "}
+                <h3>{this.state.timeLeft.h}</h3>
+              </div>
             </div>
             <div className="d-flex flex-column">
-              <h5>Minuten</h5>
-              <div className="align-self-center"> <h3>{this.state.timeLeft.m}</h3></div>
+              <h4>Minuten</h4>
+              <div className="align-self-center">
+                {" "}
+                <h3>{this.state.timeLeft.m}</h3>
+              </div>
             </div>
             <div className="d-flex flex-column">
-              <h5>Sekunden</h5>
-              <div className="align-self-center "> <h3>{this.state.timeLeft.s}</h3></div>
+              <h4>Sekunden</h4>
+              <div className="align-self-center ">
+                {" "}
+                <h3>{this.state.timeLeft.s}</h3>
+              </div>
             </div>
           </div>
         </div>

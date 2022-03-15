@@ -48,6 +48,7 @@ class Welcome extends React.Component {
           {/* Switch & Routing */}
           <Switch>
             <Route path="/" exact component={Home}></Route>
+            {/* <Route exact path="/ersteMannschaft" component={}></Route> */}
             <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
             <Route exact path="/zweiteMannschaft" component={SecondTeam}></Route>
             <Route exact path="/Junioren/C-Junioren" component={CJunioren}></Route>

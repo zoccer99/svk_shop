@@ -43,7 +43,7 @@ class Slideshow extends React.Component {
     );
     this.timerID = setInterval(() => {
       this.simulateHover(sildeTileContainers);
-    }, 2200);
+    }, 4000);         //Intervall des Bilderwechsels in ms
   }
 
   componentWillUnmount() {
