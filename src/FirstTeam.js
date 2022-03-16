@@ -11,7 +11,7 @@ class FirstTeam extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid w-75">
+      <div className="container-fluid w-lg-75">                          
         <div className="">
           <ModalImage small={firstTeam} large={firstTeam}
             className="img-fluid img-thumbnail my-3 "

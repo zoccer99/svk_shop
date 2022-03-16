@@ -56,6 +56,10 @@ h1 {
   .CounConWrapper {
     width: 75%
   }
+
+  .w-lg-75 {
+    width: 75%;
+  }
 }
 
 /* Mannschaftsbilder */

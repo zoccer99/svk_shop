@@ -64,14 +64,14 @@ class Countdown extends React.Component {
           <h1 className="text-center m-4">Nächstes Spiel</h1>
           <div className="d-flex justify-content-around m-3">
             <div>
-              <h2 className="">{this.state.heimmannschaft}</h2>
+              <h3 className="">{this.state.heimmannschaft}</h3>
             </div>
             <div>
               <h2>-</h2>
             </div>
 
             <div>
-              <h2>{this.state.gastmannschaft}</h2>
+              <h3>{this.state.gastmannschaft}</h3>
             </div>
           </div>
           <div className="d-flex justify-content-around">

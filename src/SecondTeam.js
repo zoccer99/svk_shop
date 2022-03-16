@@ -5,7 +5,7 @@ import ModalImage from "react-modal-image";
 
 function SecondTeam(props) {
   return (
-    <div className="container-fluid w-75">
+    <div className="container-fluid w-lg-75">
       <div className="d-flex justify-content-center">
         <ModalImage
           small={secondTeam}
