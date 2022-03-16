@@ -8,7 +8,7 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
 export default function ContactJunior(props) {
     return (
         <div className=" mt-5 ">
-            <div className="w-75  py-3  container-fluid rounded countdownContainer">
+            <div className="  py-3  container-fluid rounded countdownContainer">
                 <div className='d-flex align-items-center mb-2'>
                     <div className='col text-center'>
                         <FontAwesomeIcon icon={faPhone} />
@@ -38,7 +38,7 @@ export default function ContactJunior(props) {
                     <div className='col text-center'>
                         <p className='mb-0'>{props.zeit}</p>
                     </div>
-                    <div className='col-lg-4 d-none d-lg-block text-center'>
+                    <div className=' d-none d-lg-block col-lg-4 text-center'>
                         <p className='mb-0'>{props.spieltag}</p>
                     </div>
                 </div>
