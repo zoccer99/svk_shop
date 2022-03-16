@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import gebbi from "./pictures/profiles/gebbi.webp"
 
 function maxWords(str) {
-    var symbols = str.length;
-    var previewText = str;
-    if (symbols > 100) {
-        var previewText = previewText.slice(0, 100);
-        previewText = previewText.concat("...");
+    if(str != null) {
+
+        var symbols = str.length;
+        var previewText = str;
+        if (symbols > 100) {
+            var previewText = previewText.slice(0, 100);
+            previewText = previewText.concat("...");
+        }
+        return previewText;
     }
-    return previewText;
 }
 
 
@@ -22,29 +25,25 @@ export default class Card extends React.Component {
         };
     }
 
+
+    
     componentDidMount() {
         
-        if (this.props.teamClass == "Erste Mannschaft") {
-            this.setState({
-                cssClassName: 'tag-blue',
-            }
-            )
-        }
-        else if(this.props.teamClass == "Zweite Mannschaft") {
-            this.setState({
-                cssClassName: 'tag-brown',
-            })
-        }
-
-        else if(this.props.teamClass =='Verein') {
-            this.setState({
-                cssClassName:'tag-red',
-            })
-
-       
-        }
         
     }
+
+    changeColor = (str) => {                        //Ändern der CSS Klasse für Farbwechsel je nach Kategorie auf der Card
+        if(str == "Erste Mannschaft") {
+            return "tag-blue"
+        }
+        if(str == "Zweite Mannschaft") {
+            return "tag-brown"
+        }
+        if(str == "Verein") {
+            return "tag-red"
+        }
+    }
+    
     render() {
         return (
             <div className="containerCard ">
@@ -54,7 +53,7 @@ export default class Card extends React.Component {
                             <img src={this.props.imgUrl} alt="card__image" className="card__image" />
                         </div>
                         <div className="card__body">
-                            <span className={`tag ${this.state.cssClassName}`}>{this.props.teamClass}</span>
+                            <span className={`tag ${this.changeColor(this.props.teamClass)}`}>{this.props.teamClass}</span>
                             <h4 className="lead">{this.props.titel}</h4>
                             <p>{maxWords(this.props.text)}</p>
                         </div>

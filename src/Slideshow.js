@@ -29,9 +29,9 @@ class Slideshow extends React.Component {
       });
     }
 
-    else {
+    else {                        //If hovered manually
       if(this.state.index>0) {
-
+        
         elementList[this.state.index - 1].classList.remove("slideTileContainerHoverSimulation");    //wenn manuell ausgewählt -> andere hovers entfernen
       }
     }

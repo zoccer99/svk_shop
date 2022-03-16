@@ -8,7 +8,6 @@ import EJunioren from "./EJunioren";
 import FJunioren from "./FJunioren";
 import Bambinies from "./Bambinies";
 import Home from "./Home";
-import BigContribution from "./BigContribution";
 import Footer from "./Footer";
 import MainBanner from "./MainBanner";
 import NoMatch from "./NoMatch";

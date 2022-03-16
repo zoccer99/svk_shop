@@ -21,17 +21,17 @@ class ContributionSite extends React.Component {
 
   
   
-  sortCon = (teamclass,conntribution) => {
+  sortCon = (teamclass,conntribution) => {          //Filter der Contributions nach teamklaasen für erste/zweite Seite
     
     let firstTeamContributions;
 
    
     if (teamclass === 'first') {
-      firstTeamContributions = conntribution.filter(conn => conn.teamClass === 'Erste Mannschaft');
+      firstTeamContributions = conntribution.filter(conn => conn.teamClass == 'Erste Mannschaft');
     }
     
     else if (teamclass === 'second') {
-      firstTeamContributions = conntribution.filter(conn => conn.teamClass === 'Zweite Mannschaft');
+      firstTeamContributions = conntribution.filter(conn => conn.teamClass == 'Zweite Mannschaft');
     }
     else {
       firstTeamContributions = conntribution;
@@ -61,12 +61,14 @@ class ContributionSite extends React.Component {
         const data = res.data;
         this.setState({ Contributions: data });
         this.sortCon(this.props.team,this.state.Contributions)      //sortierung der mannschaftsart(erste, zweite)
-        this.sortConBydate(this.state.ContributionsFinal)           
+        this.sortConBydate(this.state.ContributionsFinal)  
+        console.log(this.state)         
       })
       .catch((err) => console.log(err));
   };
   componentDidMount() {
     this.fetchDB();
+   
     
   }
   render() {
