@@ -14,7 +14,7 @@ const DJunioren = () => {
         />
       </div>
       <ContactJunior
-        verantwortliche="Lars Hendrischke(Trainer), Christian Gebert(Nachwuchsleiter)"
+        verantwortliche="Lars Hendrischke (Trainer), Christian Gebert (Nachwuchsleiter)"
         telefon="0178 3555708"
         anschrift="Mittelstraße 28"
         ort="Kretzschau"

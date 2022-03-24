@@ -62,7 +62,7 @@ class ContributionSite extends React.Component {
         this.setState({ Contributions: data });
         this.sortCon(this.props.team,this.state.Contributions)      //sortierung der mannschaftsart(erste, zweite)
         this.sortConBydate(this.state.ContributionsFinal)  
-        console.log(this.state)         
+           
       })
       .catch((err) => console.log(err));
   };

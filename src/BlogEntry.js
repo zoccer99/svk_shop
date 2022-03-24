@@ -7,6 +7,7 @@ class BlogEntry extends Component {
     }
 
     render() {
+        
         return (
             
                 <article class="postcard light blue w-75 ">

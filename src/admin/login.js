@@ -1,64 +1,69 @@
-import React from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Button, Form, Label } from "react-bootstrap";
+import axios from "axios";
+
+const bcrypt = require('bcryptjs');
+
+function Login() {
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [userArr, setUserArr] = useState("");
+
+//TODO: fetch db data properly and compoare to input + decrypt
+//TODO: move login to server site
+  function fetchDB() {
+    axios
+      .get("https://svkretzschau.herokuapp.com/Users/")
+      .then((res) => {
+        const data = res.data;
+        setUserArr(data);
+        
+      })
+      .catch((err) => console.log(err));
+  };
 
 
 
-class login extends React.Component {
-    constructor(props) {
-        super(props)
+  function checkCredentials(username,password,Arr) {
+    let user = Arr.filter((element) => {
+      if(element.username == username) {
+        return element;
+      }
+    });
+    console.log(user)
+  }
 
-        this.state = {
-            username: "",
-            password: ""
-        };
+  function handleSubmit(event) {
+      event.preventDefault();
+      const credentialsArr = userArr;
+      checkCredentials(username,password,credentialsArr);
+  }
 
-        this.hash = this.hash.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
 
-    // hash(plainPassword) {
-    //     const bcrypt = require('bcrypt');
-    //     const saltRounds = 10;
-
-    //     bcrypt.hash(plainPassword, saltRounds, function(err,hash) {
-    //         console.log(hash);
-    //     });
-
-    // }
-
-    handleChange(event) {
-        const target = event.target;
-        const user = target.name;
-
-        this.setState({
-            [user]: target.value,
-        });
-    }
-
-    handleSubmit(event) {
-        event.preventDefault();
-        console.log(this.state.password);
-        // console.log(hashthis.state.password);
-    }
-
-    render() {
-        return (
-            <div className="d-flex justify-content-center p-2">
-                <Form className="loginFormWrapper" onSubmit={this.handleSubmit}>
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control name="username" type="text" value={this.state.username} onChange={this.handleChange}>
-                    </Form.Control>
-                    <Form.Label className="pt-4">Passwort</Form.Label>
-                    <Form.Control name="password" type="text" value={this.state.password} onChange={this.handleChange}>
-                    </Form.Control>
-                    <Button className="mt-3" type="submit" value="login" onClick={this.setState.handleSumbit}>Login</Button>
-                </Form>
-            </div>
-        )
-    }
+  return (
+    <div className="d-flex justify-content-center p-2">
+      <Form className="loginFormWrapper" onSubmit={handleSubmit}>
+        <Form.Label>Username</Form.Label>
+        <Form.Control
+          name="username"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        ></Form.Control>
+        <Form.Label className="pt-4">Passwort</Form.Label>
+        <Form.Control
+          name="password"
+          type="password"
+          value={password}
+          onChange={(e)=> setPassword(e.target.value)}
+        ></Form.Control>
+        <Button className="mt-3"  type='"submit'  value="login" >
+          Login
+        </Button>
+      </Form>
+    </div>
+  );
 }
 
-
-export default login;
+export default Login;

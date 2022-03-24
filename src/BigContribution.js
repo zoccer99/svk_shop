@@ -3,6 +3,8 @@ import firstTeam from "./pictures/firstTeam.jpg";
 
 function BigContribution(props) {
 
+  
+
   return (
     //TODO: creative img cluster
     <div className="d-flex justify-content-center ">

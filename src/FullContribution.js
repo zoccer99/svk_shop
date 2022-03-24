@@ -13,10 +13,10 @@ class FullContribution extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state);
-    console.log(this.props);
+    window.scrollTo(0, 0);
   }
   render() {
+   
     return (
       <div className="fullContributionWrapper">
         <div className="fixed-bg bg-1" id="bg-1">

@@ -22,7 +22,7 @@ const Bambinies = () => {
         ></img>
       </div>
       <ContactJunior
-        verantwortliche="Andrè Barth(Trainer), Christopher Pauli(Lizenztrainer)"
+        verantwortliche="Andrè Barth (Trainer), Christopher Pauli (Lizenztrainer)"
         telefon="0178 3555708"
         anschrift="Mittelstraße 28"
         ort="Kretzschau"

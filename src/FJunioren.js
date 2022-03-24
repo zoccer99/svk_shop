@@ -5,7 +5,7 @@ const FJunioren = () => {
     <div>
       <div>F-JUNIOREN</div>
       <ContactJunior
-        verantwortliche="Christian Gebert(Nachwuchsleiter)"
+        verantwortliche="Christian Gebert (Nachwuchsleiter)"
         telefon="0178 3555708"
         anschrift="Mittelstraße 28"
         ort="Kretzschau"

@@ -5,7 +5,7 @@ const EJunioren = () => {
     <div>
       <div>E-JUNIOREN</div>
       <ContactJunior
-        verantwortliche="Silvio Gipp(Verantwortlicher), Christian Gebert(Nachwuchsleiter)"
+        verantwortliche="Silvio Gipp (Verantwortlicher), Christian Gebert (Nachwuchsleiter)"
         telefon="0178 3555708"
         anschrift="Mittelstraße 28"
         ort="Kretzschau"
