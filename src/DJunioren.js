@@ -5,6 +5,14 @@ import ModalImage from "react-modal-image";
 const DJunioren = () => {
   return (
     <div className="container-fluid w-lg-75">
+      <blockquote class="blockquote">
+          <h1 class="mb-0">
+           D-Junioren
+          </h1>
+          <h2 class="blockquote-footer pt-4 ">
+           Kreisliga Saison 
+          </h2>
+          </blockquote>
       <div className="d-flex justify-content-center">
         <ModalImage
           small={DJuniorenPic}

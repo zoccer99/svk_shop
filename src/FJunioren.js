@@ -2,8 +2,15 @@ import ContactJunior from "./ContactJunior";
 
 const FJunioren = () => {
   return (
-    <div>
-      <div>F-JUNIOREN</div>
+    <div className="container-fluid w-lg-75">
+     <blockquote class="blockquote">
+          <h1 class="mb-0">
+           F-Junioren
+          </h1>
+          <h2 class="blockquote-footer pt-4 ">
+           Kreisliga Saison 
+          </h2>
+        </blockquote>
       <ContactJunior
         verantwortliche="Christian Gebert (Nachwuchsleiter)"
         telefon="0178 3555708"

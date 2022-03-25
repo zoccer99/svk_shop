@@ -35,7 +35,7 @@ class Welcome extends React.Component {
   };
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
     this.fetchDB();
   }
 

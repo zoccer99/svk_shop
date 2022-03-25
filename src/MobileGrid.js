@@ -23,7 +23,7 @@ class MobileGrid extends Component {
   render() {
 
     return (
-      <Carousel className="MobileGrid" controls={false} interval={2000} >
+      <Carousel className="MobileGrid" controls={false} interval={4000} >
         <Carousel.Item>
           <img
             className="d-block w-100"
