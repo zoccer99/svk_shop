@@ -3,6 +3,7 @@ import Slideshow from './Slideshow';
 import MobileGrid from './MobileGrid';
 import Countdown from './Coundown';
 import ContributionSite from './ContributionSite';
+import Sponsoren from './Sponsoren'
 
 function Home(props) {
     return (
@@ -12,8 +13,9 @@ function Home(props) {
             <MobileGrid />
             <div className="d-flex flex-column align-items-center">
                 <div className="CounConWrapper">
-                    <Countdown date={new Date('March 28,2022 14:00')} heimmannschaft="SV Kretzschau" gastmannschaft="1.FC Zeitz"/>
+                    <Countdown date={new Date('April 03,2022 15:00')} heimmannschaft="SV Kretzschau" gastmannschaft="SG Bad Kösen"/>
                     <ContributionSite />
+                    <Sponsoren />
                 </div>
             </div>
 

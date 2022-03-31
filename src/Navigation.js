@@ -11,14 +11,14 @@ function Navigation() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto ">
-        <Nav.Link className="NavItem" as={Link} to="/aktuelles">
+        {/* <Nav.Link className="NavItem" as={Link} to="/aktuelles">
             Aktuelles
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link className="NavItem" as={Link} to="/ersteMannschaft">
             1. Mannschaft
           </Nav.Link>
           <Nav.Link className="NavItem" as={Link} to="/zweiteMannschaft">
-            2.Mannschaft
+            2. Mannschaft
           </Nav.Link>
           <Nav.Link as={Link} to="/Junioren/C-Junioren">C-Junioren</Nav.Link>
             <Nav.Link as={Link} to="/Junioren/D-Junioren">D-Junioren</Nav.Link>

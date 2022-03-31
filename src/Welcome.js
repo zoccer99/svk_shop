@@ -15,6 +15,7 @@ import ContributionForm from "./admin/ContributionForm";
 import login from "./admin/login";
 import axios from "axios";
 import FullContribution from "./FullContribution";
+import Sponsoren from "./Sponsoren";
 
 class Welcome extends React.Component {
   constructor() {
@@ -61,11 +62,13 @@ class Welcome extends React.Component {
                 exact path={`/${contribution.teamClass}/${contribution.titel}`}
                 key={index}
                 headline={contribution.titel}
-                tailline= '--Zum Spiel am Sonntag--'
+                tailline= ''
                 text={contribution.text}
               />
             ))}
             {/* mapping of contribution routes depending on their props */}
+            <Route exact path="/aktuelles" component={Sponsoren}></Route> 
+            <Route exact path="/sponsoren" component={Sponsoren}></Route>
             <Route exact path="/login" component={ContributionForm}></Route>
             <Route exact path="/loginUser" component={login}></Route>
             <Route exact path="*">

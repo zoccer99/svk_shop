@@ -17,13 +17,13 @@ class Slideshow extends React.Component {
   simulateHover = (elementList) => {
     if (!elementList.some((element) => element.matches(":hover"))) {              //check if some element gets NOT hovered manually
       elementList[
-        this.state.index == 0 ? elementList.length - 1 : this.state.index - 1
+        this.state.index == 0 ? elementList.length - 1 : this.state.index - 1     //then simulate :hover
       ].classList.remove("slideTileContainerHoverSimulation");
 
       elementList[this.state.index].classList.add(
-        "slideTileContainerHoverSimulation"
+        "slideTileContainerHoverSimulation"             
       );
-      this.setState({
+      this.setState({                                                             //index++
         index:
           this.state.index == elementList.length - 1 ? 0 : this.state.index + 1,
       });
@@ -31,10 +31,10 @@ class Slideshow extends React.Component {
 
     else {                        //If hovered manually
       if(this.state.index>0) {
-        
-        elementList[this.state.index - 1].classList.remove("slideTileContainerHoverSimulation");    //wenn manuell ausgewählt -> andere hovers entfernen
+       
       }
     }
+    
   };
 
   componentDidMount() {
