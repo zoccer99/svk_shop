@@ -4,6 +4,7 @@ import ModalImage from "react-modal-image";
 import SponsorStrauch from "./pictures/sponsoren/HolgerStrauch.jpeg";
 import SponsorJoma from "./pictures/sponsoren/Joma.jpeg";
 import SponsorWinkler from "./pictures/sponsoren/Winkler.png";
+import SponsorRothermann from "./pictures/sponsoren/Rothermann.jpeg";
 
 const Sponsoren = () => {
   return (
@@ -17,6 +18,14 @@ const Sponsoren = () => {
            Zur Kreisoberliga-Saison 2021/2022
           </h2>
         </blockquote>
+        <div className="d-flex justify-content-around">
+          <ModalImage
+            small={SponsorRothermann}
+            large={SponsorRothermann}
+            className="img-fluid  my-3 "
+            alt="Unser Sponsor Strauch"
+          />
+        </div>
         <div className="d-flex justify-content-around">
           <ModalImage
             small={SponsorStrauch}
