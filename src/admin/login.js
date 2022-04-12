@@ -8,18 +8,17 @@ function Login() {
   const [userArr, setUserArr] = useState("");
 
   function postDB(data) {
+    
     axios
       .post(
         // "https://svkretzschau.herokuapp.com/Users/",
-        "https://localhost:5000/Users/",
-        JSON.stringify({ data }),
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
+        "http://localhost:5000/Users/",
+        // JSON.stringify({ data }),
+        data
+        
       )
       .catch((err) => {
-        console.log("POST failed");
+        console.log("POST failed"+ err);
       });
   }
 
