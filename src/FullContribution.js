@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Nico from "./pictures/nico.jpg";
-import BlogEntry from "./BlogEntry.js";
 
 class FullContribution extends Component {
   constructor(props) {

@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ContributionSite from "./ContributionSite";
 import firstTeam from "./pictures/firstTeam.jpg";
 import ModalImage from "react-modal-image";
 
 class FirstTeam extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

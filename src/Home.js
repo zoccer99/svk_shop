@@ -2,7 +2,6 @@ import React from 'react';
 import Slideshow from './Slideshow';
 import MobileGrid from './MobileGrid';
 import Countdown from './Coundown';
-import ContributionSite from './ContributionSite';
 import Sponsoren from './Sponsoren'
 
 function Home(props) {
