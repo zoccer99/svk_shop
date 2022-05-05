@@ -9,12 +9,9 @@ class ContributionForm extends React.Component {
       autor: "",
       titel: "",
       text: "",
-      teamClass: "",
-      image: null,
-      category: ""
+      teamClass: "Erste Mannschaft",
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleImageChange = this.handleImageChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,33 +20,18 @@ class ContributionForm extends React.Component {
     const name = target.name;
     this.setState({
       [name]: target.value,
-
-
     });
+    console.log(this.state)
   }
-
-  handleImageChange(event) {
-    const target = event.target;
-    this.setState({
-      image: target.files[0],
-    })
-  }
-
 
   handleSubmit(event) {
     event.preventDefault();
-
-    const formdata = new FormData();
-
-    formdata.append("myFile", this.state.image);
-
 
     const newContribution = {
       autor: this.state.autor,
       titel: this.state.titel,
       text: this.state.text,
       teamClass: this.state.teamClass,
-      category: this.state.category,
       image: this.state.image,
       zeit: new Date(),
     };
@@ -58,29 +40,30 @@ class ContributionForm extends React.Component {
       (newContribution["autor"] !== "") &
       (newContribution["titel"] !== "") &
       (newContribution["text"] !== "") &
-      (newContribution["teamClass"] !== "") &
-      (newContribution["category"] !== "")
+      (newContribution["teamClass"] !== "")
     ) {
+      // axios
+      // .post("http://localhost:5000/Contribution/add", newContribution)
+      //   .catch((err) => console.log(err));
       axios
         .post("https://svkretzschau.herokuapp.com/Contribution/add", newContribution)
-        .catch((err) => console.log(err));
-
-      axios.post("https://svkretzschau.herokuapp.com/Contribution/add",formdata);
+        .then(() => {
+          alert("erfolgreich hinzugefügt");
+          this.setState({
+            autor: "",
+            titel: "",
+            text: "",
+            teamClass: "",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("senden fehlgeschlagen");
+        });
+    } else {
+      alert("Bitte alle Felder ausfüllen!");
     }
     console.log(this.state);
-
-    // axios
-    //   .post("http://localhost:3000/Contribution/add", this.state.image)
-    //   .catch((err) => console.log(err));
-
-    this.setState({
-      autor: "",
-      titel: "",
-      text: "",
-      teamClass: "",
-      category: "",
-      image: null,
-    });
   }
 
   render() {
@@ -106,7 +89,7 @@ class ContributionForm extends React.Component {
           as="select"
           type="text"
           name="teamClass"
-          value={this.state.teamClass}
+          value="Erste Mannschaft"
           onChange={this.handleChange}
         >
           <option value="Erste Mannschaft">Erste Mannschaft</option>
@@ -121,15 +104,25 @@ class ContributionForm extends React.Component {
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <Form.Label>Kategorie:</Form.Label>
+        {/* <Form.Label>Kategorie:</Form.Label>
         <Form.Control
           type="text"
           name="category"
           value={this.state.category}
           onChange={this.handleChange}
-        />
-        <input type="file" accept=".png, .jpg, .jpeg" name="image" onChange={this.handleImageChange} />
-        <Button className="mt-3" type="submit" value="Absenden" onClick={this.handleSubmit}>
+        /> */}
+        {/* <input
+          type="file"
+          accept=".png, .jpg, .jpeg"
+          name="image"
+          onChange={this.handleImageChange}
+        /> */}
+        <Button
+          className="mt-3"
+          type="submit"
+          value="Absenden"
+          onClick={this.handleSubmit}
+        >
           {" "}
           Absenden{" "}
         </Button>

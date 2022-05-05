@@ -4,16 +4,13 @@ import firstTeam from "./pictures/firstTeam.jpg";
 import ModalImage from "react-modal-image";
 
 class FirstTeam extends React.Component {
-
   render() {
     return (
       <div className="container-fluid w-lg-75">
         <blockquote class="blockquote">
-          <h1 class="mb-0">
-           Erste Mannschaft
-          </h1>
+          <h1 class="mb-0">Erste Mannschaft</h1>
           <h2 class="blockquote-footer pt-4 ">
-           Kreisoberliga Saison 2020/2021
+            Kreisoberliga Saison 2020/2021
           </h2>
         </blockquote>
         <div className="">
@@ -45,6 +42,11 @@ class FirstTeam extends React.Component {
         </div>
 
         <ContributionSite team="first" />
+        <div id="widget1"></div>
+        <script type="text/javascript">
+          new fussballdeWidgetAPI().showWidget('widget1',
+          '02HRFJV13C000000VUM1DNPHVT26GPRA');
+        </script>
       </div>
     );
   }

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import firstTeam from "./pictures/firstTeam.jpg";
 
-function BigContribution(props) {
+const BigContribution = (props) => {
+ 
 
   
-
   return (
     //TODO: creative img cluster
     <div className="d-flex justify-content-center ">
@@ -12,7 +12,7 @@ function BigContribution(props) {
         <div className="">
           <img
             className="img-thumbnail img-fluid"
-            src={firstTeam}/* props.imgUrl */
+            src={firstTeam} /* props.imgUrl */
           />
         </div>
         <div className="mt-4">
@@ -23,6 +23,6 @@ function BigContribution(props) {
       </div>
     </div>
   );
-}
+};
 
 export default BigContribution;

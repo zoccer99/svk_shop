@@ -5,20 +5,21 @@ import axios from "axios";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [userArr, setUserArr] = useState("");
 
   function postDB(data) {
-    
+   
     axios
       .post(
-        // "https://svkretzschau.herokuapp.com/Users/",
-        "http://localhost:5000/Users/",
-        // JSON.stringify({ data }),
-        data
-        
-      )
+        "https://svkretzschau.herokuapp.com/Users/",
+        JSON.stringify({ data }),
+        // "http://localhost:5000/Users/",
+        data,
+        {withCredentials: true}
+      ).then((res)=> {
+        window.location.href ="https://www.sv-kretzschau.de/Dashboard"
+      })
       .catch((err) => {
-        console.log("POST failed"+ err);
+        console.log("POST failed" + err);
       });
   }
 

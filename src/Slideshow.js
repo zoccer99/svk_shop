@@ -14,36 +14,45 @@ class Slideshow extends React.Component {
     };
   }
 
+  getHoveredManually = (elementList) => {
+    if (elementList.some((element) => element.matches(":hover"))) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   simulateHover = (elementList) => {
-    if (!elementList.some((element) => element.matches(":hover"))) {              //check if some element gets NOT hovered manually
+    if (!elementList.some((element) => element.matches(":hover"))) {
+      //check if some element gets NOT hovered manually
       elementList[
-        this.state.index == 0 ? elementList.length - 1 : this.state.index - 1     //then simulate :hover
+        this.state.index == 0 ? elementList.length - 1 : this.state.index - 1 //then simulate :hover
       ].classList.remove("slideTileContainerHoverSimulation");
 
       elementList[this.state.index].classList.add(
-        "slideTileContainerHoverSimulation"             
+        "slideTileContainerHoverSimulation"
       );
-      this.setState({                                                             //index++
+      this.setState({
+        //index++
         index:
           this.state.index == elementList.length - 1 ? 0 : this.state.index + 1,
       });
+    } else {
+      //If hovered manually
+      
     }
-
-    else {                        //If hovered manually
-      if(this.state.index>0) {
-       
-      }
-    }
-    
   };
 
   componentDidMount() {
     let sildeTileContainers = Array.from(
       document.getElementsByClassName("slideTileContainer")
     );
-    this.timerID = setInterval(() => {
-      this.simulateHover(sildeTileContainers);
-    }, 4000);         //Intervall des Bilderwechsels in ms
+    let getsHovered;
+    
+      this.timerID = setInterval(() => {
+        this.simulateHover(sildeTileContainers);
+      }, 3000); //Intervall des Bilderwechsels in ms
+    
   }
 
   componentWillUnmount() {

@@ -9,7 +9,7 @@ export default function ContactJunior(props) {
     return (
         <div className=" mt-5 d-flex justify-content-center font-contactJunior">
             <div className="  py-3  container-fluid rounded countdownContainer">
-                <div className='d-flex align-items-center mb-2'>
+                <div className='d-flex align-items-center my-2'>
                     <div className='col text-center'>
                         <FontAwesomeIcon icon={faPhone} />
                     </div>
@@ -20,7 +20,7 @@ export default function ContactJunior(props) {
                         <p className='mb-0'>{props.telefon}</p>
                     </div>
                 </div>
-                <div className='d-flex align-items-center mb-2'>
+                <div className='d-flex align-items-center my-2'>
                     <div className='col text-center '>
                         <FontAwesomeIcon icon={faLocationDot} />
                     </div>
@@ -31,7 +31,7 @@ export default function ContactJunior(props) {
                         <p className='mb-0'>{props.ort}</p>
                     </div>
                 </div>
-                <div className='d-flex align-items-center mb-2'>
+                <div className='d-flex align-items-center my-2'>
                     <div className='col text-center'>
                         <FontAwesomeIcon icon={faClock} />
                     </div>

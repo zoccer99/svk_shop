@@ -180,10 +180,10 @@ h1 {
   transition: height 0.3s;
 }
 
-.slideTileContainer:hover {
+/* .slideTileContainer:hover {
   height: calc(100% + 12rem);
   overflow: visible;
-}
+} */
 
 .slideTileContainerHoverSimulation {
   height: calc(100% + 12rem);

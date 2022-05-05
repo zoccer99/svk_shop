@@ -16,12 +16,16 @@ import login from "./admin/login";
 import axios from "axios";
 import FullContribution from "./FullContribution";
 import Sponsoren from "./Sponsoren";
+import Dashboard from "./Dashboard";
+import ProtectedRoute from "./ProtectedRoute";
 
 class Welcome extends React.Component {
   constructor() {
     super();
     this.state = {
       Contributions: [],
+      isLoggedIn: false,
+      isFetching: false,
     };
   }
 
@@ -36,7 +40,7 @@ class Welcome extends React.Component {
   };
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     this.fetchDB();
   }
 
@@ -51,26 +55,54 @@ class Welcome extends React.Component {
             <Route path="/" exact component={Home}></Route>
             {/* <Route exact path="/ersteMannschaft" component={}></Route> */}
             <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
-            <Route exact path="/zweiteMannschaft" component={SecondTeam}></Route>
-            <Route exact path="/Junioren/C-Junioren" component={CJunioren}></Route>
-            <Route exact path="/Junioren/D-Junioren" component={DJunioren}></Route>
-            <Route exact path="/Junioren/E-Junioren" component={EJunioren}></Route>
-            <Route exact path="/Junioren/F-Junioren" component={FJunioren}></Route>
-            <Route exact path="/Junioren/G-Junioren" component={Bambinies}></Route>
+            <Route
+              exact
+              path="/zweiteMannschaft"
+              component={SecondTeam}
+            ></Route>
+            <Route
+              exact
+              path="/Junioren/C-Junioren"
+              component={CJunioren}
+            ></Route>
+            <Route
+              exact
+              path="/Junioren/D-Junioren"
+              component={DJunioren}
+            ></Route>
+            <Route
+              exact
+              path="/Junioren/E-Junioren"
+              component={EJunioren}
+            ></Route>
+            <Route
+              exact
+              path="/Junioren/F-Junioren"
+              component={FJunioren}
+            ></Route>
+            <Route
+              exact
+              path="/Junioren/G-Junioren"
+              component={Bambinies}
+            ></Route>
             {this.state.Contributions.map((contribution, index) => (
               <FullContribution
-                exact path={`/${contribution.teamClass}/${contribution.titel}`}
+                exact
+                path={`/${contribution.teamClass}/${contribution.titel}`}
                 key={index}
                 headline={contribution.titel}
-                tailline= ''
+                tailline=""
                 text={contribution.text}
               />
             ))}
             {/* mapping of contribution routes depending on their props */}
-            <Route exact path="/aktuelles" component={Sponsoren}></Route> 
+            <Route exact path="/aktuelles" component={Sponsoren}></Route>
             <Route exact path="/sponsoren" component={Sponsoren}></Route>
-            <Route exact path="/login" component={ContributionForm}></Route>
+            <ProtectedRoute exact path="/createContribution" component={ContributionForm} />
             <Route exact path="/loginUser" component={login}></Route>
+
+            <ProtectedRoute exact path="/Dashboard" component={Dashboard} />
+
             <Route exact path="*">
               {/* catch error 404  */}
               <NoMatch />
@@ -83,7 +115,5 @@ class Welcome extends React.Component {
     );
   }
 }
-
-
 
 export default Welcome;
