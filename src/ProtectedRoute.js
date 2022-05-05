@@ -15,7 +15,7 @@ class ProtectedRoute extends React.Component {
 
     // For success, update state like
     axios
-    .get("http://localhost:5000/auth/", {
+    .get("https://svkretzschau.herokuapp.com/auth/", {
       withCredentials: true,
     })
     .then((result) => {
