@@ -14,9 +14,9 @@ function Login() {
         // "http://localhost:5000/Users/",
         data,
       ).then((res)=> {
-        localStorage.setItem('jwt', res.data['accessToken']);
+        localStorage.setItem('jwt', res.data["accessToken"]);
         window.location.href ="https://sv-kretzschau.de/Dashboard";
-        console.log('redirect')
+        console.log(redirect)
       })
       .catch((err) => {
         console.log("POST failed" + err);
