@@ -19,7 +19,7 @@ class ProtectedRoute extends React.Component {
       .get("https://svkretzschau.herokuapp.com/auth/", {
         headers:
         {
-          Authorization: "Bearer "+ localStorage.getItem('jwt'),
+          Authorization: "Bearer "+ window.localStorage.getItem('jwt'),
         }
       })
       .then((result) => {
