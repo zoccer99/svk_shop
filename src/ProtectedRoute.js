@@ -15,13 +15,16 @@ class ProtectedRoute extends React.Component {
 
     // For success, update state like
     axios
-    .get("https://svkretzschau.herokuapp.com/auth/", {
-      withCredentials: true,
-    })
-    .then((result) => {
-      if (result.status >= 200 && result.status < 305) {
-        this.setState(() => ({ isLoading: false, isLoggedIn: true }));
-        console.log(this.state)
+    // http://localhost:5000/auth/"
+      .get("https://svkretzschau.herokuapp.com/auth/", {
+        headers:
+        {
+          Authorization: "Bearer "+ localStorage.getItem('jwt'),
+        }
+      })
+      .then((result) => {
+        if (result.status >= 200 && result.status < 305) {
+          this.setState(() => ({ isLoading: false, isLoggedIn: true }));
         } else {
           // For fail, update state like
           this.setState(() => ({ isLoading: false, isLoggedIn: false }));

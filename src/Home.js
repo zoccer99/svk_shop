@@ -12,7 +12,7 @@ function Home(props) {
             <MobileGrid />
             <div className="d-flex flex-column align-items-center">
                 <div className="CounConWrapper">
-                    <Countdown date={new Date('May 08,2022 15:00')} heimmannschaft="SV Kretzschau" gastmannschaft="Tröglitz"/>
+                    <Countdown date={new Date('May 15,2022 14:00')} heimmannschaft="Großkorbetha" gastmannschaft="SV Kretzschau"/>
                     {/* <ContributionSite /> */}
                     <Sponsoren />
                 </div>

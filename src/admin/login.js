@@ -11,12 +11,12 @@ function Login() {
     axios
       .post(
         "https://svkretzschau.herokuapp.com/Users/",
-        JSON.stringify({ data }),
         // "http://localhost:5000/Users/",
         data,
-        {withCredentials: true}
       ).then((res)=> {
-        window.location.href ="https://www.sv-kretzschau.de/Dashboard"
+        localStorage.setItem('jwt', res.data['accessToken']);
+        window.location.href ="https://sv-kretzschau.de/Dashboard";
+        console.log('redirect')
       })
       .catch((err) => {
         console.log("POST failed" + err);
@@ -49,7 +49,7 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></Form.Control>
-        <Button className="mt-3" type='"submit' value="login">
+        <Button className="mt-3" type='submit' value="login">
           Login
         </Button>
       </Form>
