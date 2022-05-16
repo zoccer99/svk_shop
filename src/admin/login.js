@@ -15,14 +15,15 @@ function Login() {
         data,
       ).then((res)=> {
         console.log(JSON.stringify(res.data["accessToken"]))
-        localStorage.setItem('jwt', JSON.stringify(res.data["accessToken"]));
-        window.location.href ="https://sv-kretzschau.de/Dashboard";
+        localStorage.setItem('jwt', res.data["accessToken"]);
+        //window.location.href ="https://sv-kretzschau.de/Dashboard";
         
       })
       .catch((err) => {
         console.log("POST failed" + err);
       });
   }
+  
 
   function handleSubmit(event) {
     event.preventDefault();
