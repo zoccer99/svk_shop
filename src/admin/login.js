@@ -16,7 +16,7 @@ function Login() {
       ).then((res)=> {
         console.log(JSON.stringify(res.data["accessToken"]))
         localStorage.setItem('jwt', res.data["accessToken"]);
-        //window.location.href ="https://sv-kretzschau.de/Dashboard";
+        window.location.href ="https://sv-kretzschau.de/Dashboard";
         
       })
       .catch((err) => {
