@@ -1,15 +1,15 @@
-import ContactJunior from "./ContactJunior";
-import FJuniorenPic from "./pictures/Junioren/F-Junioren.jpeg";
 import ModalImage from "react-modal-image";
+import ContactJunior from "../ContactJunior";
+import FJuniorenPic from "../pictures/Junioren/F-Junioren.jpeg";
 
 const FJunioren = () => {
   return (
     <div className="container-fluid w-lg-75">
-     <blockquote class="blockquote">
-          <h1 class="mb-0">
+     <blockquote className="blockquote">
+          <h1 className="mb-0">
            F-Junioren
           </h1>
-          <h2 class="blockquote-footer pt-4 ">
+          <h2 className="blockquote-footer pt-4 ">
            Kreisliga Saison 
           </h2>
         </blockquote>

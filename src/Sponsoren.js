@@ -10,11 +10,11 @@ const Sponsoren = () => {
   return (
       <div className="d-flex justify-content-center">
         <div className="w-100">
-        <blockquote class="blockquote">
-          <h3 class="mb-0">
+        <blockquote className="blockquote">
+          <h3 className="mb-0">
            Unsere Sponsoren
           </h3>
-          <h4 class="blockquote-footer pt-4 ">
+          <h4 className="blockquote-footer pt-4 ">
            Zur Kreisoberliga-Saison 2021/2022
           </h4>
         </blockquote>

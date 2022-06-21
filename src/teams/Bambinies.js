@@ -1,15 +1,15 @@
 import React from "react";
-import ContactJunior from "./ContactJunior";
-import BambinisFlyer from "./pictures/Junioren/Flyer_Bambini.jpg";
-import GJuniorenPic from "./pictures/Junioren/G-Junioren.jpeg";
+import ContactJunior from "../ContactJunior";
+import BambinisFlyer from "../pictures/Junioren/Flyer_Bambini.jpg";
+import GJuniorenPic from "../pictures/Junioren/G-Junioren.jpeg";
 import ModalImage from "react-modal-image";
 
 const Bambinies = () => {
   return (
     <div className="container-fluid w-lg-75">
-      <blockquote class="blockquote">
-        <h1 class="mb-0">G-Junioren</h1>
-        <h2 class="blockquote-footer pt-4 ">Kreisliga Saison</h2>
+      <blockquote className="blockquote">
+        <h1 className="mb-0">G-Junioren</h1>
+        <h2 className="blockquote-footer pt-4 ">Kreisliga Saison</h2>
       </blockquote>
       <div className="d-flex justify-content-center">
         <ModalImage

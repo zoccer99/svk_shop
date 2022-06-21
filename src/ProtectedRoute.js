@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Route, Redirect } from "react-router-dom";
 import axios from "axios";
+import React from "react";
+import { Redirect, Route } from "react-router-dom";
 
 class ProtectedRoute extends React.Component {
   constructor(props, context) {

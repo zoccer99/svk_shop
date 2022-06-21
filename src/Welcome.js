@@ -1,23 +1,24 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import FirstTeam from "./FirstTeam";
-import SecondTeam from "./SecondTeam";
-import CJunioren from "./CJunioren";
-import DJunioren from "./DJunioren";
-import EJunioren from "./EJunioren";
-import FJunioren from "./FJunioren";
-import Bambinies from "./Bambinies";
-import Home from "./Home";
-import Footer from "./Footer";
-import MainBanner from "./MainBanner";
-import NoMatch from "./NoMatch";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import axios from "axios";
 import ContributionForm from "./admin/ContributionForm";
 import login from "./admin/login";
-import axios from "axios";
-import FullContribution from "./FullContribution";
-import Sponsoren from "./Sponsoren";
+import FullContribution from "./Blog/FullContribution";
 import Dashboard from "./Dashboard";
+import Footer from "./Footer";
+import Home from "./Home";
+import MainBanner from "./MainBanner";
+import NoMatch from "./NoMatch";
 import ProtectedRoute from "./ProtectedRoute";
+import Sponsoren from "./Sponsoren";
+import Bambinies from "./teams/Bambinies";
+import CJunioren from "./teams/CJunioren";
+import DJunioren from "./teams/DJunioren";
+import EJunioren from "./teams/EJunioren";
+import FirstTeam from "./teams/FirstTeam";
+import FJunioren from "./teams/FJunioren";
+import SecondTeam from "./teams/SecondTeam";
 
 class Welcome extends React.Component {
   constructor() {
@@ -53,7 +54,6 @@ class Welcome extends React.Component {
           {/* Switch & Routing */}
           <Switch>
             <Route path="/" exact component={Home}></Route>
-            {/* <Route exact path="/ersteMannschaft" component={}></Route> */}
             <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
             <Route
               exact
@@ -98,8 +98,12 @@ class Welcome extends React.Component {
             {/* mapping of contribution routes depending on their props */}
             <Route exact path="/aktuelles" component={Sponsoren}></Route>
             <Route exact path="/sponsoren" component={Sponsoren}></Route>
-            <ProtectedRoute exact path="/createContribution" component={ContributionForm} />
-            <Route exact path="/loginUser" component={login}></Route>
+            <ProtectedRoute
+              exact
+              path="/createContribution"
+              component={ContributionForm}
+            />
+            <Route exact path="/login" component={login}></Route>
 
             <ProtectedRoute exact path="/Dashboard" component={Dashboard} />
 

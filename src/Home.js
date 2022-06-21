@@ -6,19 +6,19 @@ import Sponsoren from './Sponsoren'
 
 function Home(props) {
     return (
-        <div className="">
-
+        <>
             <Slideshow />
             <MobileGrid />
-            <div className="d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-center ">
                 <div className="CounConWrapper">
-                    <Countdown date={new Date('June 12,2022 14:00')} heimmannschaft="SG Lossa" gastmannschaft="SV Kretzschau"/>
+                    {/* <Countdown date={new Date('June 12,2022 14:00')} heimmannschaft="SG Lossa" gastmannschaft="SV Kretzschau"/> */}
                     {/* <ContributionSite /> */}
+                    <div style={{height:"100px"}}></div>
                     <Sponsoren />
                 </div>
             </div>
 
-        </div>
+        </>
     );
 }
 

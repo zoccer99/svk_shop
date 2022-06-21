@@ -76,7 +76,7 @@ class Countdown extends React.Component {
           </div>
           <div className="d-flex justify-content-around">
             <div className="d-flex flex-column ">
-            <h4 className="d-sm-none">D</h4>
+              <h4 className="d-sm-none">D</h4>
               <h4 className="d-none d-sm-block">Tage</h4>
               <div className="align-self-center">
                 {" "}
@@ -92,7 +92,7 @@ class Countdown extends React.Component {
               </div>
             </div>
             <div className="d-flex flex-column">
-            <h4 className="d-sm-none">M</h4>
+              <h4 className="d-sm-none">M</h4>
               <h4 className="d-none d-sm-block">Minuten</h4>
               <div className="align-self-center">
                 {" "}
@@ -100,7 +100,7 @@ class Countdown extends React.Component {
               </div>
             </div>
             <div className="d-flex flex-column">
-            <h4 className="d-sm-none">S</h4>
+              <h4 className="d-sm-none">S</h4>
               <h4 className="d-none d-sm-block">Sekunden</h4>
               <div className="align-self-center ">
                 {" "}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import firstTeam from "./pictures/firstTeam.jpg";
+import firstTeam from "../pictures/firstTeam.jpg";
 
 class FullContribution extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class FullContribution extends Component {
   componentDidMount() {
     this.scrollToTop();
     this.importAllImages(
-      require.context("./pictures/ErsteSpiel", false, /\.(png|jpe?g|svg|JPG)$/)
+      require.context("../pictures/ErsteSpiel", false, /\.(png|jpe?g|svg|JPG)$/)
     );
   }
   render() {

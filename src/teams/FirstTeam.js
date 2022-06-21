@@ -1,15 +1,15 @@
 import React from "react";
-import ContributionSite from "./ContributionSite";
-import firstTeam from "./pictures/firstTeam.jpg";
+import ContributionSite from "../Blog/ContributionSite";
+import firstTeam from "../pictures/firstTeam.jpg";
 import ModalImage from "react-modal-image";
 
 class FirstTeam extends React.Component {
   render() {
     return (
       <div className="container-fluid w-lg-75">
-        <blockquote class="blockquote">
-          <h1 class="mb-0">Erste Mannschaft</h1>
-          <h2 class="blockquote-footer pt-4 ">
+        <blockquote className="blockquote">
+          <h1 className="mb-0">Erste Mannschaft</h1>
+          <h2 className="blockquote-footer pt-4 ">
             Kreisoberliga Saison 2020/2021
           </h2>
         </blockquote>

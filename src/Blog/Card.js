@@ -1,7 +1,6 @@
-import { faThList } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { Link } from "react-router-dom";
-import gebbi from "./pictures/profiles/gebbi.webp"
+import gebbi from "../pictures/profiles/gebbi.webp";
 
 function maxWords(str) {
     if(str != null) {

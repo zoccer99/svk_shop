@@ -59,7 +59,7 @@ class ContributionSite extends React.Component {
   componentDidMount() {
     this.fetchDB();
     this.importAllImages(
-      require.context("./pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+      require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
     );
   }
 
