@@ -927,3 +927,7 @@ main
 	transform: scale(1.5);	
 }
 
+/* Playercard */
+.playerInfoWrapper {
+	background-image: linear-gradient(to bottom, #2F80ED, #56CCF2);
+}
