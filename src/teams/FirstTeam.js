@@ -74,7 +74,7 @@ const FirstTeam = () => {
       </script>
       <div className="container ">
         <div className="row mb-5">
-          <div className="col-12 col-sm-4 ">
+          <div className="col-12 col-sm-4 d-flex justify-content-center  ">
             <PlayerCard
               img={SpielerLudwig}
               name="Andreas Ludwig"
@@ -83,7 +83,7 @@ const FirstTeam = () => {
               assists={0}
             />
           </div>
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center ">
             <PlayerCard
               img={SpielerBarth}
               name="Andre Barth"
@@ -92,7 +92,7 @@ const FirstTeam = () => {
               assists="0"
             />
           </div>
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerFriedrich}
               name="Ole Friedrich"
@@ -103,7 +103,7 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerLages}
               name="Manuel Lages"
@@ -112,7 +112,7 @@ const FirstTeam = () => {
               assists={0}
             />
           </div>
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerPauli}
               name="Christopher Pauli"
@@ -121,7 +121,7 @@ const FirstTeam = () => {
               assists="0"
             />
           </div>
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerPiehl}
               name="Daniel Piehl"
@@ -132,7 +132,7 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerProtz}
               name="Christian Protz"
@@ -141,7 +141,7 @@ const FirstTeam = () => {
               assists={0}
             />
           </div>
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerSeifert}
               name="Phillipp Seifert"
@@ -150,7 +150,7 @@ const FirstTeam = () => {
               assists="0"
             />
           </div>
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerFuhrmann}
               name="Patrick Fuhrmann"
@@ -170,7 +170,7 @@ const FirstTeam = () => {
               assists={randomNumbers(30)}
             />
           </div>
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerElias}
               name="Elias Just"
@@ -180,7 +180,7 @@ const FirstTeam = () => {
             />
           </div>
 
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerErik}
               name="Erik Dobierzin"
@@ -191,7 +191,7 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-5">
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerLeon}
               name="Leon Gottschild"
@@ -200,7 +200,7 @@ const FirstTeam = () => {
               assists={randomNumbers(15)}
             />
           </div>
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerEtienne}
               name="Etienne Kalkofen"
@@ -209,7 +209,7 @@ const FirstTeam = () => {
               assists="10"
             />
           </div>
-          <div className="col-12 col-sm-4">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerSchmeißer}
               name="Claas Schmeißer"
@@ -220,7 +220,7 @@ const FirstTeam = () => {
           </div>
           </div>
           <div className="row mb-5">
-            <div className="col-12 col-sm-4">
+            <div className="col-12 col-sm-4 d-flex justify-content-center">
               <PlayerCard
                 img={SpielerAlbert}
                 name="Daniel Albert"
@@ -229,7 +229,7 @@ const FirstTeam = () => {
                 assists="0"
               />
             </div>
-            <div className="col-12 col-sm-4">
+            <div className="col-12 col-sm-4 d-flex justify-content-center">
               <PlayerCard
                 img={SpielerBalschunTom}
                 name="Tom Balschun"
@@ -239,7 +239,7 @@ const FirstTeam = () => {
               />
             </div>
 
-            <div className="col-12 col-sm-4">
+            <div className="col-12 col-sm-4 d-flex justify-content-center">
               <PlayerCard
                 img={SpielerLai}
                 name="Tino Lai"
@@ -250,7 +250,7 @@ const FirstTeam = () => {
             </div>
           </div>
           <div className="row mb-5">
-            <div className="col-12 col-sm-4">
+            <div className="col-12 col-sm-4 d-flex justify-content-center">
               <PlayerCard
                 img={SpielerScholz}
                 name="Christopher Scholz"
