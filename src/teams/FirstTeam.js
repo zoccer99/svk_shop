@@ -6,11 +6,25 @@ import PlayerCard from "../PlayerCard";
 
 import gebbi from "../pictures/profiles/gebbi.webp";
 import SpielerNico from "../pictures/Spielerprofile/Balschun_Nico.JPG";
+import SpielerLeon from "../pictures/Spielerprofile/Gottschild_Leon.JPG";
 import SpielerQuentin from "../pictures/Spielerprofile/Bernstein_Quentin.JPG";
 import SpielerEtienne from "../pictures/Spielerprofile/Kalkofen_Etienne.JPG";
 import SpielerErik from "../pictures/Spielerprofile/Dobierzin_Erik.JPG";
 import SpielerElias from "../pictures/Spielerprofile/Just_Elias.JPG";
-import SpielerLeon from "../pictures/Spielerprofile/Gottschild_Leon.JPG";
+import SpielerLudwig from "../pictures/Spielerprofile/Ludwig_Andreas.JPG";
+import SpielerProtz from "../pictures/Spielerprofile/Protz_Christian.JPG";
+import SpielerBarth from "../pictures/Spielerprofile/Barth_Andre.JPG";
+import SpielerFriedrich from "../pictures/Spielerprofile/Friedrich_Ole.JPG";
+import SpielerLages from "../pictures/Spielerprofile/Lages_Manuel.JPG";
+import SpielerPauli from "../pictures/Spielerprofile/Pauli_Christopher.JPG";
+import SpielerPiehl from "../pictures/Spielerprofile/Piel_Daniel.JPG";
+import SpielerSeifert from "../pictures/Spielerprofile/Lages_Manuel.JPG";
+import SpielerAlbert from "../pictures/Spielerprofile/Albert_Daniel.JPG";
+import SpielerFuhrmann from "../pictures/Spielerprofile/Fuhrmann_Patrick.JPG";
+import SpielerLai from "../pictures/Spielerprofile/Lai_Tino.JPG";
+import SpielerSchmeißer from "../pictures/Spielerprofile/Schmeißer_Claas.JPG";
+import SpielerBalschunTom from "../pictures/Spielerprofile/Balschun_Nico.JPG";
+import SpielerScholz from "../pictures/Spielerprofile/Scholz_Christoph.JPG";
 
 const FirstTeam = () => {
   const randomNumbers = (max) => {
@@ -61,6 +75,93 @@ const FirstTeam = () => {
       </script>
       <div className="container">
         <div className="row">
+          <div className="col-12 col-sm-4">
+            <PlayerCard
+              img={SpielerLudwig}
+              name="Andreas Ludwig"
+              einsätze={0}
+              tore={0}
+              assists={0}
+            />
+          </div>
+          <div className="col-12 col-sm-4">
+            <PlayerCard
+              img={SpielerBarth}
+              name="Andre Barth"
+              einsätze={0}
+              tore="0"
+              assists="0"
+            />
+          </div>
+          <div className="col-12 col-sm-4">
+            <PlayerCard
+              img={SpielerFriedrich}
+              name="Ole Friedrich"
+              einsätze={0}
+              tore="0"
+              assists="0"
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12 col-sm-4">
+            <PlayerCard
+              img={SpielerLages}
+              name="Manuel Lages"
+              einsätze={0}
+              tore={0}
+              assists={0}
+            />
+          </div>
+          <div className="col-12 col-sm-4">
+            <PlayerCard
+              img={SpielerPauli}
+              name="Christopher Pauli"
+              einsätze={0}
+              tore="0"
+              assists="0"
+            />
+          </div>
+          <div className="col-12 col-sm-4">
+            <PlayerCard
+              img={SpielerPiehl}
+              name="Daniel Piehl"
+              einsätze={0}
+              tore="0"
+              assists="0"
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12 col-sm-4">
+            <PlayerCard
+              img={SpielerProtz}
+              name="Christian Protz"
+              einsätze={0}
+              tore={0}
+              assists={0}
+            />
+          </div>
+          <div className="col-12 col-sm-4">
+            <PlayerCard
+              img={SpielerSeifert}
+              name="Phillipp Seifert"
+              einsätze={0}
+              tore="0"
+              assists="0"
+            />
+          </div>
+          <div className="col-12 col-sm-4">
+            <PlayerCard
+              img={SpielerFuhrmann}
+              name="Patrick Fuhrmann"
+              einsätze={0}
+              tore={0}
+              assists={0}
+            />
+          </div>
+        </div>
+        <div className="row">
           <div className="col">
             <PlayerCard
               img={SpielerNico}
@@ -110,12 +211,53 @@ const FirstTeam = () => {
           </div>
           <div className="col-12 col-sm-4">
             <PlayerCard
-              img={SpielerQuentin}
-              name="Quentin Bernstein"
-              einsätze={randomNumbers(3)}
+              img={SpielerSchmeißer}
+              name="Claas Schmeißer"
+              einsätze={0}
               tore="0"
               assists="0"
             />
+          </div>
+          
+            <div className="col-12 col-sm-4">
+              <PlayerCard
+                img={SpielerAlbert}
+                name="Daniel Albert"
+                einsätze={0}
+                tore="0"
+                assists="0"
+              />
+            </div>
+            <div className="col-12 col-sm-4">
+              <PlayerCard
+                img={SpielerBalschunTom}
+                name="Tom Balschun"
+                einsätze={0}
+                tore={0}
+                assists={0}
+              />
+            </div>
+
+            <div className="col-12 col-sm-4">
+              <PlayerCard
+                img={SpielerLai}
+                name="Tino Lai"
+                einsätze={0}
+                tore="0"
+                assists="0"
+              />
+            
+          </div>
+          
+            <div className="col-12 col-sm-4">
+              <PlayerCard
+                img={SpielerScholz}
+                name="Christopher Scholz"
+                einsätze={0}
+                tore="0"
+                assists="0"
+              />
+            
           </div>
         </div>
       </div>

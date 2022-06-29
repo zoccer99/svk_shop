@@ -66,7 +66,6 @@ class ContributionForm extends React.Component {
     } else {
       alert("Bitte alle Felder ausfüllen!");
     }
-    console.log(this.state);
   }
 
   render() {
