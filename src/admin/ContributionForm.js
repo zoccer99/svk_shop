@@ -21,7 +21,7 @@ class ContributionForm extends React.Component {
     this.setState({
       [name]: target.value,
     });
-    console.log(this.state)
+    console.log(this.state);
   }
 
   handleSubmit(event) {
@@ -46,7 +46,10 @@ class ContributionForm extends React.Component {
       // .post("http://localhost:5000/Contribution/add", newContribution)
       //   .catch((err) => console.log(err));
       axios
-        .post("https://svkretzschau.herokuapp.com/Contribution/add", newContribution)
+        .post(
+          "https://svkretzschau.herokuapp.com/Contribution/add",
+          newContribution
+        )
         .then(() => {
           alert("erfolgreich hinzugefügt");
           this.setState({
@@ -104,19 +107,6 @@ class ContributionForm extends React.Component {
           value={this.state.text}
           onChange={this.handleChange}
         />
-        {/* <Form.Label>Kategorie:</Form.Label>
-        <Form.Control
-          type="text"
-          name="category"
-          value={this.state.category}
-          onChange={this.handleChange}
-        /> */}
-        {/* <input
-          type="file"
-          accept=".png, .jpg, .jpeg"
-          name="image"
-          onChange={this.handleImageChange}
-        /> */}
         <Button
           className="mt-3"
           type="submit"

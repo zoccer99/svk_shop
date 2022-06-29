@@ -12,34 +12,46 @@ function Dashboard() {
 
   const listContribution = () => {
     axios
-      .get("https://svkretzschau.herokuapp.com/Contribution/")
+      // .get("http://localhost:5000/Contribution/") 
+      .get('https://svkretzschau.herokuapp.com/Contribution/')
       .then((res) => {
         const data = res.data;
         setContributions(data);
-        console.log(contributions);
+        console.log(data)
       });
   };
 
+  const deleteContribution = (id) => {
+    axios
+      // .delete("http://localhost:5000/Contribution/", {
+      .delete("https://svkretzschau.herokuapp.com/Contribution/", {
+        data: { _id: id},
+      })
+      .then((res) => {
+        if (res != 200) return;
+        alert("löschen erfolgreich ")
+      })
+      .catch((err) => alert(`Netzwerkfehler: ${err}`));
+  };
+
   return (
-    <div
-      className="d-flex flex-column align-items-center"
-      style={{ height: "600px" }}
-    >
+    <div className="" style={{ height: "600px" }}>
       <h1>Dashboard Seite</h1>
 
-      <div className="d-flex justify-content-around ">
+      <div className="d-flex justify-content-around my-4">
         <Button onClick={() => listContribution()}>Beiträge anzeigen</Button>
         <Button onClick={() => changeToUrl("/createContribution")}>
-          Beitrag erstelen
+          Beitrag erstellen
         </Button>
         {/* <Button>Beiträge löschen</Button> */}
       </div>
-      <div>
+      <div className="w-50">
         {contributions.map((conn, index) => (
-          <div>
-            <Button>löschen</Button>
-            <h1>{conn["titel"]}</h1>
+          
+          <div className="border " key={index}>
+            <h3>{conn["titel"]}</h3>
             <p>{conn["text"]}</p>
+            <Button onClick={() => deleteContribution(conn["_id"])}>löschen</Button>
           </div>
         ))}
       </div>

@@ -5,7 +5,7 @@ import axios from "axios";
 import ContributionForm from "./admin/ContributionForm";
 import login from "./admin/login";
 import FullContribution from "./Blog/FullContribution";
-import Dashboard from "./Dashboard";
+import Dashboard from "./admin/Dashboard";
 import Footer from "./Footer";
 import Home from "./Home";
 import MainBanner from "./MainBanner";
@@ -105,7 +105,7 @@ class Welcome extends React.Component {
             />
             <Route exact path="/login" component={login}></Route>
 
-            <ProtectedRoute exact path="/Dashboard" component={Dashboard} />
+            <Route exact path="/Dashboard" component={Dashboard} />
 
             <Route exact path="*">
               {/* catch error 404  */}
