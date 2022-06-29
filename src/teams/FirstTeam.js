@@ -68,14 +68,13 @@ const FirstTeam = () => {
       </div>
 
       <ContributionSite team="first" />
-      <div id="widget1"></div>
       <script type="text/javascript">
         new fussballdeWidgetAPI().showWidget('widget1',
         '02HRFJV13C000000VUM1DNPHVT26GPRA');
       </script>
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-sm-4">
+      <div className="container ">
+        <div className="row mb-5">
+          <div className="col-12 col-sm-4 ">
             <PlayerCard
               img={SpielerLudwig}
               name="Andreas Ludwig"
@@ -103,7 +102,7 @@ const FirstTeam = () => {
             />
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-5">
           <div className="col-12 col-sm-4">
             <PlayerCard
               img={SpielerLages}
@@ -132,7 +131,7 @@ const FirstTeam = () => {
             />
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-5">
           <div className="col-12 col-sm-4">
             <PlayerCard
               img={SpielerProtz}
@@ -161,7 +160,7 @@ const FirstTeam = () => {
             />
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-5">
           <div className="col">
             <PlayerCard
               img={SpielerNico}
@@ -180,6 +179,7 @@ const FirstTeam = () => {
               assists={randomNumbers(3)}
             />
           </div>
+
           <div className="col-12 col-sm-4">
             <PlayerCard
               img={SpielerErik}
@@ -187,10 +187,10 @@ const FirstTeam = () => {
               einsätze={randomNumbers(0)}
               tore={randomNumbers(0)}
               assists={randomNumbers(0)}
-            />
+              />
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-5">
           <div className="col-12 col-sm-4">
             <PlayerCard
               img={SpielerLeon}
@@ -218,7 +218,8 @@ const FirstTeam = () => {
               assists="0"
             />
           </div>
-          
+          </div>
+          <div className="row mb-5">
             <div className="col-12 col-sm-4">
               <PlayerCard
                 img={SpielerAlbert}
@@ -246,9 +247,9 @@ const FirstTeam = () => {
                 tore="0"
                 assists="0"
               />
-            
+            </div>
           </div>
-          
+          <div className="row mb-5">
             <div className="col-12 col-sm-4">
               <PlayerCard
                 img={SpielerScholz}
@@ -257,8 +258,8 @@ const FirstTeam = () => {
                 tore="0"
                 assists="0"
               />
-            
-          </div>
+            </div>
+          
         </div>
       </div>
     </div>

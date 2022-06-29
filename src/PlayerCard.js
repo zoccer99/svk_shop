@@ -12,7 +12,6 @@ const PlayerCard = (props) => {
 
   const updateViewport = () => {
     setMobile(window.innerWidth < 576);
-    console.log(isMobile);
   };
 
   useEffect(() => {
@@ -50,10 +49,10 @@ const PlayerCard = (props) => {
           </div>
         </div>
       ) : (
-        <div className="card playerInfoWrapper mb-3">
+        <div className="card playerInfoWrapper  w-75">
           <img src={props.img} className="card-img-top " alt="..." />
           <div className="card-body">
-            <h4 className="card-text d-flex justify-content-center text-center">
+            <h4 className="card-text d-flex ">
               {props.name}
             </h4>
           </div>

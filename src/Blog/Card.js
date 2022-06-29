@@ -56,7 +56,7 @@ export default class Card extends React.Component {
                 className="card__image"
               />
             </div>
-            <div className="card__body">
+            <div className="card__body" style={{height: "200px"}}>
               <span className={`tag ${this.changeColor(this.props.teamClass)}`}>
                 {this.props.teamClass}
               </span>
