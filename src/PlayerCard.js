@@ -24,7 +24,7 @@ const PlayerCard = (props) => {
       {isMobile ? (
         <div className="d-flex align-items-center justify-content-between playerInfoWrapper mb-1 rounded">
           <img src={props.img} alt="..." className="img-fluid w-25 rounded" style={{maxWidth: "80px"}} />
-          <h3 className="d-flex align-items-center text-center border-right">{props.name}</h3>
+          <h3 className="d-flex align-items-center justify-content-center text-center border-right sm-150" >{props.name}</h3>
           <div className=" d-md-block d-flex ">
             <div className="row ">
               <div className="col-12 col-md-4">

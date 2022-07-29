@@ -54,6 +54,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    margin-bottom: 0;
   }
   .gridItem1 {
     grid-area: 1/1/2/2;
@@ -98,3 +99,9 @@
 
 
 
+@media screen and (max-width: 567px) {
+
+  .sm-150 {
+    width: 150px;
+  }
+}

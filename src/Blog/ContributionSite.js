@@ -1,102 +1,113 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card.js";
 
 //TODO: Datenbank verbinden
 
-class ContributionSite extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      Contributions: [],
-      ContributionsFinal: [],
-      images: [],
-    };
-  }
+const ContributionSite = (props) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [contributions, setContributions] = useState();
+  const [images, setImages] = useState();
 
-  sortCon = (teamclass, conntribution) => {
+  const sortCon = (teamclass, conntribution) => {
     //Filter der Contributions nach teamklaasen für erste/zweite Seite
-
-    let firstTeamContributions;
-
+    let temp;
     if (teamclass === "first") {
-      firstTeamContributions = conntribution.filter(
+      temp = conntribution.filter(
         (conn) => conn.teamClass == "Erste Mannschaft"
       );
     } else if (teamclass === "second") {
-      firstTeamContributions = conntribution.filter(
+      temp = conntribution.filter(
         (conn) => conn.teamClass == "Zweite Mannschaft"
       );
     } else {
-      firstTeamContributions = conntribution;
+      temp = conntribution;
     }
-
-    this.setState({ ContributionsFinal: firstTeamContributions });
+    return temp;
   };
 
-  sortConBydate = (array) => {
+  const sortConBydate = (array) => {
     array.sort(function (a, b) {
       return new Date(b.zeit) - new Date(a.zeit);
     });
-    this.setState({ ContributionsFinal: array });
+    return array;
   };
 
-  fetchDB = () => {
-    axios
-      .get("https://svkretzschau.herokuapp.com/Contribution/")
-      .then((res) => {
-        const data = res.data;
-        this.setState({ Contributions: data });
-        this.sortCon(this.props.team, this.state.Contributions); //sortierung der mannschaftsart(erste, zweite)
-        this.sortConBydate(this.state.ContributionsFinal);
-      })
-      .catch((err) => console.log(err));
-  };
 
-  importAllImages = (r) => {
-    this.setState({ images: r.keys().map(r) });
-  };
-  componentDidMount() {
-    this.fetchDB();
-    this.importAllImages(
-      require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+  useEffect(async () => {
+    const response = await fetch(
+      "https://svkretzschau.herokuapp.com/Contribution/"
     );
-  }
+    let data = await response.json();
+    data = sortCon(props.team, data);
+    data = sortConBydate(data);
+    setContributions(data); //beiträge von db holen
+    const temp = await require
+      .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+      .keys()
+      .map(
+        require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+      );
+    setImages(temp); //images importieren(alle)
+  }, []);
+  let options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
 
-  render() {
-    let options = {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    };
-
-    return (
-      <div>
-        <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
-          Aktuelle Berichte
-        </h3>
-        <div className="gridParent">
-          {this.state.ContributionsFinal.map((conn, index) => (
-            <Card
-              key={index}
-              teamClass={conn.teamClass}
-              imgUrl={
-                this.state.images[
-                  Math.floor(Math.random() * (this.state.images.length - 1))
-                ].default
-              }     //random image
-              titel={conn.titel}
-              text={conn.text}
-              category={conn.category}
-              author={conn.autor}
-              time={new Date(conn.zeit).toLocaleDateString("de-DE", options)}
-            />
-          ))}
-        </div>
+  return (
+    <div>
+      <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
+        Aktuelle Berichte
+      </h3>
+        {contributions && images && (
+          <div className="row justify-content-center">
+            {contributions.map((conn, index) =>
+              index+1 % 3 == 0 ? (
+                <div>
+                  <div className="w-100"></div>
+                  <Card
+                    key={index}
+                    teamClass={conn.teamClass}
+                    imgUrl={
+                      images[Math.floor(Math.random() * (images.length - 1))]
+                        .default
+                    } //random image
+                    titel={conn.titel}
+                    text={conn.text}
+                    category={conn.category}
+                    author={conn.autor}
+                    time={new Date(conn.zeit).toLocaleDateString(
+                      "de-DE",
+                      options
+                    )}
+                  />
+                </div>
+              ) : (
+                <Card
+                  key={index}
+                  teamClass={conn.teamClass}
+                  imgUrl={
+                    images[Math.floor(Math.random() * (images.length - 1))]
+                      .default
+                  } //random image
+                  titel={conn.titel}
+                  text={conn.text}
+                  category={conn.category}
+                  author={conn.autor}
+                  time={new Date(conn.zeit).toLocaleDateString(
+                    "de-DE",
+                    options
+                  )}
+                />
+              )
+            )}
+          </div>
+        )}
       </div>
-    );
-  }
-}
+  );
+};
 
 export default ContributionSite;

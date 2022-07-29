@@ -10,14 +10,13 @@ function Login() {
    
     axios
       .post(
-        "https://svkretzschau.herokuapp.com/Users/",
-        // "http://localhost:5000/Users/",
+        // "https://svkretzschau.herokuapp.com/Users/",
+        "http://localhost:5000/Users/",
         data,
       ).then((res)=> {
-        console.log(JSON.stringify(res.data["accessToken"]))
         localStorage.setItem('jwt', res.data["accessToken"]);
-        window.location.href ="https://sv-kretzschau.de/Dashboard";
-        
+        // window.location.href ="https://sv-kretzschau.de/Dashboard";
+        window.location.href ="http://localhost:3000/Dashboard";
       })
       .catch((err) => {
         console.log("POST failed" + err);

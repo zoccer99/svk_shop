@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import gebbi from "../pictures/profiles/gebbi.webp";
+import scholle from "../pictures/profiles/Scholle.jpg";
 
 function maxWords(str) {
   if (str != null) {
@@ -26,6 +27,9 @@ export default class Card extends React.Component {
     if (str === "Christian Gebert") {
       return gebbi;
     }
+    else if (str === "Matthias Scholle") {
+      return scholle;
+    }
   };
 
   changeColor = (str) => {
@@ -43,7 +47,7 @@ export default class Card extends React.Component {
 
   render() {
     return (
-      <div className="containerCard ">
+      <div className="containerCard " style={{maxWidth: "400px"}}>
         <div className="card">
           <Link
             style={{ textDecoration: "none" }}

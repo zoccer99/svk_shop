@@ -68,12 +68,9 @@ const FirstTeam = () => {
       </div>
 
       <ContributionSite team="first" />
-      <script type="text/javascript">
-        new fussballdeWidgetAPI().showWidget('widget1',
-        '02HRFJV13C000000VUM1DNPHVT26GPRA');
-      </script>
+
       <div className="container ">
-        <div className="row mb-5">
+        <div className="row mb-md-5">
           <div className="col-12 col-sm-4 d-flex justify-content-center  ">
             <PlayerCard
               img={SpielerLudwig}
@@ -102,7 +99,7 @@ const FirstTeam = () => {
             />
           </div>
         </div>
-        <div className="row mb-5">
+        <div className="row mb-md-5">
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerLages}
@@ -131,7 +128,7 @@ const FirstTeam = () => {
             />
           </div>
         </div>
-        <div className="row mb-5">
+        <div className="row mb-md-5">
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerProtz}
@@ -160,8 +157,8 @@ const FirstTeam = () => {
             />
           </div>
         </div>
-        <div className="row mb-5">
-          <div className="col">
+        <div className="row mb-md-5">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerNico}
               name="Nico Balschun"
@@ -174,9 +171,9 @@ const FirstTeam = () => {
             <PlayerCard
               img={SpielerElias}
               name="Elias Just"
-              einsätze={randomNumbers(10)}
-              tore={randomNumbers(6)}
-              assists={randomNumbers(3)}
+              einsätze={randomNumbers(30)}
+              tore={randomNumbers(30)}
+              assists={randomNumbers(30)}
             />
           </div>
 
@@ -187,10 +184,10 @@ const FirstTeam = () => {
               einsätze={randomNumbers(0)}
               tore={randomNumbers(0)}
               assists={randomNumbers(0)}
-              />
+            />
           </div>
         </div>
-        <div className="row mb-5">
+        <div className="row mb-md-5">
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerLeon}
@@ -218,48 +215,47 @@ const FirstTeam = () => {
               assists="0"
             />
           </div>
+        </div>
+        <div className="row mb-md-5">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={SpielerAlbert}
+              name="Daniel Albert"
+              einsätze={0}
+              tore="0"
+              assists="0"
+            />
           </div>
-          <div className="row mb-5">
-            <div className="col-12 col-sm-4 d-flex justify-content-center">
-              <PlayerCard
-                img={SpielerAlbert}
-                name="Daniel Albert"
-                einsätze={0}
-                tore="0"
-                assists="0"
-              />
-            </div>
-            <div className="col-12 col-sm-4 d-flex justify-content-center">
-              <PlayerCard
-                img={SpielerBalschunTom}
-                name="Tom Balschun"
-                einsätze={0}
-                tore={0}
-                assists={0}
-              />
-            </div>
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={SpielerBalschunTom}
+              name="Tom Balschun"
+              einsätze={0}
+              tore={0}
+              assists={0}
+            />
+          </div>
 
-            <div className="col-12 col-sm-4 d-flex justify-content-center">
-              <PlayerCard
-                img={SpielerLai}
-                name="Tino Lai"
-                einsätze={0}
-                tore="0"
-                assists="0"
-              />
-            </div>
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={SpielerLai}
+              name="Tino Lai"
+              einsätze={randomNumbers(30)}
+              tore={randomNumbers(30)}
+              assists={randomNumbers(30)}
+            />
           </div>
-          <div className="row mb-5">
-            <div className="col-12 col-sm-4 d-flex justify-content-center">
-              <PlayerCard
-                img={SpielerScholz}
-                name="Christopher Scholz"
-                einsätze={0}
-                tore="0"
-                assists="0"
-              />
-            </div>
-          
+        </div>
+        <div className="row mb-md-5">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={SpielerScholz}
+              name="Christopher Scholz"
+              einsätze={0}
+              tore="0"
+              assists="0"
+            />
+          </div>
         </div>
       </div>
     </div>
