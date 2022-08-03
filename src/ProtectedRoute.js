@@ -24,10 +24,10 @@ class ProtectedRoute extends React.Component {
       })
       .then((result) => {
         if (result.status >= 200 && result.status < 305) {
-          this.setState(() => ({ isLoggedIn: true }));
+          this.setState({ isLoggedIn: true });
         } else {
           // For fail, update state like
-          this.setState(() => ({ isLoggedIn: false }));
+          this.setState({ isLoggedIn: false });
         }
       })
       .catch((err) => {
