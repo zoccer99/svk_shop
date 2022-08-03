@@ -7,7 +7,6 @@ class ProtectedRoute extends React.Component {
     super(props, context);
 
     this.state = {
-      isLoading: true,
       isLoggedIn: false,
     };
     
@@ -25,10 +24,10 @@ class ProtectedRoute extends React.Component {
       })
       .then((result) => {
         if (result.status >= 200 && result.status < 305) {
-          this.setState(() => ({ isLoading: false, isLoggedIn: true }));
+          this.setState(() => ({ isLoggedIn: true }));
         } else {
           // For fail, update state like
-          this.setState(() => ({ isLoading: false, isLoggedIn: false }));
+          this.setState(() => ({ isLoggedIn: false }));
         }
       })
       .catch((err) => {
@@ -37,10 +36,10 @@ class ProtectedRoute extends React.Component {
   }
 
   render() {
-    return this.state.isLoading ? null : this.state.isLoggedIn ? (
+    return this.state.isLoggedIn ? (
       <Route exact path={this.props.path} component={this.props.component} />
     ) : (
-      <Redirect to="/loginUser" />
+      <Redirect to="/login" />
     );
   }
 }
