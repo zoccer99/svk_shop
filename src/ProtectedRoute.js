@@ -10,13 +10,13 @@ class ProtectedRoute extends React.Component {
       isLoading: true,
       isLoggedIn: false,
     };
+    
+  }
 
-    // Your axios call here
-
-    // For success, update state like
+  componentDidMount() {
     axios
-    .get("http://localhost:5000/auth/",
-      // .get("https://svkretzschau.herokuapp.com/auth/", 
+    // .get("http://localhost:5000/auth/",
+      .get("https://svkretzschau.herokuapp.com/auth/", 
       {
         headers:
         {

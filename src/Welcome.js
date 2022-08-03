@@ -19,6 +19,7 @@ import EJunioren from "./teams/EJunioren";
 import FirstTeam from "./teams/FirstTeam";
 import FJunioren from "./teams/FJunioren";
 import SecondTeam from "./teams/SecondTeam";
+import Register from "./admin/Register";
 
 class Welcome extends React.Component {
   constructor() {
@@ -103,7 +104,8 @@ class Welcome extends React.Component {
               path="/createContribution"
               component={ContributionForm}
             />
-            <Route exact path="/login" component={login}></Route>
+            {/* <Route exact path="/login" component={login}></Route> */}
+            <Route exact path="/login" component={Register}></Route>
 
             <Route exact path="/Dashboard" component={Dashboard} />
 

@@ -46,14 +46,14 @@ const ContributionForm = () => {
       alert("Bitte alle Felder ausfüllen");
     } //check if anything is empty
     else {
-      axios
-        .post("http://localhost:5000/Contribution/add", newContribution)
+      //axios
+      //.post("http://localhost:5000/Contribution/add", newContribution)
 
-        // axios
-        //   .post(
-        //     "https://svkretzschau.herokuapp.com/Contribution/add",
-        //     newContribution
-        //   )
+      axios
+        .post(
+          "https://svkretzschau.herokuapp.com/Contribution/add",
+          newContribution
+        )
         .then(() => {
           alert("erfolgreich hinzugefügt");
           setValues({
@@ -75,15 +75,12 @@ const ContributionForm = () => {
       <Form className="d-flex flex-column mx-5" onSubmit={handleSubmit}>
         {" "}
         <Form.Label>Autor:</Form.Label>
-        <Form.Control
-          as="select"
-          name="autor"
-          type="text"
-          onChange={handleChange}
-        />{" "}
-        <option value="Christian Gebert">Christian Gebert</option>
-        <option value="Matthias Scholle">Matthias Scholle</option>
-        <option value="Leon Gottschild">Leon Gottschild</option>
+        <Form.Select name="autor" onChange={handleChange}>
+         
+          <option value="Christian Gebert">Christian Gebert</option>
+          <option value="Matthias Scholle">Matthias Scholle</option>
+          <option value="Leon Gottschild">Leon Gottschild</option>
+        </Form.Select>
         <Form.Label>Titel:</Form.Label>
         <Form.Control
           name="titel"

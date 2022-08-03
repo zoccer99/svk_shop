@@ -5,10 +5,10 @@ class Countdown extends React.Component {
     super(props);
     this.state = {
       timeLeft: {
-        d: 0,
-        h: 0,
-        m: 0,
-        s: 0,
+        d: undefined,
+        h: undefined,
+        m: undefined,
+        s: undefined,
       },
       date: props.date,
       heimmannschaft: props.heimmannschaft,
