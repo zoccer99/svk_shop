@@ -8,13 +8,14 @@ import Card from "../Blog/Card";
 import FullContribution from "../Blog/FullContribution";
 
 const ContributionForm = () => {
+  const [showMockup, setShowMockup] = useState(false);
   const [values, setValues] = useState({
     autor: "",
     titel: "",
     text: "",
     teamClass: "Erste Mannschaft",
   });
-  const [showMockup, setShowMockup] = useState(false);
+
   let options = {
     weekday: "long",
     year: "numeric",
@@ -47,13 +48,10 @@ const ContributionForm = () => {
     } //check if anything is empty
     else {
       //axios
-      //.post("http://localhost:5000/Contribution/add", newContribution)
-
-      axios
-        .post(
-          "https://svkretzschau.herokuapp.com/Contribution/add",
-          newContribution
-        )
+        // .post("http://localhost:5000/Contribution/add", newContribution)
+        axios
+          .post(
+            "https://svkretzschau.herokuapp.com/Contribution/add",newContribution)
         .then(() => {
           alert("erfolgreich hinzugefügt");
           setValues({
@@ -75,12 +73,16 @@ const ContributionForm = () => {
       <Form className="d-flex flex-column mx-5" onSubmit={handleSubmit}>
         {" "}
         <Form.Label>Autor:</Form.Label>
-        <Form.Select name="autor" onChange={handleChange}>
-         
+        <Form.Control
+          as="select"
+          type="text"
+          name="autor"
+          onChange={handleChange}
+        >
           <option value="Christian Gebert">Christian Gebert</option>
           <option value="Matthias Scholle">Matthias Scholle</option>
           <option value="Leon Gottschild">Leon Gottschild</option>
-        </Form.Select>
+        </Form.Control>
         <Form.Label>Titel:</Form.Label>
         <Form.Control
           name="titel"

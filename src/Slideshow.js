@@ -7,6 +7,7 @@ import pic5 from "./pictures/erste/Bild14.JPG";
 import pic6 from "./pictures/erste/Bild15.JPG";
 
 class Slideshow extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -60,6 +61,7 @@ class Slideshow extends React.Component {
   }
 
   render() {
+    
     return (
       <div id="slideshow">
         <a className="slideTileContainer">

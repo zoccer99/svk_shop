@@ -3,14 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import axios from "axios";
 import ContributionForm from "./admin/ContributionForm";
-import login from "./admin/login";
+import Login from "./admin/login";
 import FullContribution from "./Blog/FullContribution";
 import Dashboard from "./admin/Dashboard";
 import Footer from "./Footer";
 import Home from "./Home";
 import MainBanner from "./MainBanner";
 import NoMatch from "./NoMatch";
-import ProtectedRoute from "./ProtectedRoute";
 import Sponsoren from "./Sponsoren";
 import Bambinies from "./teams/Bambinies";
 import CJunioren from "./teams/CJunioren";
@@ -19,17 +18,17 @@ import EJunioren from "./teams/EJunioren";
 import FirstTeam from "./teams/FirstTeam";
 import FJunioren from "./teams/FJunioren";
 import SecondTeam from "./teams/SecondTeam";
-import Register from "./admin/Register";
+import Protectedroute from "./components/ui/Protectedroute";
 
 class Welcome extends React.Component {
   constructor() {
     super();
     this.state = {
       Contributions: [],
-      isLoggedIn: false,
       isFetching: false,
     };
   }
+
 
   fetchDB = () => {
     axios
@@ -99,15 +98,25 @@ class Welcome extends React.Component {
             {/* mapping of contribution routes depending on their props */}
             <Route exact path="/aktuelles" component={Sponsoren}></Route>
             <Route exact path="/sponsoren" component={Sponsoren}></Route>
-            <ProtectedRoute
+            <Route
               exact
               path="/createContribution"
-              component={ContributionForm}
-            />
-            {/* <Route exact path="/login" component={login}></Route> */}
-            <Route exact path="/login" component={Register}></Route>
+              component={() => (
+                <ContributionForm login={this.state.isLoggedIn} />
+              )}
+            ></Route>
+             <Route exact path="/login" component={Login}></Route> 
 
-            <Route exact path="/Dashboard" component={Dashboard} />
+            <Route
+              exact
+              path="/Dashboard"
+              component={() => <Protectedroute outlet={<Dashboard />} />}
+            />
+            <Route
+              exact
+              path="/contributionForm"
+              component={() => <Protectedroute outlet={<ContributionForm />} />}
+            />
 
             <Route exact path="*">
               {/* catch error 404  */}

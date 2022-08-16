@@ -12,22 +12,22 @@ function Dashboard() {
 
   const listContribution = () => {
     axios
-      // .get("http://localhost:5000/Contribution/") 
+      //.get("http://localhost:5000/Contribution/") 
       .get('https://svkretzschau.herokuapp.com/Contribution/')
       .then((res) => {
         const data = res.data;
         setContributions(data);
-        console.log(data)
       });
   };
 
   const deleteContribution = (id) => {
     axios
-      // .delete("http://localhost:5000/Contribution/", {
+      //.delete("http://localhost:5000/Contribution/", {
       .delete("https://svkretzschau.herokuapp.com/Contribution/", {
         data: { _id: id},
       })
       .then((res) => {
+        console.log(res)
         if (res != 200) return;
         alert("löschen erfolgreich ")
       })
