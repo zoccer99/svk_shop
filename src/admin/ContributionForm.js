@@ -10,7 +10,7 @@ import FullContribution from "../Blog/FullContribution";
 const ContributionForm = () => {
   const [showMockup, setShowMockup] = useState(false);
   const [values, setValues] = useState({
-    autor: "",
+    autor: "Christian Gebert",
     titel: "",
     text: "",
     teamClass: "Erste Mannschaft",
@@ -43,15 +43,22 @@ const ContributionForm = () => {
       zeit: new Date(),
     };
 
-    if (newContribution.some((e) => e == "")) {
+    if (
+      newContribution.autor === "" ||
+      newContribution.titel === "" ||
+      newContribution.text === "" ||
+      newContribution.text === ""
+    ) {
       alert("Bitte alle Felder ausfüllen");
     } //check if anything is empty
     else {
       //axios
-        // .post("http://localhost:5000/Contribution/add", newContribution)
-        axios
-          .post(
-            "https://svkretzschau.herokuapp.com/Contribution/add",newContribution)
+      // .post("http://localhost:5000/Contribution/add", newContribution)
+      axios
+        .post(
+          "https://svkretzschau.herokuapp.com/Contribution/add",
+          newContribution
+        )
         .then(() => {
           alert("erfolgreich hinzugefügt");
           setValues({
