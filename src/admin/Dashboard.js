@@ -12,8 +12,8 @@ function Dashboard() {
 
   const listContribution = () => {
     axios
-      .get("http://localhost:5000/Contribution/") 
-      //.get('https://svkretzschau.herokuapp.com/Contribution/')
+      //.get("http://localhost:5000/Contribution/") 
+      .get('https://svkretzschau.herokuapp.com/Contribution/')
       .then((res) => {
         const data = res.data;
         setContributions(data);
@@ -22,8 +22,8 @@ function Dashboard() {
 
   const deleteContribution = (id) => {
     axios
-      .delete("http://localhost:5000/Contribution/", {
-      //.delete("https://svkretzschau.herokuapp.com/Contribution/", {
+      //.delete("http://localhost:5000/Contribution/", {
+      .delete("https://svkretzschau.herokuapp.com/Contribution/", {
         data: { _id: id},
       })
       .then((res) => {

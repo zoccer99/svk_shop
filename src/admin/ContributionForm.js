@@ -52,13 +52,13 @@ const ContributionForm = () => {
       alert("Bitte alle Felder ausfüllen");
     } //check if anything is empty
     else {
-      axios
-      .post("http://localhost:5000/Contribution/add", newContribution)
       // axios
-      //   .post(
-      //     "https://svkretzschau.herokuapp.com/Contribution/add",
-      //     newContribution
-      //   )
+      // .post("http://localhost:5000/Contribution/add", newContribution)
+      axios
+        .post(
+          "https://svkretzschau.herokuapp.com/Contribution/add",
+          newContribution
+        )
         .then(() => {
           alert("erfolgreich hinzugefügt");
           setValues({

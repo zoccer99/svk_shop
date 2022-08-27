@@ -35,7 +35,7 @@ const FirstTeam = () => {
   };
 
   const fetchStats = async () => {
-    const players = await fetch("http://localhost:5000/playerStats");
+    const players = await fetch("http://svkretzschau.herokuapp.com/playerStats");
     const payload = await players.json();
     return payload;
   };
