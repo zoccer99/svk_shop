@@ -9,8 +9,8 @@ const ProtectedRoute = (props) => {
 
   useEffect(() => {
     axios
-      //.get("http://localhost:5000/auth", {
-        .get("https://svkretzschau.herokuapp.com/auth", {
+      .get("http://localhost:5000/auth", {
+      //  .get("https://svkretzschau.herokuapp.com/auth", {
         headers: {
           "x-access-token": "Bearer " + localStorage.getItem("jwt"),
         },

@@ -24,25 +24,25 @@ const PlayerCard = (props) => {
       {isMobile ? (
         <div className="d-flex align-items-center justify-content-between playerInfoWrapper mb-1 rounded">
           <img src={props.img} alt="..." className="img-fluid w-25 rounded" style={{maxWidth: "80px"}} />
-          <h3 className="d-flex align-items-center justify-content-center text-center border-right sm-150" >{props.name}</h3>
+          <h3 className="d-flex align-items-center justify-content-center text-center border-right sm-150" >{props.player.name}</h3>
           <div className=" d-md-block d-flex ">
             <div className="row ">
               <div className="col-12 col-md-4">
                 <div className="d-flex justify-content-around align-items-center">
                   <FontAwesomeIcon icon={faShoePrints} />
-                  <h5 className="m-0">{props.einsätze}</h5>
+                  <h5 className="m-0">{props.player.matches}</h5>
                 </div>
               </div>
               <div className="col-12 col-md-4 ">
                 <div className="d-flex justify-content-around align-items-center ">
                   <FontAwesomeIcon icon={faFutbol} />
-                  <h5 className="m-0 ">{props.tore}</h5>
+                  <h5 className="m-0 ">{props.player.goals}</h5>
                 </div>
               </div>
               <div className="col-12 col-md-4 ">
                 <div className="d-flex justify-content-around align-items-center ">
                   <FontAwesomeIcon icon={faHandshakeSimple} />
-                  <h5 className="m-0">{props.assists}</h5>
+                  <h5 className="m-0">{props.player.assists}</h5>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@ const PlayerCard = (props) => {
           <img src={props.img} className="card-img-top " alt="..." />
           <div className="card-body">
             <h4 className="card-text d-flex ">
-              {props.name}
+              {props.player.name}
             </h4>
           </div>
           <div className="container py-3 d-none d-md-block">
@@ -61,19 +61,19 @@ const PlayerCard = (props) => {
               <div className="col-12 col-md-4">
                 <div className="d-flex justify-content-around align-items-center">
                   <FontAwesomeIcon icon={faShoePrints} />
-                  <h5 className="m-0">{props.einsätze}</h5>
+                  <h5 className="m-0">{props.player.matches}</h5>
                 </div>
               </div>
               <div className="col-12 col-md-4 ">
                 <div className="d-flex justify-content-around align-items-center ">
                   <FontAwesomeIcon icon={faFutbol} />
-                  <h5 className="m-0 ">{props.tore}</h5>
+                  <h5 className="m-0 ">{props.player.goals}</h5>
                 </div>
               </div>
               <div className="col-12 col-md-4 ">
                 <div className="d-flex justify-content-around align-items-center ">
                   <FontAwesomeIcon icon={faHandshakeSimple} />
-                  <h5 className="m-0">{props.assists}</h5>
+                  <h5 className="m-0">{props.player.assists}</h5>
                 </div>
               </div>
             </div>

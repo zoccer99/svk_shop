@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ContributionSite from "../Blog/ContributionSite";
 import firstTeam from "../pictures/firstTeam.jpg";
 import ModalImage from "react-modal-image";
@@ -25,12 +25,34 @@ import SpielerLai from "../pictures/Spielerprofile/Lai_Tino.JPG";
 import SpielerSchmeißer from "../pictures/Spielerprofile/Schmeißer_Claas.JPG";
 import SpielerBalschunTom from "../pictures/Spielerprofile/Balschun_Nico.JPG";
 import SpielerScholz from "../pictures/Spielerprofile/Scholz_Christoph.JPG";
+import noPicture  from "../pictures/Spielerprofile/noAccount.jpg";
 
 const FirstTeam = () => {
+  const [players, setPlayers] = useState([]);
   const randomNumbers = (max) => {
     let temp = Math.floor(Math.random() * max);
     return temp;
   };
+
+  const fetchStats = async () => {
+    const players = await fetch("http://localhost:5000/playerStats");
+    const payload = await players.json();
+    return payload;
+  };
+
+  const findPlayerByName = (arr, playerName) => {
+    const player = arr.find((e) => e.name === playerName)
+    if( player ===undefined) {
+      return  {"_id":"630a0fe3f5052a9e51d14acb","name":"Andreas Ludwig","matches":1,"goals":0,"assists":0}
+    }
+    else {
+      return player;
+    }
+  };
+
+  useEffect(async () => {
+    setPlayers(await fetchStats());
+  }, []);
   return (
     <div className="container-fluid w-lg-75">
       <blockquote className="blockquote">
@@ -68,34 +90,29 @@ const FirstTeam = () => {
       </div>
 
       <ContributionSite team="first" />
-
+      <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
+        Spielerprofile
+      </h3>
       <div className="container ">
         <div className="row mb-md-5">
           <div className="col-12 col-sm-4 d-flex justify-content-center  ">
             <PlayerCard
+              id={1}
               img={SpielerLudwig}
-              name="Andreas Ludwig"
-              einsätze={0}
-              tore={0}
-              assists={0}
+              player= {findPlayerByName(players,"Andreas Ludwig") }
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center ">
             <PlayerCard
               img={SpielerBarth}
-              name="Andre Barth"
-              einsätze={0}
-              tore="0"
-              assists="0"
+              player= {findPlayerByName(players,"Andre Barth") }
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerFriedrich}
               name="Ole Friedrich"
-              einsätze={0}
-              tore="0"
-              assists="0"
+              player= {findPlayerByName(players,"Ole Friedrich")}
             />
           </div>
         </div>
@@ -104,27 +121,21 @@ const FirstTeam = () => {
             <PlayerCard
               img={SpielerLages}
               name="Manuel Lages"
-              einsätze={0}
-              tore={0}
-              assists={0}
+              player= {findPlayerByName(players,"Manuel Lages")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerPauli}
               name="Christopher Pauli"
-              einsätze={0}
-              tore="0"
-              assists="0"
+              player= {findPlayerByName(players,"Christopher Pauli")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerPiehl}
               name="Daniel Piehl"
-              einsätze={0}
-              tore="0"
-              assists="0"
+              player= {findPlayerByName(players,"Daniel Piehl")}
             />
           </div>
         </div>
@@ -133,27 +144,21 @@ const FirstTeam = () => {
             <PlayerCard
               img={SpielerProtz}
               name="Christian Protz"
-              einsätze={0}
-              tore={0}
-              assists={0}
+              player= {findPlayerByName(players,"Christian Protz")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
-              img={SpielerSeifert}
+              img={noPicture}
               name="Phillipp Seifert"
-              einsätze={0}
-              tore="0"
-              assists="0"
+              player= {findPlayerByName(players,"Phillipp Seifert")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerFuhrmann}
               name="Patrick Fuhrmann"
-              einsätze={0}
-              tore={0}
-              assists={0}
+              player= {findPlayerByName(players,"Patrick Fuhrmann")}
             />
           </div>
         </div>
@@ -162,18 +167,14 @@ const FirstTeam = () => {
             <PlayerCard
               img={SpielerNico}
               name="Nico Balschun"
-              einsätze={randomNumbers(30)}
-              tore={randomNumbers(30)}
-              assists={randomNumbers(30)}
+              player= {findPlayerByName(players,"Nico Balschun")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerElias}
               name="Elias Just"
-              einsätze={randomNumbers(30)}
-              tore={randomNumbers(30)}
-              assists={randomNumbers(30)}
+              player= {findPlayerByName(players,"Elias Just")}
             />
           </div>
 
@@ -181,9 +182,7 @@ const FirstTeam = () => {
             <PlayerCard
               img={SpielerErik}
               name="Erik Dobierzin"
-              einsätze={randomNumbers(0)}
-              tore={randomNumbers(0)}
-              assists={randomNumbers(0)}
+              player= {findPlayerByName(players,"Erik Dobierzin")}
             />
           </div>
         </div>
@@ -191,28 +190,19 @@ const FirstTeam = () => {
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerLeon}
-              name="Leon Gottschild"
-              einsätze={randomNumbers(30)}
-              tore={randomNumbers(20)}
-              assists={randomNumbers(15)}
+              player= {findPlayerByName(players,"Leon Gottschild")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerEtienne}
-              name="Etienne Kalkofen"
-              einsätze={randomNumbers(27)}
-              tore="13"
-              assists="10"
+              player= {findPlayerByName(players,"Etienne Kalkofen")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerSchmeißer}
-              name="Claas Schmeißer"
-              einsätze={0}
-              tore="0"
-              assists="0"
+              player= {findPlayerByName(players,"Claas Schmeißer")}
             />
           </div>
         </div>
@@ -221,18 +211,14 @@ const FirstTeam = () => {
             <PlayerCard
               img={SpielerAlbert}
               name="Daniel Albert"
-              einsätze={0}
-              tore="0"
-              assists="0"
+              player= {findPlayerByName(players,"Daniel Albert")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
-              img={SpielerBalschunTom}
+              img={noPicture}
               name="Tom Balschun"
-              einsätze={0}
-              tore={0}
-              assists={0}
+              player= {findPlayerByName(players,"Tom Balschun")}
             />
           </div>
 
@@ -240,9 +226,7 @@ const FirstTeam = () => {
             <PlayerCard
               img={SpielerLai}
               name="Tino Lai"
-              einsätze={randomNumbers(30)}
-              tore={randomNumbers(30)}
-              assists={randomNumbers(30)}
+              player= {findPlayerByName(players,"Tino Lai")}
             />
           </div>
         </div>
@@ -251,9 +235,7 @@ const FirstTeam = () => {
             <PlayerCard
               img={SpielerScholz}
               name="Christopher Scholz"
-              einsätze={0}
-              tore="0"
-              assists="0"
+              player= {findPlayerByName(players,"Christopher Scholz")}
             />
           </div>
         </div>
