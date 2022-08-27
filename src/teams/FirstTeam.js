@@ -35,7 +35,7 @@ const FirstTeam = () => {
   };
 
   const fetchStats = async () => {
-    const players = await fetch("http://svkretzschau.herokuapp.com/playerStats");
+    const players = await fetch("https://svkretzschau.herokuapp.com/playerStats");
     const payload = await players.json();
     return payload;
   };
@@ -43,7 +43,7 @@ const FirstTeam = () => {
   const findPlayerByName = (arr, playerName) => {
     const player = arr.find((e) => e.name === playerName)
     if( player ===undefined) {
-      return  {"_id":"630a0fe3f5052a9e51d14acb","name":"Andreas Ludwig","matches":1,"goals":0,"assists":0}
+      return  {"_id":"630a0fe3f5052a9e51d14acb","name":"loading","matches":"loading","goals":"loading","assists":"loading"}
     }
     else {
       return player;
