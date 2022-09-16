@@ -19,6 +19,8 @@ import FirstTeam from "./teams/FirstTeam";
 import FJunioren from "./teams/FJunioren";
 import SecondTeam from "./teams/SecondTeam";
 import Protectedroute from "./components/ui/Protectedroute";
+import UserProvider from "./Hooks/useContext";
+import Navigation from "./Navigation";
 
 class Welcome extends React.Component {
   constructor() {
@@ -28,7 +30,6 @@ class Welcome extends React.Component {
       isFetching: false,
     };
   }
-
 
   fetchDB = () => {
     axios
@@ -49,7 +50,9 @@ class Welcome extends React.Component {
     return (
       <div>
         <Router>
-          <MainBanner />
+          <UserProvider>
+            <Navigation />
+          </UserProvider>
 
           {/* Switch & Routing */}
           <Switch>
@@ -105,7 +108,7 @@ class Welcome extends React.Component {
                 <ContributionForm login={this.state.isLoggedIn} />
               )}
             ></Route>
-             <Route exact path="/login" component={Login}></Route> 
+            <Route exact path="/login" component={Login}></Route>
 
             <Route
               exact

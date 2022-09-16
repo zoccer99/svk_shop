@@ -29,10 +29,6 @@ import noPicture  from "../pictures/Spielerprofile/noAccount.jpg";
 
 const FirstTeam = () => {
   const [players, setPlayers] = useState([]);
-  const randomNumbers = (max) => {
-    let temp = Math.floor(Math.random() * max);
-    return temp;
-  };
 
   const fetchStats = async () => {
     const players = await fetch("https://svkretzschau.herokuapp.com/playerStats");
