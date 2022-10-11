@@ -3,9 +3,11 @@ import axios from "axios";
 import { Button, Form, Label } from "react-bootstrap";
 
 import examplePic from "../pictures/erste/Bild19.JPG";
-
 import Card from "../Blog/Card";
 import FullContribution from "../Blog/FullContribution";
+import env from "react-dotenv";
+
+
 
 const ContributionForm = () => {
   const [showMockup, setShowMockup] = useState(false);
@@ -15,6 +17,7 @@ const ContributionForm = () => {
     text: "",
     teamClass: "Erste Mannschaft",
   });
+  
 
   let options = {
     weekday: "long",

@@ -89,14 +89,19 @@ class Welcome extends React.Component {
               component={Bambinies}
             ></Route>
             {this.state.Contributions.map((contribution, index) => (
-              <FullContribution
+              <Route
+                key={index}
                 exact
                 path={`/${contribution.teamClass}/${contribution.titel}`}
-                key={index}
-                headline={contribution.titel}
-                tailline=""
-                text={contribution.text}
-              />
+                component={() => (
+                  <FullContribution
+                    key={index}
+                    headline={contribution.titel}
+                    tailline=""
+                    text={contribution.text.replace(/(?:\r\n|\r|\n)/g, "<br>")}
+                  />
+                )}
+              ></Route>
             ))}
             {/* mapping of contribution routes depending on their props */}
             <Route exact path="/aktuelles" component={Sponsoren}></Route>

@@ -54,14 +54,14 @@ function LoginModal(props) {
         <InputGroup className="mb-3">
           <InputGroup.Text>password</InputGroup.Text>
           <Form.Control
-            placeholder="27Hkjhnjkweiwhw"
+            placeholder="password..."
             name="password"
             onChange={handleChange}
           />
         </InputGroup>
       </Modal.Body>
       <Modal.Footer className="d-flex justify-content-center">
-        <span onClick={handleSubmit}>Bestätigen</span>
+        <Button onClick={handleSubmit}>Bestätigen</Button>
       </Modal.Footer>
     </Modal>
   );

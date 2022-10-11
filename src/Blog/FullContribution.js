@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firstTeam from "../pictures/firstTeam.jpg";
+import ReactHtmlParser from "react-html-parser";
 
 class FullContribution extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class FullContribution extends Component {
     this.importAllImages(
       require.context("../pictures/ErsteSpiel", false, /\.(png|jpe?g|svg|JPG)$/)
     );
+    console.log(this.props.text)
   }
   render() {
     return (
@@ -58,7 +60,7 @@ class FullContribution extends Component {
         <div className="d-flex justify-content-center align-items-center mt-5 ">
           <div className="countdownContainer rounded p-4 w-lg-75 mx-2">
             <h2 className="">{this.props.headline}</h2>
-            <h5>{this.props.text}</h5>
+            <p>{ ReactHtmlParser (this.props.text)}</p>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ const Avatar = (props) => {
   const [target, setTarget] = useState(null);
   const ref = useRef(null);
 
-  console.log(props)
+  console.log(props);
   const handleClick = (event) => {
     setShow(!show);
     setTarget(event.target);
@@ -15,15 +15,18 @@ const Avatar = (props) => {
 
   const logout = () => {
     localStorage.clear();
-  }
+  };
   return (
     <>
-   
-      <div className={`d-flex  align-items-center`} ref = {ref} onClick={handleClick}>
+      <div
+        className={`d-flex  align-items-center`}
+        ref={ref}
+        onClick={handleClick}
+      >
         <div className="me-2">{props.name}</div>
         <BsPerson />
       </div>
-      {/* <Overlay
+      <Overlay
         show={show}
         target={target}
         placement="bottom"
@@ -31,17 +34,21 @@ const Avatar = (props) => {
         containerPadding={20}
       >
         <Popover id="popover-contained">
-          <Popover.Header as="h3">Account Optionen</Popover.Header>
-          <Popover.Body>
-            <div className="d-flex flex-column">
-            <strong>Account</strong> 
-            <a href="">Beiträge</a>
-            <a href ="">Dashboard</a>
-            <a href="" onClick={logout}>Ausloggen</a>
+          <Popover.Title as="h3">Account Optionen</Popover.Title>
+          <Popover.Content>
+            <div>
+              <div className="d-flex flex-column">
+                <strong>Account</strong>
+                <a href="">Beiträge</a>
+                <a href="">Dashboard</a>
+                <a href="" onClick={logout}>
+                  Ausloggen
+                </a>
+              </div>
             </div>
-          </Popover.Body>
+          </Popover.Content>
         </Popover>
-      </Overlay> */}
+      </Overlay>
     </>
   );
 };

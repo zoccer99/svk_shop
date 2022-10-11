@@ -20,14 +20,19 @@ export default class Card extends React.Component {
     super(props);
     this.state = {
       cssClassName: "",
+      url: "",
     };
+  }
+
+  componentDidMount() {
+    const encodedUri = (`/${this.props.teamClass}/${this.props.titel}`);
+    this.setState({ url: encodedUri });
   }
 
   changeAuthorPic = (str) => {
     if (str === "Christian Gebert") {
       return gebbi;
-    }
-    else if (str === "Matthias Scholle") {
+    } else if (str === "Matthias Scholle") {
       return scholle;
     }
   };
@@ -47,7 +52,7 @@ export default class Card extends React.Component {
 
   render() {
     return (
-      <div className="containerCard " style={{maxWidth: "400px"}}>
+      <div className="containerCard " style={{ maxWidth: "400px" }}>
         <div className="card">
           <Link
             style={{ textDecoration: "none" }}
@@ -60,7 +65,7 @@ export default class Card extends React.Component {
                 className="card__image"
               />
             </div>
-            <div className="card__body" style={{height: "200px"}}>
+            <div className="card__body" style={{ height: "200px" }}>
               <span className={`tag ${this.changeColor(this.props.teamClass)}`}>
                 {this.props.teamClass}
               </span>

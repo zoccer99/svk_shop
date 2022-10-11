@@ -39,6 +39,7 @@ function Navigation() {
           <Nav.Link as={Link} to="/Junioren/G-Junioren">
             G-Junioren
           </Nav.Link>
+
           <LoginIcon />
         </Nav>
       </Navbar.Collapse>
