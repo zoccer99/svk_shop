@@ -55,7 +55,6 @@ function Home(props) {
             gastmannschaft={nextGame[1]}
           />
           <ContributionSite />
-          <MyImageGallery />
           <div style={{ height: "100px" }}></div>
           <Sponsoren />
         </div>
