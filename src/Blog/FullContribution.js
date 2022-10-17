@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import firstTeam from "../pictures/firstTeam.jpg";
 import ReactHtmlParser from "react-html-parser";
 import MyImageGallery from "./MyImageGallery";
+import MyEditor from "../admin/Editor";
 
 class FullContribution extends Component {
   constructor(props) {
@@ -60,7 +61,6 @@ class FullContribution extends Component {
             <em>{this.props.tailline}</em>
           </p>
         </div> */}
-
         <div className="d-flex justify-content-center align-items-center mt-5 ">
           <div className="countdownContainer rounded p-4 w-lg-75 mx-2">
             <h2 className="">{this.props.headline}</h2>

@@ -20,14 +20,14 @@ function LoginModal(props) {
     e.preventDefault();
     try {
       const res = await axios.post(
-        //"https://svkretzschau.herokuapp.com/Users/",
-        "http://localhost:5000/users",
+        "https://svkretzschau.herokuapp.com/Users/",
+        //"http://localhost:5000/users",
         loginCredentials
       );
       if (res.status === 200) {
         localStorage.setItem("jwt", res.data["accessToken"]);
         localStorage.setItem("user", loginCredentials["username"]);
-        window.location.href = "http://localhost:3000/dashboard"
+        window.location.href = "https://sv-kretzschau.de/dashboard"
       }
     } catch (err) {
       if (err.response.status === 401) {

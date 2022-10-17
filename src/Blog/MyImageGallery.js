@@ -51,7 +51,7 @@ const MyImageGallery = (props) => {
     }
     setfinalImages(formattedImages);
   }, []);
-  return <ImageGallery items={finalImages || images}  additionalClass="w-75" originalWidth = "200px"/>;
+  return <ImageGallery items={finalImages || images}  additionalClass="w-75" />;
 };
 
 export default MyImageGallery;
