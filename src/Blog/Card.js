@@ -69,7 +69,7 @@ export default class Card extends React.Component {
               <span className={`tag ${this.changeColor(this.props.teamClass)}`}>
                 {this.props.teamClass}
               </span>
-              <h4 className="lead">{this.props.titel}</h4>
+              <h4 className="lead ">{this.props.titel}</h4>
               <p>{maxWords(this.props.text)}</p>
             </div>
             <div className="card__footer">

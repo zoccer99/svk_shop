@@ -4,6 +4,7 @@ import MobileGrid from "./MobileGrid";
 import Sponsoren from "./Sponsoren";
 import Countdown from "./Coundown";
 import ContributionSite from "./Blog/ContributionSite";
+import MyImageGallery from "./Blog/MyImageGallery"
 
 function Home(props) {
   const games = [
@@ -54,6 +55,7 @@ function Home(props) {
             gastmannschaft={nextGame[1]}
           />
           <ContributionSite />
+          <MyImageGallery />
           <div style={{ height: "100px" }}></div>
           <Sponsoren />
         </div>

@@ -89,6 +89,7 @@ class Welcome extends React.Component {
               component={Bambinies}
             ></Route>
             {this.state.Contributions.map((contribution, index) => (
+              
               <Route
                 key={index}
                 exact
@@ -99,6 +100,7 @@ class Welcome extends React.Component {
                     headline={contribution.titel}
                     tailline=""
                     text={contribution.text.replace(/(?:\r\n|\r|\n)/g, "<br>")}
+                    customImages = {contribution.customImages}
                   />
                 )}
               ></Route>

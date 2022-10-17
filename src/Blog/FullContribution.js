@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import firstTeam from "../pictures/firstTeam.jpg";
 import ReactHtmlParser from "react-html-parser";
+import MyImageGallery from "./MyImageGallery";
 
 class FullContribution extends Component {
   constructor(props) {
@@ -38,17 +39,20 @@ class FullContribution extends Component {
     this.importAllImages(
       require.context("../pictures/ErsteSpiel", false, /\.(png|jpe?g|svg|JPG)$/)
     );
-    console.log(this.props.text)
   }
   render() {
     return (
       <div className="fullContributionWrapper">
+        
         <div className="d-flex justify-content-center">
+          {this.props.customImages ? 
+          <MyImageGallery /> :
           <img
-            className="w-lg-75 img-fluid img-thumbnail"
-            src={this.state.imageSrc}
-            alt="SpielBild"
+          className="w-lg-75 img-fluid img-thumbnail"
+          src={this.state.imageSrc}
+          alt="SpielBild"
           ></img>
+        }
         </div>
         {/* <div className="fixed-bg bg-1" id="bg-1">
           <h1 className="main-text">{this.props.headline}</h1>
