@@ -4,24 +4,11 @@ import MobileGrid from "./MobileGrid";
 import Sponsoren from "./Sponsoren";
 import Countdown from "./Coundown";
 import ContributionSite from "./Blog/ContributionSite";
-import MyImageGallery from "./Blog/MyImageGallery"
+import MyImageGallery from "./Blog/MyImageGallery";
 
 function Home(props) {
   const games = [
-    ["SV Kretzschau", "TSV Tröglitz", new Date("August 21,2022 15:00")],
-    ["FSV Osterfeld", "SV Kretzschau", new Date("August 28,2022 15:00")],
-    ["SV Kretzschau", "SC Naumburg II", new Date("September 11,2022 15:00")],
-    ["SG Langendorf", "SV Kretzschau", new Date("September 18,2022 15:00")],
-    [
-      "SV Kretzschau",
-      "SG Großgrimma/Hohenmölsen",
-      new Date("October 02,2022 15:00"),
-    ],
-    ["Baumersroadear SV", "SV Kretzschau", new Date("October 09,2022 15:00")],
-    ["SV Kretzschau", "TSV Großkorbetha", new Date("October 16,2022 15:00")],
-    ["SV Eintracht Profen", "SV Kretzschau", new Date("October 23,2022 15:00")],
-    ["SV Kretzschau", "FC Zeitz II", new Date("October 30,2022 15:00")],
-    ["SV Kretzschau", "FC ZWK Nebra", new Date("November 06,2022 15:00")],
+    ["SG Burgwerben", "SV Kretzschau", new Date("December 04,2022 14:00")],
   ];
 
   const filterGamesForDate = (games) => {
@@ -37,9 +24,15 @@ function Home(props) {
     let values = Object.values(diffs);
     let min = Math.min(...values);
     let game = Object.keys(diffs).find((key) => diffs[key] === min);
-    game = game.split(","); //string to array
-    game[2] = new Date(game[2])
-    return game;
+    try {
+
+      game = game.split(","); //string to array
+      game[2] = new Date(game[2]);
+      return game; // [heim, gast, zeit]
+    }
+    catch {
+      return undefined;
+    }
   };
 
   let nextGame = filterGamesForDate(games);
@@ -50,10 +43,9 @@ function Home(props) {
       <div className="d-flex flex-column align-items-center ">
         <div className="CounConWrapper">
           <Countdown
-            date={nextGame[2]}
-            heimmannschaft={nextGame[0]}
-            gastmannschaft={nextGame[1]}
+           game = {nextGame}
           />
+
           <ContributionSite />
           <div style={{ height: "100px" }}></div>
           <Sponsoren />
