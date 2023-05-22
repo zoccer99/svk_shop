@@ -68,8 +68,8 @@ class Countdown extends React.Component {
     return (
       <>
         {this.state.noGame ? (
-          <div>
-            <h2>Kein anstehendes Spiel</h2>
+          <div className="mt-5">
+            <h2 clas>Kein anstehendes Spiel</h2>
           </div>
         ) : (
           <div className="d-flex justify-content-center ">
