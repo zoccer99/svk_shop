@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import {
   faFutbol,
   faShoePrints,
-  faHandshakeSimple,
+  faHandshake,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -41,7 +41,7 @@ const PlayerCard = (props) => {
               </div>
               <div className="col-12 col-md-4 ">
                 <div className="d-flex justify-content-around align-items-center ">
-                  <FontAwesomeIcon icon={faHandshakeSimple} />
+                  <FontAwesomeIcon icon={faHandshake} />
                   <h5 className="m-0">{props.player.assists}</h5>
                 </div>
               </div>
@@ -72,7 +72,7 @@ const PlayerCard = (props) => {
               </div>
               <div className="col-12 col-md-4 ">
                 <div className="d-flex justify-content-around align-items-center ">
-                  <FontAwesomeIcon icon={faHandshakeSimple} />
+                  <FontAwesomeIcon icon={faHandshake} />
                   <h5 className="m-0">{props.player.assists}</h5>
                 </div>
               </div>
