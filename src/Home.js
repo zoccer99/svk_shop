@@ -11,10 +11,11 @@ function Home(props) {
     ["SG Burgwerben", "SV Kretzschau", new Date("December 04,2022 14:00")],
   ];
 
-  const filterGamesForDate = (games) => {
+  
+   const filterGamesForDate = (games) => {
     const today = new Date();
     let diffs = {};
-
+  
     for (let i in games) {
       let diff = games[i][2] - today;
       if (diff > 0) {
@@ -39,18 +40,14 @@ function Home(props) {
   return (
     <>
       <Slideshow />
-      <MobileGrid />
-      <div className="d-flex flex-column align-items-center ">
-        <div className="CounConWrapper">
-          <Countdown
-           game = {nextGame}
-          />
-
-          <ContributionSite />
-          <div style={{ height: "100px" }}></div>
-          <Sponsoren />
-        </div>
-      </div>
+            <MobileGrid />
+            <div className="d-flex flex-column align-items-center">
+                <div className="CounConWrapper">
+                    <Countdown date={new Date('June 04,2023 15:00')} heimmannschaft="SV Kretzschau" gastmannschaft="SV Eintracht Profen"/>
+                    <ContributionSite />
+                    <Sponsoren />
+                </div>
+            </div>
     </>
   );
 }
