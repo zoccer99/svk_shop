@@ -4,15 +4,13 @@ class Countdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      noGame: true,
       timeLeft: {
-        d: 0,
-        h: 0,
-        m: 0,
-        s: 0,
+        d: undefined,
+        h: undefined,
+        m: undefined,
+        s: undefined,
       },
-      date: props.date,
-      heimmannschaft: props.heimmannschaft,
-      gastmannschaft: props.gastmannschaft,
     };
   }
 
@@ -47,69 +45,86 @@ class Countdown extends React.Component {
   }
 
   tick() {
-    var temp = this.state.date - new Date();
-    if (temp <= 0) {
+    try {
+
+      var temp = this.props.game[2] - new Date();
+      if (temp <= 0) {
+        clearInterval(this.timerID);
+        temp = 0;
+      }
+      this.setState({
+        noGame: false,
+        timeLeft: this.secondsToTime(temp),
+      });
+    } catch {
       clearInterval(this.timerID);
-      temp = 0;
+      this.setState({
+        noGame: true,
+      });
     }
-    this.setState({
-      timeLeft: this.secondsToTime(temp),
-    });
   }
 
   render() {
     return (
-      <div className="d-flex justify-content-center ">
-        <div className="countdownContainer my-4 p-3">
-          <h1 className="text-center m-4">Nächstes Spiel</h1>
-          <div className="d-flex justify-content-around m-3">
-            <div>
-              <h3 className="text-center">{this.state.heimmannschaft}</h3>
-            </div>
-            <div>
-              <h3 className="text-center">-</h3>
-            </div>
+      <>
+        {this.state.noGame ? (
+          <div className="mt-5">
+            <h2 clas>Kein anstehendes Spiel</h2>
+          </div>
+        ) : (
+          <div className="d-flex justify-content-center ">
+            <div className="countdownContainer my-4 p-3">
+              <h1 className="text-center m-4">Nächstes Spiel</h1>
+              <div className="d-flex justify-content-around m-3">
+                <div>
+                  <h3 className="text-center">{this.props.game[0]}</h3>
+                </div>
+                <div>
+                  <h3 className="text-center">-</h3>
+                </div>
 
-            <div>
-              <h3 className="text-center">{this.state.gastmannschaft}</h3>
+                <div>
+                  <h3 className="text-center">{this.props.game[1]}</h3>
+                </div>
+              </div>
+              <div className="d-flex justify-content-around">
+                <div className="d-flex flex-column ">
+                  <h4 className="d-sm-none">D</h4>
+                  <h4 className="d-none d-sm-block">Tage</h4>
+                  <div className="align-self-center">
+                    {" "}
+                    <h3>{this.state.timeLeft.d}</h3>
+                  </div>
+                </div>
+                <div className="d-flex flex-column">
+                  <h4 className="d-sm-none">H</h4>
+                  <h4 className="d-none d-sm-block">Stunden</h4>
+                  <div className="align-self-center">
+                    {" "}
+                    <h3>{this.state.timeLeft.h}</h3>
+                  </div>
+                </div>
+                <div className="d-flex flex-column">
+                  <h4 className="d-sm-none">M</h4>
+                  <h4 className="d-none d-sm-block">Minuten</h4>
+                  <div className="align-self-center">
+                    {" "}
+                    <h3>{this.state.timeLeft.m}</h3>
+                  </div>
+                </div>
+                <div className="d-flex flex-column">
+                  <h4 className="d-sm-none">S</h4>
+                  <h4 className="d-none d-sm-block">Sekunden</h4>
+                  <div className="align-self-center ">
+                    {" "}
+                    <h3>{this.state.timeLeft.s}</h3>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="d-flex justify-content-around">
-            <div className="d-flex flex-column ">
-            <h4 className="d-sm-none">D</h4>
-              <h4 className="d-none d-sm-block">Tage</h4>
-              <div className="align-self-center">
-                {" "}
-                <h3>{this.state.timeLeft.d}</h3>
-              </div>
-            </div>
-            <div className="d-flex flex-column">
-              <h4 className="d-sm-none">H</h4>
-              <h4 className="d-none d-sm-block">Stunden</h4>
-              <div className="align-self-center">
-                {" "}
-                <h3>{this.state.timeLeft.h}</h3>
-              </div>
-            </div>
-            <div className="d-flex flex-column">
-            <h4 className="d-sm-none">M</h4>
-              <h4 className="d-none d-sm-block">Minuten</h4>
-              <div className="align-self-center">
-                {" "}
-                <h3>{this.state.timeLeft.m}</h3>
-              </div>
-            </div>
-            <div className="d-flex flex-column">
-            <h4 className="d-sm-none">S</h4>
-              <h4 className="d-none d-sm-block">Sekunden</h4>
-              <div className="align-self-center ">
-                {" "}
-                <h3>{this.state.timeLeft.s}</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        )}
+      </>
     );
   }
 }

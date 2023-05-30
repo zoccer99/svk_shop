@@ -1,30 +1,32 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import FirstTeam from "./FirstTeam";
-import SecondTeam from "./SecondTeam";
-import CJunioren from "./CJunioren";
-import DJunioren from "./DJunioren";
-import EJunioren from "./EJunioren";
-import FJunioren from "./FJunioren";
-import Bambinies from "./Bambinies";
-import Home from "./Home";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import axios from "axios";
+import ContributionForm from "./admin/ContributionForm";
+import Login from "./admin/login";
+import FullContribution from "./Blog/FullContribution";
+import Dashboard from "./admin/Dashboard";
 import Footer from "./Footer";
+import Home from "./Home";
 import MainBanner from "./MainBanner";
 import NoMatch from "./NoMatch";
-import ContributionForm from "./admin/ContributionForm";
-import login from "./admin/login";
-import axios from "axios";
-import FullContribution from "./FullContribution";
 import Sponsoren from "./Sponsoren";
-import Dashboard from "./Dashboard";
-import ProtectedRoute from "./ProtectedRoute";
+import Bambinies from "./teams/Bambinies";
+import CJunioren from "./teams/CJunioren";
+import DJunioren from "./teams/DJunioren";
+import EJunioren from "./teams/EJunioren";
+import FirstTeam from "./teams/FirstTeam";
+import FJunioren from "./teams/FJunioren";
+import SecondTeam from "./teams/SecondTeam";
+import Protectedroute from "./components/ui/Protectedroute";
+import UserProvider from "./Hooks/useContext";
+import Navigation from "./Navigation";
 
 class Welcome extends React.Component {
   constructor() {
     super();
     this.state = {
       Contributions: [],
-      isLoggedIn: false,
       isFetching: false,
     };
   }
@@ -48,12 +50,13 @@ class Welcome extends React.Component {
     return (
       <div>
         <Router>
-          <MainBanner />
+          <UserProvider>
+            <Navigation />
+          </UserProvider>
 
           {/* Switch & Routing */}
           <Switch>
             <Route path="/" exact component={Home}></Route>
-            {/* <Route exact path="/ersteMannschaft" component={}></Route> */}
             <Route exact path="/ersteMannschaft" component={FirstTeam}></Route>
             <Route
               exact
@@ -86,22 +89,44 @@ class Welcome extends React.Component {
               component={Bambinies}
             ></Route>
             {this.state.Contributions.map((contribution, index) => (
-              <FullContribution
+              
+              <Route
+                key={index}
                 exact
                 path={`/${contribution.teamClass}/${contribution.titel}`}
-                key={index}
-                headline={contribution.titel}
-                tailline=""
-                text={contribution.text}
-              />
+                component={() => (
+                  <FullContribution
+                    key={index}
+                    headline={contribution.titel}
+                    tailline=""
+                    text={contribution.text.replace(/(?:\r\n|\r|\n)/g, "<br>")}
+                    customImages = {contribution.customImages}
+                  />
+                )}
+              ></Route>
             ))}
             {/* mapping of contribution routes depending on their props */}
             <Route exact path="/aktuelles" component={Sponsoren}></Route>
             <Route exact path="/sponsoren" component={Sponsoren}></Route>
-            <ProtectedRoute exact path="/createContribution" component={ContributionForm} />
-            <Route exact path="/loginUser" component={login}></Route>
+            <Route
+              exact
+              path="/createContribution"
+              component={() => (
+                <ContributionForm login={this.state.isLoggedIn} />
+              )}
+            ></Route>
+            <Route exact path="/login" component={Login}></Route>
 
-            <ProtectedRoute exact path="/Dashboard" component={Dashboard} />
+            <Route
+              exact
+              path="/Dashboard"
+              component={() => <Protectedroute outlet={<Dashboard />} />}
+            />
+            <Route
+              exact
+              path="/contributionForm"
+              component={() => <Protectedroute outlet={<ContributionForm />} />}
+            />
 
             <Route exact path="*">
               {/* catch error 404  */}
