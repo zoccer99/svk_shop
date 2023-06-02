@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import gebbi from "../pictures/profiles/gebbi.webp";
 import scholle from "../pictures/profiles/Scholle.jpg";
@@ -15,7 +15,7 @@ function maxWords(str) {
   }
 }
 
-export default class Card extends React.Component {
+export default class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
