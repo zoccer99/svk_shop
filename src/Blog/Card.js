@@ -16,8 +16,8 @@ function maxWords(str) {
 }
 
 export default class Card extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       cssClassName: "",
       url: "",
