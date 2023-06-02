@@ -1,3 +1,4 @@
+import React from "react";
 import ModalImage from "react-modal-image";
 import ContactJunior from "../ContactJunior";
 import DJuniorenPic from "../pictures/Junioren/D-Junioren.jpeg";

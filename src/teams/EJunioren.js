@@ -1,3 +1,4 @@
+import React from "react";
 import ContactJunior from "../ContactJunior";
 
 const EJunioren = () => {
