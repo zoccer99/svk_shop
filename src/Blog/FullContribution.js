@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import firstTeam from "../pictures/firstTeam.jpg";
-import ReactHtmlParser from "react-html-parser";
 import MyImageGallery from "./MyImageGallery";
 import MyEditor from "../admin/Editor";
 
@@ -64,7 +63,7 @@ class FullContribution extends Component {
         <div className="d-flex justify-content-center align-items-center mt-5 ">
           <div className="countdownContainer rounded p-4 w-lg-75 mx-2">
             <h2 className="">{this.props.headline}</h2>
-            <p>{ ReactHtmlParser (this.props.text)}</p>
+            <p dangerouslySetInnerHTML={{__html: this.props.text}}></p>
           </div>
         </div>
       </div>
