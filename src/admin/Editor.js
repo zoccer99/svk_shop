@@ -28,7 +28,7 @@ class MyEditor extends React.Component {
   _onTab(e) {
     const maxDepth = 4;
     this.onChange(RichUtils.onTab(e, this.state.editorState, maxDepth));
-  }
+  } 
 
   _toggleBlockType(blockType) {
     this.onChange(

@@ -4,7 +4,7 @@ class Countdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      noGame: true,
+      noGame: false,
       timeLeft: {
         d: undefined,
         h: undefined,
@@ -47,7 +47,7 @@ class Countdown extends React.Component {
   tick() {
     try {
 
-      var temp = this.props.game[2] - new Date();
+      var temp = this.props.date - new Date();
       if (temp <= 0) {
         clearInterval(this.timerID);
         temp = 0;
@@ -77,14 +77,14 @@ class Countdown extends React.Component {
               <h1 className="text-center m-4">Nächstes Spiel</h1>
               <div className="d-flex justify-content-around m-3">
                 <div>
-                  <h3 className="text-center">{this.props.game[0]}</h3>
+                  <h3 className="text-center">{this.props.heimmannschaft}</h3>
                 </div>
                 <div>
                   <h3 className="text-center">-</h3>
                 </div>
 
                 <div>
-                  <h3 className="text-center">{this.props.game[1]}</h3>
+                  <h3 className="text-center">{this.props.gastmannschaft}</h3>
                 </div>
               </div>
               <div className="d-flex justify-content-around">
