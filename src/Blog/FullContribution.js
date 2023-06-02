@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import firstTeam from "../pictures/firstTeam.jpg";
 import MyImageGallery from "./MyImageGallery";
-import MyEditor from "../admin/Editor";
 
 class FullContribution extends Component {
   constructor(props) {
