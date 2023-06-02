@@ -71,7 +71,7 @@ function Card(props) {
               />
               <div className="user__info">
                 <h5>{props.author}</h5>
-                <small>{props.time}</small>
+                {/* <small>{props.time}</small> */}
               </div>
             </div>
           </div>
