@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "./Card.js";
+import Card from "./Card";
 
 //TODO: Datenbank verbinden
 
@@ -35,7 +35,6 @@ const ContributionSite = (props) => {
 
   useEffect(() => {
     const getImages = async() => {
-
       const response = await fetch(
         "https://svkretzschau.herokuapp.com/Contribution/"
         );
