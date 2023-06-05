@@ -22,7 +22,7 @@ class FullContribution extends Component {
     this.setState({
       imageSrc:
         this.state.images[Math.floor(Math.random() * (imgArr.length - 1))]
-          .default,
+          ,
     });
   };
 

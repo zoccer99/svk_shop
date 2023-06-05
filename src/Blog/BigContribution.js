@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import firstTeam from "../pictures/firstTeam.jpg";
 
 const BigContribution = (props) => {
- 
-
   
   return (
     //TODO: creative img cluster
