@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import gebbi from "../pictures/profiles/gebbi.webp";
@@ -71,7 +72,7 @@ function Card(props) {
               />
               <div className="user__info">
                 <h5>{props.author}</h5>
-                {/* <small>{props.time}</small> */}
+                <small>{props.time}</small>
               </div>
             </div>
           </div>
