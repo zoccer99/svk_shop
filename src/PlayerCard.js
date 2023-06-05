@@ -16,7 +16,7 @@ const PlayerCard = (props) => {
 
   useEffect(() => {
     window.addEventListener("resize", updateViewport);
-    return () => window.removeEventListener("resize", updateViewport);
+    return () => {window.removeEventListener("resize", updateViewport);}
   });
 
   return (

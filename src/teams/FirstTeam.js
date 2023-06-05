@@ -46,8 +46,13 @@ const FirstTeam = () => {
     }
   };
 
-  useEffect(async () => {
-    setPlayers(await fetchStats());
+  useEffect(() => {
+    const asyncFetch = async () => {
+      setPlayers(await fetchStats());  
+    }
+
+    asyncFetch();
+    
   }, []);
   return (
     <div className="container-fluid w-lg-75">
