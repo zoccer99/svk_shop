@@ -4,7 +4,7 @@ import Card from "./Card";
 //TODO: Datenbank verbinden
 
 const ContributionSite = (props) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [contributions, setContributions] = useState();
   const [images, setImages] = useState();
 
@@ -39,20 +39,29 @@ const ContributionSite = (props) => {
         "https://svkretzschau.herokuapp.com/Contribution/"
         );
         let data = await response.json();
-        data = sortCon(props.team, data);
-        data = sortConBydate(data);
-        setContributions(data); //beiträge von db holen
+        data = sortCon(props.team,  data);
+        data = sortConBydate(await data);
+        setContributions(await data); //beiträge von db holen
         const temp = await require
         .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
         .keys()
         .map(
-          require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+          await require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
           );
+          
           setImages(temp); //images importieren(alle)
         }
         
+        try {
+          setIsLoading(true)
+          getImages();
+          setIsLoading(false)
+        }
+        catch(err) {
+          console.log(err)
+          setIsLoading(false)
+        }
         
-      getImages()
   }, []);
   let options = {
     weekday: "long",
@@ -61,6 +70,13 @@ const ContributionSite = (props) => {
     day: "numeric",
   };
 
+  if(isLoading) {
+    return <h1>Loading..</h1>
+  }
+
+  else {
+
+  
   return (
     <div>
       <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
@@ -77,7 +93,6 @@ const ContributionSite = (props) => {
                     teamClass={conn.teamClass}
                     imgUrl={
                       images[Math.floor(Math.random() * (images.length - 1))]
-                        .default
                     } //random image
                     titel={conn.titel}
                     text={conn.text}
@@ -95,7 +110,6 @@ const ContributionSite = (props) => {
                   teamClass={conn.teamClass}
                   imgUrl={
                     images[Math.floor(Math.random() * (images.length - 1))]
-                      .default
                   } //random image
                   titel={conn.titel}
                   text={conn.text}
@@ -112,6 +126,7 @@ const ContributionSite = (props) => {
         )}
       </div>
   );
+                  }
 };
 
 export default ContributionSite;

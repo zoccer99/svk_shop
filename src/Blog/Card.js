@@ -17,7 +17,6 @@ function maxWords(str) {
 }
 
 function Card(props) {
-  const [cssClassName, setCssClassName] = useState("");
   const [url, setUrl] = useState("");
 
   useEffect(() => {
