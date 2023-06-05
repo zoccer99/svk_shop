@@ -7,7 +7,7 @@ import ContributionSite from "./Blog/ContributionSite";
 
 function Home(props) {
   const games = [
-    ["SG Burgwerben", "SV Kretzschau", new Date("December 04,2022 14:00")],
+    ["SV Kretzschau", "SG Burgwerben", new Date("June 11,2023 15:00")],
   ];
 
   
@@ -42,7 +42,7 @@ function Home(props) {
             <MobileGrid />
             <div className="d-flex flex-column align-items-center">
                 <div className="CounConWrapper">
-                    <Countdown date={new Date('June 04,2023 15:00')} heimmannschaft="SV Kretzschau" gastmannschaft="SV Eintracht Profen"/>
+                    <Countdown date={new Date('June 11,2023 15:00')} heimmannschaft="SV Kretzschau" gastmannschaft="SG Burgwerben"/>
                     <ContributionSite />
                     <Sponsoren />
                 </div>

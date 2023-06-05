@@ -24,7 +24,6 @@ const ProtectedRoute = (props) => {
         setIsAuthenticated(false);
       });
     setIsLoading(false);
-    console.log(isAuthenticated);
   }, [isAuthenticated]);
 
   return (

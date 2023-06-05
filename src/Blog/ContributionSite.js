@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import Card from "./Card.js";
 
 //TODO: Datenbank verbinden
@@ -34,21 +33,27 @@ const ContributionSite = (props) => {
   };
 
 
-  useEffect(async () => {
-    const response = await fetch(
-      "https://svkretzschau.herokuapp.com/Contribution/"
-    );
-    let data = await response.json();
-    data = sortCon(props.team, data);
-    data = sortConBydate(data);
-    setContributions(data); //beiträge von db holen
-    const temp = await require
-      .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
-      .keys()
-      .map(
-        require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
-      );
-    setImages(temp); //images importieren(alle)
+  useEffect(() => {
+    const getImages = async() => {
+
+      const response = await fetch(
+        "https://svkretzschau.herokuapp.com/Contribution/"
+        );
+        let data = await response.json();
+        data = sortCon(props.team, data);
+        data = sortConBydate(data);
+        setContributions(data); //beiträge von db holen
+        const temp = await require
+        .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+        .keys()
+        .map(
+          require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+          );
+          setImages(temp); //images importieren(alle)
+        }
+        
+        
+      getImages()
   }, []);
   let options = {
     weekday: "long",
@@ -65,7 +70,7 @@ const ContributionSite = (props) => {
         {contributions && images && (
           <div className="row justify-content-center">
             {contributions.map((conn, index) =>
-              index+1 % 3 == 0 ? (
+              index + 1 % 3 == 0 ? (
                 <div>
                   <div className="w-100"></div>
                   <Card
