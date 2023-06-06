@@ -4,6 +4,7 @@ import MobileGrid from "./MobileGrid";
 import Sponsoren from "./Sponsoren";
 import Countdown from "./Coundown";
 import ContributionSite from "./Blog/ContributionSite";
+import CookieConsent from "react-cookie-consent";
 
 function Home(props) {
   const games = [
@@ -47,6 +48,7 @@ function Home(props) {
                     <Sponsoren />
                 </div>
             </div>
+            <CookieConsent>This website uses cookies to enhance the user experience.</CookieConsent>
     </>
   );
 }
