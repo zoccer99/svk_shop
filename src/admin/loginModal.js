@@ -39,7 +39,7 @@ function LoginModal(props) {
 
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
-      <Modal.Header closeButton>
+      <Modal.Header >
         <Modal.Title id="contained-modal-title-vcenter">Login</Modal.Title>
       </Modal.Header>
       <Modal.Body className="mx-2">
@@ -54,9 +54,10 @@ function LoginModal(props) {
         <InputGroup className="mb-3">
           <InputGroup.Text>password</InputGroup.Text>
           <Form.Control
-            placeholder="password..."
+            placeholder="..."
             name="password"
             onChange={handleChange}
+            type="password"
           />
         </InputGroup>
       </Modal.Body>

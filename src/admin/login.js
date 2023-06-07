@@ -89,13 +89,13 @@ function Login() {
                       </div>
 
                       <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <Button
+                        <div
                           type="submit"
                           className="btn btn-primary btn-lg"
                           //onClick={(e) => handleSubmit(e)}
                         >
                           Login
-                        </Button>
+                        </div>
                       </div>
                     </Form>
                   </div>
