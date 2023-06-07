@@ -45,15 +45,21 @@ function Dashboard() {
         </Button>
         {/* <Button>Beiträge löschen</Button> */}
       </div>
-      <div className="w-50">
+      <div className="d-flex justify-content-center">
+        <div className="w-75">
+          <div className="d-flex flex-column g-4">
+
+
         {contributions.map((conn, index) => (
           
-          <div className="border " key={index}>
+          <div className="border border-2 border-primary rounded p-4 my-3" key={index}>
             <h3>{conn["titel"]}</h3>
             <p>{conn["text"]}</p>
             <Button onClick={() => deleteContribution(conn["_id"])}>löschen</Button>
           </div>
         ))}
+        </div>
+        </div>
       </div>
     </div>
   );
