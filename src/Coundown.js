@@ -6,10 +6,10 @@ class Countdown extends React.Component {
     this.state = {
       noGame: false,
       timeLeft: {
-        d: undefined,
-        h: undefined,
-        m: undefined,
-        s: undefined,
+        d: "\u26BD",
+        h: "\u26BD",
+        m: "\u26BD",
+        s: "\u26BD",
       },
     };
   }
