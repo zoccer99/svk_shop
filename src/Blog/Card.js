@@ -61,7 +61,7 @@ function Card(props) {
             <span className={`tag ${changeColor(props.teamClass)}`}>
               {props.teamClass}
             </span>
-            <h4 className="lead">{props.titel}</h4>
+            <h4 className="lead cardTitle">{props.titel}</h4>
             <p>{maxWords(props.text)}</p>
           </div>
           <div className="card__footer">

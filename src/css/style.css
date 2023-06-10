@@ -401,6 +401,9 @@ h1 {
   font-size: 1.5rem;
 }
 
+.cardTitle {
+}
+
 .card__footer {
   display: flex;
   padding: 1rem;
