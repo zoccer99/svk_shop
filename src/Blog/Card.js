@@ -47,7 +47,7 @@ function Card(props) {
   return (
     <div className="containerCard " style={{ maxWidth: "400px" }}>
       <div className="card">
-        <Link style={{ textDecoration: "none" }} to={url}>
+        <Link style={{ textDecoration: "none" }} to={url} >
           <div className="card__header">
             <img
               src={props.imgUrl}
@@ -55,11 +55,13 @@ function Card(props) {
               className="card__image"
             />
           </div>
-          <div className="card__body" style={{ height: "200px" }}>
+          <div className="">
+
+          <div className="card__body">
             <span className={`tag ${changeColor(props.teamClass)}`}>
               {props.teamClass}
             </span>
-            <h4 className="lead ">{props.titel}</h4>
+            <h4 className="lead">{props.titel}</h4>
             <p>{maxWords(props.text)}</p>
           </div>
           <div className="card__footer">
@@ -68,12 +70,13 @@ function Card(props) {
                 src={changeAuthorPic(props.author)}
                 alt="user__image"
                 className="user__image"
-              />
+                />
               <div className="user__info">
                 <h5>{props.author}</h5>
                 <small>{props.time}</small>
               </div>
             </div>
+                </div>
           </div>
         </Link>
       </div>

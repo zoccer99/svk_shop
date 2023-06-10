@@ -354,6 +354,18 @@ h1 {
   gap: .5rem;
 }
 
+@media screen and (min-width: 768px) { 
+	.card__body {
+		padding: 1rem;
+		display: flex;
+		height: 255px;
+		flex-direction: column;
+		gap: .5rem;
+	  }
+  
+  
+}
+
 
 
 .tag {
@@ -392,7 +404,10 @@ h1 {
 .card__footer {
   display: flex;
   padding: 1rem;
-  margin-top: 1rem;
+}
+
+.cardLink > a {
+	height: 400px;
 }
 
 .user {
