@@ -8,7 +8,11 @@ import CookieConsent from "react-cookie-consent";
 
 function Home(props) {
   const games = [
-    ["SV Kretzschau", "SG Burgwerben", new Date("June 11,2023 15:00")],
+    ["SG Langendorf/Weißenfels", "SV Kretzschau", new Date("September 15,2023 18:00")],
+    ["SV Kretzschau", "FC ZWK Nebra", new Date("September 24,2023 15:00")],
+    ["SV Blau-Weiß Grana", "SV Kretzschau", new Date("October 01,2023 15:00")],
+    ["SV Kretzschau", "SV Eintracht Profen", new Date("October 03,2023 12:00")],
+    ["SV Kretzschau", "SG Großgrimma/Hohenmölsen", new Date("October 08,2023 15:00")],
   ];
 
   
@@ -43,7 +47,7 @@ function Home(props) {
             <MobileGrid />
             <div className="d-flex flex-column align-items-center">
                 <div className="CounConWrapper">
-                    <Countdown date={new Date('June 11,2023 15:00')} heimmannschaft="SV Kretzschau" gastmannschaft="SG Burgwerben"/>
+                    <Countdown date={new Date(nextGame[2])} heimmannschaft={nextGame[0]} gastmannschaft={nextGame[1]}/>
                     <ContributionSite />
                     <Sponsoren />
                 </div>

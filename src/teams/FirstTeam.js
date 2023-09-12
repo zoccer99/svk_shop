@@ -25,6 +25,13 @@ import SpielerLai from "../pictures/Spielerprofile/Lai_Tino.JPG";
 import SpielerSchmeißer from "../pictures/Spielerprofile/Schmeißer_Claas.JPG";
 import SpielerBalschunTom from "../pictures/Spielerprofile/Balschun_Nico.JPG";
 import SpielerScholz from "../pictures/Spielerprofile/Scholz_Christoph.JPG";
+import SpielerFreyer from "../pictures/Spielerprofile/Freyer_Christoph.JPG";
+import SpielerBeier from "../pictures/Spielerprofile/Beier_Niklas.JPG";
+import SpielerBorrmann from "../pictures/Spielerprofile/Borrmann_Samuel.JPG";
+import SpielerIrl from "../pictures/Spielerprofile/Irl_Andre.JPG";
+import SpielerKrohne from "../pictures/Spielerprofile/Krohne_Sebastian.JPG";
+import SpielerJena from "../pictures/Spielerprofile/Jena_Luca.JPG";
+import SpielerSeifertPhillip from "../pictures/Spielerprofile/Seifert_Phillip.JPG";
 import noPicture  from "../pictures/Spielerprofile/noAccount.jpg";
 
 const FirstTeam = () => {
@@ -105,10 +112,12 @@ const FirstTeam = () => {
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center ">
             <PlayerCard
-              img={SpielerBarth}
-              player= {findPlayerByName(players,"Andre Barth") }
+              img={SpielerKrohne}
+              name="Sebastian Krohne"
+              player= {findPlayerByName(players,"Sebastian Krohne") }
             />
           </div>
+          
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
               img={SpielerFriedrich}
@@ -117,12 +126,36 @@ const FirstTeam = () => {
             />
           </div>
         </div>
+
         <div className="row mb-md-5">
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
-              img={SpielerLages}
-              name="Manuel Lages"
-              player= {findPlayerByName(players,"Manuel Lages")}
+              img={SpielerJena}
+              name="Luca Jena"
+              player= {findPlayerByName(players,"Luca Jena")}
+            />
+          </div>
+          <div className="col-12 col-sm-4 d-flex justify-content-center ">
+            <PlayerCard
+              img={SpielerBarth}
+              player= {findPlayerByName(players,"Andre Barth") }
+            />
+          </div>
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+          <PlayerCard
+              img={SpielerProtz}
+              name="Christian Protz"
+              player= {findPlayerByName(players,"Christian Protz")}
+            />
+          </div>
+        </div>
+        
+        <div className="row mb-md-5">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={SpielerFreyer}
+              name="Christoph Freyer"
+              player= {findPlayerByName(players,"Christoph Freyer")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
@@ -133,24 +166,24 @@ const FirstTeam = () => {
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
-            <PlayerCard
-              img={SpielerPiehl}
-              name="Daniel Piehl"
-              player= {findPlayerByName(players,"Daniel Piehl")}
+          <PlayerCard
+              img={SpielerProtz}
+              name="Christian Protz"
+              player= {findPlayerByName(players,"Christian Protz")}
             />
           </div>
         </div>
         <div className="row mb-md-5">
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
-              img={SpielerProtz}
-              name="Christian Protz"
-              player= {findPlayerByName(players,"Christian Protz")}
+              img={SpielerBeier}
+              name="Niklas Beier"
+              player= {findPlayerByName(players,"Niklas Beier")}
             />
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
-              img={noPicture}
+              img={SpielerSeifertPhillip}
               name="Phillipp Seifert"
               player= {findPlayerByName(players,"Phillipp Seifert")}
             />
@@ -237,6 +270,20 @@ const FirstTeam = () => {
               img={SpielerScholz}
               name="Christopher Scholz"
               player= {findPlayerByName(players,"Christopher Scholz")}
+            />
+          </div>
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={SpielerIrl}
+              name="Andre Irl"
+              player= {findPlayerByName(players,"Andre Irl")}
+            />
+          </div>
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={SpielerBorrmann}
+              name="Samuel Borrmann"
+              player= {findPlayerByName(players,"Samuel Borrmann")}
             />
           </div>
         </div>
