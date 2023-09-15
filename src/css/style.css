@@ -30,6 +30,8 @@ h1 {
   font-size: 2em;
 }
 
+
+
 /* COUNTDWON */
 
 .CounConWrapper {
@@ -60,6 +62,10 @@ h1 {
 
   .w-lg-75 {
     width: 75%;
+  }
+
+  .customFontSize {
+	font-size: 1.6em;
   }
 
   /* JuiniorContact */
