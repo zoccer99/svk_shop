@@ -8,11 +8,12 @@ import CookieConsent from "react-cookie-consent";
 
 function Home(props) {
   const games = [
-    ["SG Langendorf/Weißenfels", "SV Kretzschau", new Date("September 15,2023 18:00")],
-    ["SV Kretzschau", "FC ZWK Nebra", new Date("September 24,2023 15:00")],
-    ["SV Blau-Weiß Grana", "SV Kretzschau", new Date("October 01,2023 15:00")],
-    ["SV Kretzschau", "SV Eintracht Profen", new Date("October 03,2023 12:00")],
-    ["SV Kretzschau", "SG Großgrimma/Hohenmölsen", new Date("October 08,2023 15:00")],
+    ["VfB Großgörschen", "SV Kretzschau", new Date("October 29,2023 14:00")],
+    ["SV Kretzschau", "Baumersrodaer SV", new Date("October 31,2023 14:00")],
+    ["SV Kretzschau", "SG Bad Bibra/Saubach", new Date("Nocember 05,2023 14:00")],
+    ["FSV Osterfeld", "SV Kretzschau", new Date("November 12,2023 14:00")],
+    ["1.FC Zeitz II", "SV Kretzschau", new Date("December 03,2023 13:00")],
+    ["SV Kretzschau", "SG Nessa/Teuchern", new Date("December 10,2023 13:00")],
   ];
 
   

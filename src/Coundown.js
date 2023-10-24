@@ -84,7 +84,7 @@ class Countdown extends React.Component {
                 </div>
 
                 <div>
-                  <h5 className="text-center">{this.props.gastmannschaft}</h5>
+                  <h5 className="text-center customFontSize">{this.props.gastmannschaft}</h5>
                 </div>
               </div>
               <div className="d-flex justify-content-around">
