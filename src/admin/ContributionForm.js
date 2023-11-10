@@ -54,7 +54,7 @@ const ContributionForm = () => {
       image: values["image"],
       zeit: values["time"],
     };
-    console.log("final: " + newContribution)
+    console.log("final: " + newContribution["zeit"])
 
     if (
       newContribution.autor === "" ||
