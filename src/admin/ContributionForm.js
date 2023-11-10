@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Form, Label } from "react-bootstrap";
 
@@ -7,16 +7,26 @@ import Card from "../Blog/Card";
 import FullContribution from "../Blog/FullContribution";
 import env from "react-dotenv";
 
-
-
 const ContributionForm = () => {
+  
+  const getInitialDate= () => {
+    const heute = new Date();
+    const formatiertesDatum = heute.toISOString().split("T")[0];
+    return formatiertesDatum;
+  }
+  
   const [showMockup, setShowMockup] = useState(false);
+  const [date, setDate] = useState(getInitialDate());
   const [values, setValues] = useState({
     autor: "Christian Gebert",
     titel: "",
     text: "",
     teamClass: "Erste Mannschaft",
+    time: date,
   });
+
+  
+
   
 
   let options = {
@@ -30,7 +40,6 @@ const ContributionForm = () => {
     const target = event.target;
     const name = target.name;
     setValues({ ...values, [name]: target.value });
-    console.log(values);
     setShowMockup(true);
   };
 
@@ -116,6 +125,13 @@ const ContributionForm = () => {
         <Form.Control
           as="textarea"
           name="text"
+          // value={this.state.text}
+          onChange={handleChange}
+        />
+        <Form.Label>Datum:</Form.Label>
+        <Form.Control
+          type="date"
+          name="time"
           // value={this.state.text}
           onChange={handleChange}
         />
