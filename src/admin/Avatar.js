@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, Overlay, OverlayTrigger, Popover } from "react-bootstrap";
 import { BsPerson } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Avatar = (props) => {
   const [show, setShow] = useState(false);
@@ -39,8 +40,8 @@ const Avatar = (props) => {
             <div>
               <div className="d-flex flex-column">
                 <strong>Account</strong>
-                <a href="">Beiträge</a>
-                <a href="">Dashboard</a>
+                <Link to="/dashboard">Beiträge</Link>
+                <Link to="/dashboard">Dashboard</Link>
                 <a href="" onClick={logout}>
                   Ausloggen
                 </a>

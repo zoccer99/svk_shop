@@ -74,12 +74,7 @@ const ContributionForm = () => {
         )
         .then(() => {
           alert("erfolgreich hinzugefügt");
-          setValues({
-            autor: "",
-            titel: "",
-            text: "",
-            teamClass: "",
-          });
+          
         })
         .catch((err) => {
           console.log(err);
