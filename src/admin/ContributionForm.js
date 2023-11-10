@@ -52,8 +52,9 @@ const ContributionForm = () => {
       text: values["text"],
       teamClass: values["teamClass"],
       image: values["image"],
-      zeit: new Date(),
+      zeit: values["time"],
     };
+    console.log("final: " + newContribution)
 
     if (
       newContribution.autor === "" ||
