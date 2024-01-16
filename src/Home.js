@@ -47,7 +47,7 @@ function Home(props) {
         game[2] = new Date(game[2]);
         return game; // [heim, gast, zeit]
       } catch {
-        return undefined;
+        return "undefined";
       }
     };
     setNextGame(filterGamesForDate(games));
@@ -63,7 +63,7 @@ function Home(props) {
       <div className="d-flex flex-column align-items-center">
         <div className="CounConWrapper">
           {
-          (nextGame !== undefined) ? (
+          (nextGame !== "undefined") ? (
             <Countdown
               date={new Date(nextGame[2])}
               heimmannschaft={nextGame[0]}
