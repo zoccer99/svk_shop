@@ -16,7 +16,7 @@ function Login() {
       )
       .then((res) => {
         localStorage.setItem("jwt", res.data["accessToken"]);
-        history.push("/dashboard");
+        window.history.push("/dashboard");
       })
       .catch((err) => {
         console.log("POST failed" + err);
