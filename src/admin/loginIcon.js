@@ -7,7 +7,6 @@ import { userContext } from "../Hooks/useContext";
 const LoginIcon = () => {
   const [user, setUser] = useContext(userContext);
   const [showModal, setShowModal] = useState(false);
-  console.log("user:", user)
   return (
     <>
       {user === "" ? (

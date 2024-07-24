@@ -1,7 +1,7 @@
 import axios, { Axios, AxiosResponse } from "axios";
 import React, { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
-import Login from "../../admin/login";
+import Home from "../../Home"
 
 const ProtectedRoute = (props) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -9,7 +9,6 @@ const ProtectedRoute = (props) => {
 
   useEffect(() => {
     axios
-      //.get("http://localhost:5000/auth", {
         .get("https://svkretzschau.herokuapp.com/auth", {
         headers: {
           "x-access-token": "Bearer " + localStorage.getItem("jwt"),
@@ -34,7 +33,7 @@ const ProtectedRoute = (props) => {
         <div>{props.outlet}</div>
       ) : (
         <div>
-          <Login />
+          <Home />
         </div>
       )}
     </div>

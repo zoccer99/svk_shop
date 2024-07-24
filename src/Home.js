@@ -10,23 +10,14 @@ import CookieConsent from "react-cookie-consent";
 function Home(props) {
   const [nextGame, setNextGame] = useState([undefined, undefined, undefined]);
   const games = [
-    ["SV Kretzschau", "VfB Nessa", new Date("February 18, 2024 14:00")],
-["SV Eintracht Profen", "SV Kretzschau", new Date("February 25, 2024 14:00")],
-["TSV 1893 Großkorbetha", "TSV 1893 Großkorbetha", new Date("March 03, 2024 15:00")],
-["SV Baumersroda", "SV Kretzschau", new Date("March 10, 2024 14:00")],
-["Grün-Weiß Langendorf", "Grün-Weiß Langendorf", new Date("March 17, 2024 15:00")],
-["1. FC 1924 Nebra", "SV Kretzschau", new Date("March 24, 2024 14:00")],
-["1. FC Zeitz II", "SV Kretzschau", new Date("March 28, 2024 19:00")],
-["SV Blau-Weiß Grana", "SV Kretzschau", new Date("April 07, 2024 15:00")],
-["SV Großgrimma", "SV Kretzschau", new Date("April 12, 2024 19:00")],
-["SV Spora", "SV Kretzschau", new Date("April 21, 2024 15:00")],
-["VfB Scharnhorst Großgörschen", "SV Kretzschau", new Date("April 28, 2024 15:00")],
-["SV Fortuna Bad Bibra", "SV Kretzschau", new Date("May 05, 2024 14:00")],
-["FSV Grün-Gelb Osterfeld", "SV Kretzschau", new Date("May 12, 2024 15:00")],
-["VfB Nessa", "SV Kretzschau", new Date("June 02, 2024 14:00")],
-["1. FC Zeitz II", "SV Kretzschau", new Date("June 09, 2024 15:00")]
-
-  ];
+    ["SV 1893 Kretzschau", "FC Halle-Neustadt", new Date("July 28, 2024 14:30")],
+    ["SV 1893 Kretzschau", "Droyßiger SG", new Date("July 30, 2024 18:45")],
+    ["SV 1893 Kretzschau", "SV Groitzsch 1861 e.V.", new Date("August 02, 2024 18:30")],
+    ["SV 1893 Kretzschau", "SC Naumburg II", new Date("August 11, 2024 15:00")],
+    ["SV 1893 Kretzschau", "VfB Scharnhorst Großgörschen", new Date("August 18, 2024 15:00")],
+    ["1. FC Zeitz II", "SV 1893 Kretzschau", new Date("August 25, 2024 15:00")],
+    ["SV 1893 Kretzschau", "SV Spora", new Date("August 30, 2024 18:00")]
+];
 
   useEffect(()=> {
     const filterGamesForDate = (games) => {

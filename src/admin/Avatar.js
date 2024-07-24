@@ -41,7 +41,7 @@ const Avatar = (props) => {
               <div className="d-flex flex-column">
                 <strong>Account</strong>
                 <Link to="/dashboard">Beiträge</Link>
-                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/dashboard">Dashboard</Link >
                 <a href="" onClick={logout}>
                   Ausloggen
                 </a>

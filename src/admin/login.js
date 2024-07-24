@@ -29,7 +29,6 @@ function Login() {
       username: username,
       password: password,
     };
-    //   console.log(user)
     postDB(user);
   }
 

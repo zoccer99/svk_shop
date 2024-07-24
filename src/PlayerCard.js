@@ -49,15 +49,17 @@ const PlayerCard = (props) => {
           </div>
         </div>
       ) : (
-        <div className="card playerInfoWrapper  w-75">
+        <div className="card playerInfoWrapper w-75 justify-content-between">
           <img src={props.img} className="card-img-top " alt="..." />
-          <div className="card-body">
+          <div>
+          <div className="card-body card-player-name">
             <h4 className="card-text d-flex ">
               {props.player.name}
             </h4>
           </div>
+
           <div className="container py-3 d-none d-md-block">
-            <div className="row ">
+            <div className="row">
               <div className="col-12 col-md-4">
                 <div className="d-flex justify-content-around align-items-center">
                   <FontAwesomeIcon icon={faShoePrints} />
@@ -77,6 +79,7 @@ const PlayerCard = (props) => {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       )}
