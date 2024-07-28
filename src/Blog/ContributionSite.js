@@ -83,7 +83,7 @@ const ContributionSite = (props) => {
         Aktuelle Berichte
       </h3>
         {contributions && images && (
-          <div className="row justify-content-center">
+          <div className="row justify-content-between">
             {contributions.map((conn, index) =>
               index + 1 % 3 == 0 ? (
                 <div>
