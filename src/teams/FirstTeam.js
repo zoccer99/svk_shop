@@ -29,6 +29,7 @@ import SpielerFreyer from "../pictures/Spielerprofile/Freyer_Christoph.JPG";
 import SpielerBeier from "../pictures/Spielerprofile/Beier_Niklas.JPG";
 import SpielerBorrmann from "../pictures/Spielerprofile/Borrmann_Samuel.JPG";
 import SpielerIrl from "../pictures/Spielerprofile/Irl_Andre.JPG";
+import SpielerTom from "../pictures/Spielerprofile/Balschun_Tom.JPG";
 import SpielerKrohne from "../pictures/Spielerprofile/Krohne_Sebastian.JPG";
 import SpielerJena from "../pictures/Spielerprofile/Jena_Luca.JPG";
 import SpielerSeifertPhillip from "../pictures/Spielerprofile/Seifert_Phillip.JPG";
@@ -250,7 +251,7 @@ const FirstTeam = () => {
           </div>
           <div className="col-12 col-sm-4 d-flex justify-content-center">
             <PlayerCard
-              img={noPicture}
+              img={SpielerTom}
               name="Tom Balschun"
               player= {findPlayerByName(players,"Tom Balschun")}
             />

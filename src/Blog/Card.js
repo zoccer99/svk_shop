@@ -69,9 +69,9 @@ function Card(props) {
               <img
                 src={changeAuthorPic(props.author)}
                 alt="user__image"
-                className="user__image"
+                className="user__image "
                 />
-              <div className="user__info">
+              <div className="user__info d-flex flex-column align-items-center justify-content-center">
                 <h5>{props.author}</h5>
                 <small>{props.time}</small>
               </div>
