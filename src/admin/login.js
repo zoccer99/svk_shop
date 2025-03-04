@@ -11,7 +11,7 @@ function Login() {
   function postDB(data) {
     axios
       .post(
-        "https://svkretzschau.herokuapp.com/Users/",
+        "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Users/",
         data
       )
       .then((res) => {

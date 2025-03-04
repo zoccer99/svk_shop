@@ -33,7 +33,7 @@ class Welcome extends React.Component {
 
   fetchDB = () => {
     axios
-      .get("https://svkretzschau.herokuapp.com/Contribution/")
+      .get("https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/")
       .then((res) => {
         const data = res.data;
         this.setState({ Contributions: data });

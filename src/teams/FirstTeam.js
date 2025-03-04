@@ -33,13 +33,15 @@ import SpielerTom from "../pictures/Spielerprofile/Balschun_Tom.JPG";
 import SpielerKrohne from "../pictures/Spielerprofile/Krohne_Sebastian.JPG";
 import SpielerJena from "../pictures/Spielerprofile/Jena_Luca.JPG";
 import SpielerSeifertPhillip from "../pictures/Spielerprofile/Seifert_Phillip.JPG";
+import SpielerWeißenborn from "../pictures/Spielerprofile/Weißenborn_Niclas.JPG";
+
 import noPicture  from "../pictures/Spielerprofile/noAccount.jpg";
 
 const FirstTeam = () => {
   const [players, setPlayers] = useState([]);
 
   const fetchStats = async () => {
-    const players = await fetch("https://svkretzschau.herokuapp.com/playerStats");
+    const players = await fetch("https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/playerStats");
     const payload = await players.json();
     return payload;
   };
@@ -285,6 +287,15 @@ const FirstTeam = () => {
               img={SpielerBorrmann}
               name="Samuel Borrmann"
               player= {findPlayerByName(players,"Samuel Borrmann")}
+            />
+          </div>
+        </div>
+        <div className="row mb-md-5">
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={SpielerWeißenborn}
+              name="Niclas Weißenborn"
+              player= {findPlayerByName(players,"Niclas Weißenborn")}
             />
           </div>
         </div>

@@ -69,7 +69,7 @@ const ContributionForm = () => {
       // .post("http://localhost:5000/Contribution/add", newContribution)
       axios
         .post(
-          "https://svkretzschau.herokuapp.com/Contribution/add",
+          "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/add",
           newContribution
         )
         .then(() => {

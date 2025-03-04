@@ -36,7 +36,7 @@ const ContributionSite = (props) => {
   useEffect(() => {
     const getImages = async() => {
       const response = await fetch(
-        "https://svkretzschau.herokuapp.com/Contribution/"
+        "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/"
         );
         let data = await response.json();
         data = sortCon(props.team,  data);

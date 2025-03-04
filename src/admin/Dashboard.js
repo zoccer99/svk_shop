@@ -13,7 +13,7 @@ function Dashboard() {
   const listContribution = () => {
     axios
       //.get("http://localhost:5000/Contribution/") 
-      .get('https://svkretzschau.herokuapp.com/Contribution/')
+      .get('https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/')
       .then((res) => {
         const data = res.data;
         setContributions(data);
@@ -23,7 +23,7 @@ function Dashboard() {
   const deleteContribution = (id) => {
     axios
       //.delete("http://localhost:5000/Contribution/", {
-      .delete("https://svkretzschau.herokuapp.com/Contribution/", {
+      .delete("https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/", {
         data: { _id: id},
       })
       .then((res) => {

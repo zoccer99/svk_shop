@@ -52,6 +52,6 @@
     "gh-pages": "^3.2.3"
   },
   "react-dotenv": {
-    "DB_SERVER": "https://svkretzschau.herokuapp.com/"
+    "DB_SERVER": "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/"
   }
 }
