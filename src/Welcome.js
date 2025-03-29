@@ -89,23 +89,26 @@ class Welcome extends React.Component {
               path="/Junioren/G-Junioren"
               component={Bambinies}
             ></Route>
-            {this.state.Contributions.map((contribution, index) => (
-              
-              <Route
-                key={index}
-                exact
-                path={`/${contribution.teamClass}/${contribution.titel}`}
-                component={() => (
-                  <FullContribution
-                    key={index}
-                    headline={contribution.titel}
-                    tailline=""
-                    text={contribution.text.replace(/(?:\r\n|\r|\n)/g, "<br>")}
-                    customImages = {contribution.customImages}
-                  />
-                )}
-              ></Route>
-            ))}
+            {Array.isArray(this.state.Contributions) &&
+              this.state.Contributions.map((contribution, index) => (
+                <Route
+                  key={index}
+                  exact
+                  path={`/${contribution.teamClass}/${contribution.titel}`}
+                  component={() => (
+                    <FullContribution
+                      key={index}
+                      headline={contribution.titel}
+                      tailline=""
+                      text={contribution.text.replace(
+                        /(?:\r\n|\r|\n)/g,
+                        "<br>"
+                      )}
+                      customImages={contribution.customImages}
+                    />
+                  )}
+                ></Route>
+              ))}
             {/* mapping of contribution routes depending on their props */}
             <Route exact path="/aktuelles" component={Sponsoren}></Route>
             <Route exact path="/sponsoren" component={Sponsoren}></Route>

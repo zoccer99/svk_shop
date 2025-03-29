@@ -32,36 +32,40 @@ const ContributionSite = (props) => {
     return array;
   };
 
-
   useEffect(() => {
-    const getImages = async() => {
-      const response = await fetch(
-
-        `${process.env.BACKEND_URI}/Contribution/`);
-        let data = await response.json();
-        data = sortCon(props.team,  data);
-        data = sortConBydate(await data);
-        setContributions(await data); //beiträge von db holen
-        const temp = await require
+    const getImages = async () => {
+      const response = await fetch(`${process.env.BACKEND_URI}/Contribution/`);
+      if ((!response, ok)) throw new Error("Fehler beim Laden");
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("Antwort ist kein JSON!");
+      }
+      let data = await response.json();
+      data = sortCon(props.team, data);
+      data = sortConBydate(await data);
+      setContributions(await data); //beiträge von db holen
+      const temp = await require
         .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
         .keys()
         .map(
-          await require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
-          );
-          
-          setImages(temp); //images importieren(alle)
-        }
-        
-        try {
-          setIsLoading(true)
-          getImages();
-          setIsLoading(false)
-        }
-        catch(err) {
-          console.log(err)
-          setIsLoading(false)
-        }
-        
+          await require.context(
+            "../pictures/erste",
+            false,
+            /\.(png|jpe?g|svg|JPG)$/
+          )
+        );
+
+      setImages(temp); //images importieren(alle)
+    };
+
+    try {
+      setIsLoading(true);
+      getImages();
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err);
+      setIsLoading(false);
+    }
   }, []);
   let options = {
     weekday: "long",
@@ -70,22 +74,18 @@ const ContributionSite = (props) => {
     day: "numeric",
   };
 
-  if(isLoading) {
-    return <h1>Loading..</h1>
-  }
-
-  else {
-
-  
-  return (
-    <div>
-      <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
-        Aktuelle Berichte
-      </h3>
+  if (isLoading) {
+    return <h1>Loading..</h1>;
+  } else {
+    return (
+      <div>
+        <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
+          Aktuelle Berichte
+        </h3>
         {contributions && images && (
           <div className="row justify-content-between">
             {contributions.map((conn, index) =>
-              index + 1 % 3 == 0 ? (
+              index + (1 % 3) == 0 ? (
                 <div>
                   <div className="w-100"></div>
                   <Card
@@ -125,8 +125,8 @@ const ContributionSite = (props) => {
           </div>
         )}
       </div>
-  );
-                  }
+    );
+  }
 };
 
 export default ContributionSite;
