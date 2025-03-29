@@ -13,7 +13,7 @@ function Dashboard() {
   const listContribution = () => {
     axios
       //.get("http://localhost:5000/Contribution/") 
-      .get(`${process.env.BACKEND_URI}/Contribution/`)
+      .get(`${process.env.REACT_APP_BACKEND_URI}/Contribution/`)
       .then((res) => {
         const data = res.data;
         setContributions(data);
@@ -22,7 +22,7 @@ function Dashboard() {
 
   const deleteContribution = (id) => {
     axios
-      .delete(`${process.env.BACKEND_URI}/Contribution`, {
+      .delete(`${process.env.REACT_APP_BACKEND_URI}/Contribution`, {
         data: { _id: id},
       })
       .then((res) => {

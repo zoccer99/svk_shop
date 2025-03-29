@@ -34,7 +34,7 @@ class Welcome extends React.Component {
   fetchDB = () => {
     axios
 
-      .get(`${process.env.BACKEND_URI}/Contribution/`)
+      .get(`${process.env.REACT_APP_BACKEND_URI}/Contribution/`)
       .then((res) => {
         const data = res.data;
         this.setState({ Contributions: data });

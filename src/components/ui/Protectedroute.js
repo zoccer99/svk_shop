@@ -9,7 +9,7 @@ const ProtectedRoute = (props) => {
 
   useEffect(() => {
     axios
-        .get(`${process.env.BACKEND_URI}/auth`, {
+        .get(`${process.env.REACT_APP_BACKEND_URI}/auth`, {
         headers: {
           "x-access-token": "Bearer " + localStorage.getItem("jwt"),
         },

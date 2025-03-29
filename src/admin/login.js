@@ -11,7 +11,7 @@ function Login() {
   function postDB(data) {
     axios
       .post(
-        `${process.env.BACKEND_URI}/Users/`,
+        `${process.env.REACT_APP_BACKEND_URI}/Users/`,
         data
       )
       .then((res) => {

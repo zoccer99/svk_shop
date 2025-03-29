@@ -41,7 +41,7 @@ const FirstTeam = () => {
   const [players, setPlayers] = useState([]);
 
   const fetchStats = async () => {
-    const players = await fetch(`${process.env.BACKEND_URI}/playerStats`);
+    const players = await fetch(`${process.env.REACT_APP_BACKEND_URI}/playerStats`);
     if (!players.ok) throw new Error("Fehler beim Laden");
 
     const contentType = players.headers.get("content-type");

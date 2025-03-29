@@ -20,7 +20,7 @@ function LoginModal(props) {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${process.env.BACKEND_URI}/Users/`,
+        `${process.env.REACT_APP_BACKEND_URI}/Users/`,
         //"http://localhost:5000/users",
         loginCredentials
       );

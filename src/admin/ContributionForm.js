@@ -69,7 +69,7 @@ const ContributionForm = () => {
       // .post("http://localhost:5000/Contribution/add", newContribution)
       axios
         .post(
-          `${process.env.BACKEND_URI}/Contribution/add`,
+          `${process.env.REACT_APP_BACKEND_URI}/Contribution/add`,
           newContribution
         )
         .then(() => {
