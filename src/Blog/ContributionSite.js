@@ -35,7 +35,7 @@ const ContributionSite = (props) => {
   useEffect(() => {
     const getImages = async () => {
       const response = await fetch(`${process.env.BACKEND_URI}/Contribution/`);
-      if ((!response, ok)) throw new Error("Fehler beim Laden");
+      if (!response.ok) throw new Error("Fehler beim Laden");
       const contentType = response.headers.get("content-type");
       if (!contentType || !contentType.includes("application/json")) {
         throw new Error("Antwort ist kein JSON!");
