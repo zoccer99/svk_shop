@@ -36,12 +36,8 @@ const ContributionSite = (props) => {
   useEffect(() => {
     const getImages = async() => {
       const response = await fetch(
-<<<<<<< HEAD
-        "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/"
-=======
-        `${process.env.BACKEND_URI}/Contribution/`
->>>>>>> 17a5b45 (added: .env file for CHANGED backend URI)
-        );
+
+        `${process.env.BACKEND_URI}/Contribution/`);
         let data = await response.json();
         data = sortCon(props.team,  data);
         data = sortConBydate(await data);
