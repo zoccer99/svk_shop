@@ -13,11 +13,7 @@ function Dashboard() {
   const listContribution = () => {
     axios
       //.get("http://localhost:5000/Contribution/") 
-<<<<<<< HEAD
-      .get('https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/')
-=======
       .get(`${process.env.BACKEND_URI}/Contribution/`)
->>>>>>> 17a5b45 (added: .env file for CHANGED backend URI)
       .then((res) => {
         const data = res.data;
         setContributions(data);
@@ -26,12 +22,7 @@ function Dashboard() {
 
   const deleteContribution = (id) => {
     axios
-      //.delete("http://localhost:5000/Contribution/", {
-<<<<<<< HEAD
-      .delete("https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/", {
-=======
       .delete(`${process.env.BACKEND_URI}/Contribution`, {
->>>>>>> 17a5b45 (added: .env file for CHANGED backend URI)
         data: { _id: id},
       })
       .then((res) => {

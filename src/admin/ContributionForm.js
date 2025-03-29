@@ -69,11 +69,7 @@ const ContributionForm = () => {
       // .post("http://localhost:5000/Contribution/add", newContribution)
       axios
         .post(
-<<<<<<< HEAD
-          "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/add",
-=======
           `${process.env.BACKEND_URI}/Contribution/add`,
->>>>>>> 17a5b45 (added: .env file for CHANGED backend URI)
           newContribution
         )
         .then(() => {
