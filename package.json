@@ -52,6 +52,10 @@
     "gh-pages": "^3.2.3"
   },
   "react-dotenv": {
+<<<<<<< HEAD
     "DB_SERVER": "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/"
+=======
+    "DB_SERVER": "http://svkretzschau.duckdns.org:5000/"
+>>>>>>> 17a5b45 (added: .env file for CHANGED backend URI)
   }
 }

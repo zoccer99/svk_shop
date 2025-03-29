@@ -20,7 +20,11 @@ function LoginModal(props) {
     e.preventDefault();
     try {
       const res = await axios.post(
+<<<<<<< HEAD
         "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Users/",
+=======
+        `${process.env.BACKEND_URI}/Users/`,
+>>>>>>> 17a5b45 (added: .env file for CHANGED backend URI)
         //"http://localhost:5000/users",
         loginCredentials
       );

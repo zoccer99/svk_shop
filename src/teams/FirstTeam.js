@@ -41,7 +41,7 @@ const FirstTeam = () => {
   const [players, setPlayers] = useState([]);
 
   const fetchStats = async () => {
-    const players = await fetch("https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/playerStats");
+    const players = await fetch(`${process.env.BACKEND_URI}/playerStats`);
     const payload = await players.json();
     return payload;
   };

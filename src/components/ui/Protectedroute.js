@@ -9,7 +9,11 @@ const ProtectedRoute = (props) => {
 
   useEffect(() => {
     axios
+<<<<<<< HEAD
         .get("https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/auth", {
+=======
+        .get(`${process.env.BACKEND_URI}/auth`, {
+>>>>>>> 17a5b45 (added: .env file for CHANGED backend URI)
         headers: {
           "x-access-token": "Bearer " + localStorage.getItem("jwt"),
         },
