@@ -38,38 +38,36 @@ const ContributionSite = (props) => {
   };
 
   useEffect(() => {
-    const getImages = async () => {
-      try {
-        setIsLoading(true);
-
-        const response = await fetch(
-          "https://svkretzschau.duckdns.org/Contribution/"
+    const getImages = async() => {
+      setIsLoading(true);
+      const response = await fetch(
+        "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/"
         );
         let data = await response.json();
-        data = sortCon(props.team, data);
-        data = sortConBydate(data);
-        setContributions(data);
-
-        const temp = require
-          .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
-          .keys()
-          .map(
-            require.context(
-              "../pictures/erste",
-              false,
-              /\.(png|jpe?g|svg|JPG)$/
-            )
+        data = sortCon(props.team,  data);
+        data = sortConBydate(await data);
+        setContributions(await data); //beiträge von db holen
+        const temp = await require
+        .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+        .keys()
+        .map(
+          await require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
           );
-
-        setImages(temp);
-        setIsLoading(false);
-      } catch (err) {
-        console.error("❌ Fehler beim Laden der Beiträge:", err);
-        setIsLoading(false);
-      }
-    };
-
-    getImages();
+          
+          setImages(temp); //images importieren(alle)
+          setIsLoading(false);
+        }
+        
+        try {
+          setIsLoading(true)
+          getImages();
+          setIsLoading(false)
+        }
+        catch(err) {
+          console.log(err)
+          setIsLoading(false)
+        }
+        
   }, []);
 
   let options = {

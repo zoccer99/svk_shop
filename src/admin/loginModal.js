@@ -20,7 +20,7 @@ function LoginModal(props) {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://svkretzschau.duckdns.org/Users/",
+        `${process.env.REACT_APP_BACKEND_URI}/Users/`,
         //"http://localhost:5000/users",
         loginCredentials
       );
