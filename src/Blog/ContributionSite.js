@@ -41,7 +41,7 @@ const ContributionSite = (props) => {
     const getImages = async() => {
       setIsLoading(true);
       const response = await fetch(
-        "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/"
+        `${process.env.REACT_APP_BACKEND_URI}/Contribution/`
         );
         let data = await response.json();
         data = sortCon(props.team,  data);
