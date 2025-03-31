@@ -20,7 +20,7 @@ function LoginModal(props) {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Users/",
+        "https://svkretzschau.duckdns.org/Users/",
         //"http://localhost:5000/users",
         loginCredentials
       );

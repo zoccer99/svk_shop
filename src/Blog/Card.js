@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import gebbi from "../pictures/profiles/gebbi.webp";
 import scholle from "../pictures/profiles/Scholle.jpg";
+import admin from "../pictures/profiles/admin.png"
 
 function maxWords(str) {
   if (str != null) {
@@ -29,6 +30,9 @@ function Card(props) {
       return gebbi;
     } else if (str === "Matthias Scholle") {
       return scholle;
+    }
+    else if (str === "admin") {
+      return admin;
     }
   };
 

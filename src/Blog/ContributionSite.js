@@ -7,6 +7,7 @@ const ContributionSite = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [contributions, setContributions] = useState();
   const [images, setImages] = useState();
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const sortCon = (teamclass, conntribution) => {
     //Filter der Contributions nach teamklaasen für erste/zweite Seite
@@ -32,37 +33,45 @@ const ContributionSite = (props) => {
     return array;
   };
 
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
 
   useEffect(() => {
-    const getImages = async() => {
-      const response = await fetch(
-        "https://071c-2003-d5-d741-ee79-c2a9-6316-e2cb-ac49.ngrok-free.app/Contribution/"
+    const getImages = async () => {
+      try {
+        setIsLoading(true);
+
+        const response = await fetch(
+          "https://svkretzschau.duckdns.org/Contribution/"
         );
         let data = await response.json();
-        data = sortCon(props.team,  data);
-        data = sortConBydate(await data);
-        setContributions(await data); //beiträge von db holen
-        const temp = await require
-        .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
-        .keys()
-        .map(
-          await require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+        data = sortCon(props.team, data);
+        data = sortConBydate(data);
+        setContributions(data);
+
+        const temp = require
+          .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
+          .keys()
+          .map(
+            require.context(
+              "../pictures/erste",
+              false,
+              /\.(png|jpe?g|svg|JPG)$/
+            )
           );
-          
-          setImages(temp); //images importieren(alle)
-        }
-        
-        try {
-          setIsLoading(true)
-          getImages();
-          setIsLoading(false)
-        }
-        catch(err) {
-          console.log(err)
-          setIsLoading(false)
-        }
-        
+
+        setImages(temp);
+        setIsLoading(false);
+      } catch (err) {
+        console.error("❌ Fehler beim Laden der Beiträge:", err);
+        setIsLoading(false);
+      }
+    };
+
+    getImages();
   }, []);
+
   let options = {
     weekday: "long",
     year: "numeric",
@@ -70,30 +79,44 @@ const ContributionSite = (props) => {
     day: "numeric",
   };
 
-  if(isLoading) {
-    return <h1>Loading..</h1>
-  }
+  if (isLoading) {
+    return <h1>Loading..</h1>;
+  } else {
+    return (
+      <div>
+        <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
+          Aktuelle Berichte
+        </h3>
 
-  else {
-
-  
-  return (
-    <div>
-      <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
-        Aktuelle Berichte
-      </h3>
         {contributions && images && (
-          <div className="row justify-content-between">
-            {contributions.map((conn, index) =>
-              index + 1 % 3 == 0 ? (
-                <div>
-                  <div className="w-100"></div>
+          <>
+            <div className="row justify-content-between">
+              {contributions.slice(0, visibleCount).map((conn, index) =>
+                index + 1 % 3 === 0 ? (
+                  <div key={index}>
+                    <div className="w-100"></div>
+                    <Card
+                      teamClass={conn.teamClass}
+                      imgUrl={
+                        images[Math.floor(Math.random() * (images.length - 1))]
+                      }
+                      titel={conn.titel}
+                      text={conn.text}
+                      category={conn.category}
+                      author={conn.autor}
+                      time={new Date(conn.zeit).toLocaleDateString(
+                        "de-DE",
+                        options
+                      )}
+                    />
+                  </div>
+                ) : (
                   <Card
                     key={index}
                     teamClass={conn.teamClass}
                     imgUrl={
                       images[Math.floor(Math.random() * (images.length - 1))]
-                    } //random image
+                    }
                     titel={conn.titel}
                     text={conn.text}
                     category={conn.category}
@@ -103,30 +126,23 @@ const ContributionSite = (props) => {
                       options
                     )}
                   />
-                </div>
-              ) : (
-                <Card
-                  key={index}
-                  teamClass={conn.teamClass}
-                  imgUrl={
-                    images[Math.floor(Math.random() * (images.length - 1))]
-                  } //random image
-                  titel={conn.titel}
-                  text={conn.text}
-                  category={conn.category}
-                  author={conn.autor}
-                  time={new Date(conn.zeit).toLocaleDateString(
-                    "de-DE",
-                    options
-                  )}
-                />
-              )
+                )
+              )}
+            </div>
+
+            {/* 👉 Mehr laden-Button */}
+            {visibleCount < contributions.length && (
+              <div className="text-center my-4">
+                <button className="btn btn-primary" onClick={loadMore}>
+                  Mehr laden
+                </button>
+              </div>
             )}
-          </div>
+          </>
         )}
       </div>
-  );
-                  }
+    );
+  }
 };
 
 export default ContributionSite;
