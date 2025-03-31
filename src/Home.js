@@ -10,14 +10,17 @@ import CookieConsent from "react-cookie-consent";
 function Home(props) {
   const [nextGame, setNextGame] = useState([undefined, undefined, undefined]);
   const games = [
-    ["SV 1893 Kretzschau", "FC Halle-Neustadt", new Date("July 28, 2024 14:30")],
-    ["SV 1893 Kretzschau", "Droyßiger SG", new Date("July 30, 2024 18:45")],
-    ["SV 1893 Kretzschau", "SV Groitzsch 1861 e.V.", new Date("August 02, 2024 18:30")],
-    ["SV 1893 Kretzschau", "SC Naumburg II", new Date("August 11, 2024 15:00")],
-    ["SV 1893 Kretzschau", "VfB Scharnhorst Großgörschen", new Date("August 18, 2024 15:00")],
-    ["1. FC Zeitz II", "SV 1893 Kretzschau", new Date("August 25, 2024 15:00")],
-    ["SV 1893 Kretzschau", "SV Spora", new Date("August 30, 2024 18:00")]
-];
+    ["FC ZWK Nebra", "SV 1893 Kretzschau", new Date("April 6, 2025 14:00")],
+    ["SV 1893 Kretzschau", "SG Nessa/Teuchern", new Date("April 13, 2025 15:00")],
+    ["SV 1893 Kretzschau", "TSV Großkorbetha", new Date("April 27, 2025 15:00")],
+    ["SV 1893 Kretzschau", "FSV Klosterhäseler", new Date("May 4, 2025 15:00")],
+    ["SpG Lützen/Meuchen", "SV 1893 Kretzschau", new Date("May 11, 2025 15:00")],
+    ["SV 1893 Kretzschau", "SG Blau-Weiß Bad Kösen", new Date("May 18, 2025 15:00")],
+    ["SG Langendorf/WFV", "SV 1893 Kretzschau", new Date("May 25, 2025 15:00")],
+    ["VfB Scharnhorst Großgörschen", "SV 1893 Kretzschau", new Date("June 1, 2025 14:00")],
+    ["SV 1893 Kretzschau", "ESV Herrengosserstedt", new Date("June 15, 2025 14:00")]
+  ];
+  
 
   useEffect(()=> {
     const filterGamesForDate = (games) => {

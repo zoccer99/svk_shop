@@ -53,11 +53,9 @@ const ContributionSite = (props) => {
         .map(
           await require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
           );
-          
           setImages(temp); //images importieren(alle)
           setIsLoading(false);
         }
-        
         try {
           setIsLoading(true)
           getImages();
