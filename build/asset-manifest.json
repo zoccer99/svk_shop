@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.51a159f7.css",
-    "main.js": "/static/js/main.98357553.js",
+    "main.css": "/static/css/main.1fc77974.css",
+    "main.js": "/static/js/main.7ba50bf0.js",
     "static/media/Bild22.JPG": "/static/media/Bild22.e3efce1e9d824681f7c6.JPG",
     "static/media/Bild26.JPG": "/static/media/Bild26.eba2f02033d553228bd6.JPG",
     "static/media/Bild23.JPG": "/static/media/Bild23.eb22e1ad85113e8589b7.JPG",
@@ -10,10 +10,12 @@
     "static/media/Bild24.JPG": "/static/media/Bild24.77cbacf78ba9639edd03.JPG",
     "static/media/Bild25.JPG": "/static/media/Bild25.24799065594f34d01fc2.JPG",
     "static/media/Bild20.JPG": "/static/media/Bild20.7fec5d7300444e9237e5.JPG",
+    "static/media/admin.png": "/static/media/admin.a7ae31ce53fd0ccde126.png",
     "static/media/24.jpeg": "/static/media/24.5013e4084def3a4ae321.jpeg",
     "static/media/7.jpeg": "/static/media/7.442bcaaa04bb72379685.jpeg",
     "static/media/firstTeam.jpg": "/static/media/firstTeam.38958a039cc6b18d1c05.jpg",
     "static/media/6.jpeg": "/static/media/6.f1ce494ee6f23d140732.jpeg",
+    "static/media/nick_pohle.webp": "/static/media/nick_pohle.b69490b40139de51234e.webp",
     "static/media/G-Junioren.jpeg": "/static/media/G-Junioren.4af2fb4f6a215117f62c.jpeg",
     "static/media/D-Junioren.jpeg": "/static/media/D-Junioren.a1dceae748555daeba7e.jpeg",
     "static/media/secondTeam.jpg": "/static/media/secondTeam.97bc18f59fd43d4014b3.jpg",
@@ -134,11 +136,11 @@
     "static/media/27_thumbnail.jpeg": "/static/media/27_thumbnail.35c40c68cae2a421cde9.jpeg",
     "static/media/gebbi.webp": "/static/media/gebbi.ffefd9b3a0088591f82f.webp",
     "index.html": "/index.html",
-    "main.51a159f7.css.map": "/static/css/main.51a159f7.css.map",
-    "main.98357553.js.map": "/static/js/main.98357553.js.map"
+    "main.1fc77974.css.map": "/static/css/main.1fc77974.css.map",
+    "main.7ba50bf0.js.map": "/static/js/main.7ba50bf0.js.map"
   },
   "entrypoints": [
-    "static/css/main.51a159f7.css",
-    "static/js/main.98357553.js"
+    "static/css/main.1fc77974.css",
+    "static/js/main.7ba50bf0.js"
   ]
 }

@@ -34,6 +34,7 @@ import SpielerKrohne from "../pictures/Spielerprofile/Krohne_Sebastian.JPG";
 import SpielerJena from "../pictures/Spielerprofile/Jena_Luca.JPG";
 import SpielerSeifertPhillip from "../pictures/Spielerprofile/Seifert_Phillip.JPG";
 import SpielerWeißenborn from "../pictures/Spielerprofile/Weißenborn_Niclas.JPG";
+import SpielerPohle from "../pictures/Spielerprofile/nick_pohle.webp"
 
 import noPicture from "../pictures/Spielerprofile/noAccount.jpg";
 
@@ -306,6 +307,20 @@ const FirstTeam = () => {
               img={SpielerWeißenborn}
               name="Niclas Weißenborn"
               player={findPlayerByName(players, "Niclas Weißenborn")}
+            />
+          </div>
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={SpielerPohle}
+              name="Nick Pohle"
+              player={findPlayerByName(players, "Nick Pohle")}
+            />
+          </div>
+          <div className="col-12 col-sm-4 d-flex justify-content-center">
+            <PlayerCard
+              img={noPicture}
+              name="Aaron Beier"
+              player={findPlayerByName(players, "Aaron Beier")}
             />
           </div>
         </div>
