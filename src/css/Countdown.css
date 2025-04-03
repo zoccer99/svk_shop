@@ -1,0 +1,39 @@
+.countdown-container {
+    margin: auto;
+  }
+  
+  .countdown-glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #000;
+    border-radius: 1.5rem;
+    width: 100%;
+  }
+  
+  .team-names h4,
+  .team-names h3 {
+    margin: 0;
+  }
+  
+  .timer-box {
+    background: rgba(255, 255, 255, 0.8);
+    min-width: 80px;
+    transition: transform 0.2s ease;
+  }
+  
+  .timer-box:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .timer-box {
+      min-width: 100px;
+      margin-bottom: 1rem;
+    }
+  
+    .team-names {
+      flex-direction: column;
+    }
+  }
+  
