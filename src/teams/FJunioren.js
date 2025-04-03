@@ -20,7 +20,7 @@ const FJunioren = () => {
         />
       </div>
       <ContactJunior
-        verantwortliche="Christian Gebert (Nachwuchsleiter)"
+        verantwortliche="Christopher Pauli, Christian Gebert"
         telefon="+49 178 3555708"
         anschrift="Mittelstraße 28"
         ort="Kretzschau"

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import "./css/Countdown.css"; // <- Make sure this CSS file is created and linked
 
 class Countdown extends React.Component {
   constructor(props) {
@@ -6,10 +7,10 @@ class Countdown extends React.Component {
     this.state = {
       noGame: false,
       timeLeft: {
-        d: "\u26BD",
-        h: "\u26BD",
-        m: "\u26BD",
-        s: "\u26BD",
+        d: "⚽",
+        h: "⚽",
+        m: "⚽",
+        s: "⚽",
       },
     };
   }
@@ -24,43 +25,24 @@ class Countdown extends React.Component {
 
   secondsToTime(millisecs) {
     let secs = millisecs / 1000;
-
-    let days = Math.floor(Math.floor(secs / (60 * 60)) / 24);
-
-    let hours = Math.floor(secs / (60 * 60)) - days * 24;
-
-    let divisor_for_minutes = secs % (60 * 60);
-    let minutes = Math.floor(divisor_for_minutes / 60);
-
-    let divisor_for_seconds = divisor_for_minutes % 60;
-    let seconds = Math.ceil(divisor_for_seconds);
-
-    let obj = {
-      d: days,
-      h: hours,
-      m: minutes,
-      s: seconds,
-    };
-    return obj;
+    let days = Math.floor(secs / 86400);
+    let hours = Math.floor((secs % 86400) / 3600);
+    let minutes = Math.floor((secs % 3600) / 60);
+    let seconds = Math.floor(secs % 60);
+    return { d: days, h: hours, m: minutes, s: seconds };
   }
 
   tick() {
     try {
-
-      var temp = this.props.date - new Date();
+      let temp = this.props.date - new Date();
       if (temp <= 0) {
         clearInterval(this.timerID);
         temp = 0;
       }
-      this.setState({
-        noGame: false,
-        timeLeft: this.secondsToTime(temp),
-      });
+      this.setState({ noGame: false, timeLeft: this.secondsToTime(temp) });
     } catch {
       clearInterval(this.timerID);
-      this.setState({
-        noGame: true,
-      });
+      this.setState({ noGame: true });
     }
   }
 
@@ -68,58 +50,39 @@ class Countdown extends React.Component {
     return (
       <>
         {this.state.noGame ? (
-          <div className="mt-5">
-            <h2 clas>Kein anstehendes Spiel</h2>
+          <div className="text-center my-5">
+            <h2>Kein anstehendes Spiel</h2>
           </div>
         ) : (
-          <div className="d-flex justify-content-center ">
-            <div className="countdownContainer my-4 p-3">
-              <h1 className="text-center m-4">Nächstes Spiel</h1>
-              <div className="d-flex justify-content-around m-3">
-                <div>
-                  <h5 className="text-center customFontSize">{this.props.heimmannschaft}</h5>
+          <div className="countdown-container my-5 px-3 d-flex justify-content-center">
+            <div className="countdown-glass p-4 p-md-5 rounded-4 shadow-lg">
+              <h2 className="text-center mb-4 display-6 fw-semibold">Nächstes Spiel</h2>
+              <div className="d-flex flex-wrap justify-content-between align-items-center text-center mb-5 team-names">
+                <div className="flex-fill mb-2">
+                  <h4 className="fw-normal">{this.props.heimmannschaft}</h4>
                 </div>
-                <div>
-                  <h3 className="text-center">-</h3>
+                <div className="flex-fill mb-2">
+                  <h3 className="fw-bold">-</h3>
                 </div>
-
-                <div>
-                  <h5 className="text-center customFontSize">{this.props.gastmannschaft}</h5>
+                <div className="flex-fill mb-2">
+                  <h4 className="fw-normal">{this.props.gastmannschaft}</h4>
                 </div>
               </div>
-              <div className="d-flex justify-content-around">
-                <div className="d-flex flex-column ">
-                  <h4 className="d-sm-none">D</h4>
-                  <h4 className="d-none d-sm-block">Tage</h4>
-                  <div className="align-self-center">
-                    {" "}
-                    <h3>{this.state.timeLeft.d}</h3>
+
+              <div className="d-flex justify-content-around flex-wrap timer gap-3">
+                {[
+                  { label: "Tage", value: this.state.timeLeft.d },
+                  { label: "Stunden", value: this.state.timeLeft.h },
+                  { label: "Minuten", value: this.state.timeLeft.m },
+                  { label: "Sekunden", value: this.state.timeLeft.s },
+                ].map((unit, index) => (
+                  <div key={index} className="text-center">
+                    <div className="timer-box p-3 rounded-3 shadow-sm">
+                      <h3 className="mb-1 fw-bold">{unit.value}</h3>
+                      <small className="text-muted">{unit.label}</small>
+                    </div>
                   </div>
-                </div>
-                <div className="d-flex flex-column">
-                  <h4 className="d-sm-none">H</h4>
-                  <h4 className="d-none d-sm-block">Stunden</h4>
-                  <div className="align-self-center">
-                    {" "}
-                    <h3>{this.state.timeLeft.h}</h3>
-                  </div>
-                </div>
-                <div className="d-flex flex-column">
-                  <h4 className="d-sm-none">M</h4>
-                  <h4 className="d-none d-sm-block">Minuten</h4>
-                  <div className="align-self-center">
-                    {" "}
-                    <h3>{this.state.timeLeft.m}</h3>
-                  </div>
-                </div>
-                <div className="d-flex flex-column">
-                  <h4 className="d-sm-none">S</h4>
-                  <h4 className="d-none d-sm-block">Sekunden</h4>
-                  <div className="align-self-center ">
-                    {" "}
-                    <h3>{this.state.timeLeft.s}</h3>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
