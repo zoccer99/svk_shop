@@ -1108,3 +1108,7 @@ a:hover {
 .RichEditor-activeButton {
   color: #5890ff;
 }
+
+.navbar-nav .dropdown-menu {
+  width: 90%;
+}

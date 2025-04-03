@@ -17,6 +17,8 @@ import DJunioren from "./teams/DJunioren";
 import EJunioren from "./teams/EJunioren";
 import FirstTeam from "./teams/FirstTeam";
 import FJunioren from "./teams/FJunioren";
+import Anmeldung from "./Anmeldung";
+import SponsorenPage from "./Sponsorenpage.js";
 import SecondTeam from "./teams/SecondTeam";
 import Protectedroute from "./components/ui/Protectedroute";
 import UserProvider from "./Hooks/useContext";
@@ -88,6 +90,16 @@ class Welcome extends React.Component {
               exact
               path="/Junioren/G-Junioren"
               component={Bambinies}
+            ></Route>
+            <Route
+              exact
+              path="/Junioren/anmeldung"
+              component={Anmeldung}
+            ></Route>
+            <Route
+              exact
+              path="/sponsoren"
+              component={SponsorenPage}
             ></Route>
             {Array.isArray(this.state.Contributions) &&
               this.state.Contributions.map((contribution, index) => (

@@ -68,7 +68,6 @@ function Home(props) {
           )}
 
           <ContributionSite />
-          <Sponsoren />
         </div>
       </div>
       <CookieConsent>

@@ -65,7 +65,6 @@ const ContributionSite = (props) => {
           console.log(err)
           setIsLoading(false)
         }
-        
   }, []);
 
   let options = {

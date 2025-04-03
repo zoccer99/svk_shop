@@ -3,6 +3,7 @@ import ContactJunior from "../ContactJunior";
 import BambinisFlyer from "../pictures/Junioren/Flyer_Bambini.jpg";
 import GJuniorenPic from "../pictures/Junioren/G-Junioren.jpeg";
 import ModalImage from "react-modal-image";
+import RecyclingCup from "../pictures/Junioren/RecyclingCup.jpg"
 
 const Bambinies = () => {
   return (
@@ -27,12 +28,14 @@ const Bambinies = () => {
         zeit="Mittwoch 16.00 - 17.00"
         spieltag="Spiel am Wochenende"
       />
-
-      <div className="text-center bambiniFlyer mt-5">
-        <img
-          src={BambinisFlyer}
-          className="rounded img-fluid w-75 shadow-lg"
-        ></img>
+      <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
+        Aktuelle Berichte
+      </h3>
+      <div className="d-flex justify-content-center">
+        <ModalImage
+          small={RecyclingCup}
+          alt="Bild eines Turnierflyers"
+        ></ModalImage>
       </div>
     </div>
   );

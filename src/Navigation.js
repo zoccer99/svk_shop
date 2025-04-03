@@ -24,22 +24,33 @@ function Navigation() {
           <Nav.Link className="NavItem" as={Link} to="/zweiteMannschaft">
             2. Mannschaft
           </Nav.Link>
-          <Nav.Link as={Link} to="/Junioren/C-Junioren">
-            C-Junioren
+          <NavDropdown
+            title="Junioren"
+            id="junioren-dropdown"
+            className="NavItem"
+          >
+            <NavDropdown.Item as={Link} to="/Junioren/C-Junioren">
+              C-Junioren
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Junioren/D-Junioren">
+              D-Junioren
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Junioren/E-Junioren">
+              E-Junioren
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Junioren/F-Junioren">
+              F-Junioren
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Junioren/G-Junioren">
+              G-Junioren
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/Junioren/anmeldung">
+              Anmeldung
+            </NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link className="NavItem" as={Link} to="/sponsoren">
+           Sponsoren
           </Nav.Link>
-          <Nav.Link as={Link} to="/Junioren/D-Junioren">
-            D-Junioren
-          </Nav.Link>
-          <Nav.Link as={Link} to="/Junioren/E-Junioren">
-            E-Junioren
-          </Nav.Link>
-          <Nav.Link as={Link} to="/Junioren/F-Junioren">
-            F-Junioren
-          </Nav.Link>
-          <Nav.Link as={Link} to="/Junioren/G-Junioren">
-            G-Junioren
-          </Nav.Link>
-
           <LoginIcon />
         </Nav>
       </Navbar.Collapse>
