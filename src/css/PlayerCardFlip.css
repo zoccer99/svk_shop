@@ -1,0 +1,140 @@
+/* === MOBILE: Expandable Card === */
+.expandable-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding-bottom 0.3s;
+    max-height: 110px;
+  }
+  
+  .expandable-card.expanded {
+    max-height: 400px;
+    padding-bottom: 1rem;
+  }
+  
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .transition-image {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+  }
+  
+  .img-expanded {
+    width: 100%;
+    height: 180px;
+    border-radius: 1rem;
+    object-fit: cover;
+    transform: scale(1.05);
+  }
+  
+  .icon-values span {
+    min-width: 40px;
+    text-align: right;
+    display: inline-block;
+  }
+  
+  /* === DESKTOP: Flip Card === */
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 300px;
+    height: 420px;
+    perspective: 1000px;
+    margin-bottom: 2rem;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+    overflow: hidden;
+  }
+  
+  .flip-card-front {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .player-image {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .card-footer {
+    background: linear-gradient(90deg, #c1e2ff, #5db5ff);
+    padding: 1rem;
+  }
+  
+  .player-name {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .player-stats {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+  }
+  
+  .flip-card-back {
+    background: #ffffff;
+    color: #333;
+    padding: 2rem;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .flip-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .flip-card-inner {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-footer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
