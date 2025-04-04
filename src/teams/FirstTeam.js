@@ -118,14 +118,13 @@ const FirstTeam = () => {
       </h3>
       <div className="container ">
         <div className="row mb-md-5">
-          <div className="col-12 col-sm-4 d-flex justify-content-center  ">
+          <div className="col-12 col-sm-4 d-flex  flex-column align-items-center">
             <PlayerCardFlip
-              id={1}
               img={SpielerLudwig}
               player={findPlayerByName(players, "Andreas Ludwig")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex justify-content-center ">
+          <div className="col-12 col-sm-4 d-flex  flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerKrohne}
               name="Sebastian Krohne"
@@ -133,30 +132,31 @@ const FirstTeam = () => {
             />
           </div>
 
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
-            <PlayerCardFlip
-              img={SpielerFriedrich}
-              name="Ole Friedrich"
-              player={findPlayerByName(players, "Ole Friedrich")}
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
+          <PlayerCardFlip
+              img={SpielerBarth}
+              player={findPlayerByName(players, "Andre Barth")}
             />
+            
           </div>
         </div>
 
         <div className="row mb-md-5">
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerJena}
               name="Luca Jena"
               player={findPlayerByName(players, "Luca Jena")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex justify-content-center ">
+          <div className="col-12 col-sm-4 d-flex  flex-column align-items-center ">
             <PlayerCardFlip
-              img={SpielerBarth}
-              player={findPlayerByName(players, "Andre Barth")}
+              img={SpielerFriedrich}
+              name="Ole Friedrich"
+              player={findPlayerByName(players, "Ole Friedrich")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerProtz}
               name="Christian Protz"
@@ -166,21 +166,21 @@ const FirstTeam = () => {
         </div>
 
         <div className="row mb-md-5">
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerFreyer}
               name="Christoph Freyer"
               player={findPlayerByName(players, "Christoph Freyer")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerPauli}
               name="Christopher Pauli"
               player={findPlayerByName(players, "Christopher Pauli")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerProtz}
               name="Christian Protz"
@@ -189,21 +189,21 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-md-5">
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerBeier}
               name="Niklas Beier"
               player={findPlayerByName(players, "Niklas Beier")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerSeifertPhillip}
               name="Phillipp Seifert"
               player={findPlayerByName(players, "Phillipp Seifert")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerFuhrmann}
               name="Patrick Fuhrmann"
@@ -212,14 +212,14 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-md-5">
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerNico}
               name="Nico Balschun"
               player={findPlayerByName(players, "Nico Balschun")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerElias}
               name="Elias Just"
@@ -227,7 +227,7 @@ const FirstTeam = () => {
             />
           </div>
 
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerErik}
               name="Erik Dobierzin"
@@ -236,19 +236,19 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-md-5">
-        <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+        <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerLeon}
               player={findPlayerByName(players, "Leon Gottschild")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerEtienne}
               player={findPlayerByName(players, "Etienne Kalkofen")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerSchmeißer}
               player={findPlayerByName(players, "Claas Schmeißer")}
@@ -256,14 +256,14 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-md-5">
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerAlbert}
               name="Daniel Albert"
               player={findPlayerByName(players, "Daniel Albert")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerTom}
               name="Tom Balschun"
@@ -271,7 +271,7 @@ const FirstTeam = () => {
             />
           </div>
 
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerLai}
               name="Tino Lai"
@@ -280,21 +280,21 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-md-5">
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerScholz}
               name="Christopher Scholz"
               player={findPlayerByName(players, "Christopher Scholz")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerIrl}
               name="Andre Irl"
               player={findPlayerByName(players, "Andre Irl")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerBorrmann}
               name="Samuel Borrmann"
@@ -303,21 +303,21 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-md-5">
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerWeißenborn}
               name="Niclas Weißenborn"
               player={findPlayerByName(players, "Niclas Weißenborn")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerPohle}
               name="Nick Pohle"
               player={findPlayerByName(players, "Nick Pohle")}
             />
           </div>
-          <div className="col-12 col-sm-4 d-flex flex-column align-items-stretch">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={noPicture}
               name="Aaron Beier"
