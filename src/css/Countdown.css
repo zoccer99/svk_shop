@@ -36,14 +36,28 @@
       flex-direction: column;
     }
   }
+  .player-card-desktop {
+    width: 100%;
+    max-width: 300px;
+    background: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .player-card-desktop:hover {
+    transform: translateY(-5px);
+  }
+  
+  .player-card-footer {
+    background: linear-gradient(90deg, #c1e2ff 0%, #5db5ff 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
   
   .player-card-mobile {
     min-height: 100px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(0, 0, 0, 0.05);
     font-size: 0.95rem;
-    width: 90%;
     color: #222;
   }
   
