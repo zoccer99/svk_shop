@@ -37,7 +37,14 @@ import SpielerSeifertPhillip from "../pictures/Spielerprofile/Seifert_Phillip.JP
 import SpielerWeißenborn from "../pictures/Spielerprofile/Weißenborn_Niclas.JPG";
 import SpielerPohle from "../pictures/Spielerprofile/nick_pohle.webp"
 
+import CoachErik from "../pictures/staff/ErikDobierzin.png";
+import CoachMatthias from "../pictures/staff/MatthiasBalschun.png"
+import CoachIngo from "../pictures/staff/IngoGrajek.png";
+import CoachJürgen from "../pictures/staff/JürgenMühlmann.png";
+import CoachChristian from "../pictures/staff/ChristianGebert.png";
+
 import noPicture from "../pictures/Spielerprofile/noAccount.jpg";
+import StaffCard from "../StaffCard";
 
 const FirstTeam = () => {
   const [players, setPlayers] = useState([]);
@@ -68,6 +75,19 @@ const FirstTeam = () => {
       return player;
     }
   };
+
+  const findStaffByName = (arr ,memberName) => {
+    const member = arr.find((e)=> e.name == memberName);
+    if (member === undefined) {
+      return {
+        _id: "630a0fe3f5052a9e51d14acb",
+        name: "loading",
+        function: "loading"
+      };
+    } else {
+      return member;
+    }
+  }
 
   useEffect(() => {
     const asyncFetch = async () => {
@@ -113,9 +133,9 @@ const FirstTeam = () => {
       </div>
 
       <ContributionSite team="first" />
-      <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
+      <h2 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
         Spielerprofile
-      </h3>
+      </h2>
       <div className="container ">
         <div className="row mb-md-5">
           <div className="col-12 col-sm-4 d-flex  flex-column align-items-center">
@@ -325,6 +345,20 @@ const FirstTeam = () => {
             />
           </div>
         </div>
+      </div>
+      <h2 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
+        Trainerteam
+      </h2>
+      <div className="coachWrapper">
+      {/* <div className="row mb-md-5">
+          <div className="col-12 col-sm-4 d-flex  flex-column align-items-center">
+        <StaffCard
+        img={CoachErik}
+        name="Erik Dobierzin"
+        function="Trainer"
+        />
+      </div>
+      </div> */}
       </div>
     </div>
   );
