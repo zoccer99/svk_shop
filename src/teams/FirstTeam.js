@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ContributionSite from "../Blog/ContributionSite";
 import firstTeam from "../pictures/firstTeam.jpg";
+import firstTeam25 from "../pictures/firstTeam25.jpeg";
 import ModalImage from "react-modal-image";
 import PlayerCard from "../PlayerCard";
 import PlayerCardFlip from "../PlayerCardFlip";
@@ -35,10 +36,10 @@ import SpielerKrohne from "../pictures/Spielerprofile/Krohne_Sebastian.JPG";
 import SpielerJena from "../pictures/Spielerprofile/Jena_Luca.JPG";
 import SpielerSeifertPhillip from "../pictures/Spielerprofile/Seifert_Phillip.JPG";
 import SpielerWeißenborn from "../pictures/Spielerprofile/Weißenborn_Niclas.JPG";
-import SpielerPohle from "../pictures/Spielerprofile/nick_pohle.webp"
+import SpielerPohle from "../pictures/Spielerprofile/nick_pohle.webp";
 
 import CoachErik from "../pictures/staff/ErikDobierzin.png";
-import CoachMatthias from "../pictures/staff/MatthiasBalschun.png"
+import CoachMatthias from "../pictures/staff/MatthiasBalschun.png";
 import CoachIngo from "../pictures/staff/IngoGrajek.png";
 import CoachJürgen from "../pictures/staff/JürgenMühlmann.png";
 import CoachChristian from "../pictures/staff/ChristianGebert.png";
@@ -50,7 +51,9 @@ const FirstTeam = () => {
   const [players, setPlayers] = useState([]);
 
   const fetchStats = async () => {
-    const players = await fetch(`${process.env.REACT_APP_BACKEND_URI}/playerStats`);
+    const players = await fetch(
+      `${process.env.REACT_APP_BACKEND_URI}/playerStats`
+    );
     if (!players.ok) throw new Error("Fehler beim Laden");
 
     const contentType = players.headers.get("content-type");
@@ -76,18 +79,18 @@ const FirstTeam = () => {
     }
   };
 
-  const findStaffByName = (arr ,memberName) => {
-    const member = arr.find((e)=> e.name == memberName);
+  const findStaffByName = (arr, memberName) => {
+    const member = arr.find((e) => e.name == memberName);
     if (member === undefined) {
       return {
         _id: "630a0fe3f5052a9e51d14acb",
         name: "loading",
-        function: "loading"
+        function: "loading",
       };
     } else {
       return member;
     }
-  }
+  };
 
   useEffect(() => {
     const asyncFetch = async () => {
@@ -106,29 +109,26 @@ const FirstTeam = () => {
       </blockquote>
       <div className="">
         <ModalImage
-          small={firstTeam}
-          large={firstTeam}
+          small={firstTeam25}
+          large={firstTeam25}
           className="img-fluid img-thumbnail my-3 "
           alt="Erste Mannschaft"
         />
       </div>
       <div className="countdownContainer rounded p-4">
-        <h4>Saison 2020/2021</h4>
+        <h4>Saison 2024/2025</h4>
         <h5 className="lead">Hinten von links nach rechts:</h5>
-        <p className="">
-          Markus Schumann, Daniel Piehl, Elias Just, Nico Balschun, Luca Jena,
-          Quentin Bernstein, Christopher Pauli, Jonas Höntsch, Andrè Barth
+        <p>
+          Ingo Grajek, Christian Gebert, Jürgen Mühlmann, Tino Lai, Samuel
+          Borrmann, Aaron Beier, Niklas Weißenborn, Nico Balschun, Luca Jena,
+          Elias Just, Phillipp Seifert, Manuel Lages, Christopher Scholz, Erik
+          Dobierzin, Matthias Balschun
         </p>
         <h5 className="lead">Vorn von links nach rechts:</h5>
         <p>
-          Ingo Grajek, Heiko Seifert, Hartmut Friedrich, Lars Hendrischke,
-          Christian Gebert, Leon Gottschild, Patrick Fuhrmann, Christopher
-          Scholz, Manuel Lages, Ole Friedrich, Paul Mühlmann, Erik Dobierzin
-        </p>
-        <h5 className="lead">Vorn von links nach rechts:</h5>
-        <p>
-          Phillipp Seifert, Claas Schmeißer, Daniel Albert, Etienne Kalkofen,
-          Andreas Ludwig, Christian Protz, Tino Lai, Christoph Freyer
+          Etienne Kalkofen, Nick Pohle, Patrick Fuhrmann, Daniel Albert, Andreas
+          Ludwig, Christian Protz, Ole Friedrich, Leon Gottschild, Christoph
+          Freyer
         </p>
       </div>
 
@@ -153,11 +153,10 @@ const FirstTeam = () => {
           </div>
 
           <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
-          <PlayerCardFlip
+            <PlayerCardFlip
               img={SpielerBarth}
               player={findPlayerByName(players, "Andre Barth")}
             />
-            
           </div>
         </div>
 
@@ -256,7 +255,7 @@ const FirstTeam = () => {
           </div>
         </div>
         <div className="row mb-md-5">
-        <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
             <PlayerCardFlip
               img={SpielerLeon}
               player={findPlayerByName(players, "Leon Gottschild")}
@@ -349,16 +348,47 @@ const FirstTeam = () => {
       <h2 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
         Trainerteam
       </h2>
-      <div className="coachWrapper">
-      {/* <div className="row mb-md-5">
-          <div className="col-12 col-sm-4 d-flex  flex-column align-items-center">
-        <StaffCard
-        img={CoachErik}
-        name="Erik Dobierzin"
-        function="Trainer"
-        />
-      </div>
-      </div> */}
+      <div className="container">
+        <div className="row mb-md-5">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
+            <StaffCard
+              img={CoachErik}
+              name="Erik Dobierzin"
+              function="Trainer"
+            />
+          </div>
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
+            <StaffCard
+              img={CoachMatthias}
+              name="Matthias Balschun"
+              function="Co-Trainer"
+            />
+          </div>
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
+            <StaffCard
+              img={CoachChristian}
+              name="Christian Gebert"
+              function="Teammanager"
+            />
+          </div>
+        </div>
+        <div className="row mb-md-5">
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
+            <StaffCard
+              img={CoachIngo}
+              name="Ingo Grajek"
+              function="Präsident"
+            />
+          </div>
+          <div className="col-12 col-sm-4 d-flex flex-column align-items-center">
+            <StaffCard
+              img={CoachJürgen}
+              name="Jürgen Mühlmann"
+              function="Betreuer"
+            />
+          </div>
+
+        </div>
       </div>
     </div>
   );
