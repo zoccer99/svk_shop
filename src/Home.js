@@ -13,7 +13,7 @@ function Home(props) {
     ["FC ZWK Nebra", "SV 1893 Kretzschau", new Date("April 6, 2025 14:00")],
     ["SV 1893 Kretzschau", "SG Nessa/Teuchern", new Date("April 13, 2025 15:00")],
     ["SV 1893 Kretzschau", "TSV Großkorbetha", new Date("April 27, 2025 15:00")],
-    ["SV 1893 Kretzschau", "FSV Klosterhäseler", new Date("May 4, 2025 15:00")],
+    ["SV 1893 Kretzschau", "FSV Klosterhäseler", new Date("May 4, 2025 17:00")],
     ["SpG Lützen/Meuchen", "SV 1893 Kretzschau", new Date("May 11, 2025 15:00")],
     ["SV 1893 Kretzschau", "SG Blau-Weiß Bad Kösen", new Date("May 18, 2025 15:00")],
     ["SG Langendorf/WFV", "SV 1893 Kretzschau", new Date("May 25, 2025 15:00")],
