@@ -5,6 +5,16 @@ import gebbi from "../pictures/profiles/gebbi.webp";
 import scholle from "../pictures/profiles/Scholle.jpg";
 import admin from "../pictures/profiles/admin.png"
 
+function slugify(text) {
+  return text
+    .normalize('NFD')                       // z.B. ä -> ä
+    .replace(/[\u0300-\u036f]/g, '')       // Entfernt diakritische Zeichen
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')          // Entfernt Sonderzeichen
+    .trim()
+    .replace(/[\s_-]+/g, '-')              // Ersetzt Leerzeichen/Unterstriche durch Bindestrich
+    .replace(/^-+|-+$/g, '');              // Entfernt führende/abschließende Bindestriche
+}
 function maxWords(str) {
   if (str != null) {
     var symbols = str.length;
@@ -21,7 +31,8 @@ function Card(props) {
   const [url, setUrl] = useState("");
 
   useEffect(() => {
-    const encodedUri = `/${props.teamClass}/${props.titel}`;
+    let url_title = slugify(props.titel)
+    const encodedUri = `/${props.teamClass}/${url_title}`;
     setUrl(encodedUri);
   }, [props.teamClass, props.titel]);
 
