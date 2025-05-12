@@ -49,6 +49,18 @@ class Welcome extends React.Component {
     this.fetchDB();
   }
 
+
+  slugify = (text) => {
+    return text
+      .normalize('NFD')                       // z.B. ä -> ä
+      .replace(/[\u0300-\u036f]/g, '')       // Entfernt diakritische Zeichen
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')          // Entfernt Sonderzeichen
+      .trim()
+      .replace(/[\s_-]+/g, '-')              // Ersetzt Leerzeichen/Unterstriche durch Bindestrich
+      .replace(/^-+|-+$/g, '');              // Entfernt führende/abschließende Bindestriche
+  }
+
   render() {
     return (
       <div>
@@ -106,7 +118,7 @@ class Welcome extends React.Component {
                 <Route
                   key={index}
                   exact
-                  path={`/${contribution.teamClass}/${contribution.titel}`}
+                  path={`/${contribution.teamClass}/${this.slugify(contribution.titel)}`}
                   component={() => (
                     <FullContribution
                       key={index}
