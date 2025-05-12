@@ -8,6 +8,7 @@ const ContributionSite = (props) => {
   const [contributions, setContributions] = useState();
   const [images, setImages] = useState();
   const [visibleCount, setVisibleCount] = useState(6);
+  const [isMobile, setIsMobile] = useState(false);
 
   const sortCon = (teamclass, conntribution) => {
     //Filter der Contributions nach teamklaasen für erste/zweite Seite
@@ -37,7 +38,15 @@ const ContributionSite = (props) => {
     setVisibleCount((prev) => prev + 6);
   };
 
+  const contributionsToShow = isMobile
+  ? contributions.slice(0, 3)
+  : contributions.slice(0, visibleCount);
+
+
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
     const getImages = async() => {
       setIsLoading(true);
       const response = await fetch(
@@ -86,7 +95,7 @@ const ContributionSite = (props) => {
         {contributions && images && (
           <>
             <div className="row justify-content-between">
-              {contributions.slice(0, visibleCount).map((conn, index) =>
+              {contributionsToShow.map((conn, index) =>
                 index + 1 % 3 === 0 ? (
                   <div key={index}>
                     <div className="w-100"></div>
@@ -124,6 +133,13 @@ const ContributionSite = (props) => {
                 )
               )}
             </div>
+            {!isMobile && visibleCount < contributions.length && (
+            <div className="text-center my-4">
+              <button className="btn btn-primary" onClick={loadMore}>
+                Mehr laden
+              </button>
+            </div>
+          )}
 
             {/* 👉 Mehr laden-Button */}
             {visibleCount < contributions.length && (
