@@ -27,7 +27,7 @@ const PlayerCardFlip = ({ img, player }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ playerId: player?._id }), // oder player.id, je nachdem
+        body: JSON.stringify({ playerId: player?.name }), // oder player.id, je nachdem
       });
     } catch (err) {
       console.error("Fehler beim Senden des Klick-Logs:", err);
