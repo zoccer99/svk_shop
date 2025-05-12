@@ -38,9 +38,7 @@ const ContributionSite = (props) => {
     setVisibleCount((prev) => prev + 6);
   };
 
-  const contributionsToShow = isMobile
-  ? contributions.slice(0, 3)
-  : contributions.slice(0, visibleCount);
+
 
 
   useEffect(() => {
@@ -49,6 +47,7 @@ const ContributionSite = (props) => {
     window.addEventListener("resize", checkMobile);
     const getImages = async() => {
       setIsLoading(true);
+      isMobile ? setVisibleCount(3) : setVisibleCount(6);
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URI}/Contribution/`
         );
@@ -95,7 +94,7 @@ const ContributionSite = (props) => {
         {contributions && images && (
           <>
             <div className="row justify-content-between">
-              {contributionsToShow.map((conn, index) =>
+              {contributions.slice(0, visibleCount).map((conn, index) =>
                 index + 1 % 3 === 0 ? (
                   <div key={index}>
                     <div className="w-100"></div>
@@ -133,13 +132,6 @@ const ContributionSite = (props) => {
                 )
               )}
             </div>
-            {!isMobile && visibleCount < contributions.length && (
-            <div className="text-center my-4">
-              <button className="btn btn-primary" onClick={loadMore}>
-                Mehr laden
-              </button>
-            </div>
-          )}
 
             {/* 👉 Mehr laden-Button */}
             {visibleCount < contributions.length && (
