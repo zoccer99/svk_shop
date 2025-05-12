@@ -40,11 +40,10 @@ const ContributionSite = (props) => {
 
 
 
+  const checkMobile = () => setIsMobile(window.innerWidth <= 768);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
-    window.addEventListener("resize", checkMobile);
     const getImages = async() => {
       setIsLoading(true);
       isMobile ? setVisibleCount(3) : setVisibleCount(6);
