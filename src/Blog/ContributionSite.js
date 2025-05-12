@@ -72,6 +72,8 @@ const ContributionSite = (props) => {
           console.log(err)
           setIsLoading(false)
         }
+        console.log(isMobile)
+        console.log(visibleCount)
   }, []);
 
   let options = {
