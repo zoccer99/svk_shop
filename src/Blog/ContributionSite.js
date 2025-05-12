@@ -35,14 +35,14 @@ const ContributionSite = (props) => {
   };
 
   const loadMore = () => {
-    setVisibleCount((prev) => prev + 6);
+    setVisibleCount((prev) => prev + 3);
   };
 
 
 
-  const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-
+  
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
     const getImages = async() => {
       setIsLoading(true);
