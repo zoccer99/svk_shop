@@ -17,9 +17,26 @@ const PlayerCardFlip = ({ img, player }) => {
     return () => window.removeEventListener("resize", updateViewport);
   }, []);
 
-  const toggleExpand = () => {
-    if (isMobile) setExpanded((prev) => !prev);
+  const toggleExpand = async () => {
+    if (!isMobile) return;
+  
+    // Anfrage senden
+    try {
+      await fetch(`${process.env.REACT_APP_BACKEND_URI}/track-player-click`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ playerId: player?._id }), // oder player.id, je nachdem
+      });
+    } catch (err) {
+      console.error("Fehler beim Senden des Klick-Logs:", err);
+    }
+  
+    // Karte expandieren/zusammenklappen
+    setExpanded((prev) => !prev);
   };
+  
 
   if (isMobile) {
     return (
