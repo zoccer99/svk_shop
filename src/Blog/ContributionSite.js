@@ -42,39 +42,38 @@ const ContributionSite = (props) => {
 
   
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    const getImages = async() => {
-      setIsLoading(true);
-      isMobile ? setVisibleCount(3) : setVisibleCount(6);
-      const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URI}/Contribution/`
+    const getImages = async () => {
+      try {
+        setIsLoading(true);
+  
+        const isMobileNow = window.innerWidth <= 768;
+        setVisibleCount(isMobileNow ? 3 : 6);
+  
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URI}/Contribution/`
         );
         let data = await response.json();
-        data = sortCon(props.team,  data);
-        data = sortConBydate(await data);
-        setContributions(await data); //beiträge von db holen
-        const temp = await require
-        .context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
-        .keys()
-        .map(
-          await require.context("../pictures/erste", false, /\.(png|jpe?g|svg|JPG)$/)
-          );
-          setImages(temp); //images importieren(alle)
-          setIsLoading(false);
-        }
-        try {
-          setIsLoading(true)
-          getImages();
-          setIsLoading(false)
-        }
-        catch(err) {
-          console.log(err)
-          setIsLoading(false)
-        }
-        console.log(isMobile)
-        console.log(visibleCount)
+        data = sortCon(props.team, data);
+        data = sortConBydate(data);
+        setContributions(data);
+  
+        const context = require.context(
+          "../pictures/erste",
+          false,
+          /\.(png|jpe?g|svg|JPG)$/
+        );
+        const temp = context.keys().map((key) => context(key));
+        setImages(temp);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+  
+    getImages();
   }, []);
+  
 
   let options = {
     weekday: "long",
