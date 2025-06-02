@@ -18,7 +18,7 @@ function Home(props) {
     ["SV 1893 Kretzschau", "SG Blau-Weiß Bad Kösen", new Date("May 18, 2025 15:00")],
     ["SG Langendorf/WFV", "SV 1893 Kretzschau", new Date("May 25, 2025 15:00")],
     ["VfB Scharnhorst Großgörschen", "SV 1893 Kretzschau", new Date("June 1, 2025 14:00")],
-    ["SV 1893 Kretzschau", "ESV Herrengosserstedt", new Date("June 15, 2025 14:00")]
+    ["SV 1893 Kretzschau", "ESV Herrengosserstedt", new Date("June 06, 2025 18:30")]
   ];
   
 
