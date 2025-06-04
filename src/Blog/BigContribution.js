@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import firstTeam from "../pictures/firstTeam.jpg";
+import parse from 'html-react-parser';
 
 const BigContribution = (props) => {
   
@@ -16,7 +17,7 @@ const BigContribution = (props) => {
         <div className="mt-4">
           <h2 className="text-center Oswald-serif">{props.headline}</h2>
           <h3 className="text-center mt-4 pinch"></h3>
-          <p className="text-left Oswald-sans-serif">{props.text}</p>
+          <p className="text-left Oswald-sans-serif">{parse(props.text)}</p>
         </div>
       </div>
     </div>
