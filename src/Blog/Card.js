@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import gebbi from "../pictures/profiles/gebbi.webp";
 import scholle from "../pictures/profiles/Scholle.jpg";
 import admin from "../pictures/profiles/admin.png"
+import parse from 'html-react-parser';
 
 function slugify(text) {
   return text
@@ -77,7 +78,7 @@ function Card(props) {
               {props.teamClass}
             </span>
             <h4 className="lead cardTitle">{props.titel}</h4>
-            <p>{maxWords(props.text)}</p>
+            <p>{parse(maxWords(props.text))}</p>
           </div>
           <div className="card__footer">
             <div className="user">
