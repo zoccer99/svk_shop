@@ -10,23 +10,33 @@ import CookieConsent from "react-cookie-consent";
 function Home(props) {
   const [nextGame, setNextGame] = useState([undefined, undefined, undefined]);
   const games = [
-    ["FC ZWK Nebra", "SV 1893 Kretzschau", new Date("April 6, 2025 14:00")],
-    ["SV 1893 Kretzschau", "SG Nessa/Teuchern", new Date("April 13, 2025 15:00")],
-    ["SV 1893 Kretzschau", "TSV Großkorbetha", new Date("April 27, 2025 15:00")],
-    ["SV 1893 Kretzschau", "FSV Klosterhäseler", new Date("May 4, 2025 17:00")],
-    ["SpG Lützen/Meuchen", "SV 1893 Kretzschau", new Date("May 11, 2025 15:00")],
-    ["SV 1893 Kretzschau", "SG Blau-Weiß Bad Kösen", new Date("May 18, 2025 15:00")],
-    ["SG Langendorf/WFV", "SV 1893 Kretzschau", new Date("May 25, 2025 15:00")],
-    ["VfB Scharnhorst Großgörschen", "SV 1893 Kretzschau", new Date("June 1, 2025 14:00")],
-    ["SV 1893 Kretzschau", "ESV Herrengosserstedt", new Date("June 06, 2025 18:30")]
+    [
+      "SG Pölzig/Heuckewalde",
+      "SV 1893 Kretzschau",
+      new Date("July 19, 2025 15:00"),
+    ],
+    [
+      "SV 1893 Kretzschau",
+      "BSG Wismut Gera II",
+      new Date("July 25, 2025 18:30"),
+    ],
+    [
+      "Eintracht Theißen",
+      "SV 1893 Kretzschau",
+      new Date("July 27, 2025 14:30"),
+    ],
+    ["SV 1893 Kretzschau", "OTG Gera", new Date("August 3, 2025 15:00")],
+    [
+      "SV 1893 Kretzschau",
+      "SG Reichardtswerben",
+      new Date("August 9, 2025 15:00"),
+    ],
   ];
-  
-
-  useEffect(()=> {
+  useEffect(() => {
     const filterGamesForDate = (games) => {
       const today = new Date();
       let diffs = {};
-  
+
       for (let i in games) {
         let diff = games[i][2] - today;
         if (diff > 0) {
@@ -45,10 +55,7 @@ function Home(props) {
       }
     };
     setNextGame(filterGamesForDate(games));
-  }, [])
-
-  
-
+  }, []);
 
   return (
     <>
@@ -56,8 +63,7 @@ function Home(props) {
       <MobileGrid />
       <div className="d-flex flex-column align-items-center">
         <div className="CounConWrapper">
-          {
-          (nextGame !== "undefined") ? (
+          {nextGame !== "undefined" ? (
             <Countdown
               date={new Date(nextGame[2])}
               heimmannschaft={nextGame[0]}
