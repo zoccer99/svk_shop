@@ -61,7 +61,7 @@ function Card(props) {
   };
 
   return (
-    <div className="containerCard " style={{ maxWidth: "400px" }}>
+    <div className="containerCard ">
       <div className="card">
         <Link style={{ textDecoration: "none" }} to={url} >
           <div className="card__header">
@@ -69,6 +69,7 @@ function Card(props) {
               src={props.imgUrl}
               alt="card__image"
               className="card__image"
+              loading="lazy"
             />
           </div>
           <div className="">

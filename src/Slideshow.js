@@ -56,19 +56,19 @@ class Slideshow extends React.Component {
     return (
       <div id="slideshow">
         <div className="slideTileContainer">
-          <img className="slideTile" src={pic1} alt="Image 1"></img>
+          <img className="slideTile" src={pic1} alt="Image 1" loading="lazy"></img>
           <div className="hero-tile__gradient"></div>
         </div>
         <div className="slideTileContainer">
-          <img className="slideTile" src={pic2} alt="Picture 2"></img>
+          <img className="slideTile" src={pic2} alt="Picture 2" loading="lazy"></img>
           <div className="hero-tile__gradient"></div>
         </div>
         <div className="slideTileContainer">
-          <img className="slideTile" src={pic3} alt="Picture 3"></img>
+          <img className="slideTile" src={pic3} alt="Picture 3" loading="lazy"></img>
           <div className="hero-tile__gradient"></div>
         </div>
         <div className="slideTileContainer">
-          <img className="slideTile" src={pic4} alt="Picture 4"></img>
+          <img className="slideTile" src={pic4} alt="Picture 4" loading="lazy"></img>
           <div className="hero-tile__gradient"></div>
         </div>
         <div className="slideTileContainer">

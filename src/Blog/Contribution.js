@@ -18,8 +18,8 @@ function Contribution(props) {
       <div className="container contributionCard">
         <div className="row">
           <Link to={`${props.teamClass}/${props.titel}`}>
-            <div className="card m-2" style={{color:"black"}}>
-              <img className="card-img" src={props.imgUrl} />
+            <div className="card">
+              <img className="card-img" src={props.imgUrl} loading="lazy" />
               <div className="card-img-overlay">
                 <button className="btn btn-light btn-sm">
                   {props.teamClass}

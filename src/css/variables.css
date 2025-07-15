@@ -40,23 +40,36 @@
   --color-player-card-back-text-light: #e9ecef; /* Keep for now */
   --color-rich-editor-active-button: #007bff; /* Use primary blue */
 
-  /* Transparent Colors (consider using rgba with variables if base colors are defined) */
+  /* Transparent Colors */
+  --color-black-transparent-05: rgba(0, 0, 0, 0.05);
+  --color-black-transparent-08: rgba(0, 0, 0, 0.08);
+  --color-black-transparent-10: rgba(0, 0, 0, 0.1);
+  --color-black-transparent-12: rgba(0, 0, 0, 0.12);
   --color-black-transparent-15: rgba(0, 0, 0, 0.15);
+  --color-black-transparent-30: rgba(0, 0, 0, 0.3);
+  --color-black-transparent-40: rgba(0, 0, 0, 0.4);
+  --color-black-transparent-55: rgba(0, 0, 0, 0.55);
+  --color-black-transparent-60: rgba(8, 8, 8, 0.6);
   --color-white-transparent-15: rgba(255, 255, 255, 0.15);
   --color-white-transparent-20: rgba(255, 255, 255, 0.2);
   --color-white-transparent-80: rgba(255, 255, 255, 0.8);
-  --color-black-transparent-10: rgba(0, 0, 0, 0.1);
-  --color-black-transparent-40: rgba(0, 0, 0, 0.4);
-  --color-black-transparent-60: rgba(8, 8, 8, 0.6);
-  --color-black-transparent-55: rgba(0, 0, 0, 0.55);
-  --color-black-transparent-30: rgba(0, 0, 0, 0.3);
-  --color-black-transparent-05: rgba(0, 0, 0, 0.05);
-  --color-black-transparent-12: rgba(0, 0, 0, 0.12);
   --color-white-transparent-95: rgba(255, 255, 255, 0.95);
   --color-gray-transparent-40: rgba(83, 83, 83, 0.4);
   --color-gray-transparent-80: rgba(83, 83, 83, 0.8);
 
-  /* Gradients (these would still be defined as gradients, but could use color variables) */
+  /* Modern Shadows */
+  --shadow-light: 0 1px 2px var(--color-black-transparent-08), 0 2px 4px var(--color-black-transparent-08);
+  --shadow-medium: 0 4px 8px var(--color-black-transparent-10), 0 8px 16px var(--color-black-transparent-10);
+  --shadow-strong: 0 8px 16px var(--color-black-transparent-12), 0 16px 32px var(--color-black-transparent-12);
+  --shadow-hover: 0 6px 12px var(--color-black-transparent-10), 0 12px 24px var(--color-black-transparent-10);
+
+  /* Liquid Glass Effect */
+  --glass-background: rgba(255, 255, 255, 0.15); /* Slightly more visible white tint */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly more pronounced border */
+  --glass-backdrop-filter: blur(25px) saturate(1.5); /* Stronger blur and saturation for liquid effect */
+  --glass-animation-hover: scale(1.02); /* Subtle scale on hover */
+
+  /* Gradients */
   --gradient-report-overlay: linear-gradient(180deg, var(--color-tertiary-blue), rgba(224, 247, 255, 0.4));
   --gradient-card-bg: linear-gradient(to right, var(--color-white), var(--color-light-gray));
   --gradient-tag-blue: linear-gradient(to bottom, var(--color-primary-blue), var(--color-tertiary-blue));

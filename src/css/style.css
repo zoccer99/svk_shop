@@ -56,10 +56,10 @@ h1 {
   margin: 0 auto; /* Center the contribution */
 }
 
-.countdownContainer {
+.countdown-container {
   color: var(--color-countdown-dark-purple);
   background: var(--color-countdown-bg-transparent);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07); /* Multi-layered shadow */
+  box-shadow: var(--shadow-light);
   width: 100%;
   border-radius: 10px; /* Slightly less rounded corners */
   padding: var(--spacing-lg); /* Add some internal padding */
@@ -128,7 +128,26 @@ h1 {
 
 .navbar {
   padding: var(--spacing-sm) var(--spacing-lg); /* Adjust padding */
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.05); /* Multi-layered shadow */
+  box-shadow: var(--shadow-light);
+}
+
+.navbar-toggler {
+  border: none; /* Remove default border */
+  padding: var(--spacing-xs); /* Adjust padding */
+}
+
+.navbar-toggler:focus {
+  box-shadow: none; /* Remove focus outline */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Custom hamburger icon */
+  width: 1.5em; /* Adjust size */
+  height: 1.5em; /* Adjust size */
+}
+
+.navbar-collapse {
+  transition: all 0.3s ease-in-out; /* Smooth transition for collapse */
 }
 
 .transition {
@@ -176,7 +195,7 @@ h1 {
   position: relative;
   background: var(--color-slideshow-bg);
   overflow: hidden;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1); /* Multi-layered shadow */
+  box-shadow: var(--shadow-medium);
   box-sizing: border-box;
   display: none;
   border-radius: 10px; /* Rounded corners */
@@ -246,15 +265,27 @@ h1 {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter);
+  border: var(--glass-border);
+  border-radius: 1em; /* More rounded for glass effect */
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: var(--glass-animation-hover);
+  box-shadow: var(--shadow-hover);
 }
 
 .contributionCard {
   margin-bottom: var(--spacing-lg); /* Add some bottom margin */
   width: 100%;
+  padding: 0 var(--spacing-md); /* Add horizontal padding for mobile */
 }
 
 .card-img-overlay {
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1); /* Multi-layered shadow */
+  box-shadow: var(--shadow-light);
   border-radius: 8px; /* Rounded corners */
 }
 
@@ -266,11 +297,13 @@ h1 {
 .card-title {
   margin-bottom: var(--spacing-xs); /* Adjusted margin */
   font-weight: 700;
+  font-size: clamp(1rem, 2vw + 0.8rem, 1.2rem); /* Fluid font size for mobile */
 }
 
 .cat {
   display: inline-block;
   margin-bottom: var(--spacing-sm); /* Adjusted margin */
+  font-size: clamp(0.75rem, 1.5vw + 0.5rem, 0.9rem); /* Fluid font size for mobile */
 }
 
 .fa-users {
@@ -288,6 +321,13 @@ h1 {
 .textContainer {
   max-width: 95%; /* Slightly wider */
   margin: 0 auto; /* Center the text container */
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-right: var(--spacing-md);
+    padding-left: var(--spacing-md);
+  }
 }
 
 /*Mannschaftseite */
@@ -348,19 +388,7 @@ h1 {
 
 /* bigControbution */
 
-.bigContributionWrapper {
-  width: 90vw; /* Wider for better content display */
-  margin: var(--spacing-xl) auto; /* Center and add margin */
-}
 
-.loginFormWrapper {
-  width: 40vw; /* Adjusted width for login form */
-  max-width: 400px; /* Max width for better readability */
-  margin: var(--spacing-xl) auto; /* Center and add margin */
-  padding: var(--spacing-xl); /* Add padding */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1); /* Multi-layered shadow */
-}
 
 /* Card */
 
@@ -388,31 +416,11 @@ h1 {
   object-fit: cover;
 } */
 
-.card {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.08); /* Multi-layered shadow */
-  border-radius: 0.8em; /* Slightly less rounded */
-  background: var(--gradient-card-bg);
-  transition: transform 0.2s ease-in-out; /* Add hover effect */
-}
 
-.card:hover {
-  transform: translateY(-5px); /* Lift card on hover */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1); /* Enhanced shadow on hover */
-}
-
-.card__body {
-  padding: var(--spacing-md); /* Adjusted padding */
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs); /* Adjusted gap */
-}
 
 @media screen and (min-width: 768px) {
   .card__body {
-    padding: var(--spacing-lg); /* Adjusted padding for larger screens */
+    padding: var(--spacing-lg); /* Keep consistent for larger screens */
     display: flex;
     height: auto; /* Allow height to adjust naturally */
     flex-direction: column;
@@ -573,17 +581,8 @@ a:hover {
   font-size: clamp(2.2rem, 1.5vw + 2.2rem, 2.8rem); /* Fluid font size */
   color: var(--color-dark-gray); /* Darker text */
 }
-/* Cards */
-.postcard {
-  flex-wrap: wrap;
-  display: flex;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1); /* Multi-layered shadow */
-  border-radius: 12px; /* More rounded corners */
-  margin: 0 0 var(--spacing-xxl) 0; /* Adjusted margin */
-  overflow: hidden;
-  position: relative;
-  color: var(--color-white);
-}
+
+
 .postcard.dark {
   background-color: var(--color-dark-gray);
 }
@@ -659,23 +658,18 @@ a:hover {
 .postcard .postcard__tagbox .tag__item:hover {
   background: var(--color-gray-transparent-80);
 }
-.postcard:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: var(--gradient-postcard-overlay);
-  opacity: 1;
-  border-radius: 12px;
+.postcard {
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter);
+  border: var(--glass-border);
+  border-radius: 12px; /* More rounded for glass effect */
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease-in-out;
 }
-.postcard:hover .postcard__bar {
-  width: 120px; /* Wider bar on hover */
-}
+
 .postcard:hover {
-  transform: translateY(-5px); /* Lift card on hover */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15), 0 8px 16px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+  transform: var(--glass-animation-hover);
+  box-shadow: var(--shadow-hover);
 }
 @media screen and (min-width: 769px) {
   .postcard {
@@ -913,14 +907,7 @@ a:hover {
   min-height: 100vh;
 }
 
-.screen {
-  background: var(--gradient-login-screen);
-  position: relative;
-  height: 600px;
-  width: 360px;
-  box-shadow: 0px 0px 24px var(--color-login-purple-gray); /* Use variable */
-  border-radius: 10px; /* Rounded corners */
-}
+
 
 .screen__content {
   z-index: 1;
@@ -984,6 +971,17 @@ a:hover {
   width: 320px;
   padding: 30px;
   padding-top: 156px;
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter);
+  border: var(--glass-border);
+  border-radius: 15px;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease-in-out;
+}
+
+.login:hover {
+  transform: var(--glass-animation-hover);
+  box-shadow: var(--shadow-hover);
 }
 
 .login__field {
@@ -1019,23 +1017,6 @@ a:hover {
   border-color: var(--color-login-medium-purple); /* Use variable */
 }
 
-.login__submit {
-  background: var(--color-white);
-  font-size: 14px;
-  margin-top: 30px;
-  padding: 16px 20px;
-  border-radius: 26px;
-  border: 1px solid var(--color-login-border-light); /* Use variable */
-  text-transform: uppercase;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  color: var(--color-login-text-dark); /* Use variable */
-  box-shadow: 0px 2px 2px var(--color-login-purple-gray); /* Use variable */
-  cursor: pointer;
-  transition: all 0.3s ease; /* Smooth transition */
-}
 
 .login__submit:active,
 .login__submit:focus,
@@ -1043,7 +1024,7 @@ a:hover {
   border-color: var(--color-login-medium-purple); /* Use variable */
   outline: none;
   transform: translateY(-2px); /* Lift button on hover */
-  box-shadow: 0px 4px 4px var(--color-login-purple-gray); /* Enhanced shadow on hover */
+  box-shadow: var(--shadow-hover);
 }
 
 .login__submit:focus {
@@ -1084,16 +1065,7 @@ a:hover {
   transform: scale(1.5);
 }
 
-/* SocialTile */
-.socialTile {
-  background-color: var(--color-primary-blue); /* Use primary blue */
-  padding: var(--spacing-lg); /* Adjusted padding */
-  border-radius: 10px; /* Rounded corners */
-  text-align: center;
-  color: var(--color-white); /* White text */
-  margin-top: var(--spacing-xl); /* Add some top margin */
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.08); /* Multi-layered shadow */
-}
+
 
 .socialIcons {
   display: flex;
@@ -1163,12 +1135,20 @@ a:hover {
 
 /* richEditor */
 .RichEditor-root {
-  background: var(--color-white);
-  border: 1px solid var(--color-very-light-gray); /* Use variable */
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter);
+  border: var(--glass-border);
   font-family: "Inter", sans-serif; /* Use Inter font */
   font-size: 15px; /* Adjusted font size */
   padding: var(--spacing-xl); /* Adjusted padding */
   border-radius: 8px; /* Rounded corners */
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease-in-out;
+}
+
+.RichEditor-root:hover {
+  transform: var(--glass-animation-hover);
+  box-shadow: var(--shadow-hover);
 }
 
 .RichEditor-editor {
@@ -1251,9 +1231,16 @@ body {
 .coachInfoWrapper {
   padding: 1.5rem; /* Adjusted padding */
   margin: 1.5rem auto; /* Adjusted margin */
-  backdrop-filter: blur(10px); /* Stronger blur */
-  box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.15), 0 8px 16px rgba(0,0,0,0.15); /* Multi-layered shadow */
-  border: 1px solid rgba(0, 0, 0, 0.08); /* Subtle border */
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter); /* Stronger blur */
+  box-shadow: var(--shadow-medium); /* Multi-layered shadow */
+  border: var(--glass-border); /* Subtle border */
   width: 100%;
   border-radius: 12px; /* More rounded corners */
+  transition: all 0.3s ease-in-out;
+}
+
+.coachInfoWrapper:hover {
+  transform: var(--glass-animation-hover);
+  box-shadow: var(--shadow-hover);
 }

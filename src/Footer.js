@@ -27,10 +27,10 @@ function Footer() {
               <h5 className="text-uppercase">Kontakt</h5>
               <ul className="list-unstyled mb-0">
                 <li>
-                  <p>Musterstraße 123</p>
+                  <p>Mittelstraße 28</p>
                 </li>
                 <li>
-                  <p>04564 Kretzschau</p>
+                  <p>06712 Kretzschau</p>
                 </li>
                 <li>
                   <p>info@sv-kretzschau.de</p>
@@ -40,7 +40,7 @@ function Footer() {
           </div>
         </div>
         <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-          © 2022 SV 1893 Kretzschau e.V.
+          © 2025 SV 1893 Kretzschau e.V.
         </div>
       </footer>
   );
