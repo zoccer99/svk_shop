@@ -7,40 +7,48 @@ body {
   background-size: cover;
   box-sizing: border-box;
   font-family: "Inter", sans-serif; /* Standardize to Inter */
-  font-size: 16px; /* Base font size */
-  min-height: 0vw;
+  font-size: clamp(1rem, 0.8vw + 1rem, 1.125rem); /* Fluid font size */
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
 }
 
 h5 {
-  font-size: 1.1em; /* Slightly smaller for better hierarchy */
+  font-size: clamp(1.1em, 0.5vw + 1.1em, 1.25em); /* Fluid font size */
   font-weight: 600;
+  margin-bottom: var(--spacing-xs);
 }
 
 h4 {
-  font-size: 1.3em;
+  font-size: clamp(1.3em, 0.7vw + 1.3em, 1.5em); /* Fluid font size */
   font-weight: 600;
+  margin-bottom: var(--spacing-sm);
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: clamp(1.5em, 0.9vw + 1.5em, 1.75em); /* Fluid font size */
   font-weight: 700;
+  margin-bottom: var(--spacing-md);
 }
 
 h2 {
-  font-size: 1.7em;
+  font-size: clamp(1.7em, 1.1vw + 1.7em, 2em); /* Fluid font size */
   font-weight: 700;
+  margin-bottom: var(--spacing-lg);
 }
 
 h1 {
-  font-size: 2.2em; /* Slightly larger for more impact */
+  font-size: clamp(2.2em, 1.5vw + 2.2em, 2.8em); /* Fluid font size */
   font-weight: 800;
+  margin-bottom: var(--spacing-xl);
 }
 
 /* COUNTDOWN */
 
 .CounConWrapper {
-  width: 95%; /* Slightly wider for better use of space */
-  margin: 0 auto; /* Center the wrapper */
+  width: 90%; /* Adjusted width for better use of space */
+  margin: var(--spacing-lg) auto; /* Center the wrapper and add vertical margin */
 }
 
 .startCountdownContribution {
@@ -51,10 +59,10 @@ h1 {
 .countdownContainer {
   color: var(--color-countdown-dark-purple);
   background: var(--color-countdown-bg-transparent);
-  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07); /* Multi-layered shadow */
   width: 100%;
   border-radius: 10px; /* Slightly less rounded corners */
-  padding: 1.5rem; /* Add some internal padding */
+  padding: var(--spacing-lg); /* Add some internal padding */
 }
 
 .report-gradient-overlay {
@@ -119,8 +127,8 @@ h1 {
 /* NAVMENU */
 
 .navbar {
-  padding: 0.8rem 1.5rem; /* Adjust padding */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  padding: var(--spacing-sm) var(--spacing-lg); /* Adjust padding */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.05); /* Multi-layered shadow */
 }
 
 .transition {
@@ -162,13 +170,13 @@ h1 {
 /*Slideshow*/
 
 #slideshow {
-  margin-top: 20px; /* Increased margin-top */
+  margin-top: var(--spacing-xl); /* Increased margin-top */
   height: 60vh; /* Adjusted height */
   min-height: 30rem;
   position: relative;
   background: var(--color-slideshow-bg);
   overflow: hidden;
-  box-shadow: 0 0.6rem 1.8rem 0 rgba(0, 0, 0, 0.2); /* Softer, larger shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1); /* Multi-layered shadow */
   box-sizing: border-box;
   display: none;
   border-radius: 10px; /* Rounded corners */
@@ -189,7 +197,7 @@ h1 {
   position: relative;
   display: block;
   text-decoration: none;
-  box-shadow: 0 0.4rem 1.2rem 0 rgba(0, 0, 0, 0.1); /* Softer shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.05); /* Multi-layered shadow */
   cursor: pointer;
   overflow: hidden;
   transition: height 0.3s;
@@ -235,14 +243,18 @@ h1 {
 
 .card {
   border: none; /* Remove default card border */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .contributionCard {
-  margin-bottom: 1.5rem; /* Add some bottom margin */
+  margin-bottom: var(--spacing-lg); /* Add some bottom margin */
+  width: 100%;
 }
 
 .card-img-overlay {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Softer shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1); /* Multi-layered shadow */
   border-radius: 8px; /* Rounded corners */
 }
 
@@ -252,24 +264,25 @@ h1 {
 }
 
 .card-title {
-  margin-bottom: 0.5rem; /* Adjusted margin */
+  margin-bottom: var(--spacing-xs); /* Adjusted margin */
   font-weight: 700;
 }
 
 .cat {
   display: inline-block;
-  margin-bottom: 0.8rem; /* Adjusted margin */
+  margin-bottom: var(--spacing-sm); /* Adjusted margin */
 }
 
 .fa-users {
-  margin-left: 0.8rem; /* Adjusted margin */
+  margin-left: var(--spacing-sm); /* Adjusted margin */
 }
 
 .card-footer {
   font-size: 0.85rem; /* Slightly larger font */
-  padding: 0.8rem 1rem; /* Adjusted padding */
+  padding: var(--spacing-sm) var(--spacing-md); /* Adjusted padding */
   background-color: var(--color-light-gray); /* Light background for footer */
   border-top: 1px solid var(--color-very-light-gray); /* Subtle border */
+  margin-top: auto;
 }
 
 .textContainer {
@@ -286,13 +299,12 @@ h1 {
 /* Footer */
 
 .footer {
-  position: relative; /* Change to relative for better flow */
-  bottom: 0;
   width: 100%;
-  padding: 2rem 0; /* Add padding */
+  padding: var(--spacing-xl) 0; /* Add padding */
   background-color: var(--color-dark-gray); /* Dark background */
   color: var(--color-white); /* White text */
   text-align: center;
+  margin-top: auto; /* Push footer to the bottom */
 }
 
 .wrapper {
@@ -301,13 +313,13 @@ h1 {
 
 .pinch {
   color: var(--color-white); /* Use white from variables */
-  font-size: 2.2rem; /* Adjusted font size */
+  font-size: clamp(2.2rem, 1.5vw + 2.2rem, 2.8rem); /* Fluid font size */
   line-height: 1.4;
   letter-spacing: -0.03em;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg);
   position: relative;
-  padding-bottom: 1.2rem;
+  padding-bottom: var(--spacing-md);
 }
 
 .pinch::before {
@@ -338,16 +350,16 @@ h1 {
 
 .bigContributionWrapper {
   width: 90vw; /* Wider for better content display */
-  margin: 2rem auto; /* Center and add margin */
+  margin: var(--spacing-xl) auto; /* Center and add margin */
 }
 
 .loginFormWrapper {
   width: 40vw; /* Adjusted width for login form */
   max-width: 400px; /* Max width for better readability */
-  margin: 2rem auto; /* Center and add margin */
-  padding: 2rem; /* Add padding */
+  margin: var(--spacing-xl) auto; /* Center and add margin */
+  padding: var(--spacing-xl); /* Add padding */
   border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1); /* Multi-layered shadow */
 }
 
 /* Card */
@@ -365,8 +377,9 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
-  margin-block: 3rem; /* Increased vertical margin */
-  gap: 1.5rem; /* Slightly reduced gap */
+  margin-block: var(--spacing-xxl); /* Increased vertical margin */
+  gap: var(--spacing-lg); /* Slightly reduced gap */
+  align-items: stretch; /* Ensure all cards in a row have the same height */
 }
 
 /* img {
@@ -379,7 +392,7 @@ h1 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.08); /* Softer shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.08); /* Multi-layered shadow */
   border-radius: 0.8em; /* Slightly less rounded */
   background: var(--gradient-card-bg);
   transition: transform 0.2s ease-in-out; /* Add hover effect */
@@ -387,35 +400,36 @@ h1 {
 
 .card:hover {
   transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1); /* Enhanced shadow on hover */
 }
 
 .card__body {
-  padding: 1.2rem; /* Adjusted padding */
+  padding: var(--spacing-md); /* Adjusted padding */
   display: flex;
   flex-direction: column;
-  gap: 0.6rem; /* Adjusted gap */
+  gap: var(--spacing-xs); /* Adjusted gap */
 }
 
 @media screen and (min-width: 768px) {
   .card__body {
-    padding: 1.5rem; /* Adjusted padding for larger screens */
+    padding: var(--spacing-lg); /* Adjusted padding for larger screens */
     display: flex;
     height: auto; /* Allow height to adjust naturally */
     flex-direction: column;
-    gap: 0.8rem;
+    gap: var(--spacing-sm);
   }
 }
 
 .tag {
   align-self: flex-start;
-  padding: 0.3em 0.8em; /* Adjusted padding */
+  padding: var(--spacing-xxs) var(--spacing-sm); /* Adjusted padding */
   border-radius: 1.2em; /* More rounded tags */
   font-size: 0.7rem;
   font-weight: 600;
 }
 
 .tag + .tag {
-  margin-left: 0.6em;
+  margin-left: var(--spacing-xs);
 }
 
 .tag-blue {
@@ -444,11 +458,12 @@ h1 {
 
 .card__footer {
   display: flex;
-  padding: 1rem; /* Adjusted padding */
+  padding: var(--spacing-md); /* Adjusted padding */
   background-color: var(--color-light-gray); /* Light background for footer */
   border-top: 1px solid var(--color-very-light-gray); /* Subtle border */
   font-size: 0.9rem;
   color: var(--color-medium-gray);
+  margin-top: auto;
 }
 
 .cardLink > a {
@@ -457,7 +472,7 @@ h1 {
 
 .user {
   display: flex;
-  gap: 0.6rem; /* Adjusted gap */
+  gap: var(--spacing-xs); /* Adjusted gap */
   align-items: center;
 }
 
@@ -503,7 +518,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 15px; /* Adjusted padding */
+  padding: 0 var(--spacing-md); /* Adjusted padding */
   line-height: 1.6; /* Improved line height */
 }
 
@@ -524,7 +539,7 @@ main {
 }
 .text-box {
   background: var(--color-white-transparent-95); /* Use transparent white from variables */
-  padding: 25px; /* Adjusted padding */
+  padding: var(--spacing-xl); /* Adjusted padding */
   margin: 0;
   max-width: 550px; /* Slightly wider max-width */
   border-radius: 8px; /* Rounded corners */
@@ -552,19 +567,19 @@ a:hover {
   transition: color 0.3s ease-in-out;
 }
 #pageHeaderTitle {
-  margin: 2.5rem 0; /* Adjusted margin */
+  margin: var(--spacing-xxl) 0; /* Adjusted margin */
   text-transform: uppercase;
   text-align: center;
-  font-size: 2.8rem; /* Adjusted font size */
+  font-size: clamp(2.2rem, 1.5vw + 2.2rem, 2.8rem); /* Fluid font size */
   color: var(--color-dark-gray); /* Darker text */
 }
 /* Cards */
 .postcard {
   flex-wrap: wrap;
   display: flex;
-  box-shadow: 0 6px 24px -8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1); /* Multi-layered shadow */
   border-radius: 12px; /* More rounded corners */
-  margin: 0 0 2.5rem 0; /* Adjusted margin */
+  margin: 0 0 var(--spacing-xxl) 0; /* Adjusted margin */
   overflow: hidden;
   position: relative;
   color: var(--color-white);
@@ -605,13 +620,13 @@ a:hover {
 .postcard .postcard__bar {
   width: 60px; /* Slightly wider bar */
   height: 8px; /* Slightly thinner bar */
-  margin: 12px 0; /* Adjusted margin */
+  margin: var(--spacing-md) 0; /* Adjusted margin */
   border-radius: 4px;
   background-color: var(--color-medium-gray);
   transition: width 0.2s ease;
 }
 .postcard .postcard__text {
-  padding: 1.8rem; /* Adjusted padding */
+  padding: var(--spacing-lg); /* Adjusted padding */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -635,8 +650,8 @@ a:hover {
   display: inline-block;
   background: var(--color-gray-transparent-40);
   border-radius: 4px;
-  padding: 3px 12px; /* Adjusted padding */
-  margin: 0 6px 6px 0; /* Adjusted margin */
+  padding: var(--spacing-xxs) var(--spacing-sm); /* Adjusted padding */
+  margin: 0 var(--spacing-xs) var(--spacing-xs) 0; /* Adjusted margin */
   cursor: default;
   user-select: none;
   transition: background-color 0.3s;
@@ -657,6 +672,10 @@ a:hover {
 }
 .postcard:hover .postcard__bar {
   width: 120px; /* Wider bar on hover */
+}
+.postcard:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15), 0 8px 16px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
 }
 @media screen and (min-width: 769px) {
   .postcard {
@@ -979,21 +998,25 @@ a:hover {
 }
 
 .login__input {
-  border: none;
-  border-bottom: 2px solid var(--color-login-border-light); /* Use variable */
-  background: none;
-  padding: 10px;
-  padding-left: 24px;
-  font-weight: 700;
-  width: 75%;
-  transition: 0.2s;
+  border: 1px solid var(--color-login-border-light); /* Subtle border */
+  background: var(--color-white); /* White background */
+  padding: var(--spacing-sm) var(--spacing-md); /* Consistent padding */
+  border-radius: 8px; /* Rounded corners */
+  font-weight: 500;
+  width: 100%; /* Full width */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.login__input:focus {
+  border-color: var(--color-primary-blue); /* Highlight on focus */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle focus ring */
+  outline: none;
 }
 
 .login__input:active,
-.login__input:focus,
 .login__input:hover {
   outline: none;
-  border-bottom-color: var(--color-login-medium-purple); /* Use variable */
+  border-color: var(--color-login-medium-purple); /* Use variable */
 }
 
 .login__submit {
@@ -1011,13 +1034,20 @@ a:hover {
   color: var(--color-login-text-dark); /* Use variable */
   box-shadow: 0px 2px 2px var(--color-login-purple-gray); /* Use variable */
   cursor: pointer;
-  transition: 0.2s;
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
   border-color: var(--color-login-medium-purple); /* Use variable */
+  outline: none;
+  transform: translateY(-2px); /* Lift button on hover */
+  box-shadow: 0px 4px 4px var(--color-login-purple-gray); /* Enhanced shadow on hover */
+}
+
+.login__submit:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle focus ring */
   outline: none;
 }
 
@@ -1057,20 +1087,20 @@ a:hover {
 /* SocialTile */
 .socialTile {
   background-color: var(--color-primary-blue); /* Use primary blue */
-  padding: 1.5rem; /* Adjusted padding */
+  padding: var(--spacing-lg); /* Adjusted padding */
   border-radius: 10px; /* Rounded corners */
   text-align: center;
   color: var(--color-white); /* White text */
-  margin-top: 2rem; /* Add some top margin */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-top: var(--spacing-xl); /* Add some top margin */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.08); /* Multi-layered shadow */
 }
 
 .socialIcons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem; /* Space between icons */
-  margin-top: 1rem; /* Space between text and icons */
+  gap: var(--spacing-lg); /* Space between icons */
+  margin-top: var(--spacing-md); /* Space between text and icons */
 }
 
 .socialText {
@@ -1113,7 +1143,7 @@ a:hover {
   font-size: 1.2em; /* Adjusted font size */
   font-weight: 700;
   text-align: center;
-  padding: 0.5rem; /* Add padding */
+  padding: var(--spacing-xs); /* Add padding */
 }
 
 .image-gallery-content:not(.fullscreen) .image-gallery-image {
@@ -1137,7 +1167,7 @@ a:hover {
   border: 1px solid var(--color-very-light-gray); /* Use variable */
   font-family: "Inter", sans-serif; /* Use Inter font */
   font-size: 15px; /* Adjusted font size */
-  padding: 20px; /* Adjusted padding */
+  padding: var(--spacing-xl); /* Adjusted padding */
   border-radius: 8px; /* Rounded corners */
 }
 
@@ -1145,13 +1175,13 @@ a:hover {
   border-top: 1px solid var(--color-very-light-gray); /* Use variable */
   cursor: text;
   font-size: 16px;
-  margin-top: 15px; /* Adjusted margin */
+  margin-top: var(--spacing-lg); /* Adjusted margin */
 }
 
 .RichEditor-editor .public-DraftEditorPlaceholder-root,
 .RichEditor-editor .public-DraftEditor-content {
-  margin: 0 -20px -20px; /* Adjusted margin */
-  padding: 20px; /* Adjusted padding */
+  margin: 0 calc(-1 * var(--spacing-xl)) calc(-1 * var(--spacing-xl)); /* Adjusted margin */
+  padding: var(--spacing-xl); /* Adjusted padding */
 }
 
 .RichEditor-editor .public-DraftEditor-content {
@@ -1167,29 +1197,29 @@ a:hover {
   color: var(--color-medium-gray);
   font-family: "Inter", sans-serif; /* Use Inter font */
   font-style: italic;
-  margin: 18px 0; /* Adjusted margin */
-  padding: 12px 22px; /* Adjusted padding */
+  margin: var(--spacing-lg) 0; /* Adjusted margin */
+  padding: var(--spacing-md) var(--spacing-xl); /* Adjusted padding */
 }
 
 .RichEditor-editor .public-DraftStyleDefault-pre {
   background-color: var(--color-black-transparent-05); /* Use variable */
   font-family: "Menlo", "Consolas", monospace; /* Keep monospace for code */
   font-size: 15px;
-  padding: 20px;
+  padding: var(--spacing-xl); /* Adjusted padding */
   border-radius: 6px; /* Rounded corners */
 }
 
 .RichEditor-controls {
   font-family: "Inter", sans-serif; /* Use Inter font */
   font-size: 14px;
-  margin-bottom: 8px; /* Adjusted margin */
+  margin-bottom: var(--spacing-sm); /* Adjusted margin */
   user-select: none;
 }
 
 .RichEditor-styleButton {
   color: var(--color-medium-gray);
   cursor: pointer;
-  margin-right: 18px; /* Adjusted margin */
+  margin-right: var(--spacing-lg); /* Adjusted margin */
   padding: 3px 0;
   display: inline-block;
 }
@@ -1222,7 +1252,7 @@ body {
   padding: 1.5rem; /* Adjusted padding */
   margin: 1.5rem auto; /* Adjusted margin */
   backdrop-filter: blur(10px); /* Stronger blur */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Softer, larger shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.15), 0 8px 16px rgba(0,0,0,0.15); /* Multi-layered shadow */
   border: 1px solid rgba(0, 0, 0, 0.08); /* Subtle border */
   width: 100%;
   border-radius: 12px; /* More rounded corners */
