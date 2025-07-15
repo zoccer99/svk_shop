@@ -1,6 +1,5 @@
-import axios, { Axios, AxiosResponse } from "axios";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Route } from "react-router-dom";
 import Home from "../../Home"
 
 const ProtectedRoute = (props) => {

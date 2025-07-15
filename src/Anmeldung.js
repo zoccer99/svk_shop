@@ -1,7 +1,7 @@
 import React from "react";
 import ModalImage from "react-modal-image";
 import we_need_you from "./pictures/Junioren/Wir_suchen_dich_neu.png";
-import ContactJunior from "./ContactJunior";
+
 
 const Anmeldung = () => {
   return (

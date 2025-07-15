@@ -8,7 +8,7 @@ import FullContribution from "./Blog/FullContribution";
 import Dashboard from "./admin/Dashboard";
 import Footer from "./Footer";
 import Home from "./Home";
-import MainBanner from "./MainBanner";
+
 import NoMatch from "./NoMatch";
 import Sponsoren from "./Sponsoren";
 import Bambinies from "./teams/Bambinies";

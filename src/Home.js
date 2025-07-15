@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Slideshow from "./Slideshow";
 import MobileGrid from "./MobileGrid";
-import Sponsoren from "./Sponsoren";
+
 import Countdown from "./Coundown";
 import ContributionSite from "./Blog/ContributionSite";
 import CookieConsent from "react-cookie-consent";
 
 function Home(props) {
   const [nextGame, setNextGame] = useState([undefined, undefined, undefined]);
-  const games = [
+  const games = useMemo(() => [
     [
       "SG Pölzig/Heuckewalde",
       "SV 1893 Kretzschau",
@@ -31,7 +30,7 @@ function Home(props) {
       "SG Reichardtswerben",
       new Date("August 9, 2025 15:00"),
     ],
-  ];
+  ], []);
   useEffect(() => {
     const filterGamesForDate = (games) => {
       const today = new Date();
@@ -55,7 +54,7 @@ function Home(props) {
       }
     };
     setNextGame(filterGamesForDate(games));
-  }, []);
+  }, [games]);
 
   return (
     <>

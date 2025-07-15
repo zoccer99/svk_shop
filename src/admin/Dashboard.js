@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Route, Redirect } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 
@@ -27,7 +26,7 @@ function Dashboard() {
       })
       .then((res) => {
         console.log(res)
-        if (res != 200) return;
+        if (res !== 200) return;
         alert("löschen erfolgreich ")
       })
       .catch((err) => alert(`Netzwerkfehler: ${err}`));

@@ -5,7 +5,7 @@ import LoginModal from "./loginModal";
 import { userContext } from "../Hooks/useContext";
 
 const LoginIcon = () => {
-  const [user, setUser] = useContext(userContext);
+  const [user] = useContext(userContext);
   const [showModal, setShowModal] = useState(false);
   return (
     <>
@@ -14,9 +14,7 @@ const LoginIcon = () => {
           Login
         </Nav.Link>
        ) : (
-        <a className="nav-link loginWrapper">
-          <Avatar name={user} />
-        </a>
+        <Avatar name={user} />
       )}
 
       <LoginModal show={showModal} onHide={() => setShowModal(false)} /> 

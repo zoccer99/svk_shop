@@ -1,6 +1,6 @@
 import React from "react";
 import ContactJunior from "../ContactJunior";
-import BambinisFlyer from "../pictures/Junioren/Flyer_Bambini.jpg";
+
 import GJuniorenPic from "../pictures/Junioren/G-Junioren.jpeg";
 import ModalImage from "react-modal-image";
 import RecyclingCup from "../pictures/Junioren/RecyclingCup.jpg"

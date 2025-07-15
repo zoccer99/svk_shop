@@ -25,7 +25,6 @@ const MyImageGallery = (props) => {
   const [finalImages, setfinalImages] = useState();
   useEffect(() => {
     let formattedImages = [];
-    const temp = props.path || "../pictures/baumersroda";
     const img = importAllImages(
       require.context(
         "../pictures/baumersroda",
