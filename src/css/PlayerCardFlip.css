@@ -6,7 +6,7 @@
   max-width: 300px;
   height: 420px;
   perspective: 1000px;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-xl);
 }
 
 .flip-card-inner {
@@ -17,7 +17,7 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.15), 0 8px 16px rgba(0,0,0,0.15); /* Multi-layered shadow */
 }
 
 .flip-card:hover .flip-card-inner {
@@ -50,20 +50,20 @@
 
 .card-footer {
   background: var(--color-light-gray); /* Use variable */
-  padding: 1.2rem; /* Adjusted padding */
+  padding: var(--spacing-md); /* Adjusted padding */
   color: var(--color-dark-gray); /* Darker text */
 }
 
 .player-name {
   font-weight: 700; /* Bolder font */
-  margin-bottom: 0.5rem; /* Adjusted margin */
+  margin-bottom: var(--spacing-xs); /* Adjusted margin */
 }
 
 .player-stats {
   display: flex;
   justify-content: space-around;
   font-size: 0.95rem; /* Slightly smaller font */
-  gap: 0.8rem; /* Add gap between stats */
+  gap: var(--spacing-sm); /* Add gap between stats */
   color: var(--color-medium-gray); /* Medium gray text */
 }
 
@@ -71,13 +71,13 @@
   background: rgba(0, 0, 0, 0.7); /* Slightly darker blur */
   backdrop-filter: blur(12px); /* Stronger blur */
   color: var(--color-white); /* Use variable */
-  padding: 2rem; /* Adjusted padding */
+  padding: var(--spacing-xl); /* Adjusted padding */
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Softer, larger shadow */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.2), 0 4px 8px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.2); /* Multi-layered shadow */
 }
 
 .flip-card-back h5 {
@@ -117,10 +117,10 @@
     background: var(--color-white-transparent-95); /* Use variable */
     backdrop-filter: blur(10px); /* Stronger blur */
     border-radius: 12px; /* More rounded */
-    padding: 1.2rem; /* Adjusted padding */
-    margin: 1.2rem auto;
+    padding: var(--spacing-md); /* Adjusted padding */
+    margin: var(--spacing-md) auto;
     max-width: 420px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Softer, larger shadow */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.15); /* Multi-layered shadow */
     cursor: pointer;
     overflow: hidden;
     transition: all 0.4s ease;
