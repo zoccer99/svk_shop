@@ -52,27 +52,24 @@ const PlayerCardFlip = ({ img, player }) => {
           />
         </div>
 
-        <div className="text-center mt-2">
-          <div className="fw-semibold" style={{ fontSize: "1rem" }}>
-            {player?.name?.split(" ")[0] || "loading"}
-          </div>
-          <div style={{ fontSize: "0.9rem", color: "#444" }}>
-            {player?.name?.split(" ").slice(1).join(" ") || ""}
+        <div className="text-center mt-3">
+          <div className="fw-bold text-primary" style={{ fontSize: "1.2rem" }}>
+            {player?.name || "loading"}
           </div>
         </div>
 
         <div className="d-flex justify-content-around text-center mt-3 icon-values">
-          <div className="d-flex align-items-center gap-1">
-            <FontAwesomeIcon icon={faShoePrints} />
-            <span>{player?.matches ?? "loading"}</span>
+          <div className="d-flex flex-column align-items-center gap-1">
+            <FontAwesomeIcon icon={faShoePrints} size="lg" />
+            <span className="fw-semibold">{player?.matches ?? "0"} Spiele</span>
           </div>
-          <div className="d-flex align-items-center gap-1">
-            <FontAwesomeIcon icon={faFutbol} />
-            <span>{player?.goals ?? "loading"}</span>
+          <div className="d-flex flex-column align-items-center gap-1">
+            <FontAwesomeIcon icon={faFutbol} size="lg" />
+            <span className="fw-semibold">{player?.goals ?? "0"} Tore</span>
           </div>
-          <div className="d-flex align-items-center gap-1">
-            <FontAwesomeIcon icon={faHandshake} />
-            <span>{player?.assists ?? "loading"}</span>
+          <div className="d-flex flex-column align-items-center gap-1">
+            <FontAwesomeIcon icon={faHandshake} size="lg" />
+            <span className="fw-semibold">{player?.assists ?? "0"} Assists</span>
           </div>
         </div>
 
@@ -102,17 +99,17 @@ const PlayerCardFlip = ({ img, player }) => {
             alt={player?.name || "Spielerbild"}
             className="player-image"
           />
-          <div className="card-footer">
-            <h5 className="player-name">{player?.name || "loading"}</h5>
-            <div className="player-stats">
-              <div>
-                <FontAwesomeIcon icon={faShoePrints} /> {player?.matches ?? 0}
+          <div className="card-footer bg-light p-3">
+            <h5 className="player-name text-dark fw-bold mb-2">{player?.name || "loading"}</h5>
+            <div className="player-stats d-flex justify-content-around text-dark">
+              <div className="d-flex flex-column align-items-center gap-1">
+                <FontAwesomeIcon icon={faShoePrints} size="lg" /> <span className="fw-semibold">{player?.matches ?? "0"} Spiele</span>
               </div>
-              <div>
-                <FontAwesomeIcon icon={faFutbol} /> {player?.goals ?? 0}
+              <div className="d-flex flex-column align-items-center gap-1">
+                <FontAwesomeIcon icon={faFutbol} size="lg" /> <span className="fw-semibold">{player?.goals ?? "0"} Tore</span>
               </div>
-              <div>
-                <FontAwesomeIcon icon={faHandshake} /> {player?.assists ?? 0}
+              <div className="d-flex flex-column align-items-center gap-1">
+                <FontAwesomeIcon icon={faHandshake} size="lg" /> <span className="fw-semibold">{player?.assists ?? "0"} Assists</span>
               </div>
             </div>
           </div>

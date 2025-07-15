@@ -13,11 +13,11 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
+  border-radius: 0.75rem; /* Slightly less rounded */
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
 }
 
 .flip-card:hover .flip-card-inner {
@@ -29,13 +29,13 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   backface-visibility: hidden;
   overflow: hidden;
 }
 
 .flip-card-front {
-  background: #fff;
+  background: var(--color-white); /* Use variable */
   display: flex;
   flex-direction: column;
 }
@@ -44,53 +44,58 @@
   height: 280px;
   width: 100%;
   object-fit: cover;
+  border-top-left-radius: 0.75rem; /* Match card radius */
+  border-top-right-radius: 0.75rem; /* Match card radius */
 }
 
 .card-footer {
-  background: linear-gradient(90deg, #c1e2ff, #5db5ff);
-  padding: 1rem;
+  background: var(--color-light-gray); /* Use variable */
+  padding: 1.2rem; /* Adjusted padding */
+  color: var(--color-dark-gray); /* Darker text */
 }
 
 .player-name {
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  font-weight: 700; /* Bolder font */
+  margin-bottom: 0.5rem; /* Adjusted margin */
 }
 
 .player-stats {
   display: flex;
   justify-content: space-around;
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller font */
+  gap: 0.8rem; /* Add gap between stats */
+  color: var(--color-medium-gray); /* Medium gray text */
 }
 
 .flip-card-back {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(10px);
-  color: #f0f0f0;
-  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.7); /* Slightly darker blur */
+  backdrop-filter: blur(12px); /* Stronger blur */
+  color: var(--color-white); /* Use variable */
+  padding: 2rem; /* Adjusted padding */
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Softer, larger shadow */
 }
 
 .flip-card-back h5 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
+  font-size: 1.3rem; /* Adjusted font size */
+  font-weight: 700; /* Bolder font */
+  margin-bottom: 1rem; /* Adjusted margin */
 }
 
 .flip-card-back p {
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Slightly smaller font */
   margin: 0.3rem 0;
-  line-height: 1.4;
-  color: #dcdcdc;
+  line-height: 1.5; /* Improved line height */
+  color: var(--color-player-card-back-text-light); /* Use variable */
 }
 
 .flip-card-back strong {
-  color: #ffffff;
-  font-weight: 600;
+  color: var(--color-white); /* Use variable */
+  font-weight: 700; /* Bolder font */
 }
 
 .flip-card-inner {
@@ -109,24 +114,24 @@
 /* ✅ MEDIA QUERY: Nur für Mobile */
 @media (max-width: 576px) {
   .expandable-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    border-radius: 16px;
-    padding: 1rem;
+    background: var(--color-white-transparent-95); /* Use variable */
+    backdrop-filter: blur(10px); /* Stronger blur */
+    border-radius: 12px; /* More rounded */
+    padding: 1.2rem; /* Adjusted padding */
     margin: 1.2rem auto;
     max-width: 420px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Softer, larger shadow */
     cursor: pointer;
     overflow: hidden;
     transition: all 0.4s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08); /* Subtle border */
     position: relative;
     transform: scale(1);
   }
 
   .expandable-card:hover {
     transform: scale(1.01);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Softer, larger shadow on hover */
   }
 
   .expandable-card.expanded {
@@ -137,14 +142,14 @@
   .image-wrapper {
     display: flex;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: 10px; /* More rounded */
     overflow: hidden;
   }
 
   .transition-image {
     width: 80px;
     height: 80px;
-    border-radius: 12px;
+    border-radius: 10px; /* More rounded */
     object-fit: cover;
     transition: all 0.4s ease;
   }
@@ -152,7 +157,7 @@
   .img-expanded {
     width: 100%;
     height: 220px;
-    border-radius: 12px;
+    border-radius: 10px; /* More rounded */
     object-fit: cover;
     transform: scale(1.02);
   }
@@ -164,7 +169,7 @@
   .expandable-card .fw-semibold {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #222;
+    color: var(--color-dark-gray); /* Use variable */
   }
 
   .icon-values {
@@ -180,21 +185,21 @@
     align-items: center;
     gap: 0.4rem;
     font-weight: 500;
-    background: rgba(0, 0, 0, 0.03);
-    padding: 0.4rem 0.6rem;
-    border-radius: 8px;
+    background: var(--color-black-transparent-03); /* Use variable */
+    padding: 0.5rem 0.7rem; /* Adjusted padding */
+    border-radius: 6px; /* Slightly less rounded */
     min-width: 70px;
     justify-content: center;
   }
 
   .expandable-card .text-muted {
     font-size: 0.95rem;
-    color: #444 !important;
+    color: var(--color-medium-gray) !important; /* Use variable */
     margin-top: 1rem;
     line-height: 1.4;
   }
 
   .expandable-card .text-muted strong {
-    color: #000;
+    color: var(--color-black); /* Use variable */
   }
 }

@@ -1054,6 +1054,42 @@ a:hover {
   transform: scale(1.5);
 }
 
+/* SocialTile */
+.socialTile {
+  background-color: var(--color-primary-blue); /* Use primary blue */
+  padding: 1.5rem; /* Adjusted padding */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center;
+  color: var(--color-white); /* White text */
+  margin-top: 2rem; /* Add some top margin */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* Space between icons */
+  margin-top: 1rem; /* Space between text and icons */
+}
+
+.socialText {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.socialIcon {
+  color: var(--color-white); /* White icons */
+  font-size: 2em; /* Larger icons */
+  transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.socialIcon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  color: var(--color-secondary-gray); /* Change color on hover */
+}
+
 .playerInfoWrapper {
     background-image: var(--gradient-player-info-wrapper);
     border-radius: 10px; /* Rounded corners */
