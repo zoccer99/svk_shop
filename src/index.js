@@ -1,6 +1,6 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
-import ReactDOM from "react-dom";
+
 import Welcome from "./Welcome";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/style.css";

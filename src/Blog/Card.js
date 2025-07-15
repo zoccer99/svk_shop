@@ -19,9 +19,9 @@ function slugify(text) {
 function maxWords(str) {
   if (str != null) {
     var symbols = str.length;
-    var previewText = str;
+    let previewText = str;
     if (symbols > 100) {
-      var previewText = previewText.slice(0, 100);
+      previewText = previewText.slice(0, 100);
       previewText = previewText.concat("...");
     }
     return previewText;

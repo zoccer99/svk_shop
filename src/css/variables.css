@@ -1,0 +1,72 @@
+:root {
+  /* Primary Colors */
+  --color-primary-blue: #0056b3; /* Darker, more professional blue */
+  --color-secondary-gray: #f8f9fa; /* Lighter, neutral gray */
+  --color-tertiary-blue: #007bff; /* Complementary blue */
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-black: #212529; /* Slightly softer black */
+  --color-dark-gray: #343a40;
+  --color-light-gray: #e9ecef;
+  --color-medium-gray: #6c757d;
+  --color-very-light-gray: #dee2e6;
+  --color-off-white: #f8f9fa;
+  --color-light-beige: #f1f3f5;
+
+  /* Accent Colors */
+  --color-accent-blue-light: #66d9ef;
+  --color-accent-blue-medium: #007bff;
+  --color-accent-orange-brown: #fd7e14;
+  --color-accent-orange-light: #ffc107;
+  --color-accent-red-dark: #dc3545;
+  --color-accent-red-bright: #e74c3c;
+  --color-accent-green-lime: #28a745;
+  --color-accent-yellow-olive: #ffc107;
+
+  /* Specific UI Colors (adjusted to new palette) */
+  --color-countdown-dark-purple: #4a2c6e;
+  --color-countdown-bg-transparent: rgba(127, 165, 174, 0.2);
+  --color-slideshow-bg: #1a202c;
+  --color-login-purple-gray: #6f42c1;
+  --color-login-purple: #8e44ad;
+  --color-login-dark-purple: #5e35b1;
+  --color-login-medium-purple: #7b1fa2;
+  --color-login-light-purple: #9c27b0;
+  --color-login-border-light: #ced4da;
+  --color-login-text-dark: #495057;
+  --color-login-icon: #6c757d;
+  --color-player-card-back-text: #f8f9fa;
+  --color-player-card-back-text-light: #e9ecef;
+  --color-rich-editor-active-button: #007bff;
+
+  /* Transparent Colors (consider using rgba with variables if base colors are defined) */
+  --color-black-transparent-15: rgba(0, 0, 0, 0.15);
+  --color-white-transparent-15: rgba(255, 255, 255, 0.15);
+  --color-white-transparent-20: rgba(255, 255, 255, 0.2);
+  --color-white-transparent-80: rgba(255, 255, 255, 0.8);
+  --color-black-transparent-10: rgba(0, 0, 0, 0.1);
+  --color-black-transparent-40: rgba(0, 0, 0, 0.4);
+  --color-black-transparent-60: rgba(8, 8, 8, 0.6);
+  --color-black-transparent-55: rgba(0, 0, 0, 0.55);
+  --color-black-transparent-30: rgba(0, 0, 0, 0.3);
+  --color-black-transparent-05: rgba(0, 0, 0, 0.05);
+  --color-black-transparent-12: rgba(0, 0, 0, 0.12);
+  --color-white-transparent-95: rgba(255, 255, 255, 0.95);
+  --color-gray-transparent-40: rgba(83, 83, 83, 0.4);
+  --color-gray-transparent-80: rgba(83, 83, 83, 0.8);
+
+  /* Gradients (these would still be defined as gradients, but could use color variables) */
+  --gradient-report-overlay: linear-gradient(180deg, rgba(0, 51, 204, 0.7), rgba(224, 247, 255, 0.4));
+  --gradient-card-bg: linear-gradient(to right, var(--color-white), var(--color-light-beige));
+  --gradient-tag-blue: linear-gradient(to bottom, var(--color-accent-blue-medium), var(--color-accent-blue-light));
+  --gradient-tag-brown: linear-gradient(to bottom, var(--color-accent-orange-light), var(--color-accent-orange-brown));
+  --gradient-tag-red: linear-gradient(to bottom, var(--color-accent-red-bright), var(--color-accent-red-dark));
+  --gradient-transparent-line: linear-gradient(to right, transparent, var(--color-dark-gray), transparent);
+  --gradient-postcard-overlay: linear-gradient(-70deg, var(--color-dark-gray), transparent 50%);
+  --gradient-login-screen: linear-gradient(90deg, var(--color-tertiary-blue), var(--color-primary-blue));
+  --gradient-login-shape: linear-gradient(270deg, var(--color-login-dark-purple), var(--color-login-medium-purple));
+  --gradient-player-info-wrapper: linear-gradient(135deg, #0033cc, #0066ff, #66ccff, #e0f7ff);
+  --gradient-player-card-footer: linear-gradient(90deg, var(--color-very-light-blue) 0%, var(--color-light-blue) 100%);
+  --gradient-player-card-footer-alt: linear-gradient(90deg, var(--color-very-light-blue), var(--color-light-blue));
+}

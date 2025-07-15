@@ -1,14 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Button, Form, InputGroup, Modal } from "react-bootstrap";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+
 
 function LoginModal(props) {
   const [loginCredentials, setloginCredentials] = useState({
     username: "",
     password: "",
   });
-  const [success, setSuccess] = useState(false);
+  
 
   const handleChange = (e) => {
     const target = e.target;
@@ -31,7 +31,6 @@ function LoginModal(props) {
       }
     } catch (err) {
       if (err.response.status === 401) {
-        setSuccess(false);
         alert("Falscher Username oder Passwort");
       }
     }

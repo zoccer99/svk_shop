@@ -8,18 +8,18 @@ const ContributionSite = (props) => {
   const [contributions, setContributions] = useState();
   const [images, setImages] = useState();
   const [visibleCount, setVisibleCount] = useState(6);
-  const [isMobile, setIsMobile] = useState(false);
+  
 
   const sortCon = (teamclass, conntribution) => {
     //Filter der Contributions nach teamklaasen für erste/zweite Seite
     let temp;
     if (teamclass === "first") {
       temp = conntribution.filter(
-        (conn) => conn.teamClass == "Erste Mannschaft"
+        (conn) => conn.teamClass === "Erste Mannschaft"
       );
     } else if (teamclass === "second") {
       temp = conntribution.filter(
-        (conn) => conn.teamClass == "Zweite Mannschaft"
+        (conn) => conn.teamClass === "Zweite Mannschaft"
       );
     } else {
       temp = conntribution;
@@ -72,7 +72,7 @@ const ContributionSite = (props) => {
     };
   
     getImages();
-  }, []);
+  }, [props.team]);
   
 
   let options = {

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Button, Overlay, OverlayTrigger, Popover } from "react-bootstrap";
+import { Overlay, Popover } from "react-bootstrap";
 import { BsPerson } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -42,9 +42,9 @@ const Avatar = (props) => {
                 <strong>Account</strong>
                 <Link to="/dashboard">Beiträge</Link>
                 <Link to="/dashboard">Dashboard</Link >
-                <a href="" onClick={logout}>
+                <button onClick={logout} className="btn btn-link p-0 text-decoration-none text-dark"> {/* Added btn-link for styling */} 
                   Ausloggen
-                </a>
+                </button>
               </div>
             </div>
           </Popover.Content>

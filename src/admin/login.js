@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Button, Form, Label } from "react-bootstrap";
-import axios from "axios";
+import { Form } from "react-bootstrap";
 import Scholli from "../pictures/ErsteSpiel/Bild10.JPG";
+import axios from "axios";
 
 function Login() {
-  const axios = require("axios");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -102,7 +101,7 @@ function Login() {
                     <img
                       src={Scholli}
                       className="img-fluid rounded"
-                      alt="Sample image"
+                      alt=""
                     />
                   </div>
                 </div>

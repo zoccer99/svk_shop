@@ -15,19 +15,11 @@ class Slideshow extends React.Component {
     };
   }
 
-  getHoveredManually = (elementList) => {
-    if (elementList.some((element) => element.matches(":hover"))) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
   simulateHover = (elementList) => {
     if (!elementList.some((element) => element.matches(":hover"))) {
       //check if some element gets NOT hovered manually
       elementList[
-        this.state.index == 0 ? elementList.length - 1 : this.state.index - 1 //then simulate :hover
+        this.state.index === 0 ? elementList.length - 1 : this.state.index - 1 //then simulate :hover
       ].classList.remove("slideTileContainerHoverSimulation");
 
       elementList[this.state.index].classList.add(
@@ -36,7 +28,7 @@ class Slideshow extends React.Component {
       this.setState({
         //index++
         index:
-          this.state.index == elementList.length - 1 ? 0 : this.state.index + 1,
+          this.state.index === elementList.length - 1 ? 0 : this.state.index + 1,
       });
     } else {
       //If hovered manually
@@ -48,7 +40,6 @@ class Slideshow extends React.Component {
     let sildeTileContainers = Array.from(
       document.getElementsByClassName("slideTileContainer")
     );
-    let getsHovered;
     
       this.timerID = setInterval(() => {
         this.simulateHover(sildeTileContainers);
@@ -64,30 +55,30 @@ class Slideshow extends React.Component {
     
     return (
       <div id="slideshow">
-        <a className="slideTileContainer">
-          <img className="slideTile" src={pic1}></img>
+        <div className="slideTileContainer">
+          <img className="slideTile" src={pic1} alt="Image 1"></img>
           <div className="hero-tile__gradient"></div>
-        </a>
-        <a className="slideTileContainer">
-          <img className="slideTile" src={pic2}></img>
+        </div>
+        <div className="slideTileContainer">
+          <img className="slideTile" src={pic2} alt="Picture 2"></img>
           <div className="hero-tile__gradient"></div>
-        </a>
-        <a className="slideTileContainer">
-          <img className="slideTile" src={pic3}></img>
+        </div>
+        <div className="slideTileContainer">
+          <img className="slideTile" src={pic3} alt="Picture 3"></img>
           <div className="hero-tile__gradient"></div>
-        </a>
-        <a className="slideTileContainer">
-          <img className="slideTile" src={pic4}></img>
+        </div>
+        <div className="slideTileContainer">
+          <img className="slideTile" src={pic4} alt="Picture 4"></img>
           <div className="hero-tile__gradient"></div>
-        </a>
-        <a className="slideTileContainer">
-          <img className="slideTile" src={pic5}></img>
+        </div>
+        <div className="slideTileContainer">
+          <img className="slideTile" src={pic5} alt="Picture 5"></img>
           <div className="hero-tile__gradient"></div>
-        </a>
-        <a className="slideTileContainer">
-          <img className="slideTile" src={pic6}></img>
+        </div>
+        <div className="slideTileContainer">
+          <img className="slideTile" src={pic6} alt="Picture 6"></img>
           <div className="hero-tile__gradient"></div>
-        </a>
+        </div>
       </div>
     );
   }

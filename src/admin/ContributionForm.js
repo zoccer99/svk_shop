@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { Button, Form, Label } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 import examplePic from "../pictures/erste/Bild19.JPG";
 import Card from "../Blog/Card";
 import FullContribution from "../Blog/FullContribution";
-import env from "react-dotenv";
 
 const ContributionForm = () => {
   
@@ -16,13 +15,12 @@ const ContributionForm = () => {
   }
   
   const [showMockup, setShowMockup] = useState(false);
-  const [date, setDate] = useState(getInitialDate());
   const [values, setValues] = useState({
     autor: "Christian Gebert",
     titel: "",
     text: "",
     teamClass: "Erste Mannschaft",
-    time: date,
+    time: getInitialDate(),
   });
 
   

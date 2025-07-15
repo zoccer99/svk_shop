@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ContributionSite from "../Blog/ContributionSite";
-import firstTeam from "../pictures/firstTeam.jpg";
 import firstTeam25 from "../pictures/firstTeam25.jpeg";
 import ModalImage from "react-modal-image";
-import PlayerCard from "../PlayerCard";
 import PlayerCardFlip from "../PlayerCardFlip";
 
-import gebbi from "../pictures/profiles/gebbi.webp";
 import SpielerNico from "../pictures/Spielerprofile/Balschun_Nico.JPG";
 import SpielerLeon from "../pictures/Spielerprofile/Gottschild_Leon.JPG";
-import SpielerQuentin from "../pictures/Spielerprofile/Bernstein_Quentin.JPG";
 import SpielerEtienne from "../pictures/Spielerprofile/Kalkofen_Etienne.JPG";
 import SpielerErik from "../pictures/Spielerprofile/Dobierzin_Erik.JPG";
 import SpielerElias from "../pictures/Spielerprofile/Just_Elias.JPG";
@@ -17,15 +13,11 @@ import SpielerLudwig from "../pictures/Spielerprofile/Ludwig_Andreas.JPG";
 import SpielerProtz from "../pictures/Spielerprofile/Protz_Christian.JPG";
 import SpielerBarth from "../pictures/Spielerprofile/Barth_Andre.JPG";
 import SpielerFriedrich from "../pictures/Spielerprofile/Friedrich_Ole.JPG";
-import SpielerLages from "../pictures/Spielerprofile/Lages_Manuel.JPG";
 import SpielerPauli from "../pictures/Spielerprofile/Pauli_Christopher.JPG";
-import SpielerPiehl from "../pictures/Spielerprofile/Piel_Daniel.JPG";
-import SpielerSeifert from "../pictures/Spielerprofile/Lages_Manuel.JPG";
-import SpielerAlbert from "../pictures/Spielerprofile/Albert_Daniel.JPG";
 import SpielerFuhrmann from "../pictures/Spielerprofile/Fuhrmann_Patrick.JPG";
 import SpielerLai from "../pictures/Spielerprofile/Lai_Tino.JPG";
 import SpielerSchmeißer from "../pictures/Spielerprofile/Schmeißer_Claas.JPG";
-import SpielerBalschunTom from "../pictures/Spielerprofile/Balschun_Nico.JPG";
+import SpielerAlbert from "../pictures/Spielerprofile/Albert_Daniel.JPG";
 import SpielerScholz from "../pictures/Spielerprofile/Scholz_Christoph.JPG";
 import SpielerFreyer from "../pictures/Spielerprofile/Freyer_Christoph.JPG";
 import SpielerBeier from "../pictures/Spielerprofile/Beier_Niklas.JPG";
@@ -79,18 +71,7 @@ const FirstTeam = () => {
     }
   };
 
-  const findStaffByName = (arr, memberName) => {
-    const member = arr.find((e) => e.name == memberName);
-    if (member === undefined) {
-      return {
-        _id: "630a0fe3f5052a9e51d14acb",
-        name: "loading",
-        function: "loading",
-      };
-    } else {
-      return member;
-    }
-  };
+  
 
   useEffect(() => {
     const asyncFetch = async () => {

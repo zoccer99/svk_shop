@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.51a159f7.css",
-    "main.js": "/static/js/main.719fdaf9.js",
+    "main.css": "/static/css/main.cf39ea5e.css",
+    "main.js": "/static/js/main.08ad9023.js",
     "static/media/Bild22.JPG": "/static/media/Bild22.e3efce1e9d824681f7c6.JPG",
     "static/media/Bild26.JPG": "/static/media/Bild26.eba2f02033d553228bd6.JPG",
     "static/media/Bild23.JPG": "/static/media/Bild23.eb22e1ad85113e8589b7.JPG",
@@ -10,6 +10,13 @@
     "static/media/Bild24.JPG": "/static/media/Bild24.77cbacf78ba9639edd03.JPG",
     "static/media/Bild25.JPG": "/static/media/Bild25.24799065594f34d01fc2.JPG",
     "static/media/Bild20.JPG": "/static/media/Bild20.7fec5d7300444e9237e5.JPG",
+    "static/media/firstTeam25.jpeg": "/static/media/firstTeam25.7ec90101b4c247bdbcec.jpeg",
+    "static/media/IngoGrajek.png": "/static/media/IngoGrajek.3a1ee54d6fa7b63902d9.png",
+    "static/media/MatthiasBalschun.png": "/static/media/MatthiasBalschun.527b5ecc8078393c6782.png",
+    "static/media/ChristianGebert.png": "/static/media/ChristianGebert.9e4309a0e94883353e10.png",
+    "static/media/ErikDobierzin.png": "/static/media/ErikDobierzin.7059eec489a791373663.png",
+    "static/media/JürgenMühlmann.png": "/static/media/JürgenMühlmann.22b4d7c03d4cc89f1560.png",
+    "static/media/Wir_suchen_dich_neu.png": "/static/media/Wir_suchen_dich_neu.ca599a9d802c9cc08f91.png",
     "static/media/24.jpeg": "/static/media/24.5013e4084def3a4ae321.jpeg",
     "static/media/7.jpeg": "/static/media/7.442bcaaa04bb72379685.jpeg",
     "static/media/firstTeam.jpg": "/static/media/firstTeam.38958a039cc6b18d1c05.jpg",
@@ -27,7 +34,6 @@
     "static/media/28.jpeg": "/static/media/28.1f469ea4c91f2337ce42.jpeg",
     "static/media/49.jpeg": "/static/media/49.254db10e0675e6c5dc84.jpeg",
     "static/media/1.jpeg": "/static/media/1.3de88cc30fa6f1a3d153.jpeg",
-    "static/media/C-Junioren.jpeg": "/static/media/C-Junioren.7a8222ced049d31a42ee.jpeg",
     "static/media/22.jpeg": "/static/media/22.51142547ec230ec34e08.jpeg",
     "static/media/3.jpeg": "/static/media/3.51142547ec230ec34e08.jpeg",
     "static/media/13.jpeg": "/static/media/13.7f7146a199a9903a0d21.jpeg",
@@ -42,14 +48,12 @@
     "static/media/Bild5.JPG": "/static/media/Bild5.1163f792326a7313163a.JPG",
     "static/media/16.jpeg": "/static/media/16.3662122d07c8c5d5ce57.jpeg",
     "static/media/15.jpeg": "/static/media/15.2c38945b976ac3b2b553.jpeg",
-    "static/media/Lages_Manuel.JPG": "/static/media/Lages_Manuel.b1be3b031b5341ac66cd.JPG",
     "static/media/Albert_Daniel.JPG": "/static/media/Albert_Daniel.c25b39a9d35ee7eb51f8.JPG",
     "static/media/48.jpeg": "/static/media/48.1469ca0e5732f7db5f0c.jpeg",
     "static/media/Schmeißer_Claas.JPG": "/static/media/Schmeißer_Claas.43db2f2184e62fc3ae19.JPG",
     "static/media/47.jpeg": "/static/media/47.4e1cc468a69ea8f48ac9.jpeg",
     "static/media/26.jpeg": "/static/media/26.87f92d9ec51fc6c9dde3.jpeg",
     "static/media/Barth_Andre.JPG": "/static/media/Barth_Andre.ea63b5e53170b6b4cad3.JPG",
-    "static/media/Piel_Daniel.JPG": "/static/media/Piel_Daniel.af910aaa0ccd09d7a7e4.JPG",
     "static/media/20.jpeg": "/static/media/20.5200506bb1e96267cbaf.jpeg",
     "static/media/32.jpeg": "/static/media/32.b6e3db11c6c50726ac52.jpeg",
     "static/media/9.jpeg": "/static/media/9.f4052ccbf0a26128b3be.jpeg",
@@ -79,7 +83,6 @@
     "static/media/Bild12.JPG": "/static/media/Bild12.9b8b48d29a27ab31e742.JPG",
     "static/media/Bild2.JPG": "/static/media/Bild2.3a9b13c22ad408f578c3.JPG",
     "static/media/Bild1.JPG": "/static/media/Bild1.df74e1cd3d6cbf719981.JPG",
-    "static/media/Flyer_Bambini.jpg": "/static/media/Flyer_Bambini.5734f6193253e261911e.jpg",
     "static/media/38.jpeg": "/static/media/38.152e71a0b023c774f2e5.jpeg",
     "static/media/Scholle.jpg": "/static/media/Scholle.cd960e5deed3274caa75.jpg",
     "static/media/43.jpeg": "/static/media/43.bc4bef11b44e08ddc819.jpeg",
@@ -90,6 +93,7 @@
     "static/media/Gottschild_Leon.JPG": "/static/media/Gottschild_Leon.5ca256a276b2e0d2afe0.JPG",
     "static/media/Dobierzin_Erik.JPG": "/static/media/Dobierzin_Erik.52bc00a058512e3ede45.JPG",
     "static/media/Freyer_Christoph.JPG": "/static/media/Freyer_Christoph.d69d8f73cac91c0a9f06.JPG",
+    "static/media/RecyclingCup.jpg": "/static/media/RecyclingCup.7ace350679b2d6fd0164.jpg",
     "static/media/Borrmann_Samuel.JPG": "/static/media/Borrmann_Samuel.ed413fe8ad94c1c04acc.JPG",
     "static/media/Krohne_Sebastian.JPG": "/static/media/Krohne_Sebastian.0564a2344ab034690402.JPG",
     "static/media/Scholz_Christoph.JPG": "/static/media/Scholz_Christoph.7220753a96caf0206c3e.JPG",
@@ -99,7 +103,6 @@
     "static/media/Weißenborn_Niclas.JPG": "/static/media/Weißenborn_Niclas.9d787d30243eb2cad159.JPG",
     "static/media/Just_Elias.JPG": "/static/media/Just_Elias.20686e3b2bf2c1bd4af9.JPG",
     "static/media/Fuhrmann_Patrick.JPG": "/static/media/Fuhrmann_Patrick.2216f414e2e0eef993d4.JPG",
-    "static/media/Bernstein_Quentin.JPG": "/static/media/Bernstein_Quentin.2260650927ce3b3996c1.JPG",
     "static/media/Balschun_Nico.JPG": "/static/media/Balschun_Nico.fdfb4759664f39c85091.JPG",
     "static/media/Friedrich_Ole.JPG": "/static/media/Friedrich_Ole.43558eb6178556854197.JPG",
     "static/media/Kalkofen_Etienne.JPG": "/static/media/Kalkofen_Etienne.f1909ae7e7342acc5ddd.JPG",
@@ -136,11 +139,11 @@
     "static/media/27_thumbnail.jpeg": "/static/media/27_thumbnail.35c40c68cae2a421cde9.jpeg",
     "static/media/gebbi.webp": "/static/media/gebbi.ffefd9b3a0088591f82f.webp",
     "index.html": "/index.html",
-    "main.51a159f7.css.map": "/static/css/main.51a159f7.css.map",
-    "main.719fdaf9.js.map": "/static/js/main.719fdaf9.js.map"
+    "main.cf39ea5e.css.map": "/static/css/main.cf39ea5e.css.map",
+    "main.08ad9023.js.map": "/static/js/main.08ad9023.js.map"
   },
   "entrypoints": [
-    "static/css/main.51a159f7.css",
-    "static/js/main.719fdaf9.js"
+    "static/css/main.cf39ea5e.css",
+    "static/js/main.08ad9023.js"
   ]
 }
