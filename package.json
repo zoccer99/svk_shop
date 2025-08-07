@@ -54,6 +54,6 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
   },
   "react-dotenv": {
-    "DB_SERVER": "http://svkretzschau.duckdns.org:5000/"
+    "DB_SERVER": "http://svkretzschau.ddns.net:5000/"
   }
 }
