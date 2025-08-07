@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+import parse from 'html-react-parser';
 
 //TODO: Datenbank verbinden
 
 const ContributionSite = (props) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [contributions, setContributions] = useState();
+  const [contributions, setContributions] = useState([]);
   const [images, setImages] = useState();
   const [visibleCount, setVisibleCount] = useState(6);
   
@@ -84,65 +85,41 @@ const ContributionSite = (props) => {
 
   if (isLoading) {
     return <h1>Loading..</h1>;
-  } else {
+  } else {  
     return (
       <div>
         <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
           Aktuelle Berichte
         </h3>
 
-        {contributions && images && (
-          <>
-            <div className="row justify-content-between">
-              {contributions.slice(0, visibleCount).map((conn, index) =>
-                index + 1 % 3 === 0 ? (
-                  <div key={index}>
-                    <div className="w-100"></div>
-                    <Card
-                      teamClass={conn.teamClass}
-                      imgUrl={
-                        images[Math.floor(Math.random() * (images.length - 1))]
-                      }
-                      titel={conn.titel}
-                      text={conn.text}
-                      category={conn.category}
-                      author={conn.autor}
-                      time={new Date(conn.zeit).toLocaleDateString(
-                        "de-DE",
-                        options
-                      )}
-                    />
-                  </div>
-                ) : (
-                  <Card
-                    key={index}
-                    teamClass={conn.teamClass}
-                    imgUrl={
-                      images[Math.floor(Math.random() * (images.length - 1))]
-                    }
-                    titel={conn.titel}
-                    text={conn.text}
-                    category={conn.category}
-                    author={conn.autor}
-                    time={new Date(conn.zeit).toLocaleDateString(
-                      "de-DE",
-                      options
-                    )}
-                  />
-                )
-              )}
+        <div className="container">
+          <div className="row align-items-stretch">
+            {contributions.slice(0, visibleCount).map((conn, index) => (
+              <Card
+                key={index}
+                teamClass={conn.teamClass}
+                imgUrl={
+                  images[Math.floor(Math.random() * (images.length - 1))]
+                }
+                titel={conn.titel}
+                text={conn.text}
+                category={conn.category}
+                author={conn.autor}
+                time={new Date(conn.zeit).toLocaleDateString(
+                  "de-DE",
+                  options
+                )}
+              />
+            ))}
+          </div>
+          {visibleCount < contributions.length && (
+            <div className="text-center my-4">
+              <button className="btn btn-primary" onClick={loadMore}>
+                Mehr laden
+              </button>
             </div>
-
-            {/* 👉 Mehr laden-Button */}
-            {visibleCount < contributions.length && (
-              <div className="text-center my-4">
-                <button className="btn btn-primary" onClick={loadMore}>
-                  Mehr laden
-                </button>
-              </div>
-            )}
-          </>
-        )}
+          )}
+        </div>
       </div>
     );
   }

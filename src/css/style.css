@@ -310,12 +310,16 @@ h1 {
   margin-left: var(--spacing-sm); /* Adjusted margin */
 }
 
+.card-text {
+ 
+}
+
 .card-footer {
   font-size: 0.85rem; /* Slightly larger font */
   padding: var(--spacing-sm) var(--spacing-md); /* Adjusted padding */
   background-color: var(--color-light-gray); /* Light background for footer */
   border-top: 1px solid var(--color-very-light-gray); /* Subtle border */
-  margin-top: auto;
+  
 }
 
 .textContainer {
