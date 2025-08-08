@@ -36,18 +36,18 @@ function Card(props) {
   };
 
   return (
-    <div className="col-12 col-sm-6 col-md-4 mb-4 p-0">
+    <div className="col-12 col-sm-6 col-md-4 mb-4 p-4-0 ">
       <div className="card h-100 d-flex flex-column">
-        <Link to={`/${props.teamClass}/${slugify(props.titel)}`} className="text-decoration-none text-dark d-flex flex-column flex-grow-1">
-          <img src={props.imgUrl} className="card-img-top" alt="..." />
+        <Link to={`/${props.teamClass}/${slugify(props.titel)}`} className="text-decoration-none text-dark d-flex flex-column flex-grow-1 ">
+          <img src={props.imgUrl} className="card-img-top" alt="..." loading="lazy" />
           <div className="card-body flex-grow-1">
             <span className="badge bg-primary">{props.teamClass}</span>
             <h5 className="card-title mt-2">{props.titel}</h5>
-            <p className="card-text" style={{ verflow: 'hidden' }}>{stripHtml(props.text.substring(0, 100) + '...')}</p>
+            <p className="card-text" style={{ overflow: 'hidden' }}>{stripHtml(props.text.substring(0, 100) + '...')}</p>
           </div>
           <div className="card-footer d-flex align-items-center mt-auto">
-            <img src={changeAuthorPic(props.author)} alt={props.author} className="rounded-circle me-2" style={{ width: '40px', height: '40px' }} />
-            <small className="text-muted">
+            <img src={changeAuthorPic(props.author)} alt={props.author} className="rounded-circle me-2" style={{ width: '64px', height: '60px' }} />
+            <small className="text-muted pt-2">
               {props.author} - {props.time}
             </small>
           </div>
