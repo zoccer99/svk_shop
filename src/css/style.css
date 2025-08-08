@@ -47,7 +47,7 @@ h1 {
 /* COUNTDOWN */
 
 .CounConWrapper {
-  width: 90%; /* Adjusted width for better use of space */
+  width: 95%; /* Adjusted width for better use of space */
   margin: var(--spacing-lg) auto; /* Center the wrapper and add vertical margin */
 }
 
@@ -260,18 +260,7 @@ h1 {
 
 /* ContributionCard */
 
-.card {
-  border: none; /* Remove default card border */
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: var(--glass-background);
-  backdrop-filter: var(--glass-backdrop-filter);
-  border: var(--glass-border);
-  border-radius: 1em; /* More rounded for glass effect */
-  box-shadow: var(--shadow-medium);
-  transition: all 0.3s ease-in-out;
-}
+
 
 .card:hover {
   transform: var(--glass-animation-hover);
@@ -317,8 +306,8 @@ h1 {
 .card-footer {
   font-size: 0.85rem; /* Slightly larger font */
   padding: var(--spacing-sm) var(--spacing-md); /* Adjusted padding */
-  background-color: var(--color-light-gray); /* Light background for footer */
-  border-top: 1px solid var(--color-very-light-gray); /* Subtle border */
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
   
 }
 
