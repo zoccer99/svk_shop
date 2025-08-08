@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import parse from 'html-react-parser';
+import { Spinner } from "react-bootstrap";
 
 //TODO: Datenbank verbinden
 
 const ContributionSite = (props) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [contributions, setContributions] = useState([]);
   const [images, setImages] = useState();
   const [visibleCount, setVisibleCount] = useState(6);
@@ -66,6 +68,7 @@ const ContributionSite = (props) => {
         const temp = context.keys().map((key) => context(key));
         setImages(temp);
       } catch (err) {
+        setError(err);
         console.error(err);
       } finally {
         setIsLoading(false);
@@ -83,8 +86,22 @@ const ContributionSite = (props) => {
     day: "numeric",
   };
 
+  if (error) {
+    return (
+      <div className="alert alert-danger mt-4" role="alert">
+        Fehler beim Laden der Beiträge: {error.message}
+      </div>
+    );
+  }
+
   if (isLoading) {
-    return <h1>Loading..</h1>;
+    return (
+      <div className="text-center mt-4">
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    );
   } else {  
     return (
       <div>

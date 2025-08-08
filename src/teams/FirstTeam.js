@@ -85,7 +85,7 @@ const FirstTeam = () => {
       <blockquote className="blockquote">
         <h1 className="mb-0">Erste Mannschaft</h1>
         <h2 className="blockquote-footer pt-4 ">
-          Kreisoberliga Saison 2020/2021
+          Kreisoberliga Saison 2025/2026
         </h2>
       </blockquote>
       <div className="">

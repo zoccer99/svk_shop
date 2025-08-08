@@ -25,20 +25,19 @@
   --color-accent-yellow-olive: #ffc107;
 
   /* Specific UI Colors (adjusted to new palette) */
-  --color-countdown-dark-purple: #4a2c6e; /* Keep for now, but consider aligning */
-  --color-countdown-bg-transparent: rgba(127, 165, 174, 0.2); /* Keep for now */
-  --color-slideshow-bg: #1a202c; /* Keep for now */
-  --color-login-purple-gray: #6f42c1; /* Keep for now */
-  --color-login-purple: #8e44ad; /* Keep for now */
-  --color-login-dark-purple: #5e35b1; /* Keep for now */
-  --color-login-medium-purple: #7b1fa2; /* Keep for now */
-  --color-login-light-purple: #9c27b0; /* Keep for now */
-  --color-login-border-light: #ced4da; /* Keep for now */
-  --color-login-text-dark: #495057; /* Keep for now */
-  --color-login-icon: #6c757d; /* Keep for now */
-  --color-player-card-back-text: #f8f9fa; /* Keep for now */
-  --color-player-card-back-text-light: #e9ecef; /* Keep for now */
-  --color-rich-editor-active-button: #007bff; /* Use primary blue */
+  --color-countdown-dark-purple: var(--color-tertiary-blue); /* Was #4a2c6e */
+  --color-countdown-bg-transparent: rgba(0, 123, 255, 0.1); /* Was rgba(127, 165, 174, 0.2) */
+  --color-slideshow-bg: #1a202c;
+  --color-login-purple: var(--color-primary-blue); /* Was #8e44ad */
+  --color-login-dark-purple: var(--color-tertiary-blue); /* Was #5e35b1 */
+  --color-login-medium-purple: var(--color-tertiary-blue); /* Was #7b1fa2 */
+  --color-login-light-purple: var(--color-primary-blue); /* Was #9c27b0 */
+  --color-login-border-light: #ced4da;
+  --color-login-text-dark: #495057;
+  --color-login-icon: var(--color-secondary-gray); /* Was #6c757d */
+  --color-player-card-back-text: #f8f9fa;
+  --color-player-card-back-text-light: #e9ecef;
+  --color-rich-editor-active-button: var(--color-primary-blue);
 
   /* Transparent Colors */
   --color-black-transparent-05: rgba(0, 0, 0, 0.05);
@@ -92,4 +91,7 @@
   --spacing-xl: 2rem;     /* 32px */
   --spacing-xxl: 3rem;    /* 48px */
   --spacing-xxxl: 4rem;   /* 64px */
+
+  /* Typography */
+  --line-height-base: 1.5;
 }
