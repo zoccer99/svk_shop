@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   font-family: "Inter", sans-serif; /* Standardize to Inter */
   font-size: clamp(1rem, 0.8vw + 1rem, 1.125rem); /* Fluid font size */
+  line-height: var(--line-height-base);
   min-height: 100vh; /* Ensure body takes full viewport height */
   display: flex;
   flex-direction: column;
@@ -47,7 +48,7 @@ h1 {
 /* COUNTDOWN */
 
 .CounConWrapper {
-  width: 90%; /* Adjusted width for better use of space */
+  width: 95%; /* Adjusted width for better use of space */
   margin: var(--spacing-lg) auto; /* Center the wrapper and add vertical margin */
 }
 
@@ -102,7 +103,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0; /* Add vertical padding */
+  padding: var(--spacing-xl) 0; /* Add vertical padding */
 }
 
 .primary-color {
@@ -260,18 +261,7 @@ h1 {
 
 /* ContributionCard */
 
-.card {
-  border: none; /* Remove default card border */
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: var(--glass-background);
-  backdrop-filter: var(--glass-backdrop-filter);
-  border: var(--glass-border);
-  border-radius: 1em; /* More rounded for glass effect */
-  box-shadow: var(--shadow-medium);
-  transition: all 0.3s ease-in-out;
-}
+
 
 .card:hover {
   transform: var(--glass-animation-hover);
@@ -310,12 +300,16 @@ h1 {
   margin-left: var(--spacing-sm); /* Adjusted margin */
 }
 
+.card-text {
+ 
+}
+
 .card-footer {
   font-size: 0.85rem; /* Slightly larger font */
   padding: var(--spacing-sm) var(--spacing-md); /* Adjusted padding */
-  background-color: var(--color-light-gray); /* Light background for footer */
-  border-top: 1px solid var(--color-very-light-gray); /* Subtle border */
-  margin-top: auto;
+  background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  
 }
 
 .textContainer {
@@ -687,7 +681,7 @@ a:hover {
     transition: transform 0.3s ease;
   }
   .postcard .postcard__text {
-    padding: 3.5rem; /* Adjusted padding */
+    padding: var(--spacing-xxxl); /* Adjusted padding */
     width: 100%;
   }
   .postcard .media.postcard__text:before {
@@ -719,7 +713,7 @@ a:hover {
 }
 @media screen and (min-width: 1024px) {
   .postcard__text {
-    padding: 2.5rem 4rem; /* Adjusted padding */
+    padding: var(--spacing-xl) var(--spacing-xxxl); /* Adjusted padding */
   }
   .postcard__text:before {
     content: "";
@@ -943,7 +937,7 @@ a:hover {
 .screen__background__shape2 {
   height: 220px;
   width: 220px;
-  background: var(--color-login-purple); /* Use variable */
+  background: var(--color-primary-blue); /* Use variable */
   top: -172px;
   right: 0;
   border-radius: 32px;
@@ -952,7 +946,7 @@ a:hover {
 .screen__background__shape3 {
   height: 540px;
   width: 190px;
-  background: var(--gradient-login-shape); /* Use variable */
+  background: linear-gradient(270deg, var(--color-tertiary-blue), var(--color-primary-blue)); /* Use variable */
   top: -24px;
   right: 0;
   border-radius: 32px;
@@ -961,7 +955,7 @@ a:hover {
 .screen__background__shape4 {
   height: 400px;
   width: 200px;
-  background: var(--color-login-light-purple); /* Use variable */
+  background: var(--color-primary-blue); /* Use variable */
   top: 420px;
   right: 50px;
   border-radius: 60px;
@@ -969,7 +963,7 @@ a:hover {
 
 .login {
   width: 320px;
-  padding: 30px;
+  padding: var(--spacing-xl);
   padding-top: 156px;
   background: var(--glass-background);
   backdrop-filter: var(--glass-backdrop-filter);
@@ -985,7 +979,7 @@ a:hover {
 }
 
 .login__field {
-  padding: 20px 0px;
+  padding: var(--spacing-lg) 0px;
   position: relative;
 }
 
@@ -1014,14 +1008,14 @@ a:hover {
 .login__input:active,
 .login__input:hover {
   outline: none;
-  border-color: var(--color-login-medium-purple); /* Use variable */
+  border-color: var(--color-primary-blue); /* Use variable */
 }
 
 
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-  border-color: var(--color-login-medium-purple); /* Use variable */
+  border-color: var(--color-primary-blue); /* Use variable */
   outline: none;
   transform: translateY(-2px); /* Lift button on hover */
   box-shadow: var(--shadow-hover);
@@ -1055,7 +1049,7 @@ a:hover {
 }
 
 .social-login__icon {
-  padding: 20px 10px;
+  padding: var(--spacing-lg) var(--spacing-sm);
   color: var(--color-white);
   text-decoration: none;
   text-shadow: 0px 0px 8px var(--color-login-icon); /* Use variable */
@@ -1229,8 +1223,8 @@ body {
 }
 
 .coachInfoWrapper {
-  padding: 1.5rem; /* Adjusted padding */
-  margin: 1.5rem auto; /* Adjusted margin */
+  padding: var(--spacing-lg); /* Adjusted padding */
+  margin: var(--spacing-lg) auto; /* Adjusted margin */
   background: var(--glass-background);
   backdrop-filter: var(--glass-backdrop-filter); /* Stronger blur */
   box-shadow: var(--shadow-medium); /* Multi-layered shadow */
@@ -1243,4 +1237,14 @@ body {
 .coachInfoWrapper:hover {
   transform: var(--glass-animation-hover);
   box-shadow: var(--shadow-hover);
+}
+
+/* From https://css.glass */
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }

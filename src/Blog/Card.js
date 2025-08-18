@@ -1,99 +1,55 @@
-// "use client"
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import parse from "html-react-parser";
 import gebbi from "../pictures/profiles/gebbi.webp";
 import scholle from "../pictures/profiles/Scholle.jpg";
 import admin from "../pictures/profiles/admin.png"
-import parse from 'html-react-parser';
 
-function slugify(text) {
-  return text
-    .normalize('NFD')                       // z.B. ä -> ä
-    .replace(/[\u0300-\u036f]/g, '')       // Entfernt diakritische Zeichen
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')          // Entfernt Sonderzeichen
-    .trim()
-    .replace(/[\s_-]+/g, '-')              // Ersetzt Leerzeichen/Unterstriche durch Bindestrich
-    .replace(/^-+|-+$/g, '');              // Entfernt führende/abschließende Bindestriche
-}
-function maxWords(str) {
-  if (str != null) {
-    var symbols = str.length;
-    let previewText = str;
-    if (symbols > 100) {
-      previewText = previewText.slice(0, 100);
-      previewText = previewText.concat("...");
-    }
-    return previewText;
-  }
-}
 
 function Card(props) {
-  const [url, setUrl] = useState("");
+  function slugify(text) {
+    return text
+      .toString()
+      .toLowerCase()
+      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+      .replace(/\-\-+/g, '-') // Replace multiple - with single -
+      .replace(/^-+/, '') // Trim - from start of text
+      .replace(/-+$/, ''); // Trim - from end of text
+  }
+  function stripHtml(htmlString) {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = htmlString;
+    return tempDiv.textContent || tempDiv.innerText || "";
+}
 
-  useEffect(() => {
-    let url_title = slugify(props.titel)
-    const encodedUri = `/${props.teamClass}/${url_title}`;
-    setUrl(encodedUri);
-  }, [props.teamClass, props.titel]);
 
   const changeAuthorPic = (str) => {
-    if (str === "Christian Gebert") {
-      return gebbi;
-    } else if (str === "Matthias Scholle") {
-      return scholle;
-    }
-    else if (str === "admin") {
-      return admin;
-    }
-  };
-
-  const changeColor = (str) => {
-    if (str === "Erste Mannschaft") {
-      return "tag-blue";
-    }
-    if (str === "Zweite Mannschaft") {
-      return "tag-brown";
-    }
-    if (str === "Verein") {
-      return "tag-red";
-    }
+  if (str === "Christian Gebert") {
+    return gebbi;
+  } else if (str === "Matthias Scholle") {
+    return scholle;
+  }
+  else if (str === "admin") {
+    return admin;
+  }
   };
 
   return (
-    <div className="containerCard ">
-      <div className="card">
-        <Link style={{ textDecoration: "none" }} to={url} >
-          <div className="card__header">
-            <img
-              src={props.imgUrl}
-              alt="card__image"
-              className="card__image"
-              loading="lazy"
-            />
+    <div className="col-12 col-sm-6 col-md-4 mb-4 p-4-0 ">
+      <div className="card h-100 d-flex flex-column">
+        <Link to={`/${props.teamClass}/${slugify(props.titel)}`} className="text-decoration-none text-dark d-flex flex-column flex-grow-1 ">
+          <img src={props.imgUrl} className="card-img-top" alt="..." loading="lazy" />
+          <div className="card-body flex-grow-1">
+            <span className="badge bg-primary">{props.teamClass}</span>
+            <h5 className="card-title mt-2">{props.titel}</h5>
+            <p className="card-text" style={{ overflow: 'hidden' }}>{stripHtml(props.text.substring(0, 100) + '...')}</p>
           </div>
-          <div className="">
-
-          <div className="card__body">
-            <span className={`tag ${changeColor(props.teamClass)}`}>
-              {props.teamClass}
-            </span>
-            <h4 className="lead cardTitle">{props.titel}</h4>
-            <p>{parse(maxWords(props.text))}</p>
-          </div>
-          <div className="card__footer">
-            <div className="user">
-              <img
-                src={changeAuthorPic(props.author)}
-                alt="user__image"
-                className="user__image "
-                />
-              <div className="user__info d-flex flex-column align-items-center justify-content-center">
-                <h5>{props.author}</h5>
-                <small>{props.time}</small>
-              </div>
-            </div>
-                </div>
+          <div className="card-footer d-flex align-items-center mt-auto">
+            <img src={changeAuthorPic(props.author)} alt={props.author} className="rounded-circle me-2" style={{ width: '64px', height: '60px' }} />
+            <small className="text-muted pt-2">
+              {props.author} - {props.time}
+            </small>
           </div>
         </Link>
       </div>
