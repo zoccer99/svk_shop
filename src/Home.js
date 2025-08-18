@@ -10,25 +10,136 @@ function Home(props) {
   const [nextGame, setNextGame] = useState([undefined, undefined, undefined]);
   const games = useMemo(() => [
     [
-      "SG Pölzig/Heuckewalde",
-      "SV 1893 Kretzschau",
-      new Date("July 19, 2025 15:00"),
+      "SV Kretzschau",
+      "SG Nessa / Teuchern",
+      new Date("August 24, 2025 15:00"),
     ],
     [
-      "SV 1893 Kretzschau",
-      "BSG Wismut Gera II",
-      new Date("July 25, 2025 18:30"),
+      "ESV Herrengosserstedt",
+      "SV Kretzschau",
+      new Date("August 29, 2025 18:30"),
     ],
     [
-      "Eintracht Theißen",
-      "SV 1893 Kretzschau",
-      new Date("July 27, 2025 14:30"),
+      "FSV Grün-Gelb Osterfeld",
+      "SV Kretzschau",
+      new Date("September 7, 2025 15:00"),
     ],
-    ["SV 1893 Kretzschau", "OTG Gera", new Date("August 3, 2025 15:00")],
     [
-      "SV 1893 Kretzschau",
-      "SG Reichardtswerben",
-      new Date("August 9, 2025 15:00"),
+      "SV Kretzschau",
+      "SV Grün-Weiß Langendorf",
+      new Date("September 14, 2025 15:00"),
+    ],[
+      "1. FC Zeitz II",
+      "SV Kretzschau",
+      new Date("September 21, 2025 14:00"),
+    ],
+    [
+      "SV Kretzschau",
+      "FSV Blau-Weiß Borau",
+      new Date("September 28, 2025 15:00"),
+    ],
+    [
+      "FC ZWK Nebra",
+      "SV Kretzschau",
+      new Date("October 5, 2025 14:00"),
+    ],
+    [
+      "SV Kretzschau",
+      "SSC Weißenfels III",
+      new Date("October 19, 2025 15:00"),
+    ],
+    [
+      "SC Naumburg II",
+      "SV Kretzschau",
+      new Date("October 26, 2025 14:00"),
+    ],
+    [
+      "SV Kretzschau",
+      "VfB Scharnhorst Großgörschen",
+      new Date("November 2, 2025 14:00"),
+    ],
+    [
+      "FSV Klosterhäseler",
+      "SV Kretzschau",
+      new Date("November 7, 2025 19:30"),
+    ],
+    [
+      "SV Kretzschau",
+      "SG Blau-Weiß Bad Kösen",
+      new Date("November 30, 2025 13:00"),
+    ],
+    [
+      "SV Spora",
+      "SV Kretzschau",
+      new Date("November 22, 2025 13:00"),
+    ],
+    [
+      "Baumersrodaer SV",
+      "SV Kretzschau",
+      new Date("December 6, 2025 13:00"),
+    ],[
+      "SG Nessa / Teuchern",
+      "SV Kretzschau",
+      new Date("March 1, 2026 14:00"),
+    ],
+    [
+      "SV Kretzschau",
+      "ESV Herrengosserstedt",
+      new Date("March 8, 2026 15:00"),
+    ],
+    [
+      "SV Grün-Weiß Langendorf",
+      "SV Kretzschau",
+      new Date("March 15, 2026 14:00"),
+    ],
+    [
+      "SV Kretzschau",
+      "1. FC Zeitz II",
+      new Date("March 22, 2026 15:00"),
+    ],
+    [
+      "FSV Blau-Weiß Borau",
+      "SV Kretzschau",
+      new Date("March 29, 2026 14:00"),
+    ],
+    [
+      "SV Kretzschau",
+      "FC ZWK Nebra",
+      new Date("April 12, 2026 15:00"),
+    ],
+    [
+      "SSC Weißenfels III",
+      "SV Kretzschau",
+      new Date("April 19, 2026 15:00"),
+    ],
+    [
+      "SV Kretzschau",
+      "SC Naumburg II",
+      new Date("April 26, 2026 15:00"),
+    ],
+    [
+      "VfB Scharnhorst Großgörschen",
+      "SV Kretzschau",
+      new Date("May 1, 2026 19:00"),
+    ],
+    [
+      "SV Kretzschau",
+      "FSV Klosterhäseler",
+      new Date("May 17, 2026 15:00"),
+    ],[
+      "SV Kretzschau",
+      "SV Spora",
+      new Date("May 31, 2026 15:00"),
+    ],
+    [
+      "SG Blau-Weiß Bad Kösen",
+      "SV Kretzschau",
+      new Date("June 7, 2026 15:00"),
+    ],
+    [
+      "SV Kretzschau",
+      "Baumersrodaer SV",
+      new Date("June 14, 2026 14:00"),
     ],
   ], []);
   useEffect(() => {
