@@ -1,0 +1,16 @@
+.login-modal {
+  padding: 2rem;
+  background: #f7f7f7;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login-title {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 1rem;
+}

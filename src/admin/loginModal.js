@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, InputGroup, Modal } from "react-bootstrap";
 import axios from "axios";
+import "../css/loginModal.css";
 
 
 function LoginModal(props) {
@@ -38,31 +39,35 @@ function LoginModal(props) {
 
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
-      <Modal.Header >
-        <Modal.Title id="contained-modal-title-vcenter">Login</Modal.Title>
-      </Modal.Header>
       <Modal.Body className="mx-2">
-        <InputGroup className="mb-3">
-          <InputGroup.Text>username</InputGroup.Text>
-          <Form.Control
-            placeholder="..."
-            name="username"
-            onChange={handleChange}
-          />
-        </InputGroup>
-        <InputGroup className="mb-3">
-          <InputGroup.Text>password</InputGroup.Text>
-          <Form.Control
-            placeholder="..."
-            name="password"
-            onChange={handleChange}
-            type="password"
-          />
-        </InputGroup>
+        <div className="login-modal">
+          <h2 className="login-title">Login</h2>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter username"
+                name="username"
+                onChange={handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="login-button">
+              Submit
+            </Button>
+          </Form>
+        </div>
       </Modal.Body>
-      <Modal.Footer className="d-flex justify-content-center">
-        <Button onClick={handleSubmit}>Bestätigen</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
