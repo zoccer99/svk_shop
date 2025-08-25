@@ -7,15 +7,15 @@ import "./css/style.css";
 import "./css/gridCSS.css";
 import "../node_modules/react-image-gallery/styles/css/image-gallery.css";
 import '../node_modules/draft-js/dist/Draft.css';
-import UserProvider from "./Hooks/useContext";
+import AuthProvider from "./Hooks/useContext";
 
 
 const app = document.getElementById("root");
 const root = createRoot(app);
 root.render(
-  <UserProvider>
+  <AuthProvider>
      <Welcome />
-     </UserProvider>
+     </AuthProvider>
 );
 
 

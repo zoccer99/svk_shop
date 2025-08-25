@@ -1,75 +1,68 @@
-import React, { useState } from "react";
-import { Button, Form, InputGroup, Modal } from "react-bootstrap";
-import axios from "axios";
-import "../css/loginModal.css";
+import React, { useState, useContext } from 'react';
+import { Modal, Button, Form } from 'react-bootstrap';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import { AuthContext } from '../Hooks/useContext'; // Import AuthContext
 
+const LoginModal = ({ show, onHide }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const history = useHistory();
+  const { login } = useContext(AuthContext); // Use AuthContext
 
-function LoginModal(props) {
-  const [loginCredentials, setloginCredentials] = useState({
-    username: "",
-    password: "",
-  });
-  
-
-  const handleChange = (e) => {
-    const target = e.target;
-    const name = target.name;
-    setloginCredentials({ ...loginCredentials, [name]: target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleLogin = async (event) => {
+    event.preventDefault();
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URI}/Users/`,
-        //"http://localhost:5000/users",
-        loginCredentials
-      );
-      if (res.status === 200) {
-        localStorage.setItem("jwt", res.data["accessToken"]);
-        localStorage.setItem("user", loginCredentials["username"]);
-        window.location.href = "https://sv-kretzschau.de/dashboard"
-      }
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URI}/Users/login`, {
+        username,
+        password,
+      });
+      login(response.data.accessToken, response.data.username); // Use login function from AuthContext
+      history.push('/dashboard');
+      onHide(); // Close modal on successful login
     } catch (err) {
-      if (err.response.status === 401) {
-        alert("Falscher Username oder Passwort");
-      }
+      setError('Invalid credentials');
+      console.error('Login failed:', err);
     }
   };
 
   return (
-    <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
-      <Modal.Body className="mx-2">
-        <div className="login-modal">
-          <h2 className="login-title">Login</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Username</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter username"
-                name="username"
-                onChange={handleChange}
-              />
-            </Form.Group>
+    <Modal show={show} onHide={onHide} centered>
+      <Modal.Header closeButton>
+        <Modal.Title>Login</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form onSubmit={handleLogin}>
+          <Form.Group className="mb-3" controlId="formBasicUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                name="password"
-                onChange={handleChange}
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit" className="login-button">
-              Submit
-            </Button>
-          </Form>
-        </div>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </Form.Group>
+          {error && <p className="text-danger">{error}</p>}
+          <Button variant="primary" type="submit">
+            Login
+          </Button>
+        </Form>
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default LoginModal;

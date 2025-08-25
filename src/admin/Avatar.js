@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
+import { AuthContext } from "../Hooks/useContext";
 import { Overlay, Popover } from "react-bootstrap";
 import { BsPerson } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -7,15 +8,12 @@ const Avatar = (props) => {
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
   const ref = useRef(null);
+  const { logout } = useContext(AuthContext);
 
   console.log(props);
   const handleClick = (event) => {
     setShow(!show);
     setTarget(event.target);
-  };
-
-  const logout = () => {
-    localStorage.clear();
   };
   return (
     <>
@@ -36,16 +34,14 @@ const Avatar = (props) => {
       >
         <Popover id="popover-contained">
           <Popover.Title as="h3">Account Optionen</Popover.Title>
-          <Popover.Content>
-            <div>
-              <div className="d-flex flex-column">
-                <strong>Account</strong>
-                <Link to="/dashboard">Beiträge</Link>
-                <Link to="/dashboard">Dashboard</Link >
-                <button onClick={logout} className="btn btn-link p-0 text-decoration-none text-dark"> {/* Added btn-link for styling */} 
-                  Ausloggen
-                </button>
-              </div>
+          <Popover.Content className="p-3">
+            <div className="d-flex flex-column">
+              <strong className="mb-2">Account</strong>
+              <Link to="/dashboard" className="text-decoration-none text-dark mb-1">Beiträge</Link>
+              <Link to="/dashboard" className="text-decoration-none text-dark mb-2">Dashboard</Link >
+              <button onClick={logout} className="btn btn-outline-danger btn-sm mt-2"> 
+                Ausloggen
+              </button>
             </div>
           </Popover.Content>
         </Popover>
