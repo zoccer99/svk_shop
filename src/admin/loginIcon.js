@@ -2,19 +2,19 @@ import { Nav } from "react-bootstrap";
 import React, { useContext, useState } from "react";
 import Avatar from "./Avatar";
 import LoginModal from "./loginModal";
-import { userContext } from "../Hooks/useContext";
+import { AuthContext } from "../Hooks/useContext";
 
 const LoginIcon = () => {
-  const [user] = useContext(userContext);
+  const { currentUser } = useContext(AuthContext);
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      {user === "" ? (
+      {currentUser === "" ? (
         <Nav.Link className="loginWrapper" onClick={() => setShowModal(true)}>
           Login
         </Nav.Link>
        ) : (
-        <Avatar name={user} />
+        <Avatar name={currentUser} />
       )}
 
       <LoginModal show={showModal} onHide={() => setShowModal(false)} /> 
