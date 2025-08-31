@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Slideshow from "./Slideshow";
 import MobileGrid from "./MobileGrid";
+import ImageSlideshow from "./components/ImageSlideshow"
 
 import Countdown from "./Coundown";
 import ContributionSite from "./Blog/ContributionSite";

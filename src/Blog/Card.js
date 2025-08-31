@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import parse from "html-react-parser";
 import gebbi from "../pictures/profiles/gebbi.webp";
@@ -7,16 +7,30 @@ import admin from "../pictures/profiles/admin.png"
 
 
 function Card(props) {
-  function slugify(text) {
-    return text
-      .toString()
-      .toLowerCase()
-      .replace(/\s+/g, '-') // Replace spaces with -
-      .replace(/[^\w\-]+/g, '') // Remove all non-word chars
-      .replace(/\-\-+/g, '-') // Replace multiple - with single -
-      .replace(/^-+/, '') // Trim - from start of text
-      .replace(/-+$/, ''); // Trim - from end of text
-  }
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 576);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 576);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+function slugifyDe(text) {
+  const DE_MAP = { 'ä':'ae','ö':'oe','ü':'ue','Ä':'Ae','Ö':'Oe','Ü':'Ue','ß':'ss' };
+  return text
+    .toString()
+    .replace(/[äöüÄÖÜß]/g, ch => DE_MAP[ch])   // German-friendly
+    .normalize('NFKD')                          // decompose accents
+    .replace(/[\u0300-\u036f]/g, '')            // remove combining marks
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')                // ASCII only
+    .replace(/^-+|-+$/g, '')                    // trim dashes
+    .replace(/-{2,}/g, '-');                    // collapse
+}
+
   function stripHtml(htmlString) {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = htmlString;
@@ -36,9 +50,9 @@ function Card(props) {
   };
 
   return (
-    <div className="col-12 col-sm-6 col-md-4 mb-4 p-4-0 ">
+    <div className={`col-12 col-sm-6 col-md-4 mb-4 p-4-0 ${isMobile ? 'blog-card-mobile-banner' : ''}`}>
       <div className="card h-100 d-flex flex-column">
-        <Link to={`/${props.teamClass}/${slugify(props.titel)}`} className="text-decoration-none text-dark d-flex flex-column flex-grow-1 ">
+        <Link to={`/${props.teamClass}/${slugifyDe(props.titel)}`} className="text-decoration-none text-dark d-flex flex-column flex-grow-1 ">
           <img src={props.imgUrl} className="card-img-top" alt="..." loading="lazy" />
           <div className="card-body flex-grow-1">
             <span className="badge bg-primary">{props.teamClass}</span>

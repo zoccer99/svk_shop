@@ -1248,3 +1248,73 @@ body {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+.player-card-mobile {
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter);
+  border: var(--glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease-in-out;
+  padding: var(--spacing-lg) !important; /* Increased padding */
+  margin-bottom: var(--spacing-lg) !important; /* Consistent bottom margin */
+}
+
+.player-card-mobile:hover {
+  transform: var(--glass-animation-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+/* New styles for blog cards in mobile view */
+@media (max-width: 576px) {
+  .blog-card-mobile-banner {
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    background: var(--glass-background);
+    backdrop-filter: var(--glass-backdrop-filter);
+    border: var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .blog-card-mobile-banner .card-img-top {
+    height: 180px; /* Fixed height for banner image */
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .blog-card-mobile-banner .card-body {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+  }
+
+  .blog-card-mobile-banner .card-title {
+    font-size: 1.2rem; /* Larger title for banner */
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .blog-card-mobile-banner .card-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--color-medium-gray);
+  }
+
+  .blog-card-mobile-banner .card-footer {
+    padding: var(--spacing-md);
+    background-color: var(--color-light-gray);
+    border-top: 1px solid var(--color-very-light-gray);
+  }
+
+  .blog-card-mobile-banner .rounded-circle {
+    width: 50px; /* Adjust author image size */
+    height: 50px;
+  }
+
+  .blog-card-mobile-banner .badge {
+    font-size: 0.8rem;
+    padding: var(--spacing-xxs) var(--spacing-sm);
+  }
+}
