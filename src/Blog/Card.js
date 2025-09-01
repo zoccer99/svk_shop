@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import parse from "html-react-parser";
+// import parse from "html-react-parser"; // unused
 import gebbi from "../pictures/profiles/gebbi.webp";
 import scholle from "../pictures/profiles/Scholle.jpg";
 import admin from "../pictures/profiles/admin.png"
@@ -38,6 +38,21 @@ function slugifyDe(text) {
 }
 
 
+  // Safer slug generator for German characters
+  function toSlug(text) {
+    const DE_MAP = { 'ä':'ae','ö':'oe','ü':'ue','Ä':'Ae','Ö':'Oe','Ü':'Ue','ß':'ss' };
+    return (text || "")
+      .toString()
+      .replace(/[äöüÄÖÜß]/g, ch => DE_MAP[ch])
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .replace(/-{2,}/g, '-');
+  }
+
+
   const changeAuthorPic = (str) => {
   if (str === "Christian Gebert") {
     return gebbi;
@@ -47,20 +62,26 @@ function slugifyDe(text) {
   else if (str === "admin") {
     return admin;
   }
+  return admin;
   };
+
+  const previewText = (() => {
+    const plain = stripHtml(props.text || "");
+    return plain.length > 100 ? plain.slice(0, 100) + "..." : plain;
+  })();
 
   return (
     <div className={`col-12 col-sm-6 col-md-4 mb-4 ${isMobile ? 'blog-card-mobile-banner' : ''}`}>
-      <div className="card h-100 d-flex flex-column">
-        <Link to={`/${props.teamClass}/${slugifyDe(props.titel)}`} className="text-decoration-none text-dark d-flex flex-column flex-grow-1 ">
-          <img src={props.imgUrl} className="card-img-top" alt="..." loading="lazy" />
+      <div className="card h-100 d-flex flex-column blog-card">
+        <Link to={`/${props.teamClass}/${toSlug(props.titel)}`} className="text-decoration-none text-dark d-flex flex-column flex-grow-1 ">
+          <img src={props.imgUrl} className="card-img-top" alt={props.titel} loading="lazy" />
           <div className="card-body flex-grow-1">
-            <span className="badge bg-primary">{props.teamClass}</span>
+            <span className="badge badge-team">{props.teamClass}</span>
             <h5 className="card-title mt-2">{props.titel}</h5>
-            <p className="card-text" style={{ overflow: 'hidden' }}>{stripHtml(props.text.substring(0, 100) + '...')}</p>
+            <p className="card-text" style={{ overflow: 'hidden' }}>{previewText}</p>
           </div>
           <div className="card-footer d-flex align-items-center mt-auto">
-            <img src={changeAuthorPic(props.author)} alt={props.author} className="rounded-circle me-2" style={{ width: '64px', height: '60px' }} />
+            <img src={changeAuthorPic(props.author)} alt={props.author} className="rounded-circle me-2" style={{ width: '48px', height: '48px', objectFit: 'cover' }} />
             <small className="text-muted pt-2">
               {props.author} - {props.time}
             </small>

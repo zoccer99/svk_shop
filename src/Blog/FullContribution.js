@@ -19,11 +19,9 @@ class FullContribution extends Component {
   };
 
   chooseRandom = (imgArr) => {
-    this.setState({
-      imageSrc:
-        this.state.images[Math.floor(Math.random() * (imgArr.length - 1))]
-          ,
-    });
+    if (!Array.isArray(imgArr) || imgArr.length === 0) return;
+    const idx = Math.floor(Math.random() * imgArr.length);
+    this.setState({ imageSrc: imgArr[idx] });
   };
 
   importAllImages = (r) => {
@@ -47,7 +45,7 @@ class FullContribution extends Component {
           {this.props.customImages ? 
           <MyImageGallery /> :
           <img
-          className="w-lg-75 img-fluid img-thumbnail"
+          className="w-lg-75 img-fluid image-frame"
           src={this.state.imageSrc}
           alt="SpielBild"
           ></img>
@@ -60,7 +58,7 @@ class FullContribution extends Component {
           </p>
         </div> */}
         <div className="d-flex justify-content-center align-items-center mt-5 ">
-          <div className="countdownContainer rounded p-4 w-lg-75 mx-2">
+          <div className="countdownContainer countdown-container content-section p-4 w-lg-75 mx-2">
             <h2 className="">{this.props.headline}</h2>
             <p dangerouslySetInnerHTML={{__html: this.props.text}}></p>
           </div>
