@@ -1,14 +1,12 @@
 import React from "react";
-import { Link, useParams, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function maxWords(str) {
-  var symbols = str.length;
-  var previewText=str;
-  if(symbols>100) {
-    var previewText=previewText.slice(0,100);
-    previewText = previewText.concat("...");
+  const text = String(str || "");
+  if (text.length > 100) {
+    return text.slice(0, 100) + "...";
   }
-  return previewText;
+  return text;
 }
 
 function Contribution(props) {         
@@ -18,12 +16,12 @@ function Contribution(props) {
       <div className="container contributionCard">
         <div className="row">
           <Link to={`${props.teamClass}/${props.titel}`}>
-            <div className="card">
-              <img className="card-img" src={props.imgUrl} loading="lazy" />
+            <div className="card blog-card">
+              <img className="card-img" src={props.imgUrl} alt={props.titel} loading="lazy" />
               <div className="card-img-overlay">
-                <button className="btn btn-light btn-sm">
+                <span className="badge bg-light text-dark">
                   {props.teamClass}
-                </button>
+                </span>
               </div>
               <div className="card-body">
                 <h4 className="card-title"> {props.titel} </h4>

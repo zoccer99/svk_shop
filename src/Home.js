@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
-import Slideshow from "./Slideshow";
-import MobileGrid from "./MobileGrid";
-import ImageSlideshow from "./components/ImageSlideshow"
+// import MobileGrid from "./MobileGrid"; // removed old mobile slideshow
+import MyImageGallery from "./Blog/MyImageGallery";
 
 import Countdown from "./Coundown";
 import ContributionSite from "./Blog/ContributionSite";
@@ -170,23 +169,29 @@ function Home(props) {
 
   return (
     <>
-      <Slideshow />
-      <MobileGrid />
-      <div className="d-flex flex-column align-items-center">
-        <div className="CounConWrapper">
-          {nextGame !== "undefined" ? (
-            <Countdown
-              date={new Date(nextGame[2])}
-              heimmannschaft={nextGame[0]}
-              gastmannschaft={nextGame[1]}
-            />
-          ) : (
-            <></>
-          )}
-
-          <ContributionSite />
+      {/* Hero */}
+      <section className="hero-section py-3 py-md-4">
+        <div className="d-flex justify-content-center">
+          <MyImageGallery hero />
         </div>
-      </div>
+      </section>
+
+      {/* Next match */}
+      <section className="container my-4 my-md-5">
+        {nextGame !== "undefined" ? (
+          <Countdown
+            date={new Date(nextGame[2])}
+            heimmannschaft={nextGame[0]}
+            gastmannschaft={nextGame[1]}
+          />
+        ) : null}
+      </section>
+
+      {/* Recent reports */}
+      <section className="container my-4 my-md-5">
+        <ContributionSite />
+      </section>
+
       <CookieConsent>
         This website uses cookies to enhance the user experience.
       </CookieConsent>

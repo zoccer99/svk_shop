@@ -10,7 +10,6 @@ const Avatar = (props) => {
   const ref = useRef(null);
   const { logout } = useContext(AuthContext);
 
-  console.log(props);
   const handleClick = (event) => {
     setShow(!show);
     setTarget(event.target);

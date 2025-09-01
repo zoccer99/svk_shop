@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import parse from 'html-react-parser';
+// import parse from 'html-react-parser'; // unused
+import firstTeam from "../pictures/firstTeam.jpg";
 import { Spinner } from "react-bootstrap";
 
 //TODO: Datenbank verbinden
@@ -105,19 +106,21 @@ const ContributionSite = (props) => {
   } else {  
     return (
       <div>
-        <h3 className="text-center mt-4 pinch" style={{ color: "#251F47" }}>
-          Aktuelle Berichte
-        </h3>
+        <h3 className="section-title pinch">Aktuelle Berichte</h3>
 
         <div className="container">
-          <div className="row align-items-stretch">
+          <div className="row align-items-stretch g-4">
             {contributions.slice(0, visibleCount).map((conn, index) => (
               <Card
                 key={index}
                 teamClass={conn.teamClass}
-                imgUrl={
-                  images[Math.floor(Math.random() * (images.length - 1))]
-                }
+                imgUrl={(() => {
+                  if (!Array.isArray(images) || images.length === 0) return firstTeam;
+                  const idx = Math.floor(Math.random() * images.length);
+                  const picked = images[idx];
+                  // support both string paths and module objects with .default
+                  return typeof picked === 'string' ? picked : (picked && picked.default) || firstTeam;
+                })()}
                 titel={conn.titel}
                 text={conn.text}
                 category={conn.category}

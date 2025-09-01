@@ -15,6 +15,46 @@ body {
   padding: var(--spacing-md);
 }
 
+/* Landing page sections */
+.hero-section {
+  background: transparent;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero-section::after {
+  content: "";
+  display: block;
+  height: 16px;
+  margin-top: var(--spacing-md);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.06), transparent);
+  border-radius: 12px;
+  opacity: 0.35;
+}
+
+/* Full-bleed hero height and cover behavior */
+.modern-hero .image-gallery-content:not(.fullscreen) .image-gallery-image {
+  height: 60vh;
+  max-height: none !important;
+}
+
+@media (max-width: 768px) {
+  .modern-hero .image-gallery-content:not(.fullscreen) .image-gallery-image {
+    height: 42vh;
+  }
+}
+
+.modern-hero .image-gallery-content:not(.fullscreen) .image-gallery-image img {
+  object-fit: cover;
+  object-position: center center;
+}
+
 h5 {
   font-size: clamp(1.1em, 0.5vw + 1.1em, 1.25em); /* Fluid font size */
   font-weight: 600;
@@ -57,7 +97,7 @@ h1 {
   margin: 0 auto; /* Center the contribution */
 }
 
-.countdown-container {
+.countdown-container, .countdownContainer {
   color: var(--color-countdown-dark-purple);
   background: var(--color-countdown-bg-transparent);
   box-shadow: var(--shadow-light);
@@ -1321,3 +1361,194 @@ body {
     padding: var(--spacing-xxs) var(--spacing-sm);
   }
 }
+
+/* Blog: cards and content */
+.blog-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.blog-card .card-img-top, .blog-card .card-img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.badge-team {
+  background: var(--gradient-tag-blue);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.section-title {
+  color: var(--color-black);
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}
+
+.section-title.pinch::before {
+  background-color: var(--color-primary-blue);
+}
+
+.content-section {
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter);
+  border: var(--glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+}
+
+.image-frame {
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+}
+
+.image-gallery--contained {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.modern-hero {
+  width: 100%;
+  max-width: none;
+}
+
+/* Modern, glassy gallery skin */
+.modern-gallery {
+  position: relative;
+}
+
+.modern-gallery .image-gallery-content:not(.fullscreen) {
+  background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter);
+  border: var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+}
+
+.modern-gallery .image-gallery-slide .image-gallery-image {
+  overflow: hidden;
+}
+
+.modern-gallery .image-gallery-slide .image-gallery-image img {
+  transition: transform 400ms ease, filter 400ms ease;
+}
+
+.modern-gallery:hover .image-gallery-slide .image-gallery-image img {
+  transform: scale(1.03);
+}
+
+/* Navigation buttons */
+.modern-gallery .rig-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--color-black);
+  box-shadow: var(--shadow-light);
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.modern-gallery .rig-nav:hover {
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: var(--shadow-hover);
+}
+
+.modern-gallery .rig-left { left: 12px; }
+.modern-gallery .rig-right { right: 12px; }
+
+.modern-gallery .rig-nav:disabled {
+  opacity: 0.5;
+}
+
+/* Utility buttons (fullscreen, play/pause) */
+.modern-gallery .rig-utility {
+  position: absolute;
+  top: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--color-black);
+  box-shadow: var(--shadow-light);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.modern-gallery .rig-utility:hover {
+  transform: scale(1.06);
+  box-shadow: var(--shadow-hover);
+}
+
+.modern-gallery .rig-fs { right: 12px; }
+.modern-gallery .rig-play { right: 56px; }
+
+/* Thumbnails */
+.modern-gallery .image-gallery-thumbnails {
+  padding: 8px 12px 12px 12px;
+  background: transparent;
+}
+
+.modern-gallery .image-gallery-thumbnail {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--color-very-light-gray);
+  transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.modern-gallery .image-gallery-thumbnail:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.modern-gallery .image-gallery-thumbnail.active,
+.modern-gallery .image-gallery-thumbnail:focus {
+  border-color: var(--color-primary-blue);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+}
+
+/* Bullets for mobile */
+.modern-gallery .image-gallery-bullets .image-gallery-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(0,0,0,0.25);
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.modern-gallery .image-gallery-bullets .image-gallery-bullet.active,
+.modern-gallery .image-gallery-bullets .image-gallery-bullet:hover,
+.modern-gallery .image-gallery-bullets .image-gallery-bullet:focus {
+  transform: scale(1.25);
+  background: var(--color-primary-blue);
+}
+
+/* Fullscreen adjustments */
+.modern-gallery .image-gallery-content.fullscreen {
+  background: rgba(0,0,0,0.92);
+}
+
+.modern-gallery .image-gallery-content.fullscreen .image-gallery-image img {
+  object-fit: contain;
+}
+
+/* end */

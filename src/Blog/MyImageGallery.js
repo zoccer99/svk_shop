@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ImageGallery from "react-image-gallery";
+import { BsChevronLeft, BsChevronRight, BsArrowsFullscreen, BsPlayFill, BsPauseFill } from "react-icons/bs";
 
 const images = [
   {
@@ -23,8 +23,15 @@ const importAllImages = (r) => {
 
 const MyImageGallery = (props) => {
   const [finalImages, setfinalImages] = useState();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
   useEffect(() => {
-    let formattedImages = [];
+    const onResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
     const img = importAllImages(
       require.context(
         "../pictures/baumersroda",
@@ -32,25 +39,97 @@ const MyImageGallery = (props) => {
         /\.(png|jpe?g|svg|JPG)$/
       )
     );
-    for (let i = 0; i < img.length; i++) {
-      console.log(img[i])
-      for (let j = i + 1; j < img.length; j++) {
-        let tempO = img[i].default.split(".")[0]
-        let tempT = img[j].default.split(".")[0]
-        if (
-          tempT.includes(tempO) 
-          ) {
-          formattedImages.push({
-            original: img[i].default,
-            thumbnail: img[j].default,
-          });
-          break;
-        }
-      }
+
+    const pairs = new Map();
+    for (const mod of img) {
+      const url = typeof mod === 'string' ? mod : mod.default;
+      if (!url) continue;
+      const filename = url.split('/').pop() || '';
+      let base = filename.split('.')[0];
+      const isThumb = base.endsWith('_thumbnail');
+      if (isThumb) base = base.replace(/_thumbnail$/, '');
+
+      const entry = pairs.get(base) || {};
+      if (isThumb) entry.thumbnail = url; else entry.original = url;
+      pairs.set(base, entry);
     }
+
+    const formattedImages = [];
+    pairs.forEach(({ original, thumbnail }) => {
+      if (original && thumbnail) formattedImages.push({ original, thumbnail });
+    });
     setfinalImages(formattedImages);
   }, []);
-  return <ImageGallery items={finalImages || images}  additionalClass="w-75" />;
+
+  const renderLeftNav = (onClick, disabled) => (
+    <button
+      type="button"
+      className="rig-nav rig-left"
+      onClick={onClick}
+      disabled={disabled}
+      aria-label="Vorheriges Bild"
+    >
+      <BsChevronLeft />
+    </button>
+  );
+
+  const renderRightNav = (onClick, disabled) => (
+    <button
+      type="button"
+      className="rig-nav rig-right"
+      onClick={onClick}
+      disabled={disabled}
+      aria-label="Nächstes Bild"
+    >
+      <BsChevronRight />
+    </button>
+  );
+
+  const renderFullscreenButton = (onClick, isFullscreen) => (
+    <button
+      type="button"
+      className="rig-utility rig-fs"
+      onClick={onClick}
+      aria-label={isFullscreen ? "Vollbild verlassen" : "Vollbild"}
+    >
+      <BsArrowsFullscreen />
+    </button>
+  );
+
+  const renderPlayPauseButton = (onClick, isPlaying) => (
+    <button
+      type="button"
+      className="rig-utility rig-play"
+      onClick={onClick}
+      aria-label={isPlaying ? "Pause" : "Abspielen"}
+    >
+      {isPlaying ? <BsPauseFill /> : <BsPlayFill />}
+    </button>
+  );
+
+  const galleryItems = finalImages || images;
+  const isHero = !!props.hero;
+  const classes = isHero ? "modern-gallery modern-hero" : "image-gallery--contained modern-gallery";
+
+  return (
+    <ImageGallery
+      items={galleryItems}
+      additionalClass={classes}
+      infinite
+      lazyLoad
+      slideDuration={600}
+      slideInterval={4500}
+      showNav={galleryItems.length > 1}
+      showPlayButton
+      showFullscreenButton
+      showThumbnails={!isMobile}
+      showBullets={isMobile}
+      renderLeftNav={renderLeftNav}
+      renderRightNav={renderRightNav}
+      renderFullscreenButton={renderFullscreenButton}
+      renderPlayPauseButton={renderPlayPauseButton}
+    />
+  );
 };
 
 export default MyImageGallery;
