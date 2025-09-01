@@ -50,7 +50,7 @@ function slugifyDe(text) {
   };
 
   return (
-    <div className={`col-12 col-sm-6 col-md-4 mb-4 p-4-0 ${isMobile ? 'blog-card-mobile-banner' : ''}`}>
+    <div className={`col-12 col-sm-6 col-md-4 mb-4 ${isMobile ? 'blog-card-mobile-banner' : ''}`}>
       <div className="card h-100 d-flex flex-column">
         <Link to={`/${props.teamClass}/${slugifyDe(props.titel)}`} className="text-decoration-none text-dark d-flex flex-column flex-grow-1 ">
           <img src={props.imgUrl} className="card-img-top" alt="..." loading="lazy" />
