@@ -1300,10 +1300,187 @@ body {
   margin-bottom: var(--spacing-lg) !important; /* Consistent bottom margin */
 }
 
-.player-card-mobile:hover {
-  transform: var(--glass-animation-hover);
-  box-shadow: var(--shadow-hover);
-}
+  .player-card-mobile:hover {
+    transform: var(--glass-animation-hover);
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Modern Player Card */
+  .player-card-modern {
+    background: var(--color-white);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .player-hero {
+    background: linear-gradient(135deg, #6da7ff 0%, #4e7ad9 60%, #8fd7ff 100%);
+    min-height: 180px;
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  .player-hero .hero-btn {
+    position: absolute;
+    top: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+  }
+
+  .player-hero .hero-btn.back { left: 12px; }
+  .player-hero .hero-btn.follow {
+    right: 12px;
+    width: auto;
+    padding: 0 14px;
+    border-radius: 18px;
+    font-weight: 600;
+  }
+
+  .player-hero .hero-copy {
+    position: relative;
+    z-index: 1;
+    color: var(--color-white);
+    margin-left: 150px; /* leaves space for photo */
+    padding: 1rem 0 1.5rem;
+  }
+
+  .player-hero .hero-name .first {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 500;
+    opacity: 0.95;
+  }
+  .player-hero .hero-name .last {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.05;
+  }
+
+  .player-hero .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    opacity: .95;
+    font-weight: 500;
+  }
+  .player-hero .hero-meta .dot { opacity: .8; }
+
+  .player-hero .hero-photo {
+    position: absolute;
+    left: 0.75rem;
+    bottom: -6px;
+    width: 130px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+  }
+
+  .player-tabs {
+    display: flex;
+    gap: 1rem;
+    padding: .6rem 1rem 0.2rem;
+    border-bottom: 1px solid var(--color-very-light-gray);
+  }
+  .player-tabs .tab {
+    background: transparent;
+    border: none;
+    padding: .4rem .25rem .8rem;
+    color: var(--color-secondary-gray);
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+  }
+  .player-tabs .tab.active {
+    color: var(--color-dark-gray);
+  }
+  .player-tabs .tab.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: #5b2cd3;
+  }
+
+  .player-season {
+    padding: .9rem 1rem;
+  }
+  .player-season .dropdown-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .45rem .8rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-very-light-gray);
+    background: var(--color-white);
+    box-shadow: var(--shadow-light);
+    font-size: .9rem;
+    color: var(--color-dark-gray);
+  }
+  .player-season .dropdown-pill .label { color: var(--color-secondary-gray); }
+  .player-season .dropdown-pill .value { font-weight: 700; }
+
+  .player-stats-card {
+    background: var(--color-light-gray);
+    margin: 0 1rem 1rem;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: var(--shadow-light);
+  }
+  .player-stats-card .stats-row { display:flex; justify-content: space-between; gap: 1rem; }
+  .player-stats-card .stat { flex: 1; }
+  .player-stats-card .stat .label { color: var(--color-secondary-gray); font-weight: 600; }
+  .player-stats-card .stat .value { font-size: 1.6rem; font-weight: 800; color: var(--color-dark-gray); display: flex; align-items: center; gap: .5rem; }
+  .player-stats-card .badge-success { color: #10b981; font-size: .9rem; font-weight: 700; }
+
+  .player-stats-card .stats-bar { margin-top: .8rem; }
+  .player-stats-card .bar-bg { height: 10px; border-radius: 999px; background: #eadff7; overflow: hidden; }
+  .player-stats-card .bar-fill { height: 100%; background: linear-gradient(90deg, #d6b2ff, #a05cf7, #6b21a8); border-radius: 999px; }
+  .player-stats-card .bar-legend { display:flex; gap: .75rem; align-items:center; margin-top: .6rem; color: var(--color-secondary-gray); font-size: .9rem; }
+  .player-stats-card .bar-legend .dot { width: 8px; height: 8px; border-radius: 999px; display:inline-block; margin-right:.3rem; }
+  .player-stats-card .bar-legend .dot.appearances { background:#cbd5e1; }
+  .player-stats-card .bar-legend .dot.goals { background:#7c3aed; }
+  .player-stats-card .bar-legend .dot.rate { background:#5b2cd3; }
+
+  .player-stats-card .stats-icons { display:flex; justify-content: space-around; margin-top: .8rem; }
+  .player-stats-card .icon-box { display:flex; align-items:center; gap:.4rem; color: var(--color-dark-gray); background: rgba(255,255,255,.7); padding:.35rem .6rem; border-radius: 8px; }
+
+  /* Overview card uses same base look */
+  .player-overview-card {
+    background: var(--color-light-gray);
+    margin: 0 1rem 1rem;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: var(--shadow-light);
+  }
+  .player-overview-card .overview-row { display:flex; flex-wrap: wrap; gap: .75rem; margin-bottom: .5rem; }
+  .player-overview-card .item { background: rgba(255,255,255,.7); padding: .5rem .6rem; border-radius: 10px; display:flex; gap:.5rem; align-items:center; }
+  .player-overview-card .item .key { color: var(--color-secondary-gray); font-weight: 600; }
+  .player-overview-card .item .val { color: var(--color-dark-gray); font-weight: 700; }
+
+  /* Responsive tweaks */
+  @media (min-width: 576px) {
+    .player-hero { min-height: 220px; padding: 1rem 1.25rem 0 1.25rem; }
+    .player-hero .hero-photo { width: 160px; height: 210px; }
+    .player-hero .hero-copy { margin-left: 180px; }
+  }
+
+  /* Mobile spacing between cards */
+  @media (max-width: 575.98px) {
+    .player-card-modern { margin-bottom: var(--spacing-lg); }
+  }
 
 /* New styles for blog cards in mobile view */
 @media (max-width: 576px) {
