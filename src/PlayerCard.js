@@ -1,85 +1,130 @@
-import React, { useEffect, useState } from "react";
-import {
-  faFutbol,
-  faShoePrints,
-  faHandshake,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useMemo, useState } from "react";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// Redesigned PlayerCard in the style of the provided mock
 const PlayerCard = ({ img, player }) => {
-  const [isMobile, setMobile] = useState(window.innerWidth < 576);
+  const safeName = player?.name || "loading";
+  const [tab, setTab] = useState("overview");
+  const [firstName, lastName] = useMemo(() => {
+    const parts = (safeName || "").split(" ");
+    return [parts[0] || "", parts.slice(1).join(" ")];
+  }, [safeName]);
 
-  useEffect(() => {
-    const updateViewport = () => {
-      setMobile(window.innerWidth < 576);
-    };
-    window.addEventListener("resize", updateViewport);
-    return () => window.removeEventListener("resize", updateViewport);
+  const matches = Number(player?.matches ?? 0);
+  const goals = Number(player?.goals ?? 0);
+  const assists = Number(player?.assists ?? 0);
+  const goalsPerGame = useMemo(() => {
+    if (!matches) return 0;
+    return Math.round((goals / matches) * 10) / 10; // one decimal
+  }, [goals, matches]);
+
+  // Select label like 2025/26
+  const seasonLabel = useMemo(() => {
+    const now = new Date();
+    const start = now.getMonth() >= 6 ? now.getFullYear() : now.getFullYear() - 1;
+    const endShort = String((start + 1) % 100).padStart(2, "0");
+    return `${start}/${endShort}`;
   }, []);
 
+  // Progress value for the purple bar (normalized by a simple heuristic)
+  const barPct = Math.max(10, Math.min(100, Math.round((goalsPerGame / 2) * 100)));
+
   return (
-    <>
-      {isMobile ? (
-        <div className="player-card-mobile p-3 mb-3 shadow-lg rounded-lg d-flex align-items-center">
-          <img
-            src={img}
-            alt={player?.name || "Spielerbild"}
-            className="rounded-circle me-3"
-            style={{ width: "70px", height: "70px", objectFit: "cover", border: "2px solid var(--color-primary-blue)" }}
-          />
-          <div className="flex-grow-1">
-            <div className="fw-bold text-primary" style={{ fontSize: "1.1rem" }}>
-              {(player?.name?.split(" ")[0] || "loading")}
-            </div>
-            <div className="text-secondary" style={{ fontSize: "0.95rem" }}>
-              {(player?.name?.split(" ").slice(1).join(" ") || "")}
-            </div>
+    <div className="player-card-modern shadow-lg rounded-4 overflow-hidden">
+      {/* Hero */}
+      <div className="player-hero position-relative">
+        <button type="button" className="hero-btn back" aria-label="Zurück">
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+        { /* Follow button removed as requested */ }
+
+        <div className="hero-copy">
+          <div className="hero-name">
+            <span className="first">{firstName}</span>
+            <span className="last">{lastName}</span>
           </div>
-          <div className="d-flex flex-column align-items-end text-end ms-3">
-            <div className="d-flex align-items-center mb-1 text-dark">
-              <FontAwesomeIcon icon={faShoePrints} className="me-1" />
-              <span className="fw-semibold">{player?.matches ?? "loading"}</span>
-            </div>
-            <div className="d-flex align-items-center mb-1 text-dark">
-              <FontAwesomeIcon icon={faFutbol} className="me-1" />
-              <span className="fw-semibold">{player?.goals ?? "loading"}</span>
-            </div>
-            <div className="d-flex align-items-center text-dark">
-              <FontAwesomeIcon icon={faHandshake} className="me-1" />
-              <span className="fw-semibold">{player?.assists ?? "loading"}</span>
-            </div>
+          <div className="hero-meta">
+            <span className="club">SV Kretzschau</span>
+            <span className="dot">•</span>
+            <span className="position">{player?.position || "Spieler"}</span>
           </div>
         </div>
-      ) : (
-        <div className="player-card-desktop shadow-lg rounded-4 overflow-hidden mb-4">
-          <img
-            src={img}
-            className="w-100"
-            alt={player?.name || "Spielerbild"}
-            style={{ height: "300px", objectFit: "cover" }}
-          />
-          <div className="player-card-footer p-4 bg-light">
-            <h5 className="fw-bold mb-3 text-center text-dark">
-              {player?.name || "loading"}
-            </h5>
-            <div className="d-flex justify-content-around text-dark">
-              <div className="d-flex flex-column align-items-center gap-1">
-                <FontAwesomeIcon icon={faShoePrints} size="lg" />
-                <span className="fw-semibold">{player?.matches ?? "0"} Spiele</span>
-              </div>
-              <div className="d-flex flex-column align-items-center gap-1">
-                <FontAwesomeIcon icon={faFutbol} size="lg" />
-                <span className="fw-semibold">{player?.goals ?? "0"} Tore</span>
-              </div>
-              <div className="d-flex flex-column align-items-center gap-1">
-                <FontAwesomeIcon icon={faHandshake} size="lg" />
-                <span className="fw-semibold">{player?.assists ?? "0"} Assists</span>
+
+        <img src={img} alt={safeName} className="hero-photo" />
+      </div>
+
+      {/* Tabs */}
+      <div className="player-tabs">
+        <button
+          className={`tab ${tab === "overview" ? "active" : ""}`}
+          onClick={() => setTab("overview")}
+          type="button"
+          aria-pressed={tab === "overview"}
+        >
+          Overview
+        </button>
+        <button
+          className={`tab ${tab === "stats" ? "active" : ""}`}
+          onClick={() => setTab("stats")}
+          type="button"
+          aria-pressed={tab === "stats"}
+        >
+          Stats
+        </button>
+      </div>
+
+      {/* Season filter */}
+      <div className="player-season">
+        <div className="dropdown-pill" role="button" aria-label="Saison">
+          <span className="label">Season</span>
+          <span className="value">{seasonLabel}</span>
+        </div>
+      </div>
+
+      {/* Stats card */}
+      {tab === "stats" ? (
+        <div className="player-stats-card">
+          <div className="stats-row">
+            <div className="stat">
+              <div className="label">Appearances</div>
+              <div className="value">{matches}</div>
+            </div>
+            <div className="stat">
+              <div className="label">Goals</div>
+              <div className="value">
+                {goals}
+                <span className="badge-success">Top 1%</span>
               </div>
             </div>
+            <div className="stat">
+              <div className="label">Assists</div>
+              <div className="value">{assists}</div>
+            </div>
+          </div>
+
+          <div className="stats-bar">
+            <div className="bar-bg">
+              <div className="bar-fill" style={{ width: `${barPct}%` }} />
+            </div>
+            <div className="bar-legend">
+              <span className="dot appearances" /> Appearances
+              <span className="dot goals" /> Goals
+              <span className="dot rate" /> {goalsPerGame} per game
+            </div>
+          </div>
+
+        </div>
+      ) : (
+        <div className="player-overview-card">
+          <div className="overview-row">
+            <div className="item"><span className="key">Club</span><span className="val">SV Kretzschau</span></div>
+            <div className="item"><span className="key">Position</span><span className="val">{player?.position || "–"}</span></div>
+            <div className="item"><span className="key">Number</span><span className="val">{player?.number || "–"}</span></div>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
