@@ -3,6 +3,7 @@ import Card from "./Card";
 // import parse from 'html-react-parser'; // unused
 import firstTeam from "../pictures/firstTeam.jpg";
 import { Spinner } from "react-bootstrap";
+import YearFilter from "./YearFilter";
 
 //TODO: Datenbank verbinden
 
@@ -12,6 +13,8 @@ const ContributionSite = (props) => {
   const [contributions, setContributions] = useState([]);
   const [images, setImages] = useState();
   const [visibleCount, setVisibleCount] = useState(6);
+  const [selectedYear, setSelectedYear] = useState();
+  const [years, setYears] = useState([]);
   
 
   const sortCon = (teamclass, conntribution) => {
@@ -60,6 +63,10 @@ const ContributionSite = (props) => {
         data = sortCon(props.team, data);
         data = sortConBydate(data);
         setContributions(data);
+
+        const uniqueYears = [...new Set(data.map(item => new Date(item.zeit).getFullYear()))];
+        setYears(uniqueYears);
+        setSelectedYear(uniqueYears[0]);
   
         const context = require.context(
           "../pictures/erste",
@@ -78,6 +85,16 @@ const ContributionSite = (props) => {
   
     getImages();
   }, [props.team]);
+
+  const handleSelectYear = (year) => {
+    setSelectedYear(year);
+  };
+
+  const filteredContributions = selectedYear
+  ? contributions.filter(
+      (conn) => new Date(conn.zeit).getFullYear() === selectedYear
+    )
+  : contributions;
   
 
   let options = {
@@ -107,10 +124,10 @@ const ContributionSite = (props) => {
     return (
       <div>
         <h3 className="section-title pinch">Aktuelle Berichte</h3>
-
+        <YearFilter years={years} selectedYear={selectedYear} onSelectYear={handleSelectYear} />
         <div className="container">
           <div className="row align-items-stretch g-4">
-            {contributions.slice(0, visibleCount).map((conn, index) => (
+            {filteredContributions.slice(0, visibleCount).map((conn, index) => (
               <Card
                 key={index}
                 teamClass={conn.teamClass}
@@ -132,7 +149,7 @@ const ContributionSite = (props) => {
               />
             ))}
           </div>
-          {visibleCount < contributions.length && (
+          {visibleCount < filteredContributions.length && (
             <div className="text-center my-4">
               <button className="btn btn-primary" onClick={loadMore}>
                 Mehr laden
