@@ -58,7 +58,7 @@ class FullContribution extends Component {
           </p>
         </div> */}
         <div className="d-flex justify-content-center align-items-center mt-5 ">
-          <div className="countdownContainer countdown-container content-section p-4 w-lg-75 mx-2">
+          <div className=" content-section-no-border w-75 text-dark ">
             <h2 className="">{this.props.headline}</h2>
             <p dangerouslySetInnerHTML={{__html: this.props.text}}></p>
           </div>

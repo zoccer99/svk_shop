@@ -94,7 +94,7 @@ const PlayerCard = ({ img, player }) => {
               <div className="label">Goals</div>
               <div className="value">
                 {goals}
-                <span className="badge-success">Top 1%</span>
+                {/* <span className="badge-success">Top 1%</span> */}
               </div>
             </div>
             <div className="stat">
@@ -103,7 +103,7 @@ const PlayerCard = ({ img, player }) => {
             </div>
           </div>
 
-          <div className="stats-bar">
+          {/* <div className="stats-bar">
             <div className="bar-bg">
               <div className="bar-fill" style={{ width: `${barPct}%` }} />
             </div>
@@ -112,7 +112,7 @@ const PlayerCard = ({ img, player }) => {
               <span className="dot goals" /> Goals
               <span className="dot rate" /> {goalsPerGame} per game
             </div>
-          </div>
+          </div> */}
 
         </div>
       ) : (

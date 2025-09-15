@@ -115,6 +115,10 @@ h1 {
   max-height: 600px;
 }
 
+.w-75 {
+  width: 75%;
+}
+
 @media (min-width: 992px) {
   .CounConWrapper {
     width: 70%; /* Adjust for larger screens */
@@ -122,6 +126,10 @@ h1 {
 
   .w-lg-75 {
     width: 75%;
+  }
+
+  .w-lg-90 {
+    width: 90%%;
   }
 
   .customFontSize {
@@ -1582,6 +1590,11 @@ body {
   border-radius: 12px;
   box-shadow: var(--shadow-light);
 }
+
+.content-section-no-border {
+    background: var(--glass-background);
+  backdrop-filter: var(--glass-backdrop-filter);
+} 
 
 .image-frame {
   border-radius: 12px;

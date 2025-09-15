@@ -7,7 +7,7 @@ const BigContribution = (props) => {
   return (
     //TODO: creative img cluster
     <div className="d-flex justify-content-center ">
-      <div className="d-flex flex-column bigContributionWrapper">
+      <div className="d-flex flex-column ">
         <div className="">
           <img
             className="img-thumbnail img-fluid"
