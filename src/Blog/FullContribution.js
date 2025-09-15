@@ -39,7 +39,7 @@ class FullContribution extends Component {
   }
   render() {
     return (
-      <div className="fullContributionWrapper">
+      <div className="fullContributionWrapper mt-5">
         
         <div className="d-flex justify-content-center">
           {this.props.customImages ? 
