@@ -129,7 +129,7 @@ h1 {
   }
 
   .w-lg-90 {
-    width: 90%%;
+    width: 90%;
   }
 
   .customFontSize {
@@ -143,6 +143,8 @@ h1 {
   .font-contactJunior {
     font-size: 14px;
   }
+
+
 }
 
 /* Mannschaftsbilder */

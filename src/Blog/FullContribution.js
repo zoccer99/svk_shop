@@ -1,71 +1,69 @@
-import React, { Component } from "react";
+import React from "react";
 import firstTeam from "../pictures/firstTeam.jpg";
 import MyImageGallery from "./MyImageGallery";
+import useIsMobile from "../Hooks/useIsMobile";
+import TeamworkQuote from "../components/TeamworkQuote";
 
-class FullContribution extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      smallImage: "",
-      images: [],
-      imageSrc: firstTeam,
-    };
-  }
+const FullContribution = (props) => {
+  const isMobile = useIsMobile();
+  const [imageSrc, setImageSrc] = React.useState(firstTeam);
 
-  scrollToTop = () => {
+  const scrollToTop = () => {
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);
   };
 
-  chooseRandom = (imgArr) => {
+  const chooseRandom = (imgArr) => {
     if (!Array.isArray(imgArr) || imgArr.length === 0) return;
     const idx = Math.floor(Math.random() * imgArr.length);
-    this.setState({ imageSrc: imgArr[idx] });
+    setImageSrc(imgArr[idx]);
   };
 
-  importAllImages = (r) => {
+  const importAllImages = (r) => {
     let img = r.keys().map(r);
-    this.setState({ images: img }, () => {
-      this.chooseRandom(this.state.images); //random Bild wird aus importierten bildern ausgewählt
-    });
+    chooseRandom(img); //random Bild wird aus importierten bildern ausgewählt
   };
 
-  componentDidMount() {
-    this.scrollToTop();
-    this.importAllImages(
+  React.useEffect(() => {
+    scrollToTop();
+    importAllImages(
       require.context("../pictures/ErsteSpiel", false, /\.(png|jpe?g|svg|JPG)$/)
     );
-  }
-  render() {
-    return (
-      <div className="fullContributionWrapper mt-5">
-        
-        <div className="d-flex justify-content-center">
-          {this.props.customImages ? 
-          <MyImageGallery /> :
+  }, []);
+
+  return (
+    <div className="fullContributionWrapper mt-5">
+      <div className="d-flex justify-content-center">
+        {props.customImages ? (
+          isMobile ? (
+            <TeamworkQuote />
+          ) : (
+            <MyImageGallery />
+          )
+        ) : (
           <img
-          className="w-lg-75 img-fluid image-frame"
-          src={this.state.imageSrc}
-          alt="SpielBild"
+            className="w-lg-75 img-fluid image-frame"
+            src={imageSrc}
+            alt="SpielBild"
           ></img>
-        }
-        </div>
-        {/* <div className="fixed-bg bg-1" id="bg-1">
-          <h1 className="main-text">{this.props.headline}</h1>
+        )}
+      </div>
+      {/* <div className="fixed-bg bg-1" id="bg-1">
+          <h1 className="main-text">{props.headline}</h1>
           <p className="sub-text">
-            <em>{this.props.tailline}</em>
+            <em>{props.tailline}</em>
           </p>
         </div> */}
-        <div className="d-flex justify-content-center align-items-center mt-5 ">
-          <div className=" content-section-no-border w-75 text-dark ">
-            <h2 className="">{this.props.headline}</h2>
-            <p dangerouslySetInnerHTML={{__html: this.props.text}}></p>
-          </div>
+      <div className="d-flex justify-content-center align-items-center mt-5 ">
+        <div className=" content-section-no-border w-lg-75 text-dark mx-3">
+          <h2 className="">{props.headline}</h2>
+          <p dangerouslySetInnerHTML={{ __html: props.text }}></p>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default FullContribution;
+
